@@ -1,0 +1,2560 @@
+<html>
+
+<head>
+<meta name=Generator content="Microsoft Office HTML Filter 2.0">
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content="Microsoft Word 9">
+<title>FIPA Personal Assistant Specification</title>
+<style>
+<!--
+ 
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h1
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Helvetica;}
+h2
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-align:justify;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;}
+h3
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h4
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h5
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h6
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.1in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:8.0pt;
+	font-family:Helvetica;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{
+	margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-3.3pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:red;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Arial;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial Unicode MS";}
+p.zzCover, li.zzCover, div.zzCover
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.Heading2, li.Heading2, div.Heading2
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallStrong
+	{
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{
+	margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{
+	margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.Abbrevs, li.Abbrevs, div.Abbrevs
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Titre3h3, li.Titre3h3, div.Titre3h3
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.source, li.source, div.source
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+p.Normaleparagraph, li.Normaleparagraph, div.Normaleparagraph
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="SK_Preliminary"></a><a
+name="MLS_Field_QUOTE"></a><a name="MLS_Field_MERGEFORMAT"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a><b><span
+lang=EN-GB style='font-size:18.0pt;'>&nbsp;</span></b></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><b><span lang=EN-GB style='font-size:18.0pt;'>FOUNDATION FOR INTELLIGENT
+PHYSICAL AGENTS</span></b><b><span
+lang=EN-GB style='font-size:18.0pt;'><a name="_Ref479045812"></a></span></b></p>
+
+<p class=Standardparagraph><a
+name="MLS_Field_CHARFORMAT"><span lang=EN-GB>&nbsp;</span></a></span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt;'>FIPA Personal Assistant Specification</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt;'>&nbsp;</span></p>
+
+<div align=center>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border-top:1.0pt;border-left:
+  1.0pt;border-bottom:.5pt;border-right:.5pt;border-color:windowtext;
+  border-style:solid;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document title</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.0pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>FIPA Personal Assistant Specification</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document number</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>XC00083B</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document source</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>FIPA Architecture Board</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document status</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>Experimental</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Date of this status</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>2001/08/10</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Supersedes</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>FIPA00022</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Contact</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>fab@fipa.org</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=624 colspan=4 valign=top style='width:468.05pt;border-top:none;
+  border-left:solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Change history</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext .5pt;
+  border-left:solid windowtext 1.0pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>2000/10/17</span></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:solid windowtext .5pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.0pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>Approved for Experimental</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext .5pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>2001/08/10</span></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>Line numbering added</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>© 2000 Foundation for Intelligent Physical Agents - http://www.fipa.org/</span></p>
+
+<p class=Standardparagraph><i><span
+lang=EN-GB>Geneva, Switzerland</span></i></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=715 valign=top style='width:7.45in;border:solid black .75pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='text-align:center'><b><span lang=EN-GB>Notice</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:108.45pt'>
+  <td width=715 valign=top style='width:7.45in;border:solid black .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:108.45pt'>
+  <p class=Standardparagraph><span lang=EN-GB>Use of the technologies described in this specification may infringe
+  patents, copyrights or other intellectual property rights of FIPA Members and
+  non-members. Nothing in this specification should be construed as granting
+  permission to use any of the technologies described. Anyone planning to make
+  use of technology covered by the intellectual property rights of others
+  should first obtain permission from the holder(s) of the rights. FIPA
+  strongly encourages anyone implementing any part of this specification to
+  determine first whether part(s) sought to be implemented are covered by the
+  intellectual property of others, and, if so, to obtain appropriate licenses
+  or other permission from the holder(s) of such intellectual property prior to
+  implementation. This specification is subject to change without notice.
+  Neither FIPA nor any of its Members accept any responsibility whatsoever for
+  damages or liability, direct or consequential, which may result from the use
+  of this specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=zzContents><span
+lang=EN-GB>Foreword</span></p>
+
+<p class=Standardparagraph>The Foundation for Intelligent Physical Agents
+(FIPA) is an international organization that is dedicated to promoting the
+industry of intelligent agents by openly developing specifications supporting
+interoperability among agents and agent-based applications. This occurs through
+open collaboration among its member organizations, which are companies and
+universities that are active in the field of agents. FIPA makes the results of
+its activities available to all interested parties and intends to contribute its
+results to the appropriate formal standards bodies. </p>
+
+<p class=Standardparagraph>The members of FIPA are individually and
+collectively committed to open competition in the development of agent-based
+applications, services and equipment. Membership in FIPA is open to any
+corporation and individual firm, partnership, governmental body or
+international organization without restriction. In particular, members are not
+bound to implement or use specific agent-based standards, recommendations and
+FIPA specifications by virtue of their participation in FIPA. </p>
+
+<p class=Standardparagraph>The FIPA specifications are developed through
+direct involvement of the FIPA membership. The status of a specification can be
+either Preliminary, Experimental, Standard, Deprecated or Obsolete.More detail about the process of
+specification may be found in the FIPA Procedures for Technical Work. A
+complete overview of the FIPA specifications and their current status may be
+found in the FIPA List of Specifications. A list of terms and abbreviations
+used in the FIPA specifications may be found in the FIPA Glossary.</p>
+
+<p class=Standardparagraph>FIPA is a non-profit association registered in
+Geneva, Switzerland. As of January 2000, the 56 members of FIPA represented 17countries worldwide. Further
+information about FIPA as an organization, membership information, FIPA specifications
+and upcoming meetings may be found at http://www.fipa.org/.</p>
+
+<p class=zzContents><span
+lang=EN-GB>Contents</span></p>
+
+<p class=MsoToc1><a
+name="_Ref449499969"></a><a href="#_Toc505481525"><span lang=EN-GB>1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;text-decoration:
+none;'>     </span><span lang=EN-GB>Scope</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc505481526"><span lang=EN-GB>2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;text-decoration:
+none;'>     </span><span lang=EN-GB>General Analysis</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505481527"><span lang=EN-GB>2.1</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Directory Services</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505481528"><span lang=EN-GB>2.2</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Meeting Scheduling
+Services</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505481529"><span lang=EN-GB>2.3</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Information
+Management Services</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505481530"><span lang=EN-GB>2.4</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Travel Planning
+Service</span><span lang=EN-GB
+style='color:windowtext;display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc505481531"><span lang=EN-GB>3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;text-decoration:
+none;'>     </span><span lang=EN-GB>Scenario</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505481532"><span lang=EN-GB>3.1</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Architecture</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505481533"><span lang=EN-GB>3.2</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Human-Agent
+Interaction</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc505481534"><span lang=EN-GB>4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;text-decoration:
+none;'>     </span><span lang=EN-GB>Personal Assistant Ontology</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505481535"><span lang=EN-GB>4.1</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Object
+Descriptions</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc505481536"><span lang=EN-GB>4.1.1</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Meeting
+Description</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505481537"><span lang=EN-GB>4.2</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Function
+Descriptions</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc505481538"><span lang=EN-GB>4.2.1</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Negotiate a
+Meeting</span><span lang=EN-GB
+style='color:windowtext;display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc505481539"><span lang=EN-GB>4.2.2</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Schedule a Meeting</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc505481540"><span lang=EN-GB>4.2.3</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Participate in a
+Meeting</span><span lang=EN-GB
+style='color:windowtext;display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc505481541"><span lang=EN-GB>4.2.4</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Schedule a Trip</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505481542"><span lang=EN-GB>4.3</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Interaction
+Protocols</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc505481543"><span lang=EN-GB>4.3.1</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Negotiating
+Meeting Details</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc505481544"><span lang=EN-GB>4.3.2</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Scheduling a
+Meeting</span><span lang=EN-GB
+style='color:windowtext;display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc505481545"><span lang=EN-GB>4.3.3</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Confirming a
+Meeting</span><span lang=EN-GB
+style='color:windowtext;display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc505481546"><span lang=EN-GB>5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;text-decoration:
+none;'>     </span><span lang=EN-GB>Examples</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc505481547"><span lang=EN-GB>6</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;text-decoration:
+none;'>     </span><span lang=EN-GB>References</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoNormal></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica;'><br clear=all
+style='page-break-before:always;'>
+</span>
+
+<div class=Section2>
+
+<h1><a name="_Toc486842260"></a><a
+name="_Toc505481525"><span
+lang=EN-GB>1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Scope</span></a></span></h1>
+
+<p class=MsoNormal><span lang=EN-GB>One central class of agents is that of a
+Personal Assistant (PA). A PA is a software agent that acts semi-autonomously
+for and on behalf of a user, modelling the interests of the user and providing
+services to the user or other users and PAs as and when required. A PA is like
+a secretary, it accomplishes routine support tasks to allow the user to
+concentrate on their real job. It is unobtrusive but ready when needed and rich
+in knowledge about user and their areas of work.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The notion of a PA is very broad. There are
+many internal and external functions and services that can and will be used to
+provide and extend a PA's basic functionalities. In fact, such encapsulation of
+new services is a critical requirement where the interoperability of a PA's
+functions and services is desirable. The use of agent technology to support a
+PA helps in achieving this requirement.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Examples of such functions and services
+include:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Managing a user's diaries,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Filtering and sorting email,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Managing a user's desktop environment,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Managing a user's activities, plans
+and tasks,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Locating and delivering multimedia
+information,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Recommending entertainment,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Purchasing desired items, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Planning travel.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>While this specification focuses on the
+generic requirements for a PA application, other FIPA specifications, such as
+[FIPA00080] and [FIPA00081], also include the notion of personal assistance for
+specific applications. The Personal Travel Assistant (PTA) service defined in
+[FIPA00080] is different from a PA service since the PTA is an integrated
+system which spans a particular market segment of the electronic marketplace;
+the PA provides a user-oriented front-end to a wide variety of different
+services, one of which may be a PTA.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc486842261"></a><a name="_Toc505481526"><span lang=EN-GB>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>General Analysis</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>In general, a PA comprises (see <i>Figure 1</i>):</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Intelligence and associated
+capabilities such as rationality (reasoning and planning) and
+adaptability/learning,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Knowledge including facts, rules and
+adapted/learned knowledge for and about an end-user,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Interaction capabilities and
+facilities with the user, other agents and software and hardware services and
+functions, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The services and functions and their
+procedures for the agent to work with them. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The scope of this composite is limited to
+the tasks which are given by the user as goals and preferences for behaviour.
+Other agents will also exist and interact with the PA, but such other agents
+will not tend to represent particular user's preferences or access authority
+and other differentiators.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img width=414 height=253
+src="XC00083B_image002.gif"></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure 1: </span></b><span lang=EN-GB>Personal Assistant Reference Model</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The reference model include the following
+interfaces and protocols of interaction that are candidates for standardisation:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>User-agent dialogue,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Multi-modal user-agent interface,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Agent-agent communication interface,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Protocols for agent-agent interaction,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Agent-software interfaces,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Agent-software communication
+protocols,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Agent-function interfaces, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Function interoperability interfaces
+and mechanisms.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Multi-modality is the ultimate goal for
+human-agent interfaces. As a user interacts with a real PA, he/she can speak
+face-to-face with the PA or over the phone. Obviously, unconstrained natural
+language comprehension is also desirable. However, as first steps toward this
+general goal, multi-modal interaction is taken not as requirement for all
+agents to support all modalities, but merely that any single application should
+be able to select the one or more modalities required for the application. The
+composition of the PA should be media-independent in order to allow for this
+choice and otherwise provide the multi-modal conversions required, such as
+converting text to speech in order to pass information over the phone.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc486842262"></a><a name="_Toc505481527"><span lang=EN-GB>2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Directory Services</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>One of the basic functions of a PA is the
+management of the user's directory which includes telephone numbers, addresses
+and personal and useful information about them. This information facilitates
+responses the PA may provide to user's needs in an intelligent way, based on
+the context of the request. For example, if the user asks to call an
+organisation and the PA, by reference to the opening and closing times, notices
+that the call cannot be made then it will suggest alternative actions by
+inferring the user's possible intentions on the basis of the services provided
+by the organisation. A request for a call to a specific travel agency out of
+opening hours may result in the PA suggesting contacting a 24 hour call centre
+of an airline company.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc486842263"></a><a name="_Toc505481528"><span lang=EN-GB>2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Meeting Scheduling Services</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The PA includes a calendar facility, that
+among other things can be used for scheduling of meetings and negotiation with
+users and other agents. This functionality includes: </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Identifying a mutually appropriate
+time for all participants to attend a meeting,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Reserving an appropriate venue for the
+meeting,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Organising associated facilities,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Issuing reminders to all participants,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Handling any problems which might
+arise at a later date, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Cancelling meetings.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc486842264"></a><a name="_Toc505481529"><span lang=EN-GB>2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Information Management Services</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>This is a very large and nebulous set of
+tasks but also addresses one of the most critical needs for intelligent
+personal assistants. Most professionals are now inundated with too many sources
+of information and generally this is called <i>information overload</i>. An
+agent can semi-autonomously filter, sort or otherwise respond to all these
+sources to help off-load some of the more mundane tasks these professionals now
+must do themselves. Such task include: </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Email and news filtering,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Sorting and prioritising received
+information, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Automatically responding or forwarding
+information to another user.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>A key aspect of such information management
+is not just filtering out the low priority information, but also providing the
+timely delivery of high priority items; anywhere, anytime, anyhow. Such
+delivery is dependent on the user's location, media/equipment limitations and
+preferences. For instance, an agent can be instructed to deliver important
+email to an end-user even if the user only has a mobile phone by converting the
+text to speech. Of course, this same text to speech delivery of email over a
+mobile phone can be applied to any text-based information source such as NNTP
+news, stock quotes, etc. Furthermore, given the cost of mobile phone
+connectivity, other technologies such as text summarisation can be employed,
+for the most efficient delivery. The provision of such summarisation and media
+to media transformation could be provided, for example, via external services.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Even under the most constrained situations,
+such as the user only having a pager, a PA can at least notify the user about
+the existence and accessibility of an important new multimedia document. Though
+the pager device cannot deliver the information, the PA can notify the user of
+the appropriate equipment in the locality of the user that is available where
+the multimedia document could be sent.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>A less well-developed but equally important
+aspect of information management is the personal storage and retrieval of
+information. Even personal computer storage is becoming difficult to manage
+since files are often duplicated, directory structures are haphazard and the
+file systems themselves does not provide rich indexing and content search
+facilities. Here, a PA can be asked to file and retrieve documents or even
+isolated bits of information, much like a personal secretary manages
+paper-based documents in the office.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc486842265"></a><a name="_Toc505481530"><span lang=EN-GB>2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Travel Planning Service</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>A PA can assist in planning the user's trip
+by interacting with the user, other agents and external directory services and
+thus providing an appropriate plan of an intended trip and other guidance
+services (see [FIPA00079] for more information). In particular, the PA may
+assume much of the functionality of the PTA agent.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc486842266"></a><a name="_Toc505481531"><span lang=EN-GB>3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Scenario</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>The chosen scenario to illustrate the PA
+application is that of arranging meetings among several participants, located
+across companies and using different calendar management systems. This has been
+chosen for several reasons:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The scenario is instantly applicable
+to real-life situations,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Current solutions are unwieldy and
+proprietary, making integration across networks and other services difficult,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The scenario can be easily extended to
+incorporate further services, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>This class of application has been
+widely studied, with many agent-based approaches being developed (for example,
+see [Kozieriok1993]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The scenario lends itself well to agent
+technology, due to the need for:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>User profiling,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Integration of heterogeneous software,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Action on a user's behalf (semi-autonomy),
+and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Local control (in particular, of the
+user's calendar).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The selected service is an integration of
+meeting scheduling and travel assistance. The user asks the agent to set up a
+meeting with several participants and because the meeting may involve
+travelling for some of the participants, travel planning forms part of the
+meeting scheduling.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc486842267"></a><a name="_Toc505481532"><span lang=EN-GB>3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Architecture</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>In this test application, the PA provides a
+single unified interface to the user, and is represented as a single agent,
+even though it may actually be composed of several agents (see <i>Figure 2</i>).
+Each user is represented by a PA and they negotiate with each other to find an
+adequate meeting place and time. They interact with Travel Broker Agents (TBAs)
+to find out about travel schedules, etc. (see [FIPA00079]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB> </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img width=296 height=162
+src="XC00083B_image004.gif"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure
+2:</span></b><span lang=EN-GB> Agent Interactions in the Personal Assistant
+Application Scenario</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The PA may make use of several existing
+programs to perform its tasks. A possible set of relevant software for this
+test application is shown in <i>Figure 3</i>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB> </span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img width=188 height=83
+src="XC00083B_image006.gif"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure
+3: </span></b><span lang=EN-GB>Integration of External Software</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>This specification defines a set of
+scenarios based on one particular aspect of the PA role; that of arranging
+appointments for activities, such as meetings, which involve a number of
+participants. The PAs of the participants must cooperate to ensure that the
+meeting is arranged for a time and place which is mutually acceptable to all
+their users.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Basic scenario</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>User 1 is
+chairman of a committee and asks his PA to arrange a committee meeting.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Sub-scenario 1</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>User 1 suggests a
+specific time, duration and location for the meeting. The simplest case is that
+all participants are required to attend the meeting.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Sub-scenario 2</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>User 1 suggests a
+range of possible times to start the meeting. The duration and location of the
+meeting remain specific. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Sub-scenario 3</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>User 1 suggests a
+range of possible times to start the meeting as well as a set of locations at
+which the meeting can take place.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>In the scenarios, only those participants
+which have PAs will be considered in the agent-based negotiation of the
+meeting. Other possible interfaces (directly between personal agent and another
+human) will not be required.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>It is up to the individual PA application
+to associate PAs with their users, that is, if the initiator enters a list of
+participants to the meeting, the initiator's agent needs to be able to
+communicate with the PAs of the participants. The above sub-scenarios are in
+order of increasing sophistication and difficulty of implementation. Further
+scenarios, which are not directly under consideration in this specification,
+could be achieved by allowing negotiation about the duration and actual
+participants in the meeting.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>A field trial prototype should demonstrate
+cooperative meeting arrangement involving several PAs. It should implement at
+least the functionality required by the simplest sub-scenario (1) and
+preferably more. One or more of the PAs should make use of travel planning
+services provided by a PTA field trial system. It is preferable that
+interoperability of at least two independently-designed and implemented types
+of PA be demonstrated.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc486842268"></a><a name="_Toc505481533"><span lang=EN-GB>3.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Human-Agent Interaction</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>Humans may be viewed as agents in their own
+right and that their interaction with software and agents may also be achieved
+using ACL. However, since humans do not speak ACL directly, some translation
+service is required to present a user-friendly interface. This may be
+accomplished by using a special user interface agent as illustrated in <i>Figure
+4</i>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img width=314 height=84
+src="XC00083B_image008.gif"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure
+4:</span></b><span lang=EN-GB> Human-Agent Interaction Via a User Interface
+Agent</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Thus,
+the following interactions between users and their PAs could be:</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-left:.25in;text-align:left;
+text-indent:-.25in;'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>User to PA: Give task to arrange
+meeting (including reporting requirements),</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-left:.25in;text-align:left;
+text-indent:-.25in;'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>PA to User: Give progress status of
+task (at least success or failure),</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-left:.25in;text-align:left;
+text-indent:-.25in;'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>PA to User: Require permission to
+commit to the meeting,</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-left:.25in;text-align:left;
+text-indent:-.25in;'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>User to PA: Give permission to commit
+to the meeting,</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-left:.25in;text-align:left;
+text-indent:-.25in;'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>PA to User: Inform of commitment made,
+and,</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='margin-left:.25in;text-align:left;
+text-indent:-.25in;'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>User to PA: Give degree of delegation
+authority.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc486842269"></a><a name="_Toc505481534"><span lang=EN-GB>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Personal Assistant Ontology</span></a></h1>
+
+<h2><a name="_Toc485124628"></a><a name="_Toc486842270"></a><a
+name="_Toc505481535"><span lang=EN-GB
+style='color:black'>4.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Object
+Descriptions</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>This section describes a set of frames,
+that represent the classes of objects in the domain of discourse within the
+framework of the </span><span lang=EN-GB style='font-family:Courier'>FIPA-PA</span><span
+lang=EN-GB> ontology.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The following terms are used to describe
+the objects of the domain:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Frame</span></b><span lang=EN-GB>. This is the mandatory name of
+this entity, that must be used to represent each instance of this class.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Ontology</span></b><span lang=EN-GB>. This is the name of the
+ontology, whose domain of discourse includes the parameters described in the
+table.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Parameter</span></b><span lang=EN-GB>. This is the mandatory name of
+a parameter of this frame. </span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Description</span></b><span lang=EN-GB>. This is a natural language
+description of the semantics of each parameter.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Presence</span></b><span lang=EN-GB>. This indicates whether each
+parameter is mandatory or optional.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Type</span></b><span lang=EN-GB>. This is the type of the values of
+the parameter: Integer, Word, String, URL, Term, Set or Sequence.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Reserved Values</span></b><span lang=EN-GB>. This is a list of
+FIPA-defined constants that can assume values for this parameter.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc486842271"></a><a name="_Toc505481536"><span lang=EN-GB>4.1.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Meeting Description</span></a></h3>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>This
+type of object represents the description of a meeting event. The syntax and
+format of the </span><span lang=EN-GB style='font-family:Courier'>:details</span><span
+lang=EN-GB> parameter is given in [RFC2445].</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;'>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Frame</span></b></p>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>meeting-description</span></p>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>FIPA-PA</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;
+  padding:0in 0in 0in 0in' width=396 colspan=3><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Parameter</span></b></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Presence</span></b></p>
+  </td>
+  <td width=162 valign=top style='width:121.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Type</span></b></p>
+  </td>
+  <td width=156 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Reserved Values</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left;'><span
+  lang=EN-GB style='font-family:Courier'>identifier</span></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The
+  identifier of the meeting.</span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left;'><span
+  lang=EN-GB>Mandatory</span></p>
+  </td>
+  <td width=162 valign=top style='width:121.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>String</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>user</span></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The
+  user organising the meeting.</span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=162 valign=top style='width:121.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>String</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=102 valign=top style='width:76.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>details</span></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The
+  details of the meeting.</span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Mandatory</span></p>
+  </td>
+  <td width=162 valign=top style='width:121.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>String</span></p>
+  </td>
+  <td width=156 valign=top style='width:117.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>See
+  [RFC2445]</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc485124636"></a><a name="_Toc486842272"></a><a
+name="_Toc505481537"><span lang=EN-GB
+style='color:black;'>4.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Function
+Descriptions</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The
+following tables define usage and semantics of the functions that are part of
+the </span><span lang=EN-GB style='font-family:Courier;'>FIPA-PA</span><span lang=EN-GB> ontology.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The following terms are used to describe
+the functions of the </span><span lang=EN-GB style='font-family:Courier;'>FIPA-PA</span><span lang=EN-GB> domain:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Function</span></b><span lang=EN-GB>. This is the symbol that
+identifies the function in the ontology.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Ontology</span></b><span lang=EN-GB>. This is the name of the
+ontology, whose domain of discourse includes the function described in the
+table.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Supported by</span></b><span lang=EN-GB>. This is the type of agent
+that supports this function. </span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Description</span></b><span lang=EN-GB>. This is a natural language
+description of the semantics of the function.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Domain</span></b><span lang=EN-GB>. This indicates the domain over
+which the function is defined. The arguments passed to the function must belong
+to the set identified by the domain.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Range</span></b><span lang=EN-GB>. This indicates the range to which
+the function maps the symbols of the domain. The result of the function is a
+symbol belonging to the set identified by the range.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Arity</span></b><span lang=EN-GB>. This indicates the number of
+arguments that a function takes. If a function can take an arbitrary number of
+arguments, then its arity is undefined.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc486842273"></a><a name="_Toc505481538"><span lang=EN-GB>4.2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Negotiate a Meeting</span></a></h3>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:.5pt;border-right:.5pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Function</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>meet</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in'
+  width=390><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Ontology</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>FIPA-PA</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in'
+  width=390><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext .5pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Supported by</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:solid windowtext .5pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='layout-grid-mode:both'>PA</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;
+  padding:0in 0in 0in 0in' width=390><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>The execution of this
+  function has the effect asking the PA to negotiate a meeting between the
+  initiator and the attendees using the </span><span lang=EN-GB
+  style='font-family:Courier;color:black'>FIPA-Contract-Net</span><span
+  lang=EN-GB style='color:black'> interaction protocol (see [FIPA00029]). Once
+  the details of a meeting have been decided, then it can be scheduled (see
+  section <i>4.2.2, <span
+  style='color:windowtext'>Schedule a Meeting</span></i>). The first argument contains the details of
+  the meeting to schedule, the second argument contains a list of time frames
+  at which it is proposed that the meeting is scheduled and the third object is
+  the duration of the meeting.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>meeting-description</span><span
+  lang=EN-GB>, Sequence of </span><span lang=EN-GB style='font-family:Courier'>DateTime</span><span
+  lang=EN-GB> (see [FIPA00070]), </span><span lang=EN-GB style='font-family:
+  Courier'>Integer</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='layout-grid-mode:both'>The
+  execution of this function results in a change of the state, but it has no
+  explicit result. Therefore there is no range set.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>3</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB style='color:red;'>&nbsp;</span></p>
+
+<h3><a name="_Ref486826096"></a><a name="_Toc486842274"></a><a
+name="_Toc505481539"><span lang=EN-GB>4.2.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Schedule a Meeting</span></a></h3>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:.5pt;border-right:.5pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Function</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>schedule</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in'
+  width=390><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Ontology</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>FIPA-PA</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in'
+  width=390><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext .5pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Supported by</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:solid windowtext .5pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='layout-grid-mode:both'>PA</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;
+  padding:0in 0in 0in 0in' width=390><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>The execution of this
+  function has the effect asking the PA to schedule a meeting between the
+  initiator and the attendees. The first argument contains the details of the
+  meeting to schedule, the second argument contains the time frame of the
+  meeting.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>meeting-description</span><span
+  lang=EN-GB>, </span><span lang=EN-GB style='font-family:Courier'>DateTime</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='layout-grid-mode:both'>The
+  execution of this function results in a change of the state, but it has no
+  explicit result. Therefore there is no range set.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>2</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB style='color:red;'>&nbsp;</span></p>
+
+<h3><a name="_Toc486842275"></a><a name="_Toc505481540"><span lang=EN-GB style='color:black'>4.2.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Participate in a
+Meeting</span></a></h3>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:.5pt;border-right:.5pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Function</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>participate</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in'
+  width=390><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Ontology</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>FIPA-PA</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in'
+  width=390><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext .5pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Supported by</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:solid windowtext .5pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='layout-grid-mode:both'>PA</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;
+  padding:0in 0in 0in 0in' width=390><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>The execution of this
+  function has the effect of asking the PA to participate in a meeting. The
+  first argument contains the name of the participant and the second argument
+  contains the details of the meeting to schedule.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>String</span><span
+  lang=EN-GB>, </span><span lang=EN-GB style='font-family:Courier'>meeting-description</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='layout-grid-mode:both'>The
+  execution of this function results in a change of the state, but it has no
+  explicit result. Therefore there is no range set.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>2</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:10.0pt;
+font-family:Helvetica;color:black;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h3><a name="_Toc486842276"></a><a name="_Toc505481541"><span lang=EN-GB style='color:black'>4.2.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Schedule a Trip</span></a></h3>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;'>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:.5pt;border-right:.5pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Function</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>travel</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in'
+  width=390><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Ontology</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>FIPA-PA</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in'
+  width=390><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext .5pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Supported by</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:solid windowtext .5pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='layout-grid-mode:both'>PA</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;
+  padding:0in 0in 0in 0in' width=390><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>The execution of this
+  function has the effect of asking the PA to schedule travel for the
+  initiator. The first argument contains the details of the trip to schedule,
+  the second argument contains a list of time frames at which it is proposed
+  that the trip is scheduled and the third object is the duration of the trip.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>trip-summary</span><span
+  lang=EN-GB> (see [FIPA00080]), Sequence of </span><span lang=EN-GB
+  style='font-family:Courier'>DateTime</span><span lang=EN-GB>, </span><span
+  lang=EN-GB style='font-family:Courier'>Integer</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='layout-grid-mode:both'>The
+  execution of this function results in a change of the state, but it has no explicit
+  result. Therefore there is no range set.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB
+  style='color:black'>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>3</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:12.0pt;font-family:Helvetica;'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<h2><a name="_Toc486842277"></a><a name="_Toc505481542"><span lang=EN-GB>4.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Interaction Protocols</span></a></h2>
+
+<h3><a name="_Toc486842278"></a><a name="_Toc505481543"><span lang=EN-GB>4.3.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Negotiating Meeting Details</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>This normative interaction protocol (see <i>Figure
+5</i>) is used for negotiation of meetings (more accurately, negotiation about
+the action of participating in the meetings) among the PAs. Whereas the intent
+of the original contract net protocol (see [FIPA00029]) was to select the best
+bid from a set of submitted bids, here the </span><span lang=EN-GB
+style='font-family:Courier'>accept-proposal</span><span lang=EN-GB> message is
+used only if all bids (that is, time frames to attend the meeting) have a time
+frame in common, which becomes the time frame that is chosen. As the bids of
+contract net imply firm commitment, the PAs need to check with their users and
+the initiator agent.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img width=633 height=376
+src="XC00083B_image010.gif"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure
+5:</span></b><span lang=EN-GB> Negotiating Meeting Details Using the Contract
+Net Interaction Protocol</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc486842279"></a><a name="_Toc505481544"><span lang=EN-GB>4.3.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Scheduling a Meeting</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>This informative interaction protocol (see <i>Figure
+6</i>) is used between the user and their PA and is modelled using an </span><span
+lang=EN-GB style='font-family:Courier'>order</span><span lang=EN-GB> protocol
+that can be used to order the initial negotiation of a meeting.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img width=490 height=151
+src="XC00083B_image012.gif"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure
+6:</span></b><span lang=EN-GB> Scheduling a Meeting Using an Order Interaction
+Protocol</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:10.0pt;
+font-family:Helvetica;'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<h3><a name="_Toc486842280"></a><a name="_Toc505481545"><span lang=EN-GB>4.3.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Confirming a Meeting</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>This informative interaction protocol (see <i>Figure
+7</i>) is used between the user and their PA and is modelled using the </span><span
+lang=EN-GB style='font-family:Courier'>FIPA-Request-When</span><span
+lang=EN-GB> interaction protocol (see [FIPA00028]) to confirm the availability
+of the user at a suggest meeting time.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img width=488 height=287
+src="XC00083B_image014.gif"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure
+7:</span></b><span lang=EN-GB> Confirming a Meeting using the Request-When
+Interaction Protocol</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc505481546"><span lang=EN-GB>5<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Examples</span></a></h1>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB>This example will schedule an hour long meeting with colleagues for
+a specific time on a given day:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>(cfp </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :sender</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    (agent-identifier</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      :name UA-John)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :receiver (set</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    (agent-identifier</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      :name PA-Peter))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :ontology FIPA-PA</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :protocol FIPA-ContractNet</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :reply-with Response123</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :reply-by 19960315T083000000</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :conversation-id UA-John345</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :content (meet</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    (meeting-description</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      :identifier John123</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      :agent &quot;Joe Bloggs&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      :details (</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        BEGIN: VCALENDAR</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        VERSION: 1.0</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        BEGIN: VEVENT</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        UID: 123</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        SUMMARY: Test</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        ATTENDEE: Joe Bloggs</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        ATTENDEE; ROLE=ORGANIZER: John Doe</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        LOCATION: Area 51</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        CATEGORIES: X-FIPA-Test</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        DESCRIPTION: This is just a test
+meeting. Please do not attempt to attend it.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        SEQUENCE: 0</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        PRIORITY: 0</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        DTSTART: X-FIPA-UnderNegotiation</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        DTEND: X-FIPA-UnderNegotiation</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        STATUS: UNDER NEGOTIATION </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        X-FIPA-ORGANIZER: John Doe</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        END: VEVENT</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        END: VCALENDAR</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    )</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    (sequence 19960415T083000000)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    60))</span></p>
+
+<p class=MsoNormal><b><span lang=EN-GB>&nbsp;</span></b></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc486842281"></a><a name="_Toc505481547"><span lang=EN-GB>6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>References</span></a></h1>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB style='color:black'>[FIPA00023]      </span><span lang=EN-GB>FIPA Agent
+Management Specification<span style='color:black'>. Foundation for Intelligent
+Physical Agents, 2000. </span></span><span lang=EN-GB style='font-family:Courier;
+color:black'>http://www.fipa.org/specs/fipa00023/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB style='color:black'>[FIPA00028]      </span><span lang=EN-GB>FIPA Request When
+Interaction Protocol Specification<span style='color:black'>. Foundation for
+Intelligent Physical Agents, 2000.<br>
+</span></span><span lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00028/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB style='color:black'>[FIPA00029]      </span><span lang=EN-GB>FIPA Contract Net
+Interaction Protocol Specification<span style='color:black'>. Foundation for
+Intelligent Physical Agents, 2000. </span></span><span lang=EN-GB
+style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00029/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB style='color:black'>[FIPA00070]      </span><span lang=EN-GB>FIPA ACL Message Representation
+in String Specification. <span style='color:black'>Foundation for Intelligent
+Physical Agents, 2000.<br>
+</span></span><span lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00070/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB style='color:black'>[FIPA00079]      </span><span lang=EN-GB>FIPA Agent
+Software Integration Specification<span style='color:black'>. Foundation for
+Intelligent Physical Agents, 2000. </span></span><span lang=EN-GB
+style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00079/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB style='color:black'>[FIPA00080]      </span><span lang=EN-GB>FIPA Personal
+Travel Assistance Specification<span style='color:black'>. Foundation for
+Intelligent Physical Agents, 2000. </span></span><span lang=EN-GB
+style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00080/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB style='color:black'>[FIPA00081]      </span><span lang=EN-GB>FIPA Audio/Visual
+Entertainment and Broadcasting Specification<span style='color:black'>.
+Foundation for Intelligent Physical Agents, 2000.<br>
+</span></span><span lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00081/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB style='color:black'>[</span><span
+lang=EN-GB>Kozieriok1993]  A Learning
+Interface Agent for Scheduling Meetings, Kozieriok, R. and Maes, P.
+International Workshop on Intelligent User Interfaces, AMC-SIGCHI, AMC Press,
+Florida, 1993.</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB style='color:black'>[RFC2445]         Internet Calendaring and Scheduling
+Core Object Specification (iCalendar). Request for Comments, 1998.<br>
+</span><span lang=EN-GB style='font-family:Courier;color:black'>http://www.ietf.org/rfc/rfc2445.txt</span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,3767 @@
+<html>
+
+<head>
+<meta name=Generator content="Microsoft Office HTML Filter 2.0">
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content="Microsoft Word 9">
+<title>Agent Management Support for Agent Mobility </title>
+<style>
+<!--
+ 
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+h1
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;}
+h2
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h3
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:normal;}
+h4
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:normal;}
+h5
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:normal;}
+h6
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:Arial;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{
+	margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Century Old Style";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.zzCover, li.zzCover, div.zzCover
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.Heading2, li.Heading2, div.Heading2
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallStrong
+	{
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{
+	margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{
+	margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph><a name="SK_Preliminary"></a><a
+name="MLS_Field_QUOTE"></a><a name="MLS_Field_MERGEFORMAT"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a></p>
+
+<p class=Standardparagraph><a
+name="MLS_Field_CHARFORMAT"></a></span><a
+name="MLS_Field_ALPHABETIC"></a></span><a
+name="MLS_Field_AUTONUMLGL"></a></span></p>
+
+<p class=Special align=center style='text-align:center'><b><span lang=EN-GB
+style='font-size:17.0pt;font-family:Arial;'>FOUNDATION FOR INTELLIGENT PHYSICAL
+AGENTS</span></b></p>
+
+<p class=FIPA-AM><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=FIPA-AM><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=FIPA-AM><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Special align=center style='text-align:center'><span lang=EN-GB style='font-size:22.0pt;font-family:Arial;'>FIPA 98 Specification</span></p>
+
+<p class=FIPA-AM><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Special align=center style='text-align:center'><span lang=EN-GB style='font-size:24.0pt;font-family:Arial;'>Part 11</span></p>
+
+<p class=FIPA-AM><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Special align=center style='text-align:center'><span lang=EN-GB style='font-size:26.0pt;font-family:Arial;'>Agent Management Support for Mobility</span></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><b><i><span lang=EN-GB style='font-size:
+18.0pt;font-family:Arial;'>Obsolete</span></i></b></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB style='font-family:Arial;'>Publication date&nbsp;: 23<sup>rd</sup> October 1998</span></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB style='font-family:Arial;'>© 1998 FIPA - Foundation for Intelligent Physical
+Agents</span></p>
+
+<p class=Standardparagraph><i><span lang=EN-GB style='font-family:Arial;'>Geneva,
+Switzerland</span></i></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=679 valign=top style='width:509.4pt;border:solid black .75pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph><span
+  lang=EN-GB style='font-family:Arial;'>Notice</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=679 valign=top style='width:509.4pt;border:solid black .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph><span
+  lang=EN-GB style='font-family:Arial;'>Use of the technologies described in this
+  specification may infringe patents, copyrights or other intellectual property
+  rights of FIPA Members and non-members. Nothing in this specification should
+  be construed as granting permission to use any of the technologies described.
+  Anyone planning to make use of technology covered by the intellectual
+  property rights of others should first obtain permission from the holder(s)
+  of the rights. FIPA strongly encourages anyone implementing  any part of this specification to
+  determine first whether part(s) sought to be implemented are covered by the
+  intellectual property of others, and, if so, to obtain appropriate licenses
+  or other permission from the holder(s) of such intellectual property prior to
+  implementation. This FIPA ’98 Specification is subject to change without
+  notice. Neither FIPA nor any of its Members accept any responsibility
+  whatsoever for damages or liability, direct or consequential, which may
+  result from the use of this specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Arial;color:black;
+layout-grid-mode:line'><br clear=all style='page-break-before:always;'>
+</span>
+
+<div class=Section2>
+
+<p class=zzContents><span
+lang=EN-GB style='font-family:Arial;'>Contents</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>1. Scope................................................................................................................................................................ </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>2.
+Normative References.......................................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>3.
+Symbols............................................................................................................................................................ </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>4.
+Terms and Definitions.......................................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>5.
+Overview............................................................................................................................................................. </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>6.
+Relation to Other FIPA Specifications................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>7.
+Mobility and Advanced Management Actions......................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc2><span lang=EN-GB>7.1.
+Reference Model........................................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc2><span lang=EN-GB>7.2.
+Actions Supported........................................................................................................................................ </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc2><span lang=EN-GB>7.3.
+Agent Profiles............................................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc2><span lang=EN-GB>7.4.
+Action Descriptions....................................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc3><span lang=EN-GB>7.4.1.
+move..................................................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc3><span lang=EN-GB>7.4.2.
+transfer.................................................................................................................................................. </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>8.
+Mobility Ontology................................................................................................................................................ </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc2><span lang=EN-GB>8.1.
+fipa-mobile-agent-description.......................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc2><span lang=EN-GB>8.2.
+fipa-mobile-agent-profile................................................................................................................................. </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc2><span lang=EN-GB>8.3.
+fipa-mobile-agent-system............................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc2><span lang=EN-GB>8.4.
+fipa-mobile-agent-language............................................................................................................................. </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc2><span lang=EN-GB>8.5.
+fipa-mobile-agent-os...................................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>9.
+Mobility Life-Cycle............................................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>10.
+Mobility Protocols............................................................................................................................................. </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc2><span lang=EN-GB>10.1.
+Agent Migration........................................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc2><span lang=EN-GB>10.2.
+Agent Cloning............................................................................................................................................. </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc2><span lang=EN-GB>10.3.
+Agent Invocation.......................................................................................................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>Annex
+A (Informative): Integration of FIPA and MASIF Mobility Support Proposal.......................................................... </span><span lang=EN-GB>3</span></p>
+
+<p class=Standardparagraph><b><span lang=EN-GB style='font-family:Arial;'><br clear=all
+style='page-break-before:always'>
+</span></b><b><span lang=EN-GB style='font-size:12.0pt;font-family:Arial;'>Foreword</span></b></p>
+
+<p class=MsoBodyText><span
+lang=EN-GB style='font-size:10.0pt;font-family:Arial;'>The
+Foundation for Intelligent Physical Agents (FIPA) is a non-profit association
+registered in Geneva, Switzerland. FIPA’s purpose is to promote the success of
+emerging agent-based applications, services and equipment. This goal is pursued
+by making available in a timely manner, internationally agreed specifications
+that maximise interoperability across agent-based applications, services and
+equipment. This is realised through the open international collaboration of
+member organisations, which are companies and universities active in the agent
+field. FIPA intends to make the results of its activities available to all
+interested parties and to contribute the results of its activities to
+appropriate formal standards bodies.</span></p>
+
+<p class=MsoBodyText><span
+lang=EN-GB style='font-size:10.0pt;font-family:Arial;'>This
+specification has been developed through direct involvement of the FIPA
+membership. The 48 members of FIPA (October 1998) represent 13 countries
+world-wide.</span></p>
+
+<p class=MsoBodyText><span
+lang=EN-GB style='font-size:10.0pt;font-family:Arial;'>Membership
+in FIPA is open to any corporation and individual firm, partnership,
+governmental body or international organisation without restriction. By joining
+FIPA each member declares himself individually and collectively committed to
+open competition in the development of agent-based applications, services and
+equipment. Associate Member status is usually chosen by those entities who want
+to be members of FIPA without using the right to influence the precise content
+of the specifications through voting.</span></p>
+
+<p class=MsoBodyText><span
+lang=EN-GB style='font-size:10.0pt;font-family:Arial;'>The
+members are not restricted in any way from designing, developing, marketing
+and/or procuring agent-based applications, services and equipment. Members are
+not bound to implement or use specific agent-based standards, recommendations
+and FIPA specifications by virtue of their participation in FIPA.</span></p>
+
+<p class=MsoBodyText><span
+lang=EN-GB style='font-size:10.0pt;font-family:Arial;'>This
+specification is published as FIPA 98 specifications ver 1.0. All these parts
+have undergone an intense review by members as well as non-members during the
+past year as preliminary versions have been available on the FIPA web site.
+FIPA members as well as many non-members have been conducting validation trials
+of the FIPA 97 specification during 1998 and will continue to subject the new
+output to further validation during the coming months. During 1999 FIPA will
+publish revised versions of the current specifications and is also planning to
+continue work on further specifications of agent based technology.</span></p>
+
+<p class=MsoBodyText><span
+lang=EN-GB style='font-size:10.0pt;font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Standardparagraph><b><span lang=EN-GB style='font-family:Arial;'>Introduction</span></b></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB style='font-family:Arial;'>The FIPA specifications represent the primary output
+of FIPA. It is important to appreciate that these specifications have been
+derived from examining requirements on agent technology posed by specific
+industrial applications chosen by FIPA so far, and described in Parts 4, 5, 6,
+and 7 of the FIPA 97 specifications.</span></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB style='font-family:Arial;'>FIPA specifies the interfaces of the different
+components in the environment with which an agent can interact, i.e. humans,
+other agents, non-agent software and the physical world. FIPA produces two
+kinds of specifications:</span></p>
+
+<p class=Standardparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+lang=EN-GB style='font-family:Symbol;'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB style='font-family:Arial;'>normative </span></b><span lang=EN-GB style='font-family:Arial;'>specifications mandating the
+external behavior of an agent and ensuring interoperability with other
+FIPA-specified subsystems; </span></p>
+
+<p class=Standardparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+lang=EN-GB style='font-family:Symbol;'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB style='font-family:Arial;'>informative</span></b><span lang=EN-GB style='font-family:Arial;'> specifications of applications
+providing guidance to industry on the use of FIPA technologies.</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB style='font-family:Arial;'>In October 1997, FIPA released its
+first set of specifications, called FIPA 97, Version 1.0. During 1998, comments
+on this specification were received. Based upon these comments, parts of FIPA
+97 were superseded by a second version released in October 1998, introducing
+minor changes only.</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB style='font-family:Arial;'>Furthermore, in October 1998 FIPA
+released a new set of specifications, called FIPA 98, version 1.0, of which
+this document is a part.</span></p>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Arial;color:black;
+layout-grid-mode:line'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=Standardparagraph><span lang=EN-GB style='font-family:Arial;'>The following tables provide an overview
+of the complete set of FIPA specifications.</span></p>
+
+<p class=Standardparagraph><b><span lang=EN-GB
+style='font-family:Arial;'>Sorted by part:</span></b></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;'>
+ <tr>
+  <td width=91 colspan=2 valign=top style='width:68.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-top:3.0pt;margin-right:0in;
+  margin-bottom:3.0pt;margin-left:0in;'>&nbsp;</p>
+  </td>
+  <td width=196 valign=top style='width:147.15pt;border:solid windowtext .75pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:center;'><b><i><span lang=EN-GB style='font-family:Arial;'>Released
+  October 1997</span></i></b></p>
+  </td>
+  <td width=402 colspan=2 valign=top style='width:301.75pt;border:solid windowtext .75pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:center;'><b><i><span lang=EN-GB style='font-family:Arial;'>Released
+  October 1998</span></i></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=91 colspan=2 valign=top style='width:68.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-top:3.0pt;margin-right:0in;
+  margin-bottom:3.0pt;margin-left:0in;'><b><span lang=EN-GB
+  style='font-family:Arial;'>Part</span></b></p>
+  </td>
+  <td width=196 valign=top style='width:147.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><b><span
+  lang=EN-GB style='font-family:Arial;'>FIPA 97 Version 1.0</span></b></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><b><span
+  lang=EN-GB style='font-family:Arial;'>FIPA 97 Version 2.0</span></b></p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><b><span
+  lang=EN-GB style='font-family:Arial;'>FIPA 98 Version 1.0</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>1</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><i><span
+  lang=EN-GB style='font-family:Arial;'>Agent Management</span></i></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent
+  Management</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent
+  Management Extensions</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>2</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><i><span
+  lang=EN-GB style='font-family:Arial;'>ACL</span></i></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>ACL</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>3</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent
+  Software Integration</span></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>4</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>I</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Personal
+  Travel Assistant</span></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>5</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>I</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Personal
+  Assistant</span></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>6</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>I</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Audio Visual
+  Entertainment &amp; Broadcasting</span></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>7</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>I</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Network
+  Management &amp; Provision</span></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>8</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Human-Agent
+  Interaction</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>10</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent
+  Security Management</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>11</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent
+  Management Support for Mobility</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>12</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Ontology
+  Service</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>13</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>I/M</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Developer’s
+  Guide</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt;'><span lang=EN-GB
+style='font-family:Arial;'>N == normative; I == informative; M == methodology</span><span lang=EN-GB style='font-size:12.0pt;font-family:Arial;'>; </span><i><span lang=EN-GB style='font-family:Arial;'>Italicised ==
+superseded</span></i></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt;'><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Standardparagraph><b><span lang=EN-GB
+style='font-family:Arial;'>Sorted by topic:</span></b></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;'>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border:solid windowtext .75pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='text-align:left;'><b><span
+  lang=EN-GB style='font-family:Arial;'>Topic</span></b></p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-left:7.7pt;text-align:
+  left;text-indent:-7.7pt;'><b><span lang=EN-GB style='font-family:Arial;'>FIPA 97</span></b><i><span
+  lang=EN-GB style='font-family:Arial;'>(Version 1.0, unless otherwise indicated)</span></i></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border:solid windowtext .75pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-left:8.75pt;text-align:
+  left;text-indent:-8.75pt;'><b><span lang=EN-GB style='font-family:Arial;'>FIPA 98 </span></b><span lang=EN-GB style='font-family:Arial;'>Version 1,0</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border:solid windowtext .75pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent
+  Management</span></p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB
+  style='font-family:Arial;'>1. Basic System <i>(Version 2.0)</i></span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>1. Extension
+  to Basic System</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>10. Agent
+  Security Management</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>11. Agent
+  Management Support for Mobility </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border:solid windowtext .75pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent
+  Communication<br><br></span></p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>2. Agent
+  Communication Language<br>    <i>(Version 2.0)</i></span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>8.
+  Human-Agent Interaction</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>12. Ontology
+  Service</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent S/W
+  Integration<br><br></span></p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border:none;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>3. Agent
+  Software Integration<br>    </span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border:solid windowtext .75pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Reference
+  Applications</span></p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>4. Personal
+  Travel Assistant</span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>5. Personal
+  Assistant</span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>6.
+  Audio/Visual Entertainment &amp;<br>    Broadcasting</span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:.6pt;text-align:left;text-indent:-.6pt;'><span lang=EN-GB
+  style='font-family:Arial;'>7. Network Management &amp;<br>    Provisioning</span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Arial;color:black;
+layout-grid-mode:line'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt;'><span lang=EN-GB
+style='font-family:Arial;'>The parts of the FIPA 98 specifications are briefly described below</span><span lang=EN-GB style='font-size:12.0pt;font-family:Arial;'>.</span></p>
+
+<p class=Standardparagraph style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:6.0pt;margin-left:0in;'><b><span lang=EN-GB
+style='font-family:Arial;'>Part 1 - Agent Management</span></b></p>
+
+<p class=Normalparagraph style='text-align:justify'><span lang=EN-GB style='font-family:Arial;'>This part covers agent management for inter-operable agents,
+and is thus <span style='color:black'>primarily concerned with defining open
+standard interfaces for accessing agent management services. It also specifies
+an agent management ontology</span> and <span style='color:black'>agent
+platform message transport</span>. This specification incorporates and further
+enhances the FIPA 97, Part 1, Version 2.0 specification.  <span style='color:black'>The internal
+design and implementation of intelligent agents and agent management
+infrastructure is not mandated by FIPA and is outside the scope of this part.</span></span></p>
+
+<p class=berschrift1h11 style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;line-height:normal;page-break-after:auto;'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;'>Part 8 – Human-Agent Interaction</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span lang=EN-GB style='font-family:Arial;'>This part deals
+with the human-agent interaction part of an agent system. It specifies two
+agent services: User Dialog Management Service (UDMS) and User Personalization
+Service (UPS). A UDMS wraps many types of software components for user
+interfaces allowing for ACL level of interaction between agents and human
+users. A UPS can maintain user models and supports their construction by either
+accepting explicit information about the user or by learning from observations
+of user behavior. </span></p>
+
+<p class=Standardparagraph style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:6.0pt;margin-left:0in'><b><span lang=EN-GB style='font-family:Arial;'>Part 10 –  Agent Security Management</span></b></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span lang=EN-GB style='font-family:Arial;'>Security risks
+exist throughout agent management: during registration, agent-agent interaction,
+agent configuration,  agent-agent
+platform interaction, user-agent interaction and agent mobility. The Security
+Management specification identifies the key security threats in agent
+management and specifies facilities for securing agent-agent communication via
+the FIPA agent platform. This specification represents the minimal set of
+technologies required and is complementary to the existing FIPA 97 and FIPA 98,
+Part 1 specifications. This part does not mandate every FIPA-compliant agent
+platform to support agent security management.</span></p>
+
+<p class=Standardparagraph style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:6.0pt;margin-left:0in'><b><span lang=EN-GB style='font-family:Arial;'>Part 11 – Agent
+Management Support for Mobility</span></b></p>
+
+<p class=Normalparagraph style='text-align:justify'><span lang=EN-GB style='font-family:Arial;'>This specification represents a normative framework for
+supporting software agent mobility using the FIPA agent platform. This
+framework represents the minimal set of technologies required and is
+complementary to the existing FIPA 97 and FIPA 98, Part 1 specifications.
+Wherever possible, it refers to existing standards in this area. The framework
+supports additional non-mobile agent management operations such as agent
+configuration. The specification does not mandate that every FIPA-compliant
+agent platform must support agent mobility, nor does it cover the specific
+requirements for agents on mobile devices with intermittent connectivity, which
+is covered by the scope of the existing FIPA Agent Management activity.</span></p>
+
+<p class=MsoBodyText style='margin-top:12.0pt'><b><span lang=EN-GB style='font-size:10.0pt;
+font-family:Arial;'>Part 12 – Ontology
+Service</span></b></p>
+
+<p class=MsoBodyText><span
+lang=EN-GB style='font-size:10.0pt;font-family:Arial;'>This
+part deals with technologies enabling agents to manage explicit, declaratively
+represented ontologies. It specifies an ontology service provided to a
+community of agents by a dedicated Ontology Agent. It allows for discovering
+public ontologies in order to access and maintain them; translating expressions
+between different ontologies and/or different content languages; responding to
+queries for relationships between terms or between ontologies; and,
+facilitating identification of a shared ontology for communication between two
+agents.</span></p>
+
+<p class=MsoBodyText><span
+lang=EN-GB style='font-size:10.0pt;font-family:Arial;'>The
+specification deals only with the communicative interface to such a service
+while internal implementation and capabilities are left to developers. The interaction
+protocols, communicative acts and, in general, the vocabulary that agents must
+adopt when using this service are defined. The specification does not mandate
+the storage format of ontologies, but only the way the ontology service is
+accessed. However, in order to specify the service, an explicit representation
+formalism, or meta-ontology, has been specified allowing communication of
+knowledge between agents. </span></p>
+
+<p class=Standardparagraph style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:6.0pt;margin-left:0in'><b><span lang=EN-GB style='font-family:Arial;'>Part 13 – FIPA
+97 Developer's Guide</span></b></p>
+
+<p class=MsoBodyText><span
+lang=EN-GB style='font-size:10.0pt;font-family:Arial;'>The
+Developer’s Guide is meant to be a companion document to the FIPA 97
+specifications, and is intended to clarify areas of specific interest and
+potential confusion. Such areas include issues that span more than one of the
+normative parts of FIPA 97.</span></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Arial;color:black;
+layout-grid-mode:line'><br clear=all style='page-break-before:always;'>
+</span>
+
+<div class=Section3>
+
+<h1><a name="_Toc433767194"><span lang=EN-GB>1. Scope</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>This document specifies a normative
+framework for supporting software agent mobility using the FIPA agent platform.
+This framework represents the minimal set of technologies required and
+complements the existing FIPA 98 (part 1) specification. Wherever possible it
+refers to existing standards in this area. This framework can support
+additional non-mobile agent management operations such as agent configuration.
+This document does not mandate that every FIPA-compliant agent platform must
+support agent mobility, nor does it cover the specific requirements for agents
+on mobile devices with intermittent connectivity, which is covered by the scope
+of the existing FIPA Agent Management activity.</span></p>
+
+<h1><a name="_Toc433767195"><span lang=EN-GB>2. Normative References</span></a></h1>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA 97 – International standard for
+the inter-operation of software agents: Part 2: Agent Communication Language.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA 97 – International standard for
+the inter-operation of software agents: Part 3: Agent/Software Integration.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA 98 – International standard for
+the inter-operation of software agents: Part 1: Agent Management.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA 98 – International standard for
+the inter-operation of software agents: Part 10: Agent Security Management.</span></p>
+
+<h1><a name="_Toc433767196"><span lang=EN-GB>3. Symbols</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>ACC:                Agent
+Communication Channel</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>ACL:                 Agent
+Communication Language</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>AMS:                Agent
+Management System</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>AP:                   Agent
+Platform</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>DF:                   Directory
+Facilitator</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>GUID:               Global
+Unique Identifier</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>HAP:                Home
+Agent Platform</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>IPMT:                Internal
+Platform Message Transport</span></p>
+
+<h1><a name="_Toc433767197"><span lang=EN-GB>4. Terms and Definitions</span></a></h1>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>A <i>stationary
+agent</i>&nbsp;is an agent that executes only upon the AP where it begins
+executing and is reliant upon it.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>A <i>mobile
+agent</i>&nbsp;is an agent that is not reliant upon the AP where it began
+executing and can subsequently transport itself between APs.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB>Mobility</span></i><span
+lang=EN-GB> is the property or characteristic of an agent that allows it to
+travel between APs.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The <i>location</i> of an agent is associated with the AP.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB>Agent
+migration</span></i><span lang=EN-GB>&nbsp;is the process by which an agent
+transports itself between APs. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB>Agent
+cloning</span></i><span lang=EN-GB> is the process by which an agent creates a
+copy of itself on an AP.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB>Agent
+invocation</span></i><span lang=EN-GB> is the process by which an agent can
+create another instance of an agent on an AP.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB>Agent
+state</span></i><span lang=EN-GB>&nbsp;describes the execution state, or
+attribute values of an agent. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB>Agent
+code</span></i><span lang=EN-GB> is the set of instructions used by an agent.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB>Agent
+data</span></i><span lang=EN-GB> is any data associated with an agent.</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Arial;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc433767198"><span lang=EN-GB>5. Overview</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>FIPA is concerned with two types of mobility;
+mobility in devices such as portable computers and PDAs that can be
+intermittently connected to the network, and mobility in software such as
+mobile agents that can move between hosts; device mobility is handled as part
+of the Agent Management specification of FIPA 98.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>This specification is concerned with
+specifying the minimum requirements and technologies to allow agents to take
+advantage of mobility. This specification integrates closely with other FIPA
+specifications (especially Agent Management and Agent Security) and provides a
+wrapping mechanism for existing mobile agent systems to promote
+interoperability. Therefore, the scope of this specification is limited to:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>This specification does not mandate
+the use of mobility features. Instead, it mandates how agents and APs may
+support mobility, if mobility is desired.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>This specification does not mandate
+the use of any explicit technology for supporting mobility. Instead, it
+provides a wrapping mechanism for mobile agent systems.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>This specification does not define how
+mobile agents and mobile agent systems operate or are implemented. However, the
+mobility capabilities defined in this specification rely on their existence.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Mobile agent security is not currently
+addressed by this specification. This topic will be addressed in future
+versions of the FIPA specification.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>This specification defines extensions
+that are necessary to the AMS to support mobility.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The platform profile can become a
+standard way for an agent to discover the mobility  supported by an AP. If an AP does not support mobility, then it
+will refuse any mobility operation.</span></p>
+
+<h1><a name="_Toc433767199"><span lang=EN-GB>6. Relation to Other FIPA
+Specifications</span></a></h1>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA 97: Parts 1, 2 and 3.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA 98: Parts 1 and 10.</span></p>
+
+<h1><a name="_Toc433767200"><span lang=EN-GB>7. Mobility and Advanced
+Management Actions</span></a></h1>
+
+<h2><a name="_Toc433767201"><span lang=EN-GB>7.1. Reference Model</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>It is recognised that there are many ways
+of expressing mobility within agents, such as code mobility, agent migration
+and agent cloning. For this reason, FIPA does not mandate a single form of
+agent mobility but supports a core set of actions that allow flexible and
+extensible forms of mobility protocols to be supported. Two example protocol
+abstractions are explained here:</span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:"Times New Roman"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Simple Mobility Protocols</span></b><span lang=EN-GB> – An agent
+relies on a high level protocol that uses a single action (for example, <i>move</i>) which causes it to be moved to a
+destination AP. In this case, the AP upon which the agent is executing will
+have to implement the necessary protocol to realise the entire migration
+operation. This is illustrated in figure 1, where an agent is delegating its
+mobility operation to the agent platform.</span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:"Times New Roman"'>&nbsp;</span></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><span
+lang=EN-GB><img width=239 height=243
+src="OC00005A_image002.gif"></span></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure 1: Example Simple Mobility Protocol</span></b></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-family:"Times New Roman"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB>Full Mobility Protocols</span></b><span lang=EN-GB> – An agent
+directs the mobility protocol itself and does not delegate responsibility to
+the AP. As shown in figure 2, an agent first moves its agent code (and possibly
+state) to a destination AP and eventually transfers its identity and authority
+once it is assured that the new agent has been created successfully. Note that
+the agent mobility operation is not deemed to be completed until both the agent
+code (and possibly state) <i>and</i> the
+agent identity have been successfully transferred. Additionally, this protocol
+also allows the agent to inform its HAP and any other APs that it has moved to
+a new location.</span></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><b><span lang=EN-GB style='font-family:"Times New Roman"'>&nbsp;</span></b></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-family:"Times New Roman"'>&nbsp;</span></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><span
+lang=EN-GB><img width=278 height=199
+src="OC00005A_image004.gif"></span></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><b><span lang=EN-GB style='font-family:"Times New Roman"'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure 2: Example Full Mobility Protocol</span></b></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The perceived advantages of the simple
+mobility protocols are:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>reduced complexity in application
+agent development since mobility is supported by the AP,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>oriented towards existing mobile agent
+frameworks (for example, MASIF) and easy implementation on existing mobile
+agent platforms via FIPA ACL enhancement,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>a reduced number of remote
+interactions.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The perceived advantages of full mobility
+protocols are:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>reduced complexity in AP
+implementation,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>enhanced capabilities for the
+application agent in controlling the mobility operation,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>a more secure form of mobility.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>It is expected that both of these protocols
+(and others) can be appropriate in different application contexts. Therefore,
+this specification expects that FIPA AP, that support mobility will implement
+either low level or high level mobility protocol, or both.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>To initiate agent mobility (such as
+migration, cloning or invocation) with the <i>move</i>
+action, the sending agent will identify the mobility <i>protocol</i> to be used for that mobility operation (see section 10 for
+example mobility protocols). Using this information, the involved AMS and
+agents determine and take subsequent actions to complete the mobility operation
+which may involve the use of other actions, such as <i>transfer</i>.</span></p>
+
+<h2><a name="_Toc433767202"><span lang=EN-GB>7.2. Actions Supported</span></a></h2>
+
+<p class=MsoNormal><strong><span lang=EN-GB style='font-weight:normal'>The
+actions <i>move</i> and <i>transfer</i> (see table 1) are particular to agent mobility and are
+described below. The <i>execute</i> and <i>terminate</i> actions are defined in FIPA 97
+Agent Management, part 1 as action of the AMS</span></strong><a href="#_ftn1" name="_ftnref1" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB>[1]</span></span></a><strong><span
+lang=EN-GB style='font-weight:normal'>.</span></strong></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<div align=center>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;'>
+ <tr>
+  <td width=81 valign=top style='width:60.6pt;border:solid windowtext .75pt;
+  border-bottom:double windowtext 1.5pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><strong><span lang=EN-GB style='color:black'>Action</span></strong></p>
+  </td>
+  <td width=305 valign=top style='width:228.75pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 1.5pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><strong><span lang=EN-GB style='color:black'>Description</span></strong></p>
+  </td>
+  <td width=119 valign=top style='width:89.55pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 1.5pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><strong><span lang=EN-GB style='color:black'>Performative</span></strong></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=81 valign=top style='width:60.6pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><em><span lang=EN-GB style='color:black'>move</span></em></p>
+  </td>
+  <td width=305 valign=top style='width:228.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=Normalparagraph style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><span lang=EN-GB style='font-family:Arial;'>Moves a copy of an agent to a destination AP</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><span lang=EN-GB>request</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=81 valign=top style='width:60.6pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><em><span lang=EN-GB style='color:black'>transfer</span></em></p>
+  </td>
+  <td width=305 valign=top style='width:228.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><span lang=EN-GB>Transfers identity and authority to
+  another agent</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><span lang=EN-GB>request</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=81 valign=top style='width:60.6pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><em><span lang=EN-GB style='color:black'>execute</span></em></p>
+  </td>
+  <td width=305 valign=top style='width:228.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><span lang=EN-GB>Executes an agent on an AP</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=81 valign=top style='width:60.6pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><em><span lang=EN-GB style='color:black'>terminate</span></em></p>
+  </td>
+  <td width=305 valign=top style='width:228.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'><span lang=EN-GB>Terminates the execution of an agent
+  on an AP</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal align=center style='text-align:center'><strong><span
+lang=EN-GB>&nbsp;</span></strong></p>
+
+<p class=MsoNormal align=center style='text-align:center'><strong><span
+lang=EN-GB>Table 1: Actions Required to Facilitate Agent
+Mobility</span></strong></p>
+
+<h2><a name="_Toc433767203"><span lang=EN-GB>7.3. Agent Profiles</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>Since a mobile agent can be transported
+between APs in a variety of formats it can make a number of demands upon an AP
+for a required set of conditions to be met before such an agent can be executed.
+Some common examples of a mobile agent might be:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Written in Java (version 1.1.6) using
+the Aglets mobile agent toolkit (0.1 beta) represented as serialised byte-code.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Written in C represented as native
+code compiled for Linux (version 2.0.35) on i386 hardware.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Written in APRIL (version 4.1)
+represented as byte-code.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Each of these dependencies can be expressed
+as part of the meta-information of a mobile agent within the </span><span
+lang=EN-GB style='font-family:"Courier New";'>:agent-profile</span><span
+lang=EN-GB> parameter (see section 8.1). This parameter contains three description
+sections which allow various characteristics of the mobile agent to be
+specified:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Courier New";'>:system</span><span lang=EN-GB> –
+Expresses requirements of the mobile agent system which the mobile agent uses
+(if any), such as Aglets, Mole, AgentTcl, Voyager, etc. See section 8.2.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Courier New";'>:language</span><span lang=EN-GB> –
+Expresses requirements of the language in which the mobile agent is written,
+such as Java source code, i386 native code, APRIL byte-code, etc. See section
+8.3.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Courier New";'>:os</span><span lang=EN-GB> – Expresses
+requirements of the operating system for which the mobile agent was intended
+(if any), such as a Solaris SPARC box, an Linux i386 box, etc. See section 8.4.</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoToc1><span lang=EN-GB>This permits a great deal of flexibility in
+stating the execution requirements of a mobile agent and can be used by a
+receiving AP to determine whether it can support an agent of that type<a href="#_ftn2" name="_ftnref2" title=""><span
+class=MsoFootnoteReference>[2]</span></a>.
+A particular deficiency in any stated profile description section may cause the
+agent to be rejected on the grounds of lack of support or for security reasons
+(</span><span class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+color:black'>agent-profile-unsupported</span></span><span lang=EN-GB>).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Extra dependency information can be stated in
+the </span><span lang=EN-GB style='font-family:"Courier New";'>:dependencies</span><span lang=EN-GB> parameter of each
+profile description section. This is a free-form parameter that may or may not
+be supported by an AP for that particular class of agent. For example, language
+dependencies may express additional class libraries required by the mobile
+agent and operating system dependencies may express additional software that
+should be installed on the OS (such as Perl, TCL/Tk, etc.).</span></p>
+
+<h2><a name="_Toc433767204"><span lang=EN-GB>7.4. Action Descriptions</span></a></h2>
+
+<h3><a name="_Toc433767205"><span lang=EN-GB>7.4.1. move</span></a></h3>
+
+<div align=center>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;'>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border:solid windowtext .75pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in'>
+  <h4><span class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;'>Category</span></span></h4>
+  </td>
+  <td width=573 colspan=2 valign=top style='width:429.4pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <h5><span class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;'>Description</span></span></h5>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Supported
+  By</span></span></p>
+  </td>
+  <td width=573 colspan=2 valign=top style='width:429.4pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>AMS</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Description</span></span></p>
+  </td>
+  <td width=573 colspan=2 valign=top style='width:429.4pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>An
+  agent issues a <i>move</i> request to
+  transfer itself to a local/remote AMS. However, the AMS may refuse to accept
+  the move request due to lack of agent profile support or other local
+  restrictions.</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>When
+  an agent applies to move to a local/remote AMS, a mobile agent description
+  must be supplied containing values for all of the mandatory attributes of the
+  mobile agent description.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Content</span></span></p>
+  </td>
+  <td width=573 colspan=2 valign=top style='width:429.4pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>fipa-mobile-agent-description</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>FIPA
+  Protocol</span></span></p>
+  </td>
+  <td width=573 colspan=2 valign=top style='width:429.4pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>fipa-request</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Example</span></span></p>
+  </td>
+  <td width=573 colspan=2 valign=top style='width:429.4pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>(request</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>  :sender
+  an-agent@async://fipa97.org/acc </span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>  :receiver an-ams@async://fipa98.org/acc
+  </span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>  :content </span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>    (action
+  an-ams@async://fipa98.org/acc </span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>      (move </span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>        (:agent-name
+  an-agent@async://fipa97.org/acc) </span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>        (:address
+  async://fipa97.org/acc) </span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>        (:destination
+  an-ams@async://fipa98.org/acc)</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>        (:agent-profile
+  ...)</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>       
+  (:agent-mobility-protocol “...”)</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>        (:agent-code
+  “...”)</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>        (:agent-data
+  “...”)</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>        (:agent-version
+  “...”)))</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>  :protocol fipa-request </span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>  :ontology
+  fipa-mobile-agent-management)</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Refuse
+  Reasons</span></span></p>
+  </td>
+  <td width=354 valign=top style='width:265.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>unrecognised-attribute-value</span></span></p>
+  </td>
+  <td width=219 valign=top style='width:164.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>This
+  error occurs when an invalid syntax was detected in one of the
+  attribute-values.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=354 valign=top style='width:265.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>unrecognised-attribute</span></span></p>
+  </td>
+  <td width=219 valign=top style='width:164.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>This
+  error occurs when an attribute identifier does not belong in the content.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=354 valign=top style='width:265.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>unauthorised</span></span></p>
+  </td>
+  <td width=219 valign=top style='width:164.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>This
+  error occurs if the requesting agent is not authorised to perform the action
+  on the destination AMS.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=354 valign=top style='width:265.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>unwilling-to-perform</span></span></p>
+  </td>
+  <td width=219 valign=top style='width:164.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>This
+  error occurs if the destination AMS is unwilling to perform the action.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border:solid windowtext .75pt;
+  border-bottom:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Failure
+  Reasons</span></span></p>
+  </td>
+  <td width=354 valign=top style='width:265.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>agent-profile-unsupported</span></span></p>
+  </td>
+  <td width=219 valign=top style='width:164.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>This
+  failure occurs if the agent-profile is unsupported by the destination AMS.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=354 valign=top style='width:265.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>mobility-unsupported</span></span></p>
+  </td>
+  <td width=219 valign=top style='width:164.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>This
+  failure occurs if mobility is unsupported by the destination AMS.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=354 valign=top style='width:265.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>agent-already-present</span></span></p>
+  </td>
+  <td width=219 valign=top style='width:164.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>This
+  failure occurs if an agent with the same GUID is already present within the
+  destination AMS.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.35pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=354 valign=top style='width:265.25pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>ams-overloaded</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'>&nbsp;</p>
+  </td>
+  <td width=219 valign=top style='width:164.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>This
+  failure occurs if the action cannot be completed due to an overload on the
+  destination AMS.</span></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<h3><a name="_Toc433767206"><span lang=EN-GB>7.4.2. transfer</span></a></h3>
+
+<div align=center>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;'>
+ <tr>
+  <td width=99 valign=top style='width:74.5pt;border:solid windowtext .75pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in'>
+  <h6><span class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;'>Category</span></span></h6>
+  </td>
+  <td width=574 colspan=2 valign=top style='width:430.5pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading7><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;'>Description</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=99 valign=top style='width:74.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Supported
+  By</span></span></p>
+  </td>
+  <td width=574 colspan=2 valign=top style='width:430.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Agent</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=99 valign=top style='width:74.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Description</span></span></p>
+  </td>
+  <td width=574 colspan=2 valign=top style='width:430.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>An
+  agent issues a <i>transfer </i>request to
+  send its identity and authority to another agent on a destination AMS.
+  However, the receiving agent  may
+  refuse to accept the transfer request for security reasons.</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>When
+  an agent applies to transfer its identity and authority to another agent on a
+  destination AMS a mobile agent description must be supplied containing values
+  for all of the mandatory attributes of the agent identity description.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=99 valign=top style='width:74.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Content</span></span></p>
+  </td>
+  <td width=574 colspan=2 valign=top style='width:430.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>fipa-mobile-agent-description</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=99 valign=top style='width:74.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>FIPA
+  Protocol</span></span></p>
+  </td>
+  <td width=574 colspan=2 valign=top style='width:430.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>fipa-request</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=99 valign=top style='width:74.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Example</span></span></p>
+  </td>
+  <td width=574 colspan=2 valign=top style='width:430.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>(request</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>  :sender
+  an-agent@async://fipa97.org/acc</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>  :receiver
+  an-agent@async://fipa98.org/acc</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>  :content</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>    (action
+  an-agent@async://fipa98.org/acc</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>      (transfer</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>        (:agent-name
+  an-agent@async://fipa98.org/acc)</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>        (:signature
+  “...”)))</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>  :protocol fipa-request</span></span></p>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>  :ontology
+  fipa-mobile-agent-management)</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=99 valign=top style='width:74.5pt;border-top:none;border-left:solid windowtext .75pt;
+  border-bottom:none;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Refuse
+  Reasons</span></span></p>
+  </td>
+  <td width=355 valign=top style='width:266.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>unrecognised-attribute-value</span></span></p>
+  </td>
+  <td width=219 valign=top style='width:164.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>This
+  error occurs when an invalid syntax was detected in one of the
+  attribute-values.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=99 valign=top style='width:74.5pt;border-top:none;border-left:solid windowtext .75pt;
+  border-bottom:none;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=355 valign=top style='width:266.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>unrecognised-attribute</span></span></p>
+  </td>
+  <td width=219 valign=top style='width:164.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>This
+  error occurs when an attribute identifier does not belong in the content.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=99 valign=top style='width:74.5pt;border:solid windowtext .75pt;
+  border-bottom:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Failure
+  Reasons</span></span></p>
+  </td>
+  <td width=355 valign=top style='width:266.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>not-agent-owner</span></span></p>
+  </td>
+  <td width=219 valign=top style='width:164.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>This
+  failure occurs if the agent requesting the transfer does not own the
+  recipient agent specified by the :agent-name parameter.</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=99 valign=top style='width:74.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td width=355 valign=top style='width:266.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>signature-not-valid</span></span></p>
+  </td>
+  <td width=219 valign=top style='width:164.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>This
+  failure occurs if the signature is not valid.</span></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<h2><span lang=EN-GB style='font-size:14.0pt;font-style:normal'>&nbsp;</span></h2>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Arial;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc433767207"><span lang=EN-GB>8. Mobility Ontology</span></a></h1>
+
+<h2><a name="_Toc433767208"><span lang=EN-GB>8.1. fipa-mobile-agent-description</span></a></h2>
+
+<div align=center>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;'>
+ <tr>
+  <td width=176 rowspan=2 valign=top style='width:131.7pt;border:solid windowtext .75pt;
+  border-bottom:double windowtext 1.5pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Parameter</span></span></p>
+  </td>
+  <td width=329 rowspan=2 valign=top style='width:246.85pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 1.5pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading8><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;'>Description</span></span></p>
+  </td>
+  <td width=165 colspan=2 valign=top style='width:123.85pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 1.5pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading8><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;'>Action</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:double windowtext 1.5pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><i><span lang=EN-GB style='font-size:9.0pt;font-weight:normal'>move</span></i></span></p>
+  </td>
+  <td width=87 valign=top style='width:65.35pt;border-top:none;border-left:
+  none;border-bottom:double windowtext 1.5pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><i><span lang=EN-GB style='font-size:9.0pt;font-weight:normal'>transfer</span></i></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=176 valign=top style='width:131.7pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:agent-name</span></span></p>
+  </td>
+  <td width=329 valign=top style='width:246.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the GUID of the agent.</span></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;font-weight:normal'>Mandatory</span></span></p>
+  </td>
+  <td width=87 valign=top style='width:65.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;font-weight:normal'>Mandatory</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=176 valign=top style='width:131.7pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:address</span></span></p>
+  </td>
+  <td width=329 valign=top style='width:246.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the communication address of the agent.</span></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;font-weight:
+  normal'>Mandatory</span></span></p>
+  </td>
+  <td width=87 valign=top style='width:65.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:17.4pt'>
+  <td width=176 valign=top style='width:131.7pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in;
+  height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:destination</span></span></p>
+  </td>
+  <td width=329 valign=top style='width:246.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the destination AMS of the agent.</span></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+  <td width=87 valign=top style='width:65.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:17.4pt'>
+  <td width=176 valign=top style='width:131.7pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in;
+  height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:agent-profile</span></span></p>
+  </td>
+  <td width=329 valign=top style='width:246.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the specification of the requirements of the agent.</span></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+  <td width=87 valign=top style='width:65.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:17.4pt'>
+  <td width=176 valign=top style='width:131.7pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in;
+  height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:agent-mobility-protocol</span></span></p>
+  </td>
+  <td width=329 valign=top style='width:246.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the protocol used for agent mobility.</span></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+  <td width=87 valign=top style='width:65.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:17.4pt'>
+  <td width=176 valign=top style='width:131.7pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in;
+  height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:agent-code</span></span></p>
+  </td>
+  <td width=329 valign=top style='width:246.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the code base of the agent.</span></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;font-weight:
+  normal'>Mandatory</span></span></p>
+  </td>
+  <td width=87 valign=top style='width:65.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:17.4pt'>
+  <td width=176 valign=top style='width:131.7pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in;
+  height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:agent-data</span></span></p>
+  </td>
+  <td width=329 valign=top style='width:246.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  any data associated with the agent.</span></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+  <td width=87 valign=top style='width:65.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:17.4pt'>
+  <td width=176 valign=top style='width:131.7pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in;
+  height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:agent-version</span></span></p>
+  </td>
+  <td width=329 valign=top style='width:246.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the version of the agent.</span></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+  <td width=87 valign=top style='width:65.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:17.4pt'>
+  <td width=176 valign=top style='width:131.7pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in;
+  height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:signature</span></span></p>
+  </td>
+  <td width=329 valign=top style='width:246.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the encrypted identity and authority of the agent.</span></span></p>
+  </td>
+  <td width=78 valign=top style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+  <td width=87 valign=top style='width:65.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:17.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;font-weight:
+  normal'>Mandatory</span></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<h2><a name="_Toc433767209"><span lang=EN-GB>8.2. fipa-mobile-agent-profile</span></a></h2>
+
+<div align=center>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;'>
+ <tr>
+  <td width=175 rowspan=2 valign=top style='width:131.4pt;border:solid windowtext .75pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Parameter</span></span></p>
+  </td>
+  <td width=330 rowspan=2 valign=top style='width:247.5pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;'>Description</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:122.95pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;'>Action</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=164 valign=top style='width:122.95pt;border-top:none;border-left:
+  none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><i><span lang=EN-GB style='font-size:9.0pt;font-weight:normal'>move</span></i></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:system</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the mobile agent system environment required by the agent.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:122.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:language</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the language environment required by the agent.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:122.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Mandatory</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:os</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the operating system environment required by the agent.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:122.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<h2><a name="_Toc433767210"><span lang=EN-GB>8.3. fipa-mobile-agent-system</span></a></h2>
+
+<div align=center>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;'>
+ <tr style='height:18.4pt'>
+  <td width=175 rowspan=2 valign=top style='width:131.15pt;border:solid windowtext .75pt;
+  border-bottom:double windowtext 1.5pt;padding:0in 0in 0in 0in;height:18.4pt'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Parameter</span></span></p>
+  </td>
+  <td width=330 rowspan=2 valign=top style='width:247.5pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in;
+  height:18.4pt'>
+  <p class=MsoHeading9><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;'>Description</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:122.65pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in;
+  height:18.4pt'>
+  <p class=MsoHeading9><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;'>Action</span></span></p>
+  </td>
+ </tr>
+ <tr style='height:18.35pt'>
+  <td width=164 valign=top style='width:122.65pt;border-top:none;border-left:
+  none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in;height:18.35pt'>
+  <p class=MsoHeading9><span class=SmallStrong><i><span lang=EN-GB style='font-size:9.0pt;font-weight:normal'>move</span></i></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.15pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:name</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the name of the mobile agent system.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:122.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallNormal><span lang=EN-GB
+  style='font-size:9.0pt;'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.15pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:major-version</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the major version number of the mobile agent system.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:122.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.15pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:minor-version</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the minor version number of the mobile agent system.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:122.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.15pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:dependencies</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the dependencies required by the agent for the mobile agent system.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:122.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<h2><span lang=EN-GB>&nbsp;</span></h2>
+
+<b><i><span
+lang=EN-GB style='font-size:12.0pt;font-family:Arial;'><br
+clear=all style='page-break-before:always'>
+</span></i></b>
+
+<h2><a name="_Toc433767211"><span lang=EN-GB>8.4. fipa-mobile-agent-language</span></a></h2>
+
+<div align=center>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;'>
+ <tr>
+  <td width=175 rowspan=2 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Parameter</span></span></p>
+  </td>
+  <td width=330 rowspan=2 valign=top style='width:247.5pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;'>Description</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;'>Action</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><i><span lang=EN-GB style='font-size:9.0pt;font-weight:normal'>move</span></i></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:name</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the name of the language.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Mandatory</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:major-version</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the major version number of the language.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Mandatory</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:minor-version</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the minor version number of the language.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:format</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the format of the code base of the agent.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Mandatory</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:filter</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  any filter that should be executed over the code base before execution.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:dependencies</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  any dependencies required by the agent for the language.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<h2><a name="_Toc433767212"><span lang=EN-GB>8.5. fipa-mobile-agent-os</span></a></h2>
+
+<div align=center>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;'>
+ <tr>
+  <td width=175 rowspan=2 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-bottom:double windowtext 2.25pt;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallStrong><span lang=EN-GB style='font-size:9.0pt;color:black'>Parameter</span></span></p>
+  </td>
+  <td width=330 rowspan=2 valign=top style='width:247.5pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;'>Description</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><span lang=EN-GB
+  style='font-size:9.0pt;'>Action</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:double windowtext 2.25pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoHeading9><span class=SmallStrong><i><span lang=EN-GB style='font-size:9.0pt;font-weight:normal'>move</span></i></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:name</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the name of the operating system.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:major-version</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the major version number of the operating system.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:minor-version</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the minor version number of the operating system.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:hardware</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  the name of the hardware.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=175 valign=top style='width:131.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallCode><span lang=EN-GB style='font-size:9.0pt;font-family:"Courier New";
+  color:black'>:dependencies</span></span></p>
+  </td>
+  <td width=330 valign=top style='width:247.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Denotes
+  any dependencies required by the agent for the operating system.</span></span></p>
+  </td>
+  <td width=164 valign=top style='width:123.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 0in 0in 0in'>
+  <p class=MsoNormal style='margin-top:7.0pt;'><span
+  class=SmallNormal><span lang=EN-GB style='font-size:9.0pt;color:black'>Optional</span></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<h1><a name="_Toc433767213"><span lang=EN-GB>9. Mobility Life-Cycle</span></a></h1>
+
+<p class=MsoNormal style='margin-top:7.0pt;'><span
+lang=EN-GB style='layout-grid-mode:line'>This specification extends the
+existing life-cycle given in the FIPA 98 Agent Management specification by
+adding a new state (<i>transit</i>) and two
+new actions to enter and leave that state (<i>move</i>
+and <i>execute</i>)<a href="#_ftn3" name="_ftnref3" title=""><span class=MsoFootnoteReference>[3]</span></a>.
+This allows the current state of the agent to be represented within the AMS.
+This is illustrated in figure 3.</span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='layout-grid-mode:line'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Only mobile agents can enter the transit
+state, or to put it another way, stationary agents never enter the transit
+state. This ensures that a stationary agent executes all of its instructions on
+the node where it was invoked. The actions of agents can be described as:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='layout-grid-mode:line'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol;layout-grid-mode:line'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB
+style='layout-grid-mode:line'>Move</span></i><span lang=EN-GB> – <span
+style='layout-grid-mode:line'>Puts the agent in a transitory state; this can
+only be initiated by the agent.</span></span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='layout-grid-mode:line'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol;layout-grid-mode:line'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB
+style='layout-grid-mode:line'>Execute</span></i><span lang=EN-GB> – <span
+style='layout-grid-mode:line'>Brings the agent out of a transitory state; this
+can only be initiated by the agent system.</span></span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='layout-grid-mode:line'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='layout-grid-mode:line'>The
+relationship between the life-cycle actions of <i>Move</i> and <i>Execute </i>can be
+associated with the Agent Management actions of <i>move</i>, <i>transfer</i> and <i>execute</i> in the following way. To enter
+the <i>Transit</i> state, a mobile agent
+initiates the execution of a mobility protocol which involves sending a <i>move</i> (and possibly a <i>transfer</i> in the case of a full mobility
+protocol) to an AMS. Correspondingly, a mobile agent is brought out of the <i>Transit</i> state by an AMS issuing an <i>execute</i> action upon its code. This is
+illustrated by the figures in section 10.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB style='font-size:12.0pt;'><img width=295 height=231
+src="OC00005A_image006.gif"></span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure 3: Mobile Agent Life-Cycle</span></b></p>
+
+<h1><a name="_Toc433767214"><span lang=EN-GB>10. Mobility Protocols</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>A number of standard protocols have been
+defined to cover various forms of agent mobility. Specifically, they address:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Agent migration.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Agent cloning.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Agent invocation.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB><br>
+As described in section 7, there are essentially two types of protocols; simple
+and full. The simple protocols base most of the functionality of the mobility
+operation within the local and remote APs; the full protocols spread the task
+across the mobile agent and the APs.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Figures 4 to 9 represent the three mobility
+operations for each type of protocol; when an agent wishes to move to another
+AP, it can specify one of these as a mobility protocol which describes the
+actions and reactions of each involved parties. Other protocols can be
+constructed from the actions given in section 7 to permit flexible and
+extensible forms of agent mobility.</span></p>
+
+<b><i><span
+lang=EN-GB style='font-size:12.0pt;font-family:Arial;'><br
+clear=all style='page-break-before:always'>
+</span></i></b>
+
+<h2><a name="_Toc433767215"><span lang=EN-GB>10.1. Agent Migration</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The agent migration protocols are invoked
+by agents that wish to transport themselves between two APs. The simple
+migration protocol (figure 4) requires that the migrating agent delegates all
+responsibility for the migration operation to the APs, who complete the task on
+its behalf. By comparison, the full migration protocol (figure 5) requires the
+agent to participate in the migration operation and to control aspects of its completion;
+the task is not completed until the <i>transfer</i>
+action has been approved.</span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-family:"Times New Roman"'><img width=232 height=242
+src="OC00005A_image008.gif">            <img width=278 height=199
+src="OC00005A_image010.gif">        </span></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><b><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></b></p>
+
+<p class=Normalparagraph><b><span
+lang=EN-GB style='font-family:Arial;'>             Figure 4: Simple Agent Migration
+Protocol           Figure 5: Full Agent
+Migration Protocol</span></b></p>
+
+<h2><a name="_Toc433767216"><span lang=EN-GB>10.2. Agent Cloning</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The agent cloning protocols are invoked by
+agents that wish to create a copy of themselves on an AP. These protocols
+follow the same principles and responsibilities as agent migration.</span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-family:"Times New Roman"'><img width=245 height=249
+src="OC00005A_image012.gif">        <img width=278 height=120
+src="OC00005A_image014.gif"></span></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><b><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></b></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><b><span lang=EN-GB style='font-family:Arial;'>Figure 6: Simple Agent Cloning
+Protocol             Figure 7: Full
+Agent Cloning Protocol</span></b></p>
+
+<b><i><span
+lang=EN-GB style='font-size:12.0pt;font-family:Arial;'><br
+clear=all style='page-break-before:always'>
+</span></i></b>
+
+<h2><a name="_Toc433767217"><span lang=EN-GB>10.3. Agent Invocation</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The agent invocation protocols are invoked
+by agents that wish to create an agent on an AP. These protocols follow the same
+principles and responsibilities as agent migration and agent cloning (see
+figures 8 and 9<a href="#_ftn4" name="_ftnref4"
+title=""><span class=MsoFootnoteReference>[4]</span></a>).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-family:"Times New Roman"'><img width=240 height=342
+src="OC00005A_image016.gif">           <img width=273 height=197
+src="OC00005A_image018.gif"></span></p>
+
+<p class=Normalparagraph align=center style='text-align:center'><b><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></b></p>
+
+<p class=Normalparagraph><b><span
+lang=EN-GB style='font-family:Arial;'>           Figure 8: Simple Agent Invocation
+Protocol             Figure 9: Full
+Agent Invocation Protocol</span></b></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Arial;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1 align=center style='text-align:center'><a name="_Toc433767218"><span
+lang=EN-GB>Annex A (Informative): Integration of FIPA and MASIF Mobility
+Support Proposal</span></a></h1>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The intention of the MASIF standard is to
+achieve a certain degree of interoperability between mobile agent platforms of
+different manufacturers. A MASIF-compliant agent platform can be accessed via
+two standardised interfaces that are specified by means of the OMG's Interface
+Definition Language (IDL): <i>MAFAgentSystem
+</i>and <i>MAFFinder</i>. These interfaces
+provide fundamental operations for agent management, agent tracking and agent
+transport. Note that these interfaces represent the access point to agent
+systems and registration components; the concrete implementation is not
+specified at all.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Several similarities between a
+FIPA-compliant and a MASIF-compliant Agent Platform (AP) can be noticed
+regarding the specified functionality:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The FIPA Agent Management System (AMS)
+can be compared to a MASIF agent system, represented by the <i>MAFAgentSystem</i> interface. Both are
+responsible for the management of agents, that is, for their creation,
+deletion, suspension, resumption, authentication and migration.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The FIPA Directory Facilitator (DF) is
+similar to the MASIF registration component, represented by the <i>MAFFinder</i> interface. The task of these
+entities is the maintenance of registration information about agents in a
+distributed environment. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The equivalent of the FIPA Agent
+Communication Channel (ACC) is the Object Request Broker (ORB) in the context
+of MASIF. These entities care for the transfer of messages in a distributed agent
+environment.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA and MASIF provide their
+specifications in an implementation-independent way.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Beside these similarities, several
+differences have to be mentioned which are mainly associated with the general
+design approach of the FIPA and MASIF specifications:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The FIPA standards try to cover the
+set of functionality that is required for the execution and support of mobile
+agents by means of a high-level speech act language, the Agent Communication
+Language (ACL), as well as appropriate content languages. The ACL allows for
+the specification of operations and high-level communication protocols.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The MASIF standard covers a minimal
+set of functionality since it is meant as an add-on to existing agent platforms
+rather than as the basis for completely new systems. The functionality of a
+MASIF-compliant platform is accessible via IDL interfaces. These interfaces
+provide, among others, methods for the management (that is, creation,
+suspension, resumption and termination), transport and tracking of agents. In
+contrast to FIPA, no high-level language is used above the IDL methods.
+Instead, each IDL method is directly mapped onto a method of the associated,
+implemented object.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Regarding these characteristics of FIPA and
+MASIF, the two standardisation approaches can be combined to a unified mobile
+agent framework. One promising way seems to be the integration of the IDL
+operation(s) defined in FIPA for the transfer of ACL messages into the MASIF
+IDL specifications (see figure A1). To realise an agent platform that is FIPA-
+and MASIF-compliant, the following three possibilities exist:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The existing MASIF interfaces <i>MAFAgentSystem</i> and <i>MAFFinder</i> can be enhanced by new operations that enable a
+FIPA-compliant platform access.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The existing operations of the MASIF
+interfaces can be modified in order to adapt them to the requirements of the
+FIPA specifications.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Completely new interfaces are
+specified additionally to the existing MASIF interfaces.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>While the first two approaches require
+modification of the existing MASIF standard, the third approach can be regarded
+as a pure extension that does not require changes to the existing MASIF
+specification.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span style='position:
+relative;z-index:0;left:32px;top:-1px;width:586px;height:238px'><img width=586
+height=238 src="OC00005A_image019.gif"></span><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<br clear=ALL>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure A1: Integration of MASIF and FIPA</span></b></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>However, the FIPA specifications could be
+enhanced by some “specialised” methods as defined in the MASIF standard. This
+could be desirable for methods that have a simple parameter structure and that
+can be sufficiently represented without using a high-level content language.</span></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1"
+name="_ftn1" title=""><span class=MsoFootnoteReference><span lang=EN-GB>[1]</span></span></a><span
+lang=EN-GB> The <i>execute</i> and <i>terminate</i> actions are platform-specific
+operations and therefore do not have corresponding performatives.</span></p>
+
+</div>
+
+<div id=ftn2>
+
+<p class=MsoFootnoteText><a href="#_ftnref2"
+name="_ftn2" title=""><span class=MsoFootnoteReference><span lang=EN-GB>[2]</span></span></a><span
+lang=EN-GB> An AP defines this information in its platform profile as described
+in FIPA 98 Part 1, Agent Management.</span></p>
+
+</div>
+
+<div id=ftn3>
+
+<p class=MsoFootnoteText><a href="#_ftnref3"
+name="_ftn3" title=""><span class=MsoFootnoteReference><span lang=EN-GB>[3]</span></span></a><span
+lang=EN-GB> It should be noted that the actions given in figure 3 are not the
+same as the Agent Management actions defined in the FIPA 98 Agent Management
+specification.</span></p>
+
+</div>
+
+<div id=ftn4>
+
+<p class=MsoFootnoteText><a href="#_ftnref4"
+name="_ftn4" title=""><span class=MsoFootnoteReference><span lang=EN-GB>[4]</span></span></a><span
+lang=EN-GB> The <i>acquire</i> function is
+not defined as part of FIPA since the acquisition of agent code and state is a
+platform-specific issue.</span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

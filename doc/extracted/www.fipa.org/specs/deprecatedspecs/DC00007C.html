@@ -1,0 +1,1354 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 10 (filtered)">
+<title>FIPA Content Language Library Specification</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Helv;
+	panose-1:2 11 6 4 2 2 2 3 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:"\FF2D\FF33 \660E\671D";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Century Old Style";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Helvetica;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-align:justify;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h4
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h5
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h6
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.1in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:8.0pt;
+	font-family:Helvetica;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-3.3pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:red;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+strong
+	{font-family:"Book Antiqua";}
+em
+	{font-family:"Book Antiqua";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.zzCover, li.zzCover, div.zzCover
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.Code
+	{font-family:"Courier New";}
+p.Heading2, li.Heading2, div.Heading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallCode
+	{font-family:"Courier New";}
+span.SmallNormal
+	{font-family:"Book Antiqua";}
+span.SmallStrong
+	{font-family:"Book Antiqua";
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.Abbrevs, li.Abbrevs, div.Abbrevs
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Titre3h3, li.Titre3h3, div.Titre3h3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.source, li.source, div.source
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+p.Normaleparagraph, li.Normaleparagraph, div.Normaleparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="SK_Preliminary"></a><a
+name="MLS_Field_MERGEFORMAT"></a><a name="MLS_Field_QUOTE"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a><b><span lang=EN-GB
+style='font-size:18.0pt'>&nbsp;</span></b></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><b><span lang=EN-GB style='font-size:18.0pt'>FOUNDATION
+FOR INTELLIGENT PHYSICAL AGENTS</span></b><b><span
+lang=EN-GB style='font-size:18.0pt'><a name="_Ref479045812"></a></span></b></p>
+
+<p class=Standardparagraph><a name="MLS_Field_CHARFORMAT"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt'>FIPA Content Language Library<br>
+ Specification</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt'>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  title</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA
+  Content Language Library Specification</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  number</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>DC00007C</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  source</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA
+  TC C</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  status</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Deprecated</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Date
+  of this status</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2003/02/10</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Supersedes</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>None</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Contact</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>fab@fipa.org                        </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=624 colspan=4 valign=top style='width:468.05pt;border-top:none;
+  border-left:solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Change
+  history</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2000/07/31</span></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Approved
+  for Experimental</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2001/08/10</span></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Line
+  numbering added</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2003/02/10</span></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Deprecated</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>© 2000 Foundation for Intelligent
+Physical Agents - http://www.fipa.org/</span></p>
+
+<p class=Standardparagraph><i><span lang=EN-GB>Geneva, Switzerland</span></i></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='text-align:center'><b><span
+  lang=EN-GB>Notice</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:108.45pt'>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:108.45pt'>
+  <p class=Standardparagraph><span lang=EN-GB>Use of the technologies described
+  in this specification may infringe patents, copyrights or other intellectual
+  property rights of FIPA Members and non-members. Nothing in this
+  specification should be construed as granting permission to use any of the
+  technologies described. Anyone planning to make use of technology covered by
+  the intellectual property rights of others should first obtain permission
+  from the holder(s) of the rights. FIPA strongly encourages anyone implementing
+  any part of this specification to determine first whether part(s) sought to
+  be implemented are covered by the intellectual property of others, and, if
+  so, to obtain appropriate licenses or other permission from the holder(s) of
+  such intellectual property prior to implementation. This specification is
+  subject to change without notice. Neither FIPA nor any of its Members accept
+  any responsibility whatsoever for damages or liability, direct or
+  consequential, which may result from the use of this specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=zzContents><span lang=EN-GB>Foreword</span></p>
+
+<p class=Standardparagraph>The Foundation for Intelligent Physical Agents
+(FIPA) is an international organization that is dedicated to promoting the
+industry of intelligent agents by openly developing specifications supporting
+interoperability among agents and agent-based applications. This occurs through
+open collaboration among its member organizations, which are companies and
+universities that are active in the field of agents. FIPA makes the results of
+its activities available to all interested parties and intends to contribute
+its results to the appropriate formal standards bodies. </p>
+
+<p class=Standardparagraph>The members of FIPA are individually and
+collectively committed to open competition in the development of agent-based
+applications, services and equipment. Membership in FIPA is open to any
+corporation and individual firm, partnership, governmental body or
+international organization without restriction. In particular, members are not
+bound to implement or use specific agent-based standards, recommendations and
+FIPA specifications by virtue of their participation in FIPA. </p>
+
+<p class=Standardparagraph>The FIPA specifications are developed through direct
+involvement of the FIPA membership. The status of a specification can be either
+Preliminary, Experimental, Standard, Deprecated or Obsolete.<i> </i>More detail
+about the process of specification may be found in the FIPA Procedures for
+Technical Work. A complete overview of the FIPA specifications and their
+current status may be found in the FIPA List of Specifications. A list of terms
+and abbreviations used in the FIPA specifications may be found in the FIPA
+Glossary.</p>
+
+<p class=Standardparagraph>FIPA is a non-profit association registered in
+Geneva, Switzerland. As of January 2000, the 56 members of FIPA represented 17<i>
+</i>countries worldwide. Further information about FIPA as an organization,
+membership information, FIPA specifications and upcoming meetings may be found
+at http://www.fipa.org/.</p>
+
+<p class=zzContents><span lang=EN-GB>Contents</span></p>
+
+<p class=MsoToc1><a name="_Ref449499969"></a><a
+href="#_Toc34029454"><span lang=EN-GB>1</span><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span><span
+lang=EN-GB>Scope</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc34029455"><span lang=EN-GB>2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Overview</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc34029456"><span lang=EN-GB>3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>FIPA Content Language
+Library</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc34029457"><span lang=EN-GB>3.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Status</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc34029458"><span lang=EN-GB>3.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Maintenance</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc34029459"><span lang=EN-GB>3.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Inclusion Criteria</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc34029460"><span lang=EN-GB>3.4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Registry</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc34029461"><span lang=EN-GB>4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Conclusion</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc34029462"><span lang=EN-GB>5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>References</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoNormal></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=Section2>
+
+<h1><a name="_Toc34029454"></a><a name="_Toc505478182"><span lang=EN-GB>1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Scope</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>This document contains
+specifications for structuring the FIPA Content Language Library (CLL)
+including: status of a FIPA compliant content language, maintenance of the
+library and inclusion criteria. This specification also maintains an updated
+list of FIPA content languages providing the information required to identify
+those languages and recover their relative specifications.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The first part of this
+document is primarily concerned with defining the structure of the FIPA CLL and
+the requirements for a content language to be included in the library. The
+elements of the library are listed in the FIPA CLL Registry table (see <i>Section
+3.4, <span
+style='color:windowtext'>Registry</span></i>). The content languages listed in the FIPA CLL Registry table are compliant to the FIPA CLL requirements. FIPA is responsible for updating this list, but agent developers should be aware of possible changes to the
+FIPA CLL components. We recommend to all readers to consult the latest version
+of the FIPA Content Language Registry table for the latest specifications.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc34029455"></a><a name="_Toc505478183"><span lang=EN-GB>2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Overview</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>This specification
+focuses on the organization, structure, and status of the FIPA CLL and
+discusses the main requirements that a content language must satisfy in order
+to be FIPA compliant. The FIPA Content Library Registry document lists the
+current members of the library. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The objectives of
+standardizing and defining a library of FIPA compliant content languages are:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>To allow more flexibility
+and efficiency for many applications (for example, web based, real-time,
+nomadic), and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>To increase interoperability
+between agents developed in different contexts, by facilitating the reuse of content
+languages. This would enable for instance the use of RDF schemas emerging on
+the Web, or the capability of expressing choices in an agent content language,
+etc.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>In the following
+sections, we present the basic principles of the FIPA CLL. These principles
+help to guarantee that the CLL is stable, that there are public rules for the
+inclusion and maintenance of the CLL and that the CLL can be used by agent
+developers seeking a public content language.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc34029456"></a><a name="_Toc505478184"><span lang=EN-GB>3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA Content Language Library</span></a></h1>
+
+<h2><a name="_Toc34029457"></a><a name="_Toc505478185"><span lang=EN-GB>3.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Status</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The definition of a content language
+belonging to the FIPA CLL is normative. That is, if a given agent advertises
+that it accepts one of the languages in the FIPA CLL, then it must implement a
+parser or interpreter for the language as it is defined in the FIPA CLL. However,
+FIPA-compliant agents are not required to implement any of the FIPA CLL
+languages, except those required for agent management.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>By collecting content language definitions
+in a single, publicly accessible registry, the FIPA Content Language Library facilitates
+the use of standardized content languages by agents developed in different
+contexts. It also provides a greater incentive to developers to make their
+content languages generally applicable.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The name assigned to the content language
+must uniquely identify which content language is used within a FIPA ACL
+message. The name must be prefixed by the string </span><span lang=EN-GB
+style='font-family:Courier'>FIPA-</span><span lang=EN-GB> and ended by a suffix
+of five digits (for example, FIPA-SL-00008, FIPA-CCL-00009, FIPA-KIF-00010,
+FIPA-RDF-00011). The suffix consists of the five digits that identify the FIPA
+document containing the specification of the content language.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>FIPA is responsible for maintaining a
+consistent list of content language names and to make it publicly available to
+FIPA members and non-members. This list is located in the FIPA Content Language
+Library Registry.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Furthermore, every FIPA-compliant content
+language must specify at least one canonical encoding scheme that can be used
+for this language within a FIPA ACL message. Most of the languages included in
+the FIPA CLL include a “string-based” encoding scheme, but other encoding
+formats are allowed so that ACL messages can more efficiently represent the
+content of application specific data formats. The encoding schemes that a FIPA
+content language can support must be supplied as part of the language
+specification in the FIPA CLL, along with a name identifying each encoding. If
+several encoding schemes are supplied, the specific encoding scheme that is
+used in a particular FIPA ACL message must be specified in the </span><span
+lang=EN-GB style='font-family:Courier'>language-encoding</span><span
+lang=EN-GB> parameter of the message. In addition, one of the encoding schemes
+shall be designated as the default encoding, to be used if the </span><span
+lang=EN-GB style='font-family:Courier'>language-encoding</span><span
+lang=EN-GB> parameter is not specified.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>In addition to the list of encoding
+schemes, each content language in the FIPA CLL may specify additional
+information, such as stability information, versioning, contact information,
+different support levels, etc.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc34029458"></a><a name="_Toc505478186"><span lang=EN-GB>3.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Maintenance</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The most effective way of maintaining the
+FIPA CLL is through the use of the languages themselves by different agent
+developers. This is the most direct way of discovering possible bugs, errors,
+inconsistencies, weaknesses, possible improvements, as well as capabilities,
+strengths, efficiency etc.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>In order to collect feedback on the content
+languages in the library and to promote further research, FIPA encourages
+coordination between language designers, agent developers, and FIPA members.
+FIPA will make an annual report on the use of the content languages in the
+library.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>FIPA will designate a Technical Committee
+(TC) to maintain the FIPA CLL. The FIPA CLL will be managed by this TC, which
+will be responsible for the following items:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Collecting feedback and the comments about
+languages in the FIPA CLL. Depending on interest, the technical committee may
+organize more specific Working Groups. These groups would be responsible for
+maintaining public lists referring projects and people that are currently using
+such languages.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Inviting contributions in various forms: e-mail
+comments, written reports, papers, technical documents and so forth. The
+current email address of the TC maintaining the FIPA CLL is: comm@fipa.org.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>All TC members will be notified about
+contributions, comments or proposed changes and should be able to access them.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The proposed updates to the FIPA CLL must be
+discussed and approved during an official FIPA meeting, in order that the FIPA
+community may be involved with and informed of all of the FIPA approved content
+languages in the library.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>In the future, FIPA intends to supply templates
+(publicly accessible from the FIPA web site) in order to facilitate submission
+of languages to the CLL and to ensure that language developers meet the
+requirements for the submission of a language to the FIPA CLL.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc34029459"></a><a name="_Toc505478187"></a><a
+name="_Ref489694889"><span lang=EN-GB>3.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Inclusion Criteria</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>In order to populate the FIPA CLL, it is
+necessary to set some fundamental guidelines for the selection of specific
+content languages. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The minimal criteria that must be satisfied
+for a content language to be FIPA-compliant are:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>A good level of syntactical development is
+required. A &quot;good&quot; level means that, for example, the syntax of the
+language should allow the implementation of an effective parser. Content
+languages can express one or more actions, objects and propositions. If not all
+expressions are supported then all communicative acts may not be allowable.
+These not allowed communicative acts should be declared explicitly.      </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>A clear and intuitive (although not necessarily
+formal) semantics that fits with the use of FIPA-ACL must be specified. In
+particular, the composite semantics of ACL messages containing a communicative
+act which supervenes on a content expression must be specified. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Examples of the usage of such a language (a
+parallel with SL for instance for a better understanding of what objects, actions
+and propositions are, etc.) are recommended. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Substantial and clear documentation must be
+provided. This means that the proposal must be already well structured. FIPA
+members are in no way responsible for translating submitted content languages
+into an acceptable form. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The utility of such a new language should be
+made clear. Either the language should include functionality which is useful
+across a wide range of agent activities (introducing extensions or improvements
+on existing languages) or it should directly support a single but very common
+agent activity (for example, travel assistance). </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>FIPA does not enforce the use of any
+particular content language, except for the case of </span><span lang=EN-GB
+style='font-family:Courier'>FIPA-Agent-Management</span><span lang=EN-GB>, for
+which </span><span lang=EN-GB style='font-family:Courier'>FIPA-SL0</span><span
+lang=EN-GB> is mandatory (see [FIPA00008] and [FIPA00023]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc34029460"></a><a name="_Toc505478188"></a><a
+name="_Ref489694988"></a><a name="_Ref489694985"><span lang=EN-GB>3.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Registry</span></a></h2>
+
+<p class=MsoNormal><i><span lang=EN-GB>Table 1</span></i><span lang=EN-GB>
+contains the name of the FIPA content languages that are currently part of FIPA
+CLL and the name of the FIPA specifications containing the current
+specification of those content languages.</span></p>
+
+<p class=MsoNormal><b><span lang=EN-GB>&nbsp;</span></b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=172 valign=top style='width:129.05pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Content Language</span></b></p>
+  </td>
+  <td width=179 valign=top style='width:134.45pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>FIPA Specification</span></b></p>
+  </td>
+  <td width=179 valign=top style='width:134.45pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Date</span></b></p>
+  </td>
+  <td width=171 valign=top style='width:128.55pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Status</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=172 valign=top style='width:129.05pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>FIPA-SL-00008</span></p>
+  </td>
+  <td width=179 valign=top style='width:134.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>[FIPA00008]</span></p>
+  </td>
+  <td width=179 valign=top style='width:134.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>2000/07/21</span></p>
+  </td>
+  <td width=171 valign=top style='width:128.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Experimental</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=172 valign=top style='width:129.05pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>FIPA-CCL-00009</span></p>
+  </td>
+  <td width=179 valign=top style='width:134.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>[FIPA00009]</span></p>
+  </td>
+  <td width=179 valign=top style='width:134.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>2000/07/21</span></p>
+  </td>
+  <td width=171 valign=top style='width:128.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Experimental</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=172 valign=top style='width:129.05pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>FIPA-KIF-00010</span></p>
+  </td>
+  <td width=179 valign=top style='width:134.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>[FIPA00010]</span></p>
+  </td>
+  <td width=179 valign=top style='width:134.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>2000/07/21</span></p>
+  </td>
+  <td width=171 valign=top style='width:128.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Experimental</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=172 valign=top style='width:129.05pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>FIPA-RDF-00011</span></p>
+  </td>
+  <td width=179 valign=top style='width:134.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>[FIPA00011]</span></p>
+  </td>
+  <td width=179 valign=top style='width:134.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>2000/07/21</span></p>
+  </td>
+  <td width=171 valign=top style='width:128.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Experimental</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Table
+1: </span></b><span lang=EN-GB>FIPA Content Language Library Registry</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc34029461"></a><a name="_Toc505478189"><span lang=EN-GB>4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Conclusion</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>In this document a specific model for a
+FIPA CLL has been defined. This will allow more efficient usage and maintenance
+of the library itself.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Summarizing, the main features of such a
+model are:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Every content language belonging to the FIPA CLL
+has a normative definition, but is optional in use.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA and its designated TC are responsible for
+the coordination and the maintenance of such a library. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>A content language proposed to belong to the
+FIPA CLL must satisfy the fundamental inclusion criteria listed in this
+document, see <i>Section 3.3, Inclusion Criteria</i>. At least a defined syntax and a clear intuitive semantics, which fits with the use of FIPA ACL, are required. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The second part of the document contains
+the FIPA CLL Registry. This table lists the content languages currently
+included in the FIPA CLL and maintains the references to the FIPA specification
+containing the relative language descriptions.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc34029462"></a><a name="_Toc505478190"><span lang=EN-GB>5<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>References</span></a></h1>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00008]      </span><span
+lang=EN-GB>FIPA SL Content Language Specification<span style='color:black'>.
+Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00008/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00009]      </span><span
+lang=EN-GB>FIPA CCL Content Language Specification<span style='color:black'>.
+Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00009/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00010]      </span><span
+lang=EN-GB>FIPA KIF Content Language Specification<span style='color:black'>.
+Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00010/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00011]      </span><span
+lang=EN-GB>FIPA RDF Content Language Specification<span style='color:black'>.
+Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00011/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00023]      </span><span
+lang=EN-GB>FIPA Agent Management Specification<span style='color:black'>.
+Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00023/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,3384 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 10 (filtered)">
+<title>FIPA Messaging Interoperability Service Specification</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:"Century Old Style";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+@font-face
+	{font-family:"MS Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"\FF2D\FF33 \660E\671D";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Helvetica;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h4
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h5
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h6
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.1in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:8.0pt;
+	font-family:Helvetica;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:32.15pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet3, li.MsoListBullet3, div.MsoListBullet3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:46.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet4, li.MsoListBullet4, div.MsoListBullet4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.45pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet5, li.MsoListBullet5, div.MsoListBullet5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:74.6pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:32.15pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber3, li.MsoListNumber3, div.MsoListNumber3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:46.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber4, li.MsoListNumber4, div.MsoListNumber4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.45pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber5, li.MsoListNumber5, div.MsoListNumber5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:74.6pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-3.3pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:red;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+strong
+	{font-family:"Book Antiqua";}
+em
+	{font-family:"Book Antiqua";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.zzCover, li.zzCover, div.zzCover
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.Code
+	{font-family:"Courier New";}
+p.Heading2, li.Heading2, div.Heading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallCode
+	{font-family:"Courier New";}
+span.SmallNormal
+	{font-family:"Book Antiqua";}
+span.SmallStrong
+	{font-family:"Book Antiqua";
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.Abbrevs, li.Abbrevs, div.Abbrevs
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Titre3h3, li.Titre3h3, div.Titre3h3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.source, li.source, div.source
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+p.Normaleparagraph, li.Normaleparagraph, div.Normaleparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.BList, li.BList, div.BList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.Part, li.Part, div.Part
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.3in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:-.3in;
+	font-size:48.0pt;
+	font-family:Helvetica;}
+p.annex-2, li.annex-2, div.annex-2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.4in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.4in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.normal, li.normal, div.normal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.pre, li.pre, div.pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="SK_Preliminary"></a><a
+name="MLS_Field_MERGEFORMAT"></a><a name="MLS_Field_QUOTE"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a><b><span lang=EN-GB
+style='font-size:18.0pt'>&nbsp;</span></b></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><b><span lang=EN-GB style='font-size:18.0pt'>FOUNDATION
+FOR INTELLIGENT PHYSICAL AGENTS</span></b><b><span
+lang=EN-GB style='font-size:18.0pt'><a name="_Ref479045812"></a></span></b></p>
+
+<p class=Standardparagraph><a name="MLS_Field_CHARFORMAT"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt'>FIPA Messaging Interoperability Service
+Specification</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  title</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA
+  Messaging Interoperability Service Specification</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  number</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>XC00093A</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  source</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA
+  TC Gateways</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  status</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Experimental</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Date
+  of this status</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2002/05/10</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Supersedes</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>None</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Contact</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>fab@fipa.org</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=624 colspan=4 valign=top style='width:468.05pt;border-top:none;
+  border-left:solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Change
+  history</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2002/05/10                </span></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Approved
+  for Experimental</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>© 2001 Foundation for Intelligent
+Physical Agents - http://www.fipa.org/</span></p>
+
+<p class=Standardparagraph><i><span lang=EN-GB>Geneva, Switzerland</span></i></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='text-align:center'><b><span
+  lang=EN-GB>Notice</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:108.45pt'>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:108.45pt'>
+  <p class=Standardparagraph><span lang=EN-GB>Use of the technologies described
+  in this specification may infringe patents, copyrights or other intellectual
+  property rights of FIPA Members and non-members. Nothing in this
+  specification should be construed as granting permission to use any of the
+  technologies described. Anyone planning to make use of technology covered by
+  the intellectual property rights of others should first obtain permission
+  from the holder(s) of the rights. FIPA strongly encourages anyone
+  implementing any part of this specification to determine first whether
+  part(s) sought to be implemented are covered by the intellectual property of
+  others, and, if so, to obtain appropriate licenses or other permission from
+  the holder(s) of such intellectual property prior to implementation. This
+  specification is subject to change without notice. Neither FIPA nor any of
+  its Members accept any responsibility whatsoever for damages or liability,
+  direct or consequential, which may result from the use of this specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=zzContents><span lang=EN-GB>Foreword</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>The Foundation for Intelligent
+Physical Agents (FIPA) is an international organization that is dedicated to
+promoting the industry of intelligent agents by openly developing
+specifications supporting interoperability among agents and agent-based
+applications. This occurs through open collaboration among its member
+organizations, which are companies and universities that are active in the
+field of agents. FIPA makes the results of its activities available to all
+interested parties and intends to contribute its results to the appropriate
+formal standards bodies. </span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>The members of FIPA are
+individually and collectively committed to open competition in the development
+of agent-based applications, services and equipment. Membership in FIPA is open
+to any corporation and individual firm, partnership, governmental body or
+international organization without restriction. In particular, members are not
+bound to implement or use specific agent-based standards, recommendations and
+FIPA specifications by virtue of their participation in FIPA. </span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>The FIPA specifications are
+developed through direct involvement of the FIPA membership. The status of a
+specification can be either Preliminary, Experimental, Standard, Deprecated or
+Obsolete.<i> </i>More detail about the process of specification may be found in
+the FIPA Procedures for Technical Work. A complete overview of the FIPA
+specifications and their current status may be found in the FIPA List of
+Specifications. A list of terms and abbreviations used in the FIPA
+specifications may be found in the FIPA Glossary.</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>FIPA is a non-profit association
+registered in Geneva, Switzerland. As of January 2000, the 56 members of FIPA
+represented 17<i> </i>countries worldwide. Further information about FIPA as an
+organization, membership information, FIPA specifications and upcoming meetings
+may be found at http://www.fipa.org/.</span></p>
+
+<p class=zzContents><span lang=EN-GB>Contents</span></p>
+
+<p class=MsoToc1><a name="_Ref449499969"></a><a
+href="#_Toc521897381"><span lang=EN-GB>1</span><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span><span
+lang=EN-GB>Scope</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc521897382"><span lang=EN-GB>2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Overview</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc521897383"><span lang=EN-GB>2.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Reference Model</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc521897384"><span lang=EN-GB>3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>FIPA Messaging
+Interoperability Service</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc521897385"><span lang=EN-GB>3.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Requesting a Translation
+Service</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc521897386"><span lang=EN-GB>3.1.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Receiver Initiated
+Translation Service</span><span lang=EN-GB style='color:windowtext;display:
+none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc521897387"><span lang=EN-GB>4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Messaging Interoperability
+Service Ontology</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc521897388"><span lang=EN-GB>4.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Object Descriptions</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc521897389"><span lang=EN-GB>4.1.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Translation Identifier</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc521897390"><span lang=EN-GB>4.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Function Descriptions</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc521897391"><span lang=EN-GB>4.2.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Available Encodings</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc521897392"><span lang=EN-GB>4.2.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Resolve Encoding</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc521897393"><span lang=EN-GB>4.2.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Transform Encoding</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc521897394"><span lang=EN-GB>4.2.4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Request Incoming
+Translation</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc521897395"><span lang=EN-GB>4.2.5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Cancel Incoming Translation</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc521897396"><span lang=EN-GB>4.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Exceptions</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc521897397"><span lang=EN-GB>4.3.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Not Understood Exception
+Propositions</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc521897398"><span lang=EN-GB>4.3.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Refusal Exception
+Propositions</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc521897399"><span lang=EN-GB>4.3.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Failure Exception
+Propositions</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc521897400"><span lang=EN-GB>5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Registration of a FIPA
+Messaging Interoperability Service with the DF</span><span lang=EN-GB
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc521897401"><span lang=EN-GB>6</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>References</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc521897402"><span lang=EN-GB>7</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Informative Annex A —
+Examples</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc521897403"><span lang=EN-GB>7.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Transformation Encoding
+Request</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc521897404"><span lang=EN-GB>7.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Resolve Encoding</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc521897405"><span lang=EN-GB>7.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Receiver initialised
+transformations</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoNormal></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=Section2>
+
+<h1><a name="_Toc521897381"></a><a name="_Toc520711034"><span lang=EN-GB>1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Scope</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='layout-grid-mode:line'>This document
+is part of the FIPA specifications and deals with message conversion between
+inter-operating agents. This document also forms part of the FIPA Message
+Transport Service Specification [FIPA00067] and contains specification for:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='layout-grid-mode:line'>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA Message conversion between different Message
+Transport Protocols or/and concrete encoding.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Arial;layout-grid-mode:
+line'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='layout-grid-mode:line'>The document
+provides a series of examples to illustrate the agent management functions
+defined.</span></p>
+
+<p class=normal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc521897382"></a><a name="_Toc520711035"></a><a
+name="_Toc515859733"><span lang=EN-GB>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Overview</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The FIPA Messaging
+Interoperability Service (FIPA-MIS) provides a means for converting between
+Message Transport Protocols (MTPs) and between concrete encodings of
+FIPA-message parts. FIPA-MIS can be used where direct end-to-end
+interoperability is impossible, impractical or undesirable. Direct end-to-end
+interoperability is impossible when communicating platforms/agents do not
+support any common message transport protocol or encoding of FIPA-message
+components, for example. Direct end-to-end interoperability may be impractical
+when communicating over a slow wireless link with a peer in the fixed network
+that does not support any message transport protocol suitable for wireless
+links.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc521897383"></a><a name="_Toc520711036"></a><a
+name="_Toc515859734"><span lang=EN-GB>2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Reference Model</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The reference model for
+FMIS comprises four levels (see<i> Figure 1</i>):</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB style='layout-grid-mode:both'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The Message Transport Protocol Gateway (MTP-GW)
+is used to translate between Message Transport Protocols. For example, the
+Message Transport Protocol Gateway may translate between </span><span
+lang=EN-GB style='font-family:Courier'>fipa.mts.mtp.iiop.std</span><span
+lang=EN-GB> and </span><span lang=EN-GB style='font-family:Courier'>fipa.mts.mtp.wap.std</span><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>The Message Envelope
+Encoding Gateway (ENV-GW) is used to translate between Message Envelope
+encodings. </span><span lang=EN-GB>For example, the <span style='color:black'>Message
+Envelope Encoding Gateway may translate </span>between </span><span lang=EN-GB
+style='font-family:Courier'>fipa.mts.env.rep.xml.std</span><span lang=EN-GB>
+and </span><span lang=EN-GB style='font-family:Courier'>fipa.mts.env.rep.bitefficient.std</span><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>The ACL Encoding Gateway
+(ACL-GW) is used to translate between ACL encodings. For example, the ACL
+Encoding Gateway may translate between </span><span lang=EN-GB
+style='font-family:Courier'>fipa.acl.rep.xml.std</span><span lang=EN-GB> and </span><span
+lang=EN-GB style='font-family:Courier'>fipa.acl.rep.bitefficient.std</span><span
+lang=EN-GB>.</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB style='layout-grid-mode:both'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>The Content Language
+Encoding Gateway (CL-GW) is used to translate between Content Language
+encodings. Note that the current specification does not allow conversion
+between <i>different</i> content languages, only between <i>different encodings</i>
+of the same content language<a href="#_ftn1" name="_ftnref1" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span lang=EN-GB
+style='font-size:10.0pt;font-family:Helvetica;color:black'>[1]</span></span></span></a>.
+However, if this kind of functionality is needed, in can be added easily to the
+gateway specification. How such a translation is actually performed is an
+application implementation issue, and hence is out of scope.</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB style='layout-grid-mode:both'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The services specified
+here may also provide other kinds of translations (e.g., application dependent
+translation, etc.). This kind of functionality, however, should not be specified
+by FIPA, but hooks for such services exist in the specification.</span></p>
+
+<div>
+
+<table cellspacing=0 cellpadding=0 hspace=0 vspace=0 width=576 height=260>
+ <tr>
+  <td valign=top align=left height=260 style='padding-top:0in;padding-right:
+  0in;padding-bottom:0in;padding-left:0in'>
+  <p class=MsoCaption><span lang=EN-GB>&nbsp;</span></p>
+  <p class=MsoCaption><span lang=EN-GB><img width=437 height=190
+  src="XC00093B_files/image001.gif"></span></p>
+  <p class=MsoCaption><span lang=EN-GB>&nbsp;</span></p>
+  <p class=MsoCaption><a name="_Ref507911646"><b><span lang=EN-GB>Figure 1</span></b></a><b><span
+  lang=EN-GB>:</span></b><span lang=EN-GB> FIPA Messaging Interoperability
+  Service Reference Model </span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<br clear=ALL>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<h1><a name="_Toc521897384"></a><a name="_Toc520711037"></a><a
+name="_Toc515859735"><span lang=EN-GB>3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA Messaging Interoperability Service</span></a></h1>
+
+<h2><a name="_Toc521897385"></a><a name="_Toc520711038"></a><a
+name="_Toc515859736"><span lang=EN-GB>3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Requesting a Translation Service</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>When an ACC (or another gateway) finds out
+that some or all parts of a message or a MTP must be converted to another, it
+must first find a messaging interoperability service that can perform the
+necessary translations (this process is not defined here). <span
+style='color:black'>After this, the functions provided by the service can be
+used in order to translate between message components (i.e., content language,
+ACL, or envelope). If translation of message transport protocol is needed, the
+message can be sent to the service that provides MTP-GW. The service knows
+implicitly the target MTP by examining the transport address of the destination
+agent. For example, let’s assume that the agent-identifier of the destination
+agent is as follows:</span></span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB style='layout-grid-mode:both'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>(agent-identifier</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'> 
+:name foo@helluli.com</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'> 
+:addresses (sequence (wap://helluli.com http://helluli.com/acc)))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>When receiving the
+message using the message transport protocol, for example IIOP, the MTP-GW
+translates the message transport protocol to WAP.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<h3><a name="_Toc521897386"></a><a name="_Toc520711039"></a><a
+name="_Toc515859738"><span lang=EN-GB>3.1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Receiver Initiated Translation Service</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>When an agent knows in advance that it is
+not able to receive messages encoded in a particular encoding, it may request
+the messaging interoperability service to automatically translate all the
+messages directed to it. The agent sends a description of the encoding it is
+able to understand to the FIPA-MIS, which will translate the message with the
+suggested encoding. </span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc515859739"></a><a name="_Toc521897387"></a><a
+name="_Toc520711040"><span lang=EN-GB>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Messaging Interoperability Service Ontology</span></a><span
+lang=EN-GB> </span></h1>
+
+<h2><a name="_Toc521897388"></a><a name="_Toc520711041"></a><a
+name="_Toc515859740"><span lang=EN-GB>4.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Object Descriptions</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>This section describes a set of frames that
+represent the classes of objects in the domain of discourse within the
+framework of the </span><span lang=EN-GB style='font-family:Courier'>FIPA-MIS</span><span
+lang=EN-GB> ontology.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The following terms are used to describe
+the objects of the domain:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Frame</span></b><span lang=EN-GB>. This is
+the mandatory name of this entity that must be used to represent each instance
+of this class.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Ontology</span></b><span lang=EN-GB>. This is
+the name of the ontology, whose domain of discourse includes the parameters
+described in the table.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Parameter</span></b><span lang=EN-GB>. This
+is the mandatory name of a parameter of this frame. </span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Description</span></b><span lang=EN-GB>. This
+is a natural language description of the semantics of each parameter.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Presence</span></b><span lang=EN-GB>. This
+indicates whether each parameter is mandatory or optional.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Type</span></b><span lang=EN-GB>. This is the
+type of the values of the parameter: Integer, Word, String, URL, Term, Set or
+Sequence.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Reserved Values</span></b><span lang=EN-GB>.
+This is a list of FIPA-defined constants that can assume values for this
+parameter.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc521897389"></a><a name="_Toc520711042"></a><a
+name="_Toc515859741"></a><a name="_Toc510351130"><span lang=EN-GB>4.1.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Translation Identifier</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>This type of object represents the unique
+identification for the incoming message translation.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=132 valign=top style='width:99.0pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Frame</span></b></p>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=228 valign=top style='width:171.0pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>translation-id</span></p>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>FIPA-MIS</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=342 colspan=3><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Parameter</span></b></p>
+  </td>
+  <td width=228 valign=top style='width:171.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Presence</span></b></p>
+  </td>
+  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Type</span></b></p>
+  </td>
+  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Reserved
+  Values</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>Id</span></p>
+  </td>
+  <td width=228 valign=top style='width:171.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='text-autospace:none'><span lang=EN-GB>Unique
+  identifier for the incoming message translation. The identifier is unique
+  only in one Messaging Interoperability Service. </span></p>
+  </td>
+  <td width=84 valign=top style='width:63.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB>Mandatory</span></p>
+  </td>
+  <td width=132 valign=top style='width:99.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>String</span></p>
+  </td>
+  <td width=126 valign=top style='width:94.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><a name="_Toc494783033"></a><a name="_Toc486904771"><span
+lang=EN-GB>&nbsp;</span></a></p>
+
+<h2><a name="_Toc521897390"></a><a name="_Toc520711043"></a><a
+name="_Toc515859742"></a><a name="_Toc503231696"><span lang=EN-GB>4.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Function Descriptions</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The following tables define usage and
+semantics of the functions that are part of the </span><span lang=EN-GB
+style='font-family:Courier'>FIPA-MIS </span><span lang=EN-GB>ontology.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The following terms are used to describe
+the functions of the </span><span lang=EN-GB style='font-family:Courier'>FIPA-MIS</span><span
+lang=EN-GB> domain:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Function</span></b><span lang=EN-GB>. This is
+the symbol that identifies the function in the ontology.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Ontology</span></b><span lang=EN-GB>. This is
+the name of the ontology, whose domain of discourse includes the function
+described in the table.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Supported by</span></b><span lang=EN-GB>.
+This is the type of agent that supports this function. </span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Description</span></b><span lang=EN-GB>. This
+is a natural language description of the semantics of the function.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Domain</span></b><span lang=EN-GB>. This
+indicates the domain over which the function is defined. The arguments passed
+to the function must belong to the set identified by the domain.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Range</span></b><span lang=EN-GB>. This
+indicates the range to which the function maps the symbols of the domain. The
+result of the function is a symbol belonging to the set identified by the
+range.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Arity</span></b><span lang=EN-GB>. This
+indicates the number of arguments that a function takes. If a function can take
+an arbitrary number of arguments, then its arity is undefined.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc521897391"></a><a name="_Toc520711044"></a><a
+name="_Toc515859743"><span lang=EN-GB>4.2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Available Encodings</span></a></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:1.0pt;border-right:1.0pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Function</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>available-encodings</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>FIPA-MIS</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext 1.0pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Supported by</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='font-family:Courier'>fipa-mis</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>An agent may query the service to provide
+  a list of all encoding representations known by the service. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB>None</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='font-family:Courier;color:windowtext;layout-grid-mode:both'>gateway-description</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>0</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><a name="_Toc521897392"></a><a name="_Toc520711045"></a><a
+name="_Toc515859744"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<h3><span lang=EN-GB>4.2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Resolve Encoding</span></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:1.0pt;border-right:1.0pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Function</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Resolve</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>FIPA-MIS</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext 1.0pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Supported by</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='font-family:Courier'>fipa-mis</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>An agent may query the service to resolve
+  the encoding with which the supplied </span><span lang=EN-GB
+  style='font-family:Courier'>message-component</span><span lang=EN-GB> has
+  been encoded. If the action is successful, the service will return the </span><span
+  lang=EN-GB style='font-family:Courier'>encoding-representation</span><span
+  lang=EN-GB> of supplied message-component.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>message-component<a
+  name="_Ref510328672"></a><a href="#_ftn2" name="_ftnref2" title=""><span
+  class=MsoFootnoteReference><span class=MsoFootnoteReference><span lang=EN-GB
+  style='font-size:10.0pt;font-family:Courier'>[2]</span></span></span></a></span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='font-family:Courier;color:windowtext;layout-grid-mode:both'>encoding-representation</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>1</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><a name="_Toc521897393"></a><a name="_Toc520711046"></a><a
+name="_Toc515859745"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<h3><span lang=EN-GB>4.2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Transform Encoding</span></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:1.0pt;border-right:1.0pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Function</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>transform</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>FIPA-MIS</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext 1.0pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Supported by</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='font-family:Courier'>fipa-mis</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>An agent may request the service to
+  convert a transport-message or message component (i.e., payload, message, or
+  content) into a particular encoding representation. The source message
+  component is given as a parameter </span><span lang=EN-GB style='font-family:
+  Courier'>message-component</span><span lang=EN-GB> and the </span><span
+  lang=EN-GB style='font-family:Courier'>encoding-representation</span><span
+  lang=EN-GB> parameter defines the target encoding. If the action is
+  successful, the service will return the encoded message component.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>message-component</span><a
+  name="_Hlt520708384"></a><span
+  lang=EN-GB><span class=MsoFootnoteReference>2</span></span><span
+  lang=EN-GB>, </span><span lang=EN-GB style='font-family:Courier'>encoding-representation</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='font-family:Courier;color:windowtext;layout-grid-mode:both'>message-component</span><span
+  lang=EN-GB style='color:windowtext;layout-grid-mode:both'><span
+  class=MsoFootnoteReference><span lang=FR style='color:black;layout-grid-mode:
+  line'>2</span></span></span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>2</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h3><a name="_Toc515859747"><span lang=EN-GB>4.2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB> </span></a><a name="_Toc521897394"></a><a
+name="_Toc520711047"><span lang=EN-GB>Request Incoming Translation</span></a></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:1.0pt;border-right:1.0pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Function</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>incoming-translation</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='font-family:Courier'>FIPA-MIS</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext 1.0pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Supported by</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='font-family:Courier'>fipa-mis</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>An agent may request the service to
+  convert automatically a transport-message or a message component (i.e.,
+  payload, message, or content) of an incoming message into a particular
+  encoding representation before having it delivered. The preferred encoding is
+  described in the </span><span lang=EN-GB style='font-family:Courier'>gateway-behaviour.</span><span
+  lang=EN-GB> If the action is successful the service will return a </span><span
+  lang=EN-GB style='font-family:Courier'>translation-id</span><span lang=EN-GB>,
+  which can be used to cancel the translation service.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB>Sequence of</span><span lang=EN-GB> </span><span
+  lang=EN-GB style='font-family:Courier'>gateway-behaviour</span><span
+  lang=EN-GB> (see [FIPA00067])</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='font-family:Courier'>translation-id</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>1</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><a name="_Toc521897395"></a><a name="_Toc520711048"></a><a
+name="_Toc515859748"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<h3><span lang=EN-GB>4.2.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Cancel Incoming Translation</span></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:1.0pt;border-right:1.0pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Function</span></b></p>
+  </td>
+  <td width=252 valign=top style='width:189.0pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>cancel-incoming-translation</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=336><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=252 valign=top style='width:189.0pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='font-family:Courier'>FIPA-MIS</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=336><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext 1.0pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Supported by</span></b></p>
+  </td>
+  <td width=252 valign=top style='width:189.0pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='font-family:Courier'>fipa-mis</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=336><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>An agent may request the service to stop
+  transforming messages before delivering them to the agent.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>translation-id</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='layout-grid-mode:line'>The
+  execution of this function results in a change of the state, but it has no
+  explicit result.</span></p>
+  <p class=MsoNormal><span lang=EN-GB>Therefore there is no range set.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>1</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc521897396"></a><a name="_Toc520711049"></a><a
+name="_Toc515859749"><span lang=EN-GB>4.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Exceptions</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Arial;layout-grid-mode:
+line'>The exceptions for the </span><span lang=EN-GB style='font-family:Courier;
+layout-grid-mode:line'>FIPA-MIS</span><span lang=EN-GB style='layout-grid-mode:
+line'> </span><span lang=EN-GB style='font-family:Arial;layout-grid-mode:line'>ontology
+follow the same form and rules as specified in [FIPA00023].</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc521897397"></a><a name="_Toc520711050"></a><a
+name="_Toc515859750"><span lang=EN-GB>4.3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Not Understood Exception Propositions</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Arial;layout-grid-mode:
+line'>The same set of <i>“Not Understood Exception Proposition</i>s” as in the </span><span
+lang=EN-GB style='font-family:Courier;layout-grid-mode:line'>FIPA-Agent-Management</span><span
+lang=EN-GB style='layout-grid-mode:line'> </span><span lang=EN-GB
+style='font-family:Arial;layout-grid-mode:line'>ontology is used in the </span><span
+lang=EN-GB style='font-family:Courier;layout-grid-mode:line'>FIPA-MIS</span><span
+lang=EN-GB style='layout-grid-mode:line'> ontology</span><span lang=EN-GB
+style='font-family:Arial;layout-grid-mode:line'> (see [FIPA00023]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc521897398"></a><a name="_Toc520711051"></a><a
+name="_Toc515859751"><span lang=EN-GB>4.3.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Refusal Exception Propositions</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Arial;layout-grid-mode:
+line'>The same set of <i>“Refusal Exception Proposition</i>s” as defined in the
+</span><span lang=EN-GB style='font-family:Courier;layout-grid-mode:line'>FIPA-Agent-Management
+</span><span lang=EN-GB style='font-family:Arial;layout-grid-mode:line'>ontology
+is used in </span><span lang=EN-GB style='font-family:Courier;layout-grid-mode:
+line'>FIPA-MIS</span><span lang=EN-GB style='layout-grid-mode:line'> </span><span
+lang=EN-GB style='font-family:Arial;layout-grid-mode:line'>ontology (see
+[FIPA00023]). In addition, the </span><span lang=EN-GB style='font-family:Courier;
+layout-grid-mode:line'>FIPA-MIS</span><span lang=EN-GB style='layout-grid-mode:
+line'> </span><span lang=EN-GB style='font-family:Arial;layout-grid-mode:line'>ontology
+defines the propositions given below.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Communicative
+  Act</span></b></p>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Courier'>refuse</span></p>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>FIPA-MIS</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=288><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Predicate
+  symbol</span></b></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Arguments</span></b></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>Invalid-message</span></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Arial;layout-grid-mode:line'>The message component to be
+  encoded is invalid in some way.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>Invalid-encoding</span></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Arial;
+  layout-grid-mode:line'>The encoding-representation selected is unavailable.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>Unidentifiable-encoding</span></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Arial;layout-grid-mode:line'>The encoding-representation
+  is unidentifiable by the service</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc521897399"></a><a name="_Toc520711052"></a><a
+name="_Toc515859752"><span lang=EN-GB>4.3.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Failure Exception Propositions</span></a></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Communicative
+  Act</span></b></p>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>failure</span></p>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>FIPA-MIS</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=288><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Predicate
+  symbol</span></b></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Arguments</span></b></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>internal-error</span></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>String</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>See
+  [FIPA00023].</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>unknown-identifier</span></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>String</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The </span><span
+  lang=EN-GB style='font-family:Courier'>translation-id</span><span lang=EN-GB>
+  </span><span lang=EN-GB>is unknown.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc494783047"></a><a name="_Toc477052717"></a><a
+name="_Toc445211746"></a><a name="_Toc433739137"></a><a name="_Toc433650919"></a><a
+name="_Toc433650546"></a><a name="_Ref426277481"></a><a name="_Toc521897400"></a><a
+name="_Toc520711053"></a><a name="_Toc515859753"><span lang=EN-GB>5<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Registration of a FIPA Messaging
+Interoperability Service with the DF</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>In order for a FIPA messaging
+interoperability service to advertise its willingness to provide its services
+to an agent domain, it must register with a DF (as described in [FIPA00023]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>As part of this registration process the
+following constant values are introduced that universally identify the services
+the agent provides: </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The </span><span lang=EN-GB style='font-family:
+"Courier New"'>type</span><span lang=EN-GB> slot in the </span><span
+lang=EN-GB style='font-family:"Courier New"'>service-description</span><span
+lang=EN-GB> frame of FIPA messaging interoperability service must be declared
+as a constant</span><span lang=EN-GB> </span><span lang=EN-GB style='font-family:
+"Courier New"'>fipa-mis</span><span lang=EN-GB>.</span></p>
+
+<p class=MsoList style='margin-left:0in;text-indent:0in'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The </span><span lang=EN-GB style='font-family:
+"Courier New"'>ontology</span><span lang=EN-GB> slot in the </span><span
+lang=EN-GB style='font-family:"Courier New"'>service-description</span><span
+lang=EN-GB> frame of FIPA messaging interoperability service must be declared
+as a constant</span><span lang=EN-GB style='font-family:"Courier New"'>
+FIPA-MIS</span><span lang=EN-GB>.</span></p>
+
+<p class=normal><span lang=EN-GB style='color:windowtext'>&nbsp;</span></p>
+
+<p class=normal><span lang=EN-GB style='color:windowtext'>Below is given an
+example content of an agent </span><span lang=EN-GB style='font-family:"Courier New";
+color:windowtext'>df-agent-description</span><span lang=EN-GB style='color:
+windowtext'> frame which provides the following functionality:</span></p>
+
+<p class=normal><span lang=EN-GB style='color:windowtext'>&nbsp;</span></p>
+
+<p class=normal style='margin-left:.25in;text-indent:-.25in'><span lang=EN-GB
+style='font-family:Symbol;color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:windowtext'>Translation service
+from XML encoded envelopes to bit-efficient envelopes, and,</span></p>
+
+<p class=normal><span lang=EN-GB style='color:windowtext'>&nbsp;</span></p>
+
+<p class=normal style='margin-left:.25in;text-indent:-.25in'><span lang=EN-GB
+style='font-family:Symbol;color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:windowtext'>Translation service
+from XML encoded ACL messages to bit-efficient ACL messages.</span></p>
+
+<p class=normal><span lang=EN-GB style='color:windowtext'>&nbsp;</span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=EN-GB>(df-agent-description</span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=EN-GB>  :name</span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=EN-GB>    (agent-identifier </span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=EN-GB>      :name
+fipa-gateway@iiop://foo.com/acc</span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=EN-GB>      :addresses
+(sequence iiop://foo.com/acc))</span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=EN-GB>  :ontology (set
+FIPA-MIS)</span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=EN-GB>  :language (set </span><span
+lang=FR style='font-family:Courier'>FIPA-SL0</span><span lang=EN-GB>)</span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=EN-GB>  :services (set</span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=EN-GB>   
+(service-description</span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=EN-GB>      :name
+fipa-messaging-interoperability-service</span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=EN-GB>      </span><span
+lang=FR>:type fipa-mis</span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=FR>      :ontology FIPA-MIS</span></p>
+
+<p class=pre style='margin-left:.25in;text-indent:.5in'><span lang=EN-GB>:properties
+</span></p>
+
+<p class=pre style='margin-left:.25in;text-indent:.5in'><span lang=EN-GB>  (</span><span
+lang=EN-GB style='font-family:Courier'>gateway-description</span></p>
+
+<p class=pre style='margin-left:.25in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>    :acl-translation </span></p>
+
+<p class=pre style='margin-left:.25in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>      (acl-gateway-description</span></p>
+
+<p class=MsoNormal align=left style='margin-left:.25in;text-align:left'><span
+lang=EN-GB style='font-family:Courier'>              :from </span></p>
+
+<p class=MsoNormal align=left style='margin-left:.25in;text-align:left'><span
+lang=EN-GB style='font-family:Courier'>                (encoding-representation
+:name fipa.acl.rep.xml.std)</span></p>
+
+<p class=MsoNormal align=left style='margin-left:.25in;text-align:left'><span
+lang=EN-GB style='font-family:Courier'>              :to </span></p>
+
+<p class=MsoNormal align=left style='margin-left:.25in;text-align:left'><span
+lang=EN-GB style='font-family:Courier'>                (set </span></p>
+
+<p class=MsoNormal align=left style='margin-left:.25in;text-align:left'><span
+lang=EN-GB style='font-family:Courier'>                  (encoding-representation
+:name fipa.acl.rep.bitefficient.std)))</span></p>
+
+<p class=pre style='margin-left:.25in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>    :envelope-translation</span></p>
+
+<p class=pre style='margin-left:.25in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>      (envelope-gateway-description</span></p>
+
+<p class=pre style='margin-left:.25in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>        :from </span></p>
+
+<p class=pre style='margin-left:1.25in'><span lang=EN-GB style='font-family:
+Courier'>    (encoding-representation :name fipa.mts.env.rep.xml.std)</span></p>
+
+<p class=pre style='margin-left:.25in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>        :to </span></p>
+
+<p class=pre style='margin-left:1.25in'><span lang=EN-GB style='font-family:
+Courier'>    (set </span></p>
+
+<p class=pre style='margin-left:1.25in'><span lang=EN-GB style='font-family:
+Courier'>      (encoding-representation</span></p>
+
+<p class=pre style='margin-left:1.25in'><span lang=EN-GB style='font-family:
+Courier'>        :name fipa.mts.env.rep.bitefficient.std)))))</span></p>
+
+<p class=pre style='margin-left:.25in'><span lang=EN-GB>           :ownership
+(set Helluli)))))</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc521897401"></a><a name="_Toc520711054"></a><a
+name="_Toc515859754"><span lang=EN-GB>6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>References</span></a></h1>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00023]      </span><span
+lang=EN-GB>FIPA Agent Management Specification<span style='color:black'>.
+Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00023/</span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-indent:-1.0in'><span
+lang=EN-GB style='color:black'>[FIPA00067]      </span><span lang=EN-GB>FIPA
+Agent Message Transport Service Specification<span style='color:black'>.
+Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00067/</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc521897402"></a><a name="_Toc520711055"></a><a
+name="_Toc515859755"><span lang=EN-GB>7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Informative Annex A — Examples</span></a></h1>
+
+<h2><a name="_Toc521897403"></a><a name="_Toc520711056"></a><a
+name="_Toc515859756"><span lang=EN-GB>7.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Transformation Encoding Request</span></a></h2>
+
+<div>
+
+<table cellspacing=0 cellpadding=0 hspace=0 vspace=0 width=739 height=241>
+ <tr>
+  <td valign=top align=left height=241 style='padding-top:0in;padding-right:
+  1.7in;padding-bottom:0in;padding-left:1.7in'>
+  <p class=MsoCaption style='page-break-after:avoid'><span lang=EN-GB><img
+  width=393 height=187 src="XC00093B_files/image002.gif"></span></p>
+  <p class=MsoCaption><span lang=EN-GB>&nbsp;</span></p>
+  <p class=MsoCaption><a name="_Ref510258405"><b><span lang=EN-GB>Figure 2</span></b></a><b><span
+  lang=EN-GB>:</span></b><span lang=EN-GB> Transformation of message-component
+  encoding</span></p>
+  <p class=MsoCaption><span lang=EN-GB> </span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<br clear=ALL>
+
+<p class=MsoNormal><span lang=EN-GB>This example shows how an agent requests
+the Messaging Interoperability Service to transform a message component from
+one encoding to another. The message flow is illustrated in <i>Figure 2</i>.</span></p>
+
+<p class=MsoNormal align=right style='text-align:right'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [1]: The agent <i>dummy</i> receives a
+message and wants to transform the ACL-encoding of the message. </span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [2] </span><span lang=EN-GB
+style='font-family:Courier'>request</span><span lang=EN-GB>: The agent <i>dummy</i>
+sends the transform request to the Messaging Interoperability Service. The
+request contains the message-component to be transformed and the requested new
+encoding representation.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(request </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://helluli.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name fipa-messaging-interoperability-service</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://fmis.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  </span><span lang=FR style='font-family:Courier'>:ontology FIPA-MIS</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :language FIPA-SL0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :protocol fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>    (action </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>      (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>        </span><span lang=EN-GB style='font-family:Courier'>:name
+fipa-messaging-interoperability-service) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (transform</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (message-component <i>(request …)</i> )</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (encoding-representation </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>          :name fipa.acl.rep.bitefficient.std))))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [3] </span><span lang=EN-GB
+style='font-family:Courier'>agree</span><span lang=EN-GB>: The Messaging 
+Interoperability Service agrees to perform the transformation:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(agree </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name fipa-messaging-interoperability-service</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://fmis.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://helluli.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  </span><span lang=FR style='font-family:Courier'>:ontology FIPA-MIS</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :language FIPA-SL0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :protocol fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>    ((action </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>      (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>         </span><span lang=EN-GB style='font-family:Courier'>:name
+fipa-messaging-interoperability-service) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (transform</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (message-component <i>(request …)</i> )</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>     (encoding-representation </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>          :name fipa.acl.rep.bitefficient.std)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>       true))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB> </span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [4] </span><span lang=EN-GB
+style='font-family:Courier'>inform</span><span lang=EN-GB>: The Messaging
+Interoperability Service returns the encoded message component to the agent.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(inform </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name fipa-messaging-interoperability-service</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://fmis.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://helluli.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  </span><span lang=FR style='font-family:Courier'>:ontology FIPA-MIS</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :language FIPA-SL0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span lang=EN-GB style='font-family:Courier'>:protocol
+fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (result</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (action   </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>           :name fipa-messaging-interoperability-service) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (transform</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>          (message-component <i>(request …)</i> )</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (encoding-representation </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>            :name fipa.acl.rep.bitefficient.std)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>     (message-component <i>0xfa…</i> )))</span></p>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Courier'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoHeader><span lang=EN-GB style='font-family:Courier'> </span></p>
+
+<h2><a name="_Toc521897404"></a><a name="_Toc520711057"></a><a
+name="_Toc515859758"><span lang=EN-GB>7.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Resolve Encoding</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>This example shows how an agent requests
+the Messaging Interoperability Service to resolve the encoding of a message
+component.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [1] </span><span lang=EN-GB
+style='font-family:Courier'>request</span><span lang=EN-GB>: The agent <i>dummy</i>
+sends the resolve request to the Messaging Interoperability Service:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(request </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://helluli.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name fipa-messaging-interoperability-service</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://fmis.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  </span><span lang=FR style='font-family:Courier'>:ontology FIPA-MIS</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :language FIPA-SL0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span lang=EN-GB style='font-family:Courier'>:protocol
+fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (action (agent-identifier :name
+fipa-messaging-interoperability-service) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (resolve</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        </span><span lang=FR style='font-family:Courier'>(message-component
+&lt;fipa-message&gt;…&lt;/fipa-message&gt;))))</span></p>
+
+<p class=MsoHeader><span lang=FR style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [2] </span><span lang=EN-GB
+style='font-family:Courier'>agree</span><span lang=EN-GB>: The Messaging
+Interoperability Service agrees to perform the action.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [3] </span><span lang=EN-GB
+style='font-family:Courier'>inform: </span><span lang=EN-GB>The Messaging
+Interoperability Service informs the agent <i>dummy</i> that the message is
+encoded using </span><span lang=EN-GB style='font-family:Courier'>fipa.acl.rep.xml.std</span><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(inform </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>   (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name fipa-messaging-interoperability-service</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://fmis.com/acc)) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://helluli.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  </span><span lang=FR style='font-family:Courier'>:ontology FIPA-MIS</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :language FIPA-SL0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span lang=EN-GB style='font-family:Courier'>:protocol
+fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>   (result</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (action (agent-identifier :name
+fipa-messaging-interoperability-service) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (resolve</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (message-component
+&lt;fipa-message&gt;…&lt;/fipa-message&gt;)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (encoding-representation </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>         :name fipa.acl.rep.xml.std)))</span></p>
+
+<p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>      </span></p>
+
+<b><span lang=EN-GB style='font-size:12.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h2><a name="_Toc521897405"></a><a name="_Toc520711058"></a><a
+name="_Toc515859759"><span lang=EN-GB>7.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Receiver initialised transformations</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>This example shows how an agent requests
+the Messaging Interoperability Service to transform messages before their
+delivery to the agent. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<div>
+
+<table cellspacing=0 cellpadding=0 hspace=0 vspace=0 width=576 height=352>
+ <tr>
+  <td valign=top align=left height=352 style='padding-top:0in;padding-right:
+  0in;padding-bottom:0in;padding-left:0in'>
+  <p class=MsoCaption style='page-break-after:avoid'><span lang=EN-GB><img
+  width=412 height=308 src="XC00093B_files/image003.gif"></span></p>
+  <p class=MsoCaption><span lang=EN-GB>&nbsp;</span></p>
+  <p class=MsoCaption><b><span lang=EN-GB>Figure 3:</span></b><span lang=EN-GB>
+  Receiver Initialised Transformations</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<br clear=ALL>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [1] </span><span lang=EN-GB
+style='font-family:Courier'>request</span><span lang=EN-GB>: The agent <i>dummy</i>
+query the Messaging Interoperability Service a list of all the encoding
+representations known by the service. </span></p>
+
+<p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(request </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://campa.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name fipa-messaging-interoperability-service</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://fmis.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  </span><span lang=FR style='font-family:Courier'>:ontology FIPA-MIS</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :language FIPA-SL0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :protocol fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>    (action </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>      (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>        </span><span lang=EN-GB style='font-family:Courier'>:name
+fipa-messaging-interoperability-service) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (available-encodings)))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [2] </span><span lang=EN-GB
+style='font-family:Courier'>agree</span><span lang=EN-GB>: The Messaging
+Interoperability Service agrees to deliver the list.</span></p>
+
+<p class=MsoList style='margin-left:0in;text-indent:0in'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [3] </span><span lang=EN-GB
+style='font-family:Courier'>inform</span><span lang=EN-GB>: The Messaging
+Interoperability Service sends the list:</span></p>
+
+<p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(inform </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>   (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name fipa-messaging-interoperability-service</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://fmis.com/acc)) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://campa.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  </span><span lang=FR style='font-family:Courier'>:ontology FIPA-MIS</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :language FIPA-SL0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span lang=EN-GB style='font-family:Courier'>:protocol
+fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (result</span></p>
+
+<p class=MsoHeader style='margin-left:.25in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>(action </span></p>
+
+<p class=MsoHeader style='margin-left:.25in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>  (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>    :name fipa-messaging-interoperability-service) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (available-encodings))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (gateway-description</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>   :acl-translation </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>     (set </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>          (acl-gw-description </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>            :from fipa.acl.rep.bitefficient.std    </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>         :to (set fipa.acl.rep.string.std fipa.acl.rep.xml.std))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>          (acl-gw-description </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>            :from fipa.acl.rep.string.std    </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>         :to (set fipa.acl.rep.bitefficient.std))))))</span></p>
+
+<p class=MsoList style='margin-left:0in;text-indent:0in'><span lang=EN-GB
+style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [4] </span><span lang=EN-GB
+style='font-family:Courier'>request</span><span lang=EN-GB>: The agent <i>dummy</i>
+requests to the Messaging Interoperability Service to transform messages to the
+</span><span lang=EN-GB style='font-family:Courier'>fipa.acl.rep.bitefficient.std</span><span
+lang=EN-GB> encoding before delivering them to the agent <i>dummy</i>:</span></p>
+
+<p class=MsoList style='margin-left:0in;text-indent:0in'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(request </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://campa.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name fipa-messaging-interoperability-service</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://fmis.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  </span><span lang=FR style='font-family:Courier'>:ontology FIPA-MIS</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :language FIPA-SL0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span lang=EN-GB style='font-family:Courier'>:protocol
+fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (action (agent-identifier :name
+fipa-messaging-interoperability-service) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (incoming-translation</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>     (sequence </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>          (gateway-behaviour</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>             :acl fipa.acl.rep.bitefficient.std)))))</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>                        </span></p>
+
+<p class=MsoList><span lang=EN-GB>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [5] </span><span lang=EN-GB
+style='font-family:Courier'>agree</span><span lang=EN-GB>: The Messaging
+Interoperability Service agrees.</span></p>
+
+<p class=MsoList style='margin-left:0in;text-indent:0in'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [6] </span><span lang=EN-GB
+style='font-family:Courier'>inform</span><span lang=EN-GB>: The Messaging
+Interoperability Service returns an translation identifier:</span></p>
+
+<p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(inform </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>   (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name fipa-messaging-interoperability-service</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://fmis.com/acc)) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://campa.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  </span><span lang=FR style='font-family:Courier'>:ontology FIPA-MIS</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :language FIPA-SL0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span lang=EN-GB style='font-family:Courier'>:protocol
+fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (result</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>     (action (agent-identifier :name
+fipa-messaging-interoperability-service) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (incoming-translation</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>     (sequence </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>          (gateway-behaviour</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>             :acl fipa.acl.rep.bitefficient.std))))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>     (translation-id :id id1)))</span></p>
+
+<p class=MsoList style='margin-left:0in;text-indent:0in'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [7]: The service receives a message for <i>dummy</i>,
+and converts the ACL encoding to </span><span lang=EN-GB style='font-family:
+Courier'>fipa.acl.rep.bitefficient.std</span><span lang=EN-GB>.</span></p>
+
+<p class=MsoList style='margin-left:0in;text-indent:0in'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [8]: The service delivers the message to
+the agent <i>dummy</i>.</span></p>
+
+<p class=MsoList style='margin-left:0in;text-indent:0in'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [9] and Message [10]: Another message
+delivered to the agent <i>dummy</i> after being translated.</span></p>
+
+<p class=MsoList style='margin-left:0in;text-indent:0in'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+lang=EN-GB>Message [11] </span><span lang=EN-GB style='font-family:Courier'>request</span><span
+lang=EN-GB>: The agent <i>dummy</i> sends a request to the Messaging
+Interoperability Service to cancel the translation of incoming messages:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(request </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://campa.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name fipa-messaging-interoperability-service</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://fmis.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  </span><span lang=FR style='font-family:Courier'>:ontology FIPA-MIS</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  :language FIPA-SL0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span lang=EN-GB style='font-family:Courier'>:protocol
+fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (action (agent-identifier :name
+fipa-messaging-interoperability-service) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (received-translated-cancel</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>     (translation-id :id id1))))</span></p>
+
+<p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB>11.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [12] </span><span lang=EN-GB
+style='font-family:Courier'>agree:</span><span lang=EN-GB> The service agrees.</span></p>
+
+<p class=MsoList style='margin-left:0in;text-indent:0in'><span lang=EN-GB> </span></p>
+
+<p class=MsoList><span lang=EN-GB>12.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [13] </span><span lang=EN-GB
+style='font-family:Courier'>inform</span><span lang=EN-GB>: The service informs
+the agent that the translation of the incoming messages has been cancelled. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[1]</span></span></span></span></a><span
+lang=EN-GB> However, currently there is no content language specified in  the
+FIPA Content Language Library that has more than one concrete encoding.</span></p>
+
+</div>
+
+<div id=ftn2>
+
+<p class=MsoFootnoteText><a href="#_ftnref2" name="_ftn2" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[2]</span></span></span></span></a><span
+lang=EN-GB> The concrete syntax of the </span><span lang=EN-GB
+style='font-family:Courier'>message-component</span><span lang=EN-GB> depends
+on the concrete representation of the message component.</span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

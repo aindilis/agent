@@ -1,0 +1,124 @@
+;; #$DeonticLogic 
+;;
+;; (#$obligatedAgents #$Obligation #$Agent)
+
+;; Find out how to make a coalition agent
+
+;; ;; #$oughtToDo
+
+;; (#$permittedToDo #$Agent ?PROP)
+;; (#$forbiddenToDo #$Agent ?PROP)
+
+;; (#$knows #$Agent #$Prop)
+;; ;; #$knowsAbout 
+;; ;; #$knowsAboutIndirectlyVia 
+
+;; ;; can't find these
+
+;;  "everybody-knows" => {
+;; 			 examples => [
+;; 				      {
+;; 				       statement => "(everybody-knows G Phi)",
+;; 				       meaning => "Everybody in G knows",
+;; 				      },
+;; 				      {
+;; 				       statement => "(E_G Phi)",
+;; 				       meaning => "",
+;; 				      },
+;; 				     ],
+;; 			 operator => "E_G",
+;; 			},
+;;  "distributed-knowledge" => {
+;; 			       examples => [
+;; 					    {
+;; 					     statement => "(distributed-knowledge G Phi)",
+;; 					     meaning => "It is distributed knowledge in G",
+;; 					    },
+;; 					    {
+;; 					     statement => "(D_G Phi)",
+;; 					     meaning => "",
+;; 					    },
+;; 					   ],
+;; 			       operator => "D_G",
+;; 			      },
+;;  "common-knowledge" => {
+;; 			  examples => [
+;; 				       {
+;; 					statement => "(common-knowledge G Phi)",
+;; 					meaning => "It is common knowledge in G",
+;; 				       },
+;; 				       {
+;; 					statement => "(C_G Phi)",
+;; 					meaning => "",
+;; 				       },
+;; 				      ],
+;; 			  operator => "C_G",
+;; 			 },
+;; },
+
+;; need assertion about BDI
+;; (#$beliefs #$Agent #$Prop)
+;; #$intends #$Agent #$Prop
+;; ;; #$intends-SitType #$Agent #$Prop
+;; ;; #$goals
+;; #$desires
+#$AbilityToFn
+#$hasCapability
+#$agentHasOpportunity 
+
+;; quick glance doesn't seem to have this
+   "Adversarial" => {
+		     "enforce" => {
+				   examples => [
+						{
+						 statement => "(enforce C A)",
+						 meaning => "",
+						},
+					       ],
+				  },
+		    },
+   "Temporal" => {
+#$sometimesTrue 
+		  "sometime" => {
+				 examples => [
+					     ],
+				},
+#$alwaysTrue 
+
+		  "always" => {
+
+			       examples => [
+					   ],
+			      },
+		  "eventually" => {
+				   examples => [
+					       ],
+				  },
+		  "in-the-next-state" => {
+					  examples => [
+						      ],
+					 },
+		 },
+  };
+
+
+;; ask Doug does Cyc have stuff for LTL
+
+
+
+;; individually obligatory
+
+;; yes permissible/permitted
+;; yes must
+;; yes impermissible/forbidden/prohibited
+;; nope: supererogatory/beyond the call of duty
+;; yes obligatory/duty/required
+;; indifferent || significant
+omissible/non-obligatory
+;; no the least one can do
+;; no optional
+;; no better than || best || good || bad
+;; yes ought #$oughtToDo #$oughtToBe
+claim || liberty || power || immunity
+;; #$claims ;; no ;; yes #$powerInGroup #$power-Geopolitical #$power-Military #$power-Technological;; no
+

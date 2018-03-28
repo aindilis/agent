@@ -1,0 +1,1144 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 10 (filtered)">
+<title>FIPA Request Interaction Protocol Specification</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Century Old Style";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Geneva;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Monotype Sorts";}
+@font-face
+	{font-family:"Arial OUP";}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;}
+h4
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:normal;}
+h5
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:normal;}
+h6
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.1in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:8.0pt;
+	font-family:Arial;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-3.3pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-style:italic;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:red;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+strong
+	{font-family:"Book Antiqua";}
+em
+	{font-family:"Book Antiqua";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.zzCover, li.zzCover, div.zzCover
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.Code
+	{font-family:"Courier New";}
+p.Heading2, li.Heading2, div.Heading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallCode
+	{font-family:"Courier New";}
+span.SmallNormal
+	{font-family:"Book Antiqua";}
+span.SmallStrong
+	{font-family:"Book Antiqua";
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.Abbrevs, li.Abbrevs, div.Abbrevs
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Titre3h3, li.Titre3h3, div.Titre3h3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.source, li.source, div.source
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+p.Normaleparagraph, li.Normaleparagraph, div.Normaleparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="SK_Preliminary"></a><a
+name="MLS_Field_MERGEFORMAT"></a><a name="MLS_Field_QUOTE"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a><b><span lang=EN-GB
+style='font-size:18.0pt'>&nbsp;</span></b></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><b><span lang=EN-GB style='font-size:18.0pt'>FOUNDATION
+FOR INTELLIGENT PHYSICAL AGENTS</span></b><b><span
+lang=EN-GB style='font-size:18.0pt'><a name="_Ref479045812"></a></span></b></p>
+
+<p class=Standardparagraph><a name="MLS_Field_CHARFORMAT"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt'>FIPA Request Interaction Protocol
+Specification</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt'>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB
+  style='font-family:Helvetica'>Document title</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Helvetica'>FIPA Request Interaction Protocol Specification</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB
+  style='font-family:Helvetica'>Document number</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Helvetica'>SC00026H</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB
+  style='font-family:Helvetica'>Document source</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Helvetica'>FIPA TC Communication</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB
+  style='font-family:Helvetica'>Document status</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Helvetica'>Standard</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB
+  style='font-family:Helvetica'>Date of this status</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Helvetica'>2002/12/03</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB
+  style='font-family:Helvetica'>Supersedes</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Helvetica'>None</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB
+  style='font-family:Helvetica'>Contact</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Helvetica'>fab@fipa.org</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB
+  style='font-family:Helvetica'>Change history         </span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Helvetica'>See <i>Informative Annex A — ChangeLog</i></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>©
+1996-2002 Foundation for Intelligent Physical Agents <br>
+http://www.fipa.org/<i><br>
+Geneva, Switzerland</i></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='text-align:center'><b><span
+  lang=EN-GB>Notice</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:108.45pt'>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:108.45pt'>
+  <p class=Standardparagraph><span lang=EN-GB>Use of the technologies described
+  in this specification may infringe patents, copyrights or other intellectual
+  property rights of FIPA Members and non-members. Nothing in this
+  specification should be construed as granting permission to use any of the
+  technologies described. Anyone planning to make use of technology covered by
+  the intellectual property rights of others should first obtain permission
+  from the holder(s) of the rights. FIPA strongly encourages anyone
+  implementing any part of this specification to determine first whether
+  part(s) sought to be implemented are covered by the intellectual property of
+  others, and, if so, to obtain appropriate licenses or other permission from
+  the holder(s) of such intellectual property prior to implementation. This
+  specification is subject to change without notice. Neither FIPA nor any of
+  its Members accept any responsibility whatsoever for damages or liability,
+  direct or consequential, which may result from the use of this specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=zzContents><span lang=EN-GB>Foreword</span></p>
+
+<p class=Standardparagraph>The Foundation for Intelligent Physical Agents
+(FIPA) is an international organization that is dedicated to promoting the
+industry of intelligent agents by openly developing specifications supporting
+interoperability among agents and agent-based applications. This occurs through
+open collaboration among its member organizations, which are companies and
+universities that are active in the field of agents. FIPA makes the results of
+its activities available to all interested parties and intends to contribute
+its results to the appropriate formal standards bodies where appropriate. </p>
+
+<p class=Standardparagraph>The members of FIPA are individually and
+collectively committed to open competition in the development of agent-based
+applications, services and equipment. Membership in FIPA is open to any
+corporation and individual firm, partnership, governmental body or
+international organization without restriction. In particular, members are not
+bound to implement or use specific agent-based standards, recommendations and
+FIPA specifications by virtue of their participation in FIPA. </p>
+
+<p class=Standardparagraph>The FIPA specifications are developed through direct
+involvement of the FIPA membership. The status of a specification can be either
+Preliminary, Experimental, Standard, Deprecated or Obsolete.<i> </i>More detail
+about the process of specification may be found in the FIPA <span lang=EN-GB>Document
+Policy [f-out-00000] and the FIPA Specifications Policy [f-out-00003]</span>. A
+complete overview of the FIPA specifications and their current status may be
+found on the FIPA Web site.</p>
+
+<p class=Standardparagraph>FIPA is a non-profit association registered in
+Geneva, Switzerland. As of June 2002, the 56 members of FIPA represented many<i>
+</i>countries worldwide. Further information about FIPA as an organization,
+membership information, FIPA specifications and upcoming meetings may be found on
+the FIPA Web site at http://www.fipa.org/.</p>
+
+<p class=zzContents><span lang=FR>Contents</span></p>
+
+<p class=MsoToc1><span lang=EN-GB><span class=MsoHyperlink><span
+style='color:blue'><a href="#_Toc26669018"><span style='font-family:Helvetica'>1</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span style='font-family:Helvetica'>FIPA
+Request Interaction Protocol</span><span style='color:windowtext;display:none;
+text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></span></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><span lang=EN-GB style='color:blue'><a
+href="#_Toc26669019"><span style='font-family:Helvetica'>1.1</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span style='font-family:Helvetica'>Explanation
+of the Protocol Flow</span><span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><span lang=EN-GB style='color:blue'><a
+href="#_Toc26669020"><span style='font-family:Helvetica'>1.2</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span style='font-family:Helvetica'>Exceptions
+to Protocol Flow</span><span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span lang=EN-GB style='color:blue'><a
+href="#_Toc26669021"><span style='font-family:Helvetica'>2</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span style='font-family:Helvetica'>References</span><span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span lang=EN-GB style='color:blue'><a
+href="#_Toc26669022"><span style='font-family:Helvetica'>3</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span style='font-family:Helvetica'>Informative
+Annex A — ChangeLog</span><span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><span lang=EN-GB style='color:blue'><a
+href="#_Toc26669023"><span style='font-family:Helvetica'>3.1</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span style='font-family:Helvetica'>2002/11/01
+- version G by TC X2S</span><span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><span lang=EN-GB style='color:blue'><a
+href="#_Toc26669024"><span style='font-family:Helvetica'>3.2</span><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span style='font-family:Helvetica'>2002/12/03
+- version H by FIPA Architecture Board</span><span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></span></p>
+
+<p class=MsoNormal></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=Section2>
+
+<h1><a name="_Toc26669018"></a><a name="_Toc23662125"></a><a
+name="_Toc499524246"><span lang=EN-GB style='font-family:Helvetica'>1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:Helvetica'>FIPA Request
+Interaction Protocol</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>The FIPA
+Request Interaction Protocol (IP) allows one agent to request another to
+perform some action.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>The
+representation of this protocol is given in <i>Figure 1</i> which is based on extensions
+to UML 1.x. [Odell2001]. This protocol is identified by the token </span><span
+lang=EN-GB style='font-family:Courier'>fipa-request</span><span lang=EN-GB
+style='font-family:Helvetica'> as the value of the </span><span lang=EN-GB
+style='font-family:Courier'>protocol</span><span lang=EN-GB style='font-family:
+Helvetica'> parameter of the ACL message.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB
+style='font-family:Helvetica'> <img width=347 height=568
+src="SC00026H_files/image001.gif"></span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB
+style='font-family:Helvetica'>Figure 1:</span></b><span lang=EN-GB
+style='font-family:Helvetica'> FIPA Request Interaction Protocol</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+style='font-family:Helvetica'>&nbsp;</span></p>
+
+<h2><a name="_Toc499524247"></a><a name="_Toc26669019"></a><a
+name="_Toc23662126"><span lang=EN-GB style='font-family:Helvetica'>1.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:Helvetica'>Explanation of the
+Protocol Flow</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>The FIPA
+Request Interaction Protocol (IP) allows one agent to request another to
+perform some action. The Participant processes the request and makes a decision
+whether to accept or refuse the request. If a refuse decision is made, then “refused”
+becomes true and the Participant communicates a </span><span lang=EN-GB
+style='font-family:Courier'>refuse</span><span lang=EN-GB style='font-family:
+Helvetica'>. Otherwise, “agreed” becomes true.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>If conditions
+indicate that an explicit agreement is required (that is, “notification
+necessary” is true), then the Participant communicates an </span><span
+lang=EN-GB style='font-family:Courier'>agree</span><span lang=EN-GB
+style='font-family:Helvetica'>. The </span><span lang=EN-GB style='font-family:
+Courier'>agree</span><span lang=EN-GB style='font-family:Helvetica'> may be
+optional depending on circumstances, for example, if the requested action is
+very quick and can happen before a time specified in the </span><span
+lang=EN-GB style='font-family:Courier'>reply-by</span><span lang=EN-GB
+style='font-family:Helvetica'> parameter. Once the request has been agreed
+upon, then the Participant must communicate either:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:Helvetica'>A </span><span
+lang=EN-GB style='font-family:Courier'>failure</span><span lang=EN-GB
+style='font-family:Helvetica'> if it fails in its attempt to fill the request,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:Helvetica'>An </span><span
+lang=EN-GB style='font-family:Courier'>inform-done</span><span lang=EN-GB
+style='font-family:Helvetica'> if it successfully completes the request and
+only wishes to indicate that it is done, or,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:Helvetica'>An </span><span
+lang=EN-GB style='font-family:Courier'>inform-result</span><span lang=EN-GB
+style='font-family:Helvetica'> if it wishes to indicate both that it is done
+and notify the initiator of the results.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal><a name="OLE_LINK2"></a><a name="OLE_LINK1"><span
+lang=EN-GB style='font-family:Helvetica'>Any interaction using this interaction
+protocol is identified by a globally unique, non-null </span></a><span
+lang=EN-GB style='font-family:Courier'>conversation-id</span><span lang=EN-GB
+style='font-family:Helvetica'> parameter, assigned by the Initiator. The agents
+involved in the interaction must tag all of its ACL messages with this
+conversation identifier. This enables each agent to manage its communication
+strategies and activities, for example, it allows an agent to identify
+individual conversations and to reason across historical records of
+conversations. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica;color:black'>&nbsp;</span></p>
+
+<h2><a name="_Toc26669020"></a><a name="_Toc23662127"><span lang=EN-GB
+style='font-family:Helvetica'>1.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:Helvetica'>Exceptions to
+Protocol Flow</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>At <i>any</i>
+point in the IP, the receiver of a communication can inform the sender that it
+did not understand what was communicated. This is accomplished by returning a </span><span
+lang=EN-GB style='font-family:Courier'>not-understood</span><span lang=EN-GB
+style='font-family:Helvetica'> message. As such, <i>Figure 1</i> does not
+depict a </span><span lang=EN-GB style='font-family:Courier'>not-understood</span><span
+lang=EN-GB style='font-family:Helvetica'> communication as it can occur at any
+point in the IP. The communication of a </span><span lang=EN-GB
+style='font-family:Courier'>not-understood</span><span lang=EN-GB
+style='font-family:Helvetica'> within an interaction protocol may terminate the
+entire IP and termination of the interaction may imply that any commitments
+made during the interaction are null and void. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>At any point
+in the IP, the initiator of the IP may cancel the interaction protocol by
+initiating the meta-protocol shown in <i>Figure 2</i>. The </span><span
+lang=EN-GB style='font-family:Courier'>conversation-id</span><span lang=EN-GB
+style='font-family:Helvetica'> parameter of the cancel interaction is identical
+to the </span><span lang=EN-GB style='font-family:Courier'>conversation-id</span><span
+lang=EN-GB style='font-family:Helvetica'> parameter of the interaction that the
+Initiator intends to cancel. The semantics of cancel should roughly be
+interpreted as meaning that the initiator is no longer interested in continuing
+the interaction and that it should be terminated in a manner acceptable to both
+the Initiator and the Participant. The Participant either informs the Initiator
+that the interaction is done using an </span><span lang=EN-GB style='font-family:
+Courier'>inform-done</span><span lang=EN-GB style='font-family:Helvetica'> or
+indicates the failure of the cancellation using a </span><span lang=EN-GB
+style='font-family:Courier'>failure</span><span lang=EN-GB style='font-family:
+Helvetica'>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB
+style='font-family:Helvetica'><img width=479 height=356
+src="SC00026H_files/image002.gif"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB
+style='font-family:Helvetica'>Figure 2:</span></b><span lang=EN-GB
+style='font-family:Helvetica'> FIPA Cancel Meta-Protocol</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>This IP is a
+pattern for a simple interaction type. Elaboration on this pattern will almost
+certainly be necessary in order to specify all cases that might occur in an
+actual agent interaction. Real world issues such as the effects of cancelling
+actions, asynchrony, abnormal or unexpected IP termination, nested IPs, and the
+like, are explicitly not addressed here.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc8555286"></a><a name="_Toc8532400"></a><a name="_Ref8531939"></a><a
+name="_Toc522504001"></a><a name="_Toc427478813"></a><a name="_Toc497728952"></a><a
+name="_Toc23654231"></a><a name="_Toc23654644"></a><a name="_Toc23662128"></a><a
+name="_Toc23662149"></a><a name="_Toc23829572"></a><a name="_Toc23654232"></a><a
+name="_Toc23654645"></a><a name="_Toc23662129"></a><a name="_Toc23662150"></a><a
+name="_Toc23829573"></a><a name="_Toc23654233"></a><a name="_Toc23654646"></a><a
+name="_Toc23662130"></a><a name="_Toc23662151"></a><a name="_Toc23829574"></a><a
+name="_Toc26669021"></a><a name="_Toc23662152"></a><a name="_Toc23662132"></a><a
+name="_Toc23662131"><span lang=EN-GB style='font-family:Helvetica'>2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:Helvetica'>References</span></a></h1>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='font-family:Helvetica'>[Odell2001]        </span><span
+style='font-family:Helvetica'>Odell, James, Van Dyke Parunak, H. and Bauer, B.,
+<i>Representing Agent Interaction Protocols in UML</i>. In: Agent-Oriented
+Software Engineering, Ciancarini, P. and Wooldridge, M., Eds., Springer, pp.
+121-140, Berlin, 2001.<br>
+</span><span style='font-family:Courier'>http://www.fipa.org/docs/input/f-in-00077/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span style='font-family:"Arial OUP"'>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26669022"></a><a name="_Ref23829558"></a><a name="_Toc23662133"><span
+lang=EN-GB style='font-family:Helvetica'>3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:Helvetica'>Informative Annex
+A — ChangeLog</span></a></h1>
+
+<h2><a name="_Toc26669023"></a><a name="_Toc23662134"></a><a name="_Toc8555287"></a><a
+name="_Toc8532402"><span lang=EN-GB style='font-family:Helvetica'>3.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:Helvetica'>2002/11/01 -
+version G by </span></a><span lang=EN-GB style='font-family:Helvetica'>TC X2S</span></h2>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+style='font-family:Helvetica'>Page 1, Figure 1:             The communication
+labeled </span><span style='font-family:Courier'>inform-ref</span><span
+style='font-family:Helvetica'> was changed to </span><span style='font-family:
+Courier'>inform-result</span><span style='font-family:Helvetica'> for clarity;
+the purpose of this communication is to inform the initiator of a result and </span><span
+style='font-family:Courier'>inform-result</span><span style='font-family:Helvetica'>
+implies </span><span style='font-family:Courier'>inform-done</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+style='font-family:Helvetica'>Page 1, Figure 1:             The </span><span
+style='font-family:Courier'>not-understood</span><span style='font-family:Helvetica'>
+communication was removed</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+style='font-family:Helvetica'>Page 1, Figure 1:             Reworked the
+protocol flow to make the </span><span style='font-family:Courier'>agree</span><span
+style='font-family:Helvetica'> optional which also involved changing the
+exclusive-or with the </span><span style='font-family:Courier'>agree</span><span
+style='font-family:Helvetica'> to a different AUML notation</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+style='font-family:Helvetica'>Page 1, Figure 1:             To conform to UML
+2, the protocol name was placed in a boundary, x is removed from the diamonds (xor
+is now the default) and the template box was removed</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+style='font-family:Helvetica'>Page 1, line 41:                Reworked and
+expanded the section description of the IP</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+style='font-family:Helvetica'>Page 1, line 50:                Added a new
+section on Explanation of Protocol Flow</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+style='font-family:Helvetica'>Page 1, line 50:                Reworked and
+expanded the section on Exceptions of Protocol Flow to incorporate a
+meta-protocol for cancel</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+style='font-family:Helvetica'>Page 1, line 50:                Added a paragraph
+explaining the </span><span style='font-family:Courier'>not-understood</span><span
+style='font-family:Helvetica'> communication and its relationship with the IP</span></p>
+
+<p class=MsoNormal><span style='font-family:Helvetica'> </span></p>
+
+<h2><a name="_Toc26669024"><span lang=EN-GB style='font-family:Helvetica'>3.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:Helvetica'>2002/12/03 -
+version H by FIPA Architecture Board</span></a></h2>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+style='font-family:Helvetica'>Entire document:              Promoted to Standard
+status</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+style='font-family:Helvetica'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,3542 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 10 (filtered)">
+<title>FIPA Message Buffering Service Specification</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:"Century Old Style";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+@font-face
+	{font-family:"MS Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"\FF2D\FF33 \660E\671D";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Helvetica;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h4
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h5
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h6
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.1in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:8.0pt;
+	font-family:Helvetica;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet3, li.MsoListBullet3, div.MsoListBullet3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet4, li.MsoListBullet4, div.MsoListBullet4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet5, li.MsoListBullet5, div.MsoListBullet5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber3, li.MsoListNumber3, div.MsoListNumber3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber4, li.MsoListNumber4, div.MsoListNumber4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber5, li.MsoListNumber5, div.MsoListNumber5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-3.3pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:red;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+strong
+	{font-family:"Book Antiqua";}
+em
+	{font-family:"Book Antiqua";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.zzCover, li.zzCover, div.zzCover
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.Code
+	{font-family:"Courier New";}
+p.Heading2, li.Heading2, div.Heading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallCode
+	{font-family:"Courier New";}
+span.SmallNormal
+	{font-family:"Book Antiqua";}
+span.SmallStrong
+	{font-family:"Book Antiqua";
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.Abbrevs, li.Abbrevs, div.Abbrevs
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Titre3h3, li.Titre3h3, div.Titre3h3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.source, li.source, div.source
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+p.Normaleparagraph, li.Normaleparagraph, div.Normaleparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.BList, li.BList, div.BList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:12.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.item, li.item, div.item
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.1in;
+	margin-bottom:.0001pt;
+	text-indent:-.1in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.Part, li.Part, div.Part
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.3in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:-.3in;
+	font-size:48.0pt;
+	font-family:Helvetica;}
+p.annex-2, li.annex-2, div.annex-2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.4in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.4in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+ins
+	{text-decoration:none;}
+span.msoIns
+	{text-decoration:underline;}
+span.msoDel
+	{text-decoration:line-through;
+	color:red;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="SK_Preliminary"></a><a
+name="MLS_Field_MERGEFORMAT"></a><a name="MLS_Field_QUOTE"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a><b><span lang=EN-GB
+style='font-size:18.0pt'>&nbsp;</span></b></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><b><span lang=EN-GB style='font-size:18.0pt'>FOUNDATION
+FOR INTELLIGENT PHYSICAL AGENTS</span></b><b><span
+lang=EN-GB style='font-size:18.0pt'><a name="_Ref479045812"></a></span></b></p>
+
+<p class=Standardparagraph><a name="MLS_Field_CHARFORMAT"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt'>FIPA Message Buffering Service
+Specification</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  title</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA
+  Message Buffering Service Specification</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  number</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>XC00092B</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  source</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA
+  TC Gateways</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  status</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Experimental</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Date
+  of this status</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2002/05/10</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Supersedes</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>None</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Contact</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>fab@fipa.org</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=624 colspan=4 valign=top style='width:468.05pt;border-top:none;
+  border-left:solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Change
+  history</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2002/05/10</span></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Approved
+  for Experimental</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>© 2001 Foundation for Intelligent
+Physical Agents - http://www.fipa.org/</span></p>
+
+<p class=Standardparagraph><i><span lang=EN-GB>Geneva, Switzerland</span></i></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='text-align:center'><b><span
+  lang=EN-GB>Notice</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:108.45pt'>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:108.45pt'>
+  <p class=Standardparagraph><span lang=EN-GB>Use of the technologies described
+  in this specification may infringe patents, copyrights or other intellectual
+  property rights of FIPA Members and non-members. Nothing in this
+  specification should be construed as granting permission to use any of the
+  technologies described. Anyone planning to make use of technology covered by
+  the intellectual property rights of others should first obtain permission
+  from the holder(s) of the rights. FIPA strongly encourages anyone
+  implementing any part of this specification to determine first whether
+  part(s) sought to be implemented are covered by the intellectual property of
+  others, and, if so, to obtain appropriate licenses or other permission from
+  the holder(s) of such intellectual property prior to implementation. This
+  specification is subject to change without notice. Neither FIPA nor any of
+  its Members accept any responsibility whatsoever for damages or liability,
+  direct or consequential, which may result from the use of this specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=zzContents><span lang=EN-GB>Foreword</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>The Foundation for Intelligent Physical
+Agents (FIPA) is an international organization that is dedicated to promoting
+the industry of intelligent agents by openly developing specifications
+supporting interoperability among agents and agent-based applications. This
+occurs through open collaboration among its member organizations, which are
+companies and universities that are active in the field of agents. FIPA makes
+the results of its activities available to all interested parties and intends
+to contribute its results to the appropriate formal standards bodies. </span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>The members of FIPA are
+individually and collectively committed to open competition in the development
+of agent-based applications, services and equipment. Membership in FIPA is open
+to any corporation and individual firm, partnership, governmental body or
+international organization without restriction. In particular, members are not
+bound to implement or use specific agent-based standards, recommendations and
+FIPA specifications by virtue of their participation in FIPA. </span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>The FIPA specifications are
+developed through direct involvement of the FIPA membership. The status of a
+specification can be either Preliminary, Experimental, Standard, Deprecated or
+Obsolete.<i> </i>More detail about the process of specification may be found in
+the FIPA Procedures for Technical Work. A complete overview of the FIPA
+specifications and their current status may be found in the FIPA List of
+Specifications. A list of terms and abbreviations used in the FIPA
+specifications may be found in the FIPA Glossary.</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>FIPA is a non-profit association
+registered in Geneva, Switzerland. As of January 2000, the 56 members of FIPA
+represented 17<i> </i>countries worldwide. Further information about FIPA as an
+organization, membership information, FIPA specifications and upcoming meetings
+may be found at http://www.fipa.org/.</span></p>
+
+<p class=zzContents><span lang=EN-GB>Contents</span></p>
+
+<p class=MsoToc1><a name="_Ref449499969"></a><a
+href="#_Toc8442059"><span lang=EN-GB>1</span><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span><span
+lang=EN-GB>Scope</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc8442060"><span lang=EN-GB>2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Overview</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442061"><span lang=EN-GB>2.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Reference Model</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc8442062"><span lang=EN-GB>3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>FIPA Message Buffering
+Service</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442063"><span lang=EN-GB>3.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Buffering Messages</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442064"><span lang=EN-GB>3.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Handling State Expiration
+Timeout</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442065"><span lang=EN-GB>3.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Handling Forward Timeout</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442066"><span lang=EN-GB>3.4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Updating Message Envelope
+Information</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442067"><span lang=EN-GB>3.5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Standard Interfaces</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442068"><span lang=EN-GB>3.6</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Proprietary Interfaces</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442069"><span lang=EN-GB>3.7</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Forwarding Messages</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442070"><span lang=EN-GB>3.8</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Handling a Single Receiver</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442071"><span lang=EN-GB>3.9</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Handling Multiple Transport
+Addresses for a Single Receiver</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442072"><span lang=EN-GB>3.10</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>       </span><span lang=EN-GB>Handling Multiple
+Receivers</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442073"><span lang=EN-GB>3.11</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>       </span><span lang=EN-GB>Delivering Messages</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442074"><span lang=EN-GB>3.12</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>       </span><span lang=EN-GB>Using a Name Resolution
+Services</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442075"><span lang=EN-GB>3.13</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>       </span><span lang=EN-GB>Error Messages</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc8442076"><span lang=EN-GB>4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Message Buffering Service
+Ontology</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442077"><span lang=EN-GB>4.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Object Descriptions</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc8442078"><span lang=EN-GB>4.1.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Buffer Space Description</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc8442079"><span lang=EN-GB>4.1.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Buffer Space Identifier</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc8442080"><span lang=EN-GB>4.1.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Destination Description</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442081"><span lang=EN-GB>4.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Function Descriptions</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc8442082"><span lang=EN-GB>4.2.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Reserve Buffer Space</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc8442083"><span lang=EN-GB>4.2.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Delete Buffer Space</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc8442084"><span lang=EN-GB>4.2.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Forward Message</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc8442085"><span lang=EN-GB>4.2.4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Delete Messages</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442086"><span lang=EN-GB>4.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Exceptions</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc8442087"><span lang=EN-GB>4.3.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Not Understood Exception
+Propositions</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc8442088"><span lang=EN-GB>4.3.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Refusal Exception
+Propositions</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc8442089"><span lang=EN-GB>4.3.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Failure Exception
+Propositions</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc8442090"><span lang=EN-GB>5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>References</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc8442091"><span lang=EN-GB>6</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Annex A — Informative
+Examples</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442092"><span lang=EN-GB>6.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Support for Disconnected
+Mode</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc8442093"><span lang=EN-GB>6.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Support for Roaming</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>14</span></a></p>
+
+<p class=MsoNormal></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=Section2>
+
+<h1><a name="_Toc8442059"></a><a name="_Toc521897151"><span lang=EN-GB>1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Scope</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='layout-grid-mode:line'>This document
+is part of the FIPA specifications and deals with message buffering between
+inter-operating agents. This document also forms part of the FIPA Message
+Transport Service Specification [FIPA00067] and contains specification for:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='layout-grid-mode:line'>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message buffering of FIPA messages.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='layout-grid-mode:line'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='layout-grid-mode:line'>The document
+provides a series of examples to illustrate the agent management functions
+defined.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc8442060"></a><a name="_Toc521897152"><span lang=EN-GB>2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Overview</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The FIPA Message
+Buffering Service (FIPA-MBS) provides explicit FIPA-message buffering when a
+particular agent/agent platform cannot be </span><span lang=EN-GB>reached<a
+href="#_ftn1" name="_ftnref1" title=""><span class=MsoFootnoteReference><span
+class=MsoFootnoteReference><span lang=EN-GB style='font-size:10.0pt;font-family:
+Helvetica'>[1]</span></span></span></a>. <span style='color:black'>It allows an
+agent and/or an agent platform to explicitly apply for message buffering.
+FIPA-MBS is especially useful in cases where an agent and/or an agent platform
+is situated on a weakly connected device that does not have a physical
+connection to the fixed network at all times. Although FIPA-MBS is designed
+primarily for wireless environments, it also can be used in wireline
+environments. The </span>FIPA Message Buffer (MB) implements the Message
+Buffering Service. The MB does not have to be a part of any agent platform, but
+it may. Application agents do not have to be aware of FIPA-MBS, but the
+underlying agent platform can take care of the details in order to enable
+buffering as well as requesting message forwarding.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The FIPA-MBS allows roaming between Message
+Buffers. This allows, for example, the usage of dynamic addresses for the
+agents situated in the weakly connected devices. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The specification contains features that
+may weaken the messaging security. These issues, however, are not explicitly
+discussed in the specification.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc8442061"></a><a name="_Toc521897153"></a><a
+name="_Toc520549880"><span lang=EN-GB>2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Reference Model</span></a></h2>
+
+<div>
+
+<table cellspacing=0 cellpadding=0 hspace=0 vspace=0 width=576 height=204>
+ <tr>
+  <td valign=top align=left height=204 style='padding-top:0in;padding-right:
+  0in;padding-bottom:0in;padding-left:0in'>
+  <p class=MsoCaption><span lang=EN-GB><img width=516 height=157
+  src="XC00092B_files/image001.gif"></span></p>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-GB>Figure </span></b><b><span lang=EN-GB>1</span></b><b><span
+  lang=EN-GB>:</span></b><span lang=EN-GB> FIPA Message Buffering Service
+  Reference Model</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<br clear=ALL>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The FIPA Message Buffer
+is logically situated between two APs (see <i>Figure 1</i>). The Message Buffer
+can be a standalone FIPA-addressable entity, that is, something that does not
+necessarily belong to any physical AP, but it also can be part of an AP.
+Especially, the Message Buffer can be a part of either platform (A or B) in <i>Figure
+1</i>. The actual location of the message buffer depends on the environment
+where it is </span><span lang=EN-GB>employed. </span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB style='layout-grid-mode:both'>&nbsp;</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc520549881"></a><a name="_Toc8442062"></a><a
+name="_Toc521897154"><span lang=EN-GB>3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA Message Buffering Service</span></a><span
+lang=EN-GB> </span></h1>
+
+<h2><a name="_Toc8442063"></a><a name="_Toc521897155"></a><a
+name="_Toc520549882"><span lang=EN-GB>3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Buffering Messages</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The Message Buffer will buffer messages
+when requested to do so. Buffering will happen whenever there is no connection
+to the next destination, and the address of the next destination is the one for
+which buffering has been previously requested. If the message contains multiple
+receivers, the message is forwarded normally to those receivers that can be
+reached. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Messages will be buffered even if the
+envelope contains reachable addresses to where the message could be forwarded.
+If the destination that has requested the message buffering does not request
+the MB to forward the buffered messages before the timeout expires (</span><span
+lang=EN-GB style='font-family:Courier'>keep-time</span><span lang=EN-GB>),
+messages are either forwarded to the next address in the message envelope (if
+there is such an address) or an error message is sent as specified in
+[FIPA00067].</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>If the buffer space reserved for a given
+destination become full, the MB raises an error for each incoming message
+destined to this address.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:red'>&nbsp;</span></p>
+
+<h2><a name="_Toc8442064"></a><a name="_Toc521897156"></a><a
+name="_Toc520549883"></a><a name="_Ref495316783"></a><a name="_Ref495316711"></a><a
+name="_Hlt495316745"></a><span lang=EN-GB>3.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Handling State Expiration Timeout</span></h2>
+
+<p class=MsoNormal><span lang=EN-GB>A </span><span lang=EN-GB style='font-family:
+Courier'>buffer-space</span><span lang=EN-GB> object (see <i>Section 4.1</i>) may contain a state expiration timeout (</span><span
+lang=EN-GB style='font-family:Courier'>keep-time</span><span lang=EN-GB>) for
+buffered messages. When this timeout expires, the MB acts like an ACC, that is,
+it either forwards the message to the next address defined in the message
+envelope or it raises an error. The state expiration timer is started whenever
+the MB buffers a message.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc8442065"></a><a name="_Toc521897157"></a><a
+name="_Toc520549884"></a><a name="_Ref495827233"><span lang=EN-GB>3.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Handling Forward Timeout</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>A </span><span lang=EN-GB style='font-family:
+Courier'>buffer-space</span><span lang=EN-GB> object may contain a timeout (</span><span
+lang=EN-GB style='font-family:Courier'>forward-time</span><span lang=EN-GB>)
+for how long the MB will forward messages after it has been requested to do so.
+The forwarding timer is started when the MB receives a forwarding request.
+After the timer expires, the MB acts like a Message Transport Service, that is,
+it either forwards the messages to the next address defined in the message
+envelope or it raises an error.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc8442066"></a><a name="_Toc521897158"></a><a
+name="_Toc520549885"><span lang=EN-GB>3.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Updating Message Envelope Information</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>See [FIPA00067].</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc490023421"></a><a name="_Toc480605353"></a><a
+name="_Ref462040225"></a><a name="_Toc494872673"></a><a name="_Toc8442067"></a><a
+name="_Toc521897159"></a><a name="_Toc520549886"><span lang=EN-GB>3.5<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Standard Interfaces</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>See [FIPA00067].</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc8442068"></a><a name="_Toc521897160"></a><a
+name="_Toc520549887"><span lang=EN-GB>3.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Proprietary Interfaces</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>FIPA does not specify how agents
+communicate with the MB using proprietary interfaces.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc8442069"></a><a name="_Toc521897161"></a><a
+name="_Toc520549888"><span lang=EN-GB>3.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Forwarding Messages</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>If the buffering is not needed, the MB acts
+like a Message Transport Service (see [FIPA00067]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc8442070"></a><a name="_Toc521897162"></a><a
+name="_Toc520549889"><span lang=EN-GB>3.8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Handling a Single Receiver</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>If the buffering is not needed, the MB acts
+like a Message Transport Service (see [FIPA00067]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc8442071"></a><a name="_Toc521897163"></a><a
+name="_Toc520549890"><span lang=EN-GB>3.9<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Handling Multiple Transport Addresses for a
+Single Receiver</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>See [FIPA00067].</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc8442072"></a><a name="_Toc521897164"></a><a
+name="_Toc520549891"><span lang=EN-GB>3.10<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Handling Multiple Receivers</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>If the buffering is not needed for any of
+the receivers, the MB acts like a Message Transport Service (see [FIPA00067]).
+If the buffering is needed for some destinations, the message(s) destined to
+these addresses are buffered. For other destinations, the MB acts like an ACC.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc8442073"></a><a name="_Toc521897165"></a><a
+name="_Toc520549892"><span lang=EN-GB>3.11<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Delivering Messages</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>See [FIPA00067].</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc8442074"></a><a name="_Toc521897166"></a><a
+name="_Toc520549893"><span lang=EN-GB>3.12<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Using a Name Resolution Services</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>See [FIPA00067].</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc8442075"></a><a name="_Toc521897167"></a><a
+name="_Toc520549894"><span lang=EN-GB>3.13<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Error Messages</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>See [FIPA00067].</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc8442076"></a><a name="_Toc521897168"></a><a
+name="_Toc520549895"><span lang=EN-GB>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message Buffering Service Ontology</span></a></h1>
+
+<h2><a name="_Ref503266524"></a><a name="_Toc8442077"></a><a
+name="_Toc521897169"></a><a name="_Toc520549896"><span lang=EN-GB>4.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Object Descriptions</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>This section describes a set of frames that
+represent the classes of objects in the domain of discourse within the
+framework of the </span><span lang=EN-GB style='font-family:Courier'>FIPA-Message-Buffering</span><span
+lang=EN-GB> ontology.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The following terms are used to describe
+the objects of the domain:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Frame</span></b><span lang=EN-GB>. This is
+the mandatory name of this entity that must be used to represent each instance
+of this class.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Ontology</span></b><span lang=EN-GB>. This is
+the name of the ontology, whose domain of discourse includes the parameters
+described in the table.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Parameter</span></b><span lang=EN-GB>. This
+is the mandatory name of a parameter of this frame. </span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Description</span></b><span lang=EN-GB>. This
+is a natural language description of the semantics of each parameter.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Presence</span></b><span lang=EN-GB>. This
+indicates whether each parameter is mandatory or optional.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Type</span></b><span lang=EN-GB>. This is the
+type of the values of the parameter: Integer, Word, String, URL, Term, Set or
+Sequence.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Reserved Values</span></b><span lang=EN-GB>.
+This is a list of FIPA-defined constants that can assume values for this
+parameter.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc8442078"></a><a name="_Toc521897170"></a><a
+name="_Toc520549897"><span lang=EN-GB>4.1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Buffer Space Description</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>This type of object represents the
+properties of a buffer space. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=144 valign=top style='width:108.3pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Frame</span></b></p>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=256 valign=top style='width:192.0pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>buffer-space-description</span></p>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>FIPA-Message-Buffering</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=310 colspan=3><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:108.3pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Parameter</span></b></p>
+  </td>
+  <td width=256 valign=top style='width:192.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=85 valign=top style='width:64.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Presence</span></b></p>
+  </td>
+  <td width=86 valign=top style='width:.9in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Type</span></b></p>
+  </td>
+  <td width=138 valign=top style='width:103.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Reserved
+  Values</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:108.3pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>max-messages</span></p>
+  </td>
+  <td width=256 valign=top style='width:192.0pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-GB style='font-family:Helvetica'>Maximum number of messages that MB
+  can buffer. This value must be positive.</span></p>
+  </td>
+  <td width=85 valign=top style='width:64.0pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=86 valign=top style='width:.9in;border:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>Integer</span></p>
+  </td>
+  <td width=138 valign=top style='width:103.4pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:108.3pt;border:solid windowtext 1.0pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>max-size</span></p>
+  </td>
+  <td width=256 valign=top style='width:192.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader style='text-autospace:none'><span lang=EN-GB>Maximum number
+  of bytes that MB can buffer. This value must be positive.</span></p>
+  </td>
+  <td width=85 valign=top style='width:64.0pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=86 valign=top style='width:.9in;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Courier'>Integer</span></p>
+  </td>
+  <td width=138 valign=top style='width:103.4pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:108.3pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>forward-time</span></p>
+  </td>
+  <td width=256 valign=top style='width:192.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><span lang=EN-GB>Timeout (in
+  seconds) the MB will forward messages after forward request (see <i>Section 3.3 Handling Forward Timeout</i>). This value must not be negative.</span></p>
+  </td>
+  <td width=85 valign=top style='width:64.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=86 valign=top style='width:.9in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Courier'>Integer</span></p>
+  </td>
+  <td width=138 valign=top style='width:103.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:108.3pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>keep-time</span></p>
+  </td>
+  <td width=256 valign=top style='width:192.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-autospace:none'><span lang=EN-GB>Maximum time
+  (in seconds) the messages are buffered (state expiration timeout) (see
+  Section <i>4.2.2 Handling State Expiration Timeout</i>). This value must be positive.</span></p>
+  </td>
+  <td width=85 valign=top style='width:64.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=86 valign=top style='width:.9in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Courier'>Integer</span></p>
+  </td>
+  <td width=138 valign=top style='width:103.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:108.3pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>force-buffering</span></p>
+  </td>
+  <td width=256 valign=top style='width:192.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph style='text-align:justify;text-justify:inter-ideograph;
+  text-autospace:none'><span lang=EN-GB style='font-family:Helvetica'>Forces
+  message buffering even if there is a connection between the MB and the
+  message destination.</span></p>
+  </td>
+  <td width=85 valign=top style='width:64.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=86 valign=top style='width:.9in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Courier'>Boolean</span></p>
+  </td>
+  <td width=138 valign=top style='width:103.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>true</span></p>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>false</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>If the </span><span lang=EN-GB
+style='font-family:Courier'>buffer-space-description </span><span lang=EN-GB>object
+does not contain the </span><span lang=EN-GB style='font-family:Courier'>max-messages</span><span
+lang=EN-GB> or the </span><span lang=EN-GB style='font-family:Courier'>max-size</span><span
+lang=EN-GB> parameter, the size of the buffer depends on service defaults.
+However, because of physical limits, it may happen that the buffer overflows,
+and the MB must raise an error (i.e., the entity that requested buffering, may
+still have to be prepared for lost messages because of possible buffer
+overflow). If both parameters—</span><span lang=EN-GB style='font-family:Courier'>max-messages</span><span
+lang=EN-GB> and </span><span lang=EN-GB style='font-family:Courier'>max-size</span><span
+lang=EN-GB>—are defined, then the actual buffer space is the minimum of these
+two. For example, if the value of the </span><span lang=EN-GB style='font-family:
+Courier'>max-messages</span><span lang=EN-GB> parameter is 2 and the value of
+the </span><span lang=EN-GB style='font-family:Courier'>max-size</span><span
+lang=EN-GB> parameter is 1024, the buffer space cannot hold even one message,
+if the message size is more than 1024 bytes.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>If either the </span><span lang=EN-GB
+style='font-family:Courier'>keep-time</span><span lang=EN-GB> or the </span><span
+lang=EN-GB style='font-family:Courier'>forward-time</span><span lang=EN-GB>
+parameter is missing from the </span><span lang=EN-GB style='font-family:Courier'>buffer-space</span><span
+lang=EN-GB> object, corresponding timeout depends on service defaults. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The </span><span lang=EN-GB
+style='font-family:Courier'>force-buffering</span><span lang=EN-GB> parameter
+defines whether the messages must be buffered even if the message destination
+is reachable. By default, messages are not buffered if the destination is
+reachable.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc8442079"></a><a name="_Toc521897171"></a><a
+name="_Toc520549898"><span lang=EN-GB>4.1.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Buffer Space Identifier</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>This type of object represents the
+identification of the buffer space. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=104 valign=top style='width:77.8pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Frame</span></b></p>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=282 valign=top style='width:211.5pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>buffer-space-identifier</span></p>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>FIPA-Message-Buffering</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=324 colspan=3><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=104 valign=top style='width:77.8pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Parameter</span></b></p>
+  </td>
+  <td width=282 valign=top style='width:211.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=94 valign=top style='width:70.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Presence</span></b></p>
+  </td>
+  <td width=78 valign=top style='width:58.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Type</span></b></p>
+  </td>
+  <td width=152 valign=top style='width:113.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Reserved
+  Values</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=104 valign=top style='width:77.8pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>id</span></p>
+  </td>
+  <td width=282 valign=top style='width:211.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph style='text-align:justify;text-justify:inter-ideograph'><span
+  lang=EN-GB style='font-family:Helvetica'>A unique identifier for the buffer
+  space. The identifier is unique only in one MB.</span></p>
+  </td>
+  <td width=94 valign=top style='width:70.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Mandatory</span></p>
+  </td>
+  <td width=78 valign=top style='width:58.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>String</span></p>
+  </td>
+  <td width=152 valign=top style='width:113.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The MB implementation determines how the
+identifiers are constructed.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc8442080"></a><a name="_Toc521897172"></a><a
+name="_Toc520549899"><span lang=EN-GB>4.1.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Destination Description</span></a><span
+lang=EN-GB> </span></h3>
+
+<p class=MsoNormal><span lang=EN-GB>This type of object represents the
+identification of a message destination. </span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=98 valign=top style='width:73.85pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Frame</span></b></p>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=224 valign=top style='width:167.8pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>destination</span></p>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>FIPA-Message-Buffering</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=388 colspan=3><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.85pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Parameter</span></b></p>
+  </td>
+  <td width=224 valign=top style='width:167.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=92 valign=top style='width:68.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Presence<a
+  href="#_ftn2" name="_ftnref2" title=""><span class=MsoFootnoteReference><span
+  class=MsoFootnoteReference><b><span lang=EN-GB style='font-size:10.0pt;
+  font-family:Helvetica'>[2]</span></b></span></span></a></span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Type</span></b></p>
+  </td>
+  <td width=129 valign=top style='width:96.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Reserved
+  Values</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.85pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>address</span></p>
+  </td>
+  <td width=224 valign=top style='width:167.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>Defines
+  the destination address.</span></p>
+  </td>
+  <td width=92 valign=top style='width:68.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=167 valign=top style='width:125.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>URL</span></p>
+  </td>
+  <td width=129 valign=top style='width:96.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=98 valign=top style='width:73.85pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>aid</span></p>
+  </td>
+  <td width=224 valign=top style='width:167.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>Defines
+  the destination agent.</span></p>
+  </td>
+  <td width=92 valign=top style='width:68.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=167 valign=top style='width:125.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>agent-identifier
+  </span><span lang=EN-GB>(see [FIPA00023])</span></p>
+  </td>
+  <td width=129 valign=top style='width:96.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc8442081"></a><a name="_Toc521897173"></a><a
+name="_Toc520549900"><span lang=EN-GB>4.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Function Descriptions</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The following tables define usage and
+semantics of the functions that are part of the </span><span lang=EN-GB
+style='font-family:Courier'>FIPA-Message-Buffering </span><span lang=EN-GB>ontology.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The following terms are used to describe
+the functions of the </span><span lang=EN-GB style='font-family:Courier'>FIPA-Message-Buffering</span><span
+lang=EN-GB> domain:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Function</span></b><span lang=EN-GB>. This is
+the symbol that identifies the function in the ontology.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Ontology</span></b><span lang=EN-GB>. This is
+the name of the ontology, whose domain of discourse includes the function
+described in the table.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Supported by</span></b><span lang=EN-GB>.
+This is the type of agent that supports this function. </span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Description</span></b><span lang=EN-GB>. This
+is a natural language description of the semantics of the function.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Domain</span></b><span lang=EN-GB>. This
+indicates the domain over which the function is defined. The arguments passed
+to the function must belong to the set identified by the domain.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Range</span></b><span lang=EN-GB>. This
+indicates the range to which the function maps the symbols of the domain. The
+result of the function is a symbol belonging to the set identified by the
+range.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Arity</span></b><span lang=EN-GB>. This
+indicates the number of arguments that a function takes. If a function can take
+an arbitrary number of arguments, then its arity is undefined.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc8442082"></a><a name="_Toc521897174"></a><a
+name="_Toc520549901"><span lang=EN-GB>4.2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Reserve Buffer Space</span></a></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:1.0pt;border-right:1.0pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Function</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>reserve-buffer</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Ontology</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>FIPA-Message-Buffering</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext 1.0pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Supported by</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='layout-grid-mode:both'>FIPA-MB</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>An agent can request a buffer space for
+  messages that might be destined to it while the agent cannot be reached (for
+  example, because of a disconnection). The argument </span><span lang=EN-GB
+  style='font-family:Courier'>buffer-space-description</span><span lang=EN-GB>
+  defines the requirements for buffer space (e.g., how much buffer space is
+  needed and for how long time). If the sender does not want to specify
+  requirements for buffer space, the </span><span lang=EN-GB style='font-family:
+  Courier'>buffer-space-description</span><span lang=EN-GB> can be left empty.
+  In this case, properties of buffer space depend on the service defaults. The
+  argument </span><span lang=EN-GB style='font-family:Courier'>destination</span><span
+  lang=EN-GB> specifies the destination address of the messages to be buffered.
+  </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>buffer-space-description</span><span
+  lang=EN-GB>, </span><span lang=EN-GB style='font-family:Courier'>destination</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='font-family:Courier;layout-grid-mode:both'>buffer-space-identifier</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>2</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc8442083"></a><a name="_Toc521897175"></a><a
+name="_Toc520549902"><span lang=EN-GB>4.2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Delete Buffer Space</span></a></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:1.0pt;border-right:1.0pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Function</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>delete-buffer</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Ontology</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>FIPA-Message-Buffering</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext 1.0pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Supported by</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='layout-grid-mode:both'>FIPA-MB</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>An agent can request a Message Buffer to
+  discard all the messages buffered in a given buffer space and also that new
+  messages should not be buffered. An error message is sent to the originator
+  agent of each discarded message.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>buffer-space-identifier</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>The execution of this
+  function results in a change of the state, but it has no explicit result.
+  Therefore there is no range set.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>1</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc8442084"></a><a name="_Toc521897176"></a><a
+name="_Toc520549903"><span lang=EN-GB>4.2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Forward Message</span></a></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:1.0pt;border-right:1.0pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Function</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>forward</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Ontology</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>FIPA-Message-Buffering</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext 1.0pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Supported by</span></b></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='layout-grid-mode:both'>FIPA-MB</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=378><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>An agent can request a Message Buffer to
+  forward all or some of the buffered messages to the given destination. The
+  argument </span><span lang=EN-GB style='font-family:Courier'>buffer-space-identifier</span><span
+  lang=EN-GB> specifies the buffer space from which messages are to be
+  forwarded and the argument </span><span lang=EN-GB style='font-family:Courier'>destination</span><span
+  lang=EN-GB> specifies the destination to where the messages should be
+  forwarded. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>buffer-space-identifier</span><span
+  lang=EN-GB>, </span><span lang=EN-GB style='font-family:Courier'>destination</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>The execution of this
+  function results in a change of the state, but it has no explicit result.
+  Therefore there is no range set.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>2</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h3><a name="_Toc8442085"></a><a name="_Toc521897177"></a><a
+name="_Toc520549904"><span lang=EN-GB>4.2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Delete Messages</span></a></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:1.0pt;border-right:1.0pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Function</span></b></p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>delete</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=348><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:none;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;border:none;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>FIPA-Message-Buffering</span></p>
+  </td>
+  <td style='border:none;padding:0in 0in 0in 0in' width=348><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border:solid windowtext 1.0pt;
+  border-left:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Supported by</span></b></p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='color:windowtext;layout-grid-mode:both'>FIPA-MB</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=348><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>An agent can request a Message Buffer to </span><span
+  lang=EN-GB>delete</span><span lang=EN-GB> all of the</span><span lang=EN-GB>
+  buffered messages. </span><span lang=EN-GB>An error message is sent to the
+  original sender of each deleted message.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Domain</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>buffer-space-identifier</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Range</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>The execution of this function results in
+  a change of the state, but it has no explicit result. Therefore there is no
+  range set.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=120 valign=top style='width:1.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Arity</span></b></p>
+  </td>
+  <td width=588 colspan=2 valign=top style='width:441.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB>1</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><a name="_Toc520549905"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<h2><a name="_Toc8442086"></a><a name="_Toc521897178"><span lang=EN-GB>4.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Exceptions</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The exceptions for the </span><span
+lang=EN-GB style='font-family:Courier'>FIPA-Message-Buffering</span><span
+lang=EN-GB> ontology follow the same form and rules as specified in
+[FIPA00023].</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc8442087"></a><a name="_Toc521897179"></a><a
+name="_Toc520549906"></a><a name="_Toc495288945"></a><a name="_Toc486904766"><span
+lang=EN-GB>4.3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Not Understood Exception Propositions</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>The same set of “<i>Not Understood
+Exception Propositions</i>” as in the </span><span lang=EN-GB style='font-family:
+Courier'>FIPA-Agent-Management</span><span lang=EN-GB> ontology is used in the </span><span
+lang=EN-GB style='font-family:Courier'>FIPA-Message-Buffering</span><span
+lang=EN-GB> ontology (see [FIPA00023]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc8442088"></a><a name="_Toc521897180"></a><a
+name="_Toc520549907"></a><a name="_Toc495288946"></a><a name="_Toc486904767"></a><a
+name="_Toc485644260"></a><a name="_Toc485124561"></a><a name="_Toc484872208"><span
+lang=EN-GB>4.3.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Refusal Exception Propositions</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>The same set of “<i>Refusal Exception
+Propositions</i>” as defined in the </span><span lang=EN-GB style='font-family:
+Courier'>FIPA-Agent-Management</span><span lang=EN-GB> ontology is used in </span><span
+lang=EN-GB style='font-family:Courier'>FIPA-Message-Buffering</span><span
+lang=EN-GB> ontology (see [FIPA00023]). In addition, the </span><span
+lang=EN-GB style='font-family:Courier'>FIPA-Message-Buffering</span><span
+lang=EN-GB> ontology defines the propositions given below.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=216 valign=top style='width:2.25in;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Communicative
+  Act</span></b></p>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>refuse</span></p>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>FIPA-Message-Buffering</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=288><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=216 valign=top style='width:2.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Predicate
+  symbol</span></b></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Arguments</span></b></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=216 valign=top style='width:2.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>size-value-too-large</span></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>String</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The
+  agent has requested more buffer space than the MB allows for one agent</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=216 valign=top style='width:2.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>forward-time-too-long</span></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The
+  agent has requested too long </span><span lang=EN-GB style='font-family:Courier'>forward-time</span><span
+  lang=EN-GB> timeout.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=216 valign=top style='width:2.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>keeptime-too-long</span></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>The
+  agent has requested too long </span><span lang=EN-GB style='font-family:Courier'>keep-time</span><span
+  lang=EN-GB style='font-family:Helvetica'> timeout.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=216 valign=top style='width:2.25in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>force-buffering-not-supported</span></p>
+  </td>
+  <td width=198 valign=top style='width:148.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>The
+  agent has requested message buffering even if it is reachable, but the MB
+  does not support this functionality </span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc8442089"></a><a name="_Toc521897181"></a><a
+name="_Toc520549908"></a><a name="_Toc495288947"></a><a name="_Toc486904768"></a><a
+name="_Toc485640841"><span lang=EN-GB>4.3.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Failure Exception Propositions</span></a></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Communicative
+  Act</span></b></p>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>failure</span></p>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>FIPA-Message-Buffering</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=288><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Predicate
+  symbol</span></b></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Arguments</span></b></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>internal-error</span></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>String</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>See
+  [FIPA00023].</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>allocation-failed</span></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>String</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The
+  allocating a buffer space failed; the string identifies failure reason.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>forwarding-failed</span></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>String</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The
+  forwarding a message failed; the string identifies failure reason.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>unknown-identifier</span></p>
+  </td>
+  <td width=204 valign=top style='width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+  <td width=288 valign=top style='width:3.0in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The </span><span
+  lang=EN-GB style='font-family:Courier'>buffer-space-identifier</span><span
+  lang=EN-GB> is not known.</span></p>
+  </td>
+ </tr>
+</table>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc8442090"></a><a name="_Toc521897182"></a><a
+name="_Toc520549909"><span lang=EN-GB>5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>References</span></a></h1>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00014]      </span><span
+lang=EN-GB>FIPA Nomadic Application Support Specification<span
+style='color:black'>. Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier'>http://www.fipa.org/specs/fipa00014/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00023]      </span><span
+lang=EN-GB>FIPA Agent Management Specification<span style='color:black'>. Foundation
+for Intelligent Physical Agents, 2000. </span></span><span lang=EN-GB
+style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00023/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00067]      </span><span
+lang=EN-GB>FIPA Agent Message Transport Service Specification<span
+style='color:black'>. Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00067/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc8442091"></a><a name="_Toc521897183"></a><a
+name="_Toc520549910"><span lang=EN-GB>6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Annex A — Informative Examples</span></a></h1>
+
+<h2><a name="_Toc8442092"></a><a name="_Toc521897184"></a><a
+name="_Toc520549911"><span lang=EN-GB>6.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Support for Disconnected Mode</span></a><span
+lang=EN-GB> </span></h2>
+
+<p class=MsoNormal><span lang=EN-GB>This example shows how the Message
+Buffering Service may support the disconnected mode of operation. The message
+flow is illustrated in the <i>Figure 4</i>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [1]: The agent <i>dummy</i> (located at
+a mobile device) is receiving messages from agents located at the fixed
+network.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [2] </span><span lang=EN-GB
+style='font-family:Courier'>request</span><span lang=EN-GB>: In order to be
+sure that no message is lost during a possible disconnection, the agent <i>dummy</i>
+applies to the Message Buffer to buffer the messages if it cannot be reached.
+The agent <i>dummy</i> requests a buffer space for 100 messages, with a state
+expiration timeout of 120 seconds:</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(request </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://helluli.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name message-buffer</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://buffer.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :ontology FIPA-Message-Buffering</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :language fipa-sl0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :protocol fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (action (agent-identifier :name message-buffer) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (reserve-buffer</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (buffer-space-description </span></p>
+
+<p class=MsoHeader style='margin-left:.75in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>:max-messages 100 </span></p>
+
+<div>
+
+<table cellspacing=0 cellpadding=0 hspace=0 vspace=0 width=739 height=375>
+ <tr>
+  <td valign=top align=left height=375 style='padding-top:0in;padding-right:
+  1.7in;padding-bottom:0in;padding-left:1.7in'>
+  <p class=MsoCaption><span lang=EN-GB><img width=395 height=331
+  src="XC00092B_files/image002.gif"></span></p>
+  <p class=MsoCaption><span lang=EN-GB>&nbsp;</span></p>
+  <p class=MsoCaption><b><span lang=EN-GB>Figure 2:</span></b><span lang=EN-GB>
+  Support for Disconnected Mode</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<br clear=ALL>
+
+<p class=MsoHeader style='margin-left:1.25in'><span lang=EN-GB
+style='font-family:Courier'>:keep-time 120)</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (destination :address http://helluli.com/acc))))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [3] </span><span lang=EN-GB
+style='font-family:Courier'>agree</span><span lang=EN-GB>: The Message Buffer
+agrees to reserve a buffer space:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(agree</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name message-buffer</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://buffer.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://helluli.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :ontology FIPA-Message-Buffering</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :language fipa-sl0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :protocol fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    ((action (agent-identifier :name message-buffer) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (reserve-buffer</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (buffer-space-description </span></p>
+
+<p class=MsoHeader style='margin-left:.75in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>:max-messages 100 </span></p>
+
+<p class=MsoHeader style='margin-left:1.25in'><span lang=EN-GB
+style='font-family:Courier'>:keep-time 120)</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (destination :address http://helluli.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>       true))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [4] </span><span lang=EN-GB
+style='font-family:Courier'>inform</span><span lang=EN-GB>: The Message Buffer
+informs the agent <i>dummy</i> that buffer space is reserved with an identifier
+</span><span lang=EN-GB style='font-family:Courier'>buffer-3</span><span
+lang=EN-GB>:</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(inform</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name message-buffer</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://buffer.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://helluli.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :ontology FIPA-Message-Buffering</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :language fipa-sl0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :protocol fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (result </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (action (agent-identifier :name message-buffer) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (reserve-buffer</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>          (buffer-space-description </span></p>
+
+<p class=MsoHeader style='margin-left:.75in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>  :max-messages 100 </span></p>
+
+<p class=MsoHeader style='margin-left:1.25in'><span lang=EN-GB
+style='font-family:Courier'>  :keep-time 120)</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>          (destination :address http://helluli.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (buffer-space-identifier :id buffer-3))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [5]: Messages coming from the fixed
+network are still forwarded to the agent <i>dummy</i>:</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Messages [6] and [7]: During a disconnection
+(when the agent <i>dummy</i> cannot be reached anymore) the messages are
+buffered.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [8] </span><span lang=EN-GB
+style='font-family:Courier'>request</span><span lang=EN-GB>: The agent <i>dummy</i>
+requests the Message Buffer to forward all the buffered messages:</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(request </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://helluli.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name message-buffer</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://buffer.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :ontology FIPA-Message-Buffering</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :language fipa-sl0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :protocol fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (action (agent-identifier :name message-buffer) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (forward</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (buffer-space-identifier :id buffer-3)</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (destination :address http://helluli.com/acc))))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [9] </span><span lang=EN-GB
+style='font-family:Courier'>agree</span><span lang=EN-GB>: The Message Buffer
+agrees:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(agree </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name message-buffer</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://buffer.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://helluli.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :ontology FIPA-Message-Buffering</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :language fipa-sl0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :protocol fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    ((action (agent-identifier :name message-buffer) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (forward</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (buffer-space-identifier :id buffer-3)</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (destination :address http://helluli.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      true))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>    </span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [10]: A new message arrives from the
+fixed network. The Message Buffer does not forward this message until all the
+messages are forwarded from the buffer in order to preserve message ordering.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+lang=EN-GB>Messages [11] and [12]: The Message Buffer forwards the messages
+([6] and [7]) that were buffered while the agent <i>dummy</i> was unreachable. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>11.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+lang=EN-GB>Message [13] </span><span lang=EN-GB style='font-family:Courier'>inform</span><span
+lang=EN-GB>: The Message Buffer informs the agent <i>dummy</i> that all
+messages are now forwarded:</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(inform </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name message-buffer</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://buffer.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://helluli.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :ontology FIPA-Message-Buffering</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :language fipa-sl0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :protocol fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (done (action (agent-identifier :name message-buffer) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (forward</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (buffer-space-identifier :id buffer-3)</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (destination :address http://helluli.com/acc)))))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>12.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+lang=EN-GB>Message [14]: Finally, the Message Buffer forwards the message [10]
+to the agent <i>dummy</i>.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:12.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h2><a name="_Toc8442093"></a><a name="_Toc521897185"></a><a
+name="_Toc520549912"><span lang=EN-GB>6.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Support for Roaming</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>This example shows how the Message Buffer
+may support roaming from one Message Buffer to another. In this example, the
+agent changes its transport address. The message flow is illustrated in <i>Figure
+5</i>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [1]: The agent <i>dummy</i> (located at
+a mobile device) is receiving messages from agents located at the fixed
+network.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [2] </span><span lang=EN-GB
+style='font-family:Courier'>request</span><span lang=EN-GB>: The agent <i>dummy
+</i>applies to the MB<sub>1</sub> (located at </span><span lang=EN-GB
+style='font-family:Courier'>helluli.com</span><span lang=EN-GB>) to buffer the
+messages in the case of disconnection:</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(request </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://helluli.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name message-buffer1</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://buffer.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :ontology FIPA-Message-Buffering</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :language fipa-sl0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :protocol fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (action (agent-identifier :name message-buffer1) </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (reserve-buffer</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (buffer-space-description </span></p>
+
+<p class=MsoHeader style='margin-left:.75in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>:max-messages 100 </span></p>
+
+<p class=MsoHeader style='margin-left:1.25in'><span lang=EN-GB
+style='font-family:Courier'>:keep-time 120)</span></p>
+
+<div>
+
+<table cellspacing=0 cellpadding=0 hspace=0 vspace=0 width=576 height=402>
+ <tr>
+  <td valign=top align=left height=402 style='padding-top:0in;padding-right:
+  0in;padding-bottom:0in;padding-left:0in'>
+  <p class=MsoCaption><span lang=EN-GB><img width=477 height=347
+  src="XC00092B_files/image003.gif"></span></p>
+  <p class=MsoCaption><span lang=EN-GB>&nbsp;</span></p>
+  <p class=MsoCaption><b><span lang=EN-GB>Figure 3:</span></b><span lang=EN-GB>
+  Roaming from one Message Buffer to Another</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<br clear=ALL>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>        (destination :address http://helluli.com/acc))))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message [3] </span><span lang=EN-GB
+style='font-family:Courier'>agree</span><span lang=EN-GB> and Message [4] </span><span
+lang=EN-GB style='font-family:Courier'>inform</span><span lang=EN-GB>: The MB<sub>1</sub>
+agrees and informs that buffer space is set up (with </span><span lang=EN-GB
+style='font-family:"Courier New"'>buffer-space-identifier</span><span
+lang=EN-GB> is </span><span lang=EN-GB style='font-family:"Courier New"'>foo1</span><span
+lang=EN-GB>).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Messages [5] and [6]: The MB<sub>1</sub> buffers
+incoming messages while the agent <i>dummy</i> is unreachable.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The agent <i>dummy</i> establishes a new
+connection to the fixed network, but using a different access node. At the same
+time, the agent <i>dummy</i> changes its transport address. Let us assume that
+the new address is </span><span lang=EN-GB style='font-family:Courier'>wap://helluli.com/acc</span><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Messages [7] and [7’] </span><span lang=EN-GB
+style='font-family:Courier'>request</span><span lang=EN-GB>: The agent <i>dummy</i>
+requests the MB<sub>1</sub> to forward all the buffered messages to its new
+address (the message goes though the MB<sub>2</sub>):</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>(request </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :sender </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name dummy</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence wap://helluli.com/acc))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :receiver (set</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (agent-identifier </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :name message-buffer1</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      :addresses (sequence http://buffer.com/acc)))</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :ontology FIPA-Message-Buffering</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :language fipa-sl0</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :protocol fipa-request</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>  :content </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>    (action </span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (agent-identifier :name message-buffer1)</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>      (forward</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>         (buffer-space-identifier :id foo1)</span></p>
+
+<p class=MsoHeader style='margin-left:.25in'><span lang=EN-GB style='font-family:
+Courier'>         (destination :address wap://helluli.com/acc))))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Messages [8] and [8’] </span><span lang=EN-GB
+style='font-family:Courier'>agree</span><span lang=EN-GB>: The MB<sub>1 </sub>agrees
+(through the MB<sub>2</sub>).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Messages [9], [9’], [10], [10’]: The MB<sub>1 </sub>sends
+the buffered messages (through the MB<sub>2</sub>).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Messages [11] and [11’] </span><span lang=EN-GB
+style='font-family:Courier'>inform</span><span lang=EN-GB>: The MB<sub>1 </sub>informs
+that all the buffered messages are forwarded.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+lang=EN-GB>Messages [12], [12’], [12’’]: The MB<sub>1</sub> will forward all
+the messages to the new address until the </span><span lang=EN-GB
+style='font-family:Courier'>forward-time</span><span lang=EN-GB> timeout
+expires.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[1]</span></span></span></span></a><span
+lang=EN-GB> Detecting connectivity is an implementation issue. One possibility
+is using the Monitor Agent as specified in [FIPA00014].</span></p>
+
+</div>
+
+<div id=ftn2>
+
+<p class=MsoFootnoteText><a href="#_ftnref2" name="_ftn2" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[2]</span></span></span></span></a><span
+lang=EN-GB> While both of these parameters are optional, a valid </span><span
+lang=EN-GB style='font-family:Courier'>destination</span><span lang=EN-GB>
+object should contain at least one parameter</span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

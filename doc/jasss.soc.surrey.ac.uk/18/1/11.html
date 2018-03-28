@@ -1,0 +1,757 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html> <head> 
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<meta name="DC.Title" content="A Survey of Agent Platforms"> 
+<meta name="DC.Creator" content="Kalliopi Kravari and Nick Bassiliades"> 
+<meta name="DC.Creator.Address" content="kkravari@csd.auth.gr"> 
+<meta name="DC.Subject" content="Intelligent Agents, Multi-Agent Systems, Agent Platforms"> 
+<meta name="DC.Description" content="From computer games to human societies, many natural and artificial phenomena can be represented as multi-agent systems. Over time, these systems have been proven a really powerful tool for modelling and understanding phenomena in fields, such as economics and trading, health care, urban planning and social sciences. However, although, intelligent agents have been around for years, their actual implementation is still in its early stages. Since the late nineties many agent platforms have been developed. Some of them have already been abandoned whereas others continue releasing new versions. On the other hand, the agent-oriented research community is still providing more and more new platforms. This vast amount of platform options leads to a high degree of heterogeneity. Hence, a common problem is how people interested in using multi-agent systems should choose which platform to use in order to benefit from agent technology. This decision was usually left to word of mouth, past experiences or platform publicity, lately however people depend on solid survey articles. To date, in most cases multi-agent system surveys describe only the basic characteristics of a few representatives without even providing any classification of the systems themselves. This article presents a comparative up-to-date review of the most promising existing agent platforms that can be used. It is based on universal comparison and evaluation criteria, proposing classifications for helping readers to understand which agent platforms broadly exhibit similar properties and in which situations which choices should be made."> 
+<meta name="DC.Publisher" content="JASSS"> 
+<meta name="DC.Date" content="2015-01-31"> 
+<meta name="DC.Type" content="Text.Article"> 
+<meta name="DC.Format" content="text/html"> 
+<meta name="DC.Identifier" content="http://jasss.soc.surrey.ac.uk/18/1/11.html"> 
+<meta name="DC.Source" content="2014:71:2"> 
+<meta name="DC.Language" content="en"> 
+<meta name="DC.Rights" content="JASSS@soc.surrey.ac.uk">
+<title>A Survey of Agent Platforms</title>
+<link rel="stylesheet" href="/styles/jasssarticle.css" type="text/css">
+<link rel="stylesheet" href="/styles/SpryCollapsiblePanel.css" type="text/css">
+<script src="/scripts/SpryCollapsiblePanel.js" type="text/javascript"></script>
+</head> 
+<body>
+<div id="header">
+	<span class="copyright">&copy;<a href="/admin/copyright.html">Copyright JASSS</a></span><p>
+	<a href="../../JASSS.html"><img src="/gifs/JASSSMed.GIF" width="189" height="76" border="0" alt="JASSS logo"></a>
+	<p><img src="/gifs/bar.gif" width="100%" height="3" alt="----"> 
+        <span
+   class="Z3988" 
+   title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rfr_id=http%3A%2F%2Fjasss.soc.surrey.ac.uk%2F18%2F1%2F11.html&amp;rft.genre=article&amp;rft.atitle=A+Survey+of+Agent+Platforms&amp;rft.jtitle=Journal+of+Artificial+Societies+and+Social+Simulation&amp;rft.stitle=JASSS&amp;rft.issn=1460-7425&amp;rft.date=2015&amp;rft.volume=18&amp;rft.issue=1&amp;rft.pages=11&amp;rft.aufirst=Kalliopi&amp;rft.aulast=Kravari&amp;rft.au=Bassiliades%2C+Nick"> </span>
+	<p class="artauthor"><a href="http://jasss.soc.surrey.ac.uk/18/1/11/kravari.html">Kalliopi Kravari</a> and <a href="http://jasss.soc.surrey.ac.uk/18/1/11/kravari.html">Nick Bassiliades</a></a> (2015)<p class="artaffil">Dep. of Informatics, Aristotle University of Thessaloniki, Greece</p>
+<p class="arttitle">
+	A Survey of Agent Platforms
+	<p class="artlocation"><i>Journal of Artificial Societies and Social Simulation</i> <b>18</b> (1)  11<br>
+	&lt;http://jasss.soc.surrey.ac.uk/18/1/11.html&gt;<br><span class="artdoi">DOI: 10.18564/jasss.2661</span></p>
+	<p class="artdates">
+	Received: 22-Jun-2014
+	&nbsp;&nbsp;&nbsp;Accepted: 20-Sep-2014
+	&nbsp;&nbsp;&nbsp;Published: 31-Jan-2015
+<hr>
+</div>
+<div class="content">
+<!-- draws and processes the tools menu for a JASSS article
+	NG 13 April 2011
+-->
+<script language="javascript" type="text/javascript">
+<!--
+
+function validate() {
+	if (document.tellafriend.name.value.length==0) {
+		alert("Please enter your name");
+		document.tellafriend.name.focus();
+		return false;
+	}
+	if (!echeck(document.tellafriend.email.value)) {
+		alert("Please enter your valid email address");
+		document.tellafriend.email.focus();
+		return false;
+	}
+	if (!echeck(document.tellafriend.fmail1.value)) {
+		alert("Please enter a valid colleague's email address");
+		document.tellafriend.fmail1.focus();
+		return false;
+	}
+	document.tellafriend.submit()
+	return true;
+}
+
+function validate1() {
+	if (!echeck(document.alert_confirm.email.value)) {
+		alert("Please enter your valid email address");
+		return false;
+	}
+	document.alert_confirm.submit()
+	return true;
+}
+
+/**
+ * DHTML email validation script. Courtesy of SmartWebby.com (http://www.smartwebby.com/dhtml/)
+ */
+
+function echeck(str) {
+
+		if ((str==null)||(str=="")){
+				return false
+			}
+
+		var at="@"
+		var dot="."
+		var lat=str.indexOf(at)
+		var lstr=str.length
+		var ldot=str.indexOf(dot)
+		if (str.indexOf(at)==-1){
+		   return false
+		}
+
+		if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){
+		   return false
+		}
+
+		if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+		    return false
+		}
+
+		 if (str.indexOf(at,(lat+1))!=-1){
+		    return false
+		 }
+
+		 if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+		    return false
+		 }
+
+		 if (str.indexOf(dot,(lat+2))==-1){
+		    return false
+		 }
+		
+		 if (str.indexOf(" ")!=-1){
+		    return false
+		 }
+
+ 		 return true					
+	}
+
+function resizeText(multiplier) {
+  if (document.body.style.fontSize == "") {
+    document.body.style.fontSize = "1.0em";
+  }
+  document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.2) + "em";
+  return false;
+}
+
+/* implement the show/hide link for the sidebar panel */
+
+function hidePanel() {
+		var panel = document.getElementById('tools');
+        var icon = document.getElementById('toolsicon');
+        if (panel.style.display=="none") {
+        	panel.style.display = "block";
+        	icon.style.display = "none";
+        }
+        else {
+        	panel.style.display = "none";
+        	icon.style.display = "block";
+        }      	
+}
+
+//-->	
+</script>
+
+<div id="toolsicon" style="display: none;">
+			<a href="#" onClick="hidePanel()">Show<br>tools</a>
+</div>	
+
+<div class="tools" id="tools">
+
+	<div class="menu">
+		
+		<div class="title">
+			<span style="float:right;"><a href="#" onClick="hidePanel()" style="font-size:90%">Hide</a></span><br> 
+			<b>Article Tools</b>
+		</div>
+	
+		<div class="content">
+	
+			<div class="panel">
+				<a href="#" title="Decrease font size" onclick="resizeText(-1)" style="font-size: smaller">Smaller</a>
+				Text
+				<a href="#" title="Increase font size" onclick="resizeText(1)" style="font-size: larger">Bigger</a>
+			</div>  
+			
+			<!-- see http://www.addthis.com/ -->
+			
+			<script type="text/javascript">
+				var addthis_config = {
+	     		ui_cobrand: "JASSS"
+				}
+			</script>
+			
+			<div class="panel">
+				Bookmark: 
+				<div class="addthis_toolbox addthis_default_style" style="padding:5px;">
+					<a class="addthis_button_preferred_1"></a>
+  					<a class="addthis_button_preferred_2"></a>
+  					<a class="addthis_button_preferred_3"></a>
+<!--  				<a class="addthis_button_citeulike"></a> -->
+<!-- 				<a class="addthis_button_delicious"></a> -->
+<!-- 				<a class="addthis_button_digg"></a> -->
+				    <a class="addthis_button_facebook"></a>
+				    <a class="addthis_button_linkedin"></a>
+				    <a class="addthis_button_reddit"></a>
+				    <a class="addthis_button_researchgate"></a>
+				    <a class="addthis_button_stumbleupon"></a>
+				    <a class="addthis_button_xing"></a>
+				    <a class="addthis_button_twitter"></a>
+				    <a class="addthis_button_baidu"></a>
+				    <a class="addthis_button_orkut"></a>
+				</div>
+			</div>
+			
+			<script type="text/javascript" src="http://s7.addthis.com/addthis_widget.js"></script>
+		
+			<div id="CollapsiblePanel1" class="CollapsiblePanel">
+		        <div class="CollapsiblePanelTab"> Export citation</div>       
+		      	<div class="CollapsiblePanelContent">
+					<ul>
+			   		 	<li><a href="/admin/export_citation.php?format=plain">Plain text</a></li>
+			   		 	<li><a href="/admin/export_citation.php?format=html">HTML</a></li>
+			   		 	<li><a href="/admin/export_citation.php?format=bibtex">BibTex</a></li>
+						<li><a href="/admin/export_citation.php?format=ris">Reference Manager</a></li>
+				   		<li><a href="/admin/export_citation.php?format=ris">EndNote</a></li>
+			    		<li><a href="/admin/export_citation.php?format=ris">ProCite</a></li>
+		   		 	</ul>
+		         </div>  
+			</div>    
+			<script type="text/javascript"> var CollapsiblePanel1 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel1");</script>
+			
+			
+			<div id="CollapsiblePanel2" class="CollapsiblePanel">
+		        <div class="CollapsiblePanelTab"> Articles with the same author(s)</div>
+		        <div class="CollapsiblePanelContent">
+	  				<ul> 
+		  				<li><a href="/admin/get_similar_jasss.php?search=author">From JASSS</a></li>
+					    <li><a href="/admin/get_similar_google.php?search=author">From Google Scholar</a></li>
+				    </ul>
+	             </div>  
+	 		</div>   
+			<script type="text/javascript"> var CollapsiblePanel2 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel2");</script>
+			
+			<div id="CollapsiblePanel3" class="CollapsiblePanel">
+	        	<div class="CollapsiblePanelTab">Articles with similar keywords</div>
+	          	<div class="CollapsiblePanelContent">
+	          	<ul>
+				    <li><a href="/admin/get_similar_jasss.php?search=kw">From JASSS</a></li>
+				    <li><a href="/admin/get_similar_google.php?search=kw">From Google Scholar</a></li>	
+				 </ul>
+	           </div>  
+	    	</div>    
+			<script type="text/javascript"> var CollapsiblePanel3 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel3");</script>
+			
+			<div id="CollapsiblePanel4" class="CollapsiblePanel">
+	        	<div class="CollapsiblePanelTab"> Articles citing this article</div>
+	        	<div class="CollapsiblePanelContent">
+	          		<ul>
+					    <li><a href="/admin/get_similar_jasss.php?search=cite">From JASSS</a></li>
+						<li><a href="/admin/get_similar_google.php?search=cite">From Google Scholar</a></li>
+					</ul>
+	        	</div>  
+	    	</div>  
+			<script type="text/javascript"> var CollapsiblePanel4 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel4");</script>
+			
+			<div id="getPDF" class="panel">
+				<a href="/admin/get_pdf.php" >Download this article in PDF format</a>
+	    	</div>  
+			
+			<div id="CollapsiblePanel5" class="CollapsiblePanel">
+	        	<div class="CollapsiblePanelTab">Alert me when this article is cited within JASSS</div>                   			
+         		<div class="CollapsiblePanelContent">
+					<form name="alert_confirm" action="/admin/alert_confirm.php" onSubmit="return validate1()" method="post">
+						Your email:
+						<input size="20" name="email" maxlength="45">
+						<input type=hidden name="refurl" value="/18/1/11.html"> 
+						<center> <input onClick="validate1();" type="button" value="Submit"> </center>
+					</form>
+             	</div>  
+	     	</div> 
+			<script type="text/javascript"> var CollapsiblePanel5 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel5");</script>
+			
+			<div id="CollapsiblePanel6" class="CollapsiblePanel">
+	        	<div class="CollapsiblePanelTab">Send a link to this article to a colleague</div>
+				<div class="CollapsiblePanelContent">
+					<form name="tellafriend" action="/admin/tellafriend.php" onSubmit="return validate()" method="post">
+						Your name:<br>
+						<input size="20" name="name" maxlength="45"><br>
+						Your email:<br>
+						<input size="20" name="email" maxlength="45"><br>
+						Your colleague&rsquo;s email:<br>
+						<input size="20" name="fmail1" maxlength="50"><br>
+						<input type=hidden name="refurl" value="/18/1/11.html"> 
+						<center> <input onClick="validate();" type="button" value="Submit"> </center>
+					</form>
+				</div>  
+	    	</div>   
+			<script type="text/javascript"> var CollapsiblePanel6 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel6");</script>
+	
+		</div>	<!-- content -->
+	</div> <!-- menu -->
+</div> <!-- tools -->
+              
+
+
+
+    <div class="article">
+<h3><img src="/gifs/bullet.gif" alt="* ">Abstract</h3>
+<dl><dt><dd>
+From computer games to human societies, many natural and artificial phenomena can be represented as multi-agent systems. Over time, these systems have been proven a really powerful tool for modelling and understanding phenomena in fields, such as economics and trading, health care, urban planning and social sciences. However, although, intelligent agents have been around for years, their actual implementation is still in its early stages. Since the late nineties many agent platforms have been developed. Some of them have already been abandoned whereas others continue releasing new versions. On the other hand, the agent-oriented research community is still providing more and more new platforms. This vast amount of platform options leads to a high degree of heterogeneity. Hence, a common problem is how people interested in using multi-agent systems should choose which platform to use in order to benefit from agent technology. This decision was usually left to word of mouth, past experiences or platform publicity, lately however people depend on solid survey articles. To date, in most cases multi-agent system surveys describe only the basic characteristics of a few representatives without even providing any classification of the systems themselves. This article presents a comparative up-to-date review of the most promising existing agent platforms that can be used. It is based on universal comparison and evaluation criteria, proposing classifications for helping readers to understand which agent platforms broadly exhibit similar properties and in which situations which choices should be made.
+<p><dt><b>Keywords:</b><dd>
+Intelligent Agents, Multi-Agent Systems, Agent Platforms
+</dl><hr noshade>
+<h3><img align=Bottom src="/gifs/bullet.gif" width="23" height="23" alt="* "> Introduction
+</h3><dl compact>
+<!-- Body here -->
+<dt><b><a name="1.1">1.1</a></b><dd>Multi-agent systems can be used to investigate phenomena or solve problems that are difficult or impossible for humans to study and solve. Actually, they can be used in numerous research areas, from computer games and informatics to economics and social sciences (<a href="#schurr2005">Schurr et al. 2005</a>; <a href="#sun2004">Sun &amp; Naveh 2004</a>; <a href="#kaminka2004">Kaminka 2004</a>; <a href="#kubera2010">Kubera et al. 2010</a>). Many natural and artificial phenomena can be and in some cases they are represented by multi-agent systems. Hence over time, multi-agent systems have been proven a really powerful tool for modelling and understanding phenomena in fields, such as economics and trading, health care, urban planning and social sciences. Besides, a multi-agent system can be represented as a society, similar to a human society, consisting of entities with characteristics similar to humans, for instance in terms of autonomy and intelligence.
+       
+<p><dt><b><a name="1.2">1.2</a></b><dd>However, although, intelligent agents have been around for years, their actual implementation is still in its early stages. To this end, the research community has developed a variety of agent platforms in the last two decades; either general purpose or oriented to a specific domain of use. Some of them have already been abandoned whereas others continue releasing new versions. At the same time, the agent-oriented research community is still providing more and more new platforms. All these platforms are as diverse as the community of people who use them. With so many of them available, the choice of which one is best suited for each case was usually left to word of mouth, past experiences or platform publicity. However lately, people interested in using multi-agent systems in order to benefit from agent technology depend increasingly on solid survey articles.
+
+<p><dt><b><a name="1.3">1.3</a></b><dd>To date, in most cases multi-agent system surveys describe only some basic characteristics of a few representatives using a variety of criteria, which usually are different from survey to survey (e.g. <a href="#gupta2011">Gupta &amp; Kansal 2011</a>; <a href="#bordini2006">Bordini et al. 2006</a>; <a href="#nguyen2002">Nguyen et al. 2002</a>; <a href="#nikolai2009">Nikolai &amp; Madey 2009</a>). Moreover, in most cases surveys so far do not provide case classification, in other words the representatives are just described without indicating relations among them. This article presents a comparative up-to-date review of the existing agent platforms. Our intention was to include and examine the entire continuum of agent platforms that are available today. For this purpose we omitted platforms that can no longer be used and we focused on platforms that are still available even if their development progress is stopped. Hence, we ended up in twenty four agent platforms.
+
+<p><dt><b><a name="1.4">1.4</a></b><dd>Moreover, this article in order to provide a thorough and comparable description of each agent platform proposes a list of solid universal criteria, which could be used in future work in the field. Additionally, it proposes a number of classifications for helping readers to understand which agent platforms broadly exhibit similar properties and in which situations which choices should be made. For this purpose, we studied as much information as possible for each platform, such as published papers, manual, wikis, websites and forums. Moreover, since each platform is designed for different purposes and domains, we obtained an instance of each platform, installed it and tried to use it following its tutorials and examples, rather than an identical use case that could be proven unfair, in order to study how easy it is to learn and use it. Based on the above research and personal experience, we were finally able to evaluate and compare the platforms. The rest of the article is organized as follows: The next section presents the evaluation criteria in detail. The third section presents a comparative review of agent platforms, also detailing their aspects, while the fourth proposes a number of potential classifications for these agent platforms. Finally, the final section presents the conclusion remarks of the article.
+
+</dl><h3><IMG ALIGN=Bottom SRC="/gifs/bullet.gif" WIDTH="23" HEIGHT="23" ALT="* ">Comparison and Evaluation Criteria</h3><dl compact>
+
+<dt><b><a name="2.1">2.1</a></b><dd>The high heterogeneity and the vast amount of the available agent platforms is a fact. Hence, choosing the right or most suitable platform for a given problem is still a challenge for the developer. The lack of concrete standardized criteria is an open issue in agent-oriented research that tends to acquire just individual solutions. However, having universal criteria for platform evaluation and comparison has significant advantages. Not only the outcomes of different surveys will be comparable but also comparisons and evaluations during a time interval will reveal the progress that has been or has been not achieved even if the surveys are conducted by different researchers.
+
+<p><dt><b><a name="2.2">2.2</a></b><dd>In order to present the platforms in a uniform way that facilitates comparison among them and drawing of significant conclusions, we studied past relevant surveys in order to elicit the most used criteria even if they are not explicitly mentioned as such (e.g. <a href="#gupta2011">Gupta &amp; Kansal 2011</a>; <a href="#bordini2006">Bordini et al. 2006</a>; <a href="#nguyen2002">Nguyen et al. 2002</a>; <a href="#nikolai2009">Nikolai &amp; Madey 2009</a>). Additionally, we extensively studied the research disciplines proposed in Braubach et al. (<a href="#braubach2008">2008</a>) where the authors propose a generic universal criteria catalog for heterogeneous agent development artifacts based on existing standards such as ISO 9126 and ISO 9241 (<a href="#iso/iec2001">ISO/IEC 9126-1:2001</a>; <a href="#iso9241-110:2006">ISO9241-110:2006</a>). Based on the above, in this article we present a concrete guideline proposal for comparing and evaluating agent platforms which is directly related to the scope of platform operation and the quality of each platform's provided aspect. This guideline proposal is composed of five discrete criteria categories, namely platform properties, usability, operating ability, pragmatics and security management. Each of these categories has a number of subcriteria that indicate a detailed analysis of each agent platform. 
+
+<p><dt><b><a name="2.3">2.3</a></b><dd>Platform properties refer to the primary concepts of the platform, describing its basic characteristics that are necessary for a potential user/developer in order to understand the scope and the domain of the platform. Usability refers to the suitability of the platform for the construction of agent applications. Operating ability refers to all these aspects that are taken into account during execution. In other words, operating ability indicates the quality of the platform. Pragmatics refers to external factors that are neither related to the construction nor to the operation of the platform. More specific, pragmatics indicates whether the platform can be used in practice or not. Finally, security management refers to security issues, indicating if the platform is considered safe or not. Table <a href="#table1">1</a> presents the criteria categories along with their subcriteria.
+
+<a name=table1></a><table border=0 width="80%">
+<tr><td colspan=5><hr noshade></td></tr>
+<tr><td colspan=5><b>Table 1: </b>Evaluation criteria</td></tr>
+<tr><td colspan=5><hr noshade></td></tr>
+<tr valign=top align=left><td><b><i>Platform properties</i></b></td><td><b><i>Usability</i></b></td><td><b><i>Operating ability</i></b></td><td><b><i>Pragmatics</i></b></td><td><b><i>Security management</i></b></td></tr>
+<tr valign=top align=left><td>Developer/<br>Organization</td><td>Simplicity</td><td>Performance</td><td>Installation</td><td>End-to-end security</td></tr>
+<tr valign=top align=left><td>Primary domain</td><td>Learnability</td><td>Stability</td><td>User support</td><td>Fairness</td></tr>
+<tr valign=top align=left><td>Latest release</td><td>Scalability</td><td>Robustness</td><td>Popularity</td><td>Platform security</td></tr>
+<tr valign=top align=left><td>License</td><td>Standard compatibilities</td><td>Programming languages</td><td>Technological maturity</td><td></td></tr>
+<tr valign=top align=left><td>Open source</td><td>Communication</td><td>Operating systems</td><td>Cost</td><td><tr><td colspan=5><hr noshade></td></tr>
+</table>
+
+
+
+	
+<p><dt><b><a name="2.4">2.4</a></b><dd>The platform properties and the pragmatics are quite understandable and so there is no need for further explanations. The usability criteria group is also easily understood. Simplicity indicates how simple and understandable the underlying platform's mechanisms are and how easy it is for a developer to use that platform. Learnability refers to whether the platform's mechanisms are familiar to the developer community or not. It is obvious that familiar mechanisms need less or no effort to learn and use while unfamiliar mechanisms could be time and effort consuming. Scalability refers to a potential critical issue; whether the platform can handle varying problem sizes or not. Standard compatibilities, next, are some of the most important features in an agent platform. Standard compliance is an indicator of the platform's flexibility; the more standards a platform adopts the more likely it is to cooperate with other applications. Communication is also important since it refers to the type of intra- and/or inter-platform messaging. 
+
+<p><dt><b><a name="2.5">2.5</a></b><dd>Operating ability criteria group, on the other hand, refers to more specialized issues. Performance is about how efficient is the platform with respect to space and time operations. In this context, we studied how fast the agent communication is and the running speed of the platform itself. Values ranges from average meaning tolerable but not really fast to high meaning excellent platform performance. Stability is about how stable is the platform in case of long term execution whereas robustness is about how tolerant it is in case of breakdowns. In this study, it is a value representing a percentage (based on all available data) of platform crashes, ranging again from average to high (many crashes). Next, programming languages and operating systems indicate the languages and the systems that are used in or by the platform, respectively. Finally, security management is an important aspect in multi-agent systems. The classic case of end-to-end security refers to those protocols and mechanisms that protect access to the platform while fairness refers to those special mechanisms that guarantee equal treatment. Additionally, platform security requires more mechanisms in order to ensure platform security and smooth operation. In this study, platform secure ranges from weak to good, high and strong (in this order) indicating the amount of security mechanisms that are available in the platform.
+
+<p><dt><b><a name="2.6">2.6</a></b><dd>However, classic security issues are not enough for the agent community, an aspect that gains more and more attention by the research community is the trust management in the multi-agent systems. Trust models help agents to decide who to trust, encouraging trustworthy behavior and deterring dishonest participation by providing the mean through which reputation and ultimately trust among the community can be quantified (<a href="#resnick2000">Resnick et al. 2000</a>). In other words, in is not only important to have a secure agent platform but it is required the community acting in that platform to be able to use trust mechanisms. To date, only the EMERALD platform has adopted such mechanisms that support a variety of logics and languages. Hence, we do not include trust management as a separate criterion, although it is important, since it is not supported by the platforms yet except EMERALD.
+       
+<p><dt><b><a name="2.7">2.7</a></b><dd>Moreover, this article goes one step further. Web is moving towards a true global village, connecting people and knowledge. Eventually, the idea of building a network of content stored on the web making it possible for machines to understand meaning of data and to satisfy requests from people by using it, will came true to its full potential. The semantic wave embraces four stages of internet growth (<a href="#mills2009">Mills 2009</a>). The first, Web of Shared Information (Web 1.0), was about connecting information while the current second, Social Web (Web 2.0), is about connecting people. The third, Semantic Web (Web 3.0), has already started and it is about connecting knowledge while the fourth, Web of Intelligence (Web 4.0), will come later and it is about connecting intelligences in a ubiquitous web where both people and things can reason and communicate together. 
+       
+<p><dt><b><a name="2.8">2.8</a></b><dd>The growing complexity and extent of this knowledge however creates the need for more powerful tools. Hence, the question is if agent platforms are or will be able to deal with that. In other words, the question is if agents build in these platforms will be able to traverse the web and integrate the available knowledge. So far, there is no survey, to the best of our knowledge, that takes into account this issue. To this end, we used all the available data to discover which platforms support technologies, semantic web technologies in particular, that can be used for this purpose. As a result, we present an additional classification subsection, where agent platforms are classified according to the degree of their support in semantic web technologies.
+
+</dl><h3><IMG ALIGN=Bottom SRC="/gifs/bullet.gif" WIDTH="23" HEIGHT="23" ALT="* ">Agent Platforms Overview</h3><dl compact>
+
+<dt><b><a name="3.1">3.1</a></b><dd>This article, as already mentioned, is intended to examine the agent platforms that are available today. Hence, this section presents the platforms that are still available even if their development progress is stopped. An interesting question raises here; why platforms that are no longer developed should be included? The answer is that there are some important and popular agent platforms that are still used by the community though their developers have stopped their maintenance. However, these cases are just a minority. Almost all the presented platforms are active with stable releases. In this context, we have chosen twenty four cases including pure agent platforms, agent frameworks and agent-based simulators because all of them are or will be able to act like agent platforms. Hence, next, each of them is presented in alphabetic order while pivot tables complete the overview at the end of the section. 
+
+<p><dt><b><a name="3.2">3.2</a></b><dd>First of all, we present the <b><i>Agent Factory</i></b> Framework (<a href="#russell2011">Russell et al. 2011</a>), an open source collection of tools, platforms, and languages that support the development and deployment of multi-agent systems. The framework is broadly split into two parts: support for deploying agents on laptops, desktops, and servers; and support for deploying agents on constrained devices such as mobile phones and sensors. The former support is realized through Agent Factory Standard Edition (AFSE), and the latter support is realized through Agent Factory Micro Edition (AFME), a light weight agent platform that has been designed to work with J2ME-CDLC MIDP2.0. Currently, Agent Factory is used in a number of projects including mobile computing, robotics and other, e.g. the MiRA- Mixed Reality Agents project (<a href="#holz2011">Holz et al. 2011</a>). 
+
+<p><dt><b><a name="3.3">3.3</a></b><dd><b><i>AgentBuilder</i></b> (<a href="#acronymics2004">Acronymics Inc. 2004</a>) is another case of traditional agent platform that can be used in numerous simulation cases. It is a KQML-compliant integrated tool suite for constructing intelligent software agents, allowing software developers with no background in intelligent systems or intelligent agent technologies to quickly and easily build intelligent agent-based applications. KQML is a language and protocol for communication among software agents and knowledge-based systems (<a href="#finin1994">Finin et al. 1994</a>). AgentBuilder is quite simple and easy to use even for unfamiliar users is its main advantage. AgentBuilder is an agent platform based on the notions of mental states, which comply with the agent language Agent-0 proposed by Shoham. 
+
+<p><dt><b><a name="3.4">3.4</a></b><dd><i><b>AgentScape</b></i> (<a href="#oey2010">Oey et al. 2010</a>) agent platform, on the other hand, has been designed to support the design and deployment of large-scale, heterogeneous, secure, distributed agent systems. Within AgentScape, agents are active entities that reside within locations, communicate with each other and access services. The AgentScape approach to management is targeted to scalability and autonomicity. The above allows AgentScape to be a promising agent platform for studies including large-scale distribution and heterogeneity.
+
+<p><dt><b><a name="3.5">3.5</a></b><dd><i><B>AGLOBE</B></i> (<a href="#sislak2006">Sislak et al. 2006</a>) is an agent platform designed for testing experimental scenarios featuring agents' position and communication inaccessibility, but it can be also used without these extended functions. The platform provides functions for the residing agents, such as communication infrastructure, store, directory services, migration function, deploy service, etc. Communication in AGLOBE is very fast and the platform is relatively lightweight. AGLOBE platform is not yet fully compliant with the Foundation for Intelligent Physical Agents' (FIPA) specifications, e.g. it does not support inter-platform communication (communication with other agent platforms is not supported yet). This interoperability is not necessary when developing closed systems, where no communication outside these systems is required (e.g. agent-based simulations). AGLOBE is sponsored by US Air Force and it is suitable for real-world simulations including both static (e.g. towns, ports, etc.) and mobile units (e.g. vehicles). In such case the platform can be started in extended version with Geographical Information System (GIS) services and Environment Simulator (ES) agent. 
+
+<p><dt><b><a name="3.6">3.6</a></b><dd><i><b>AnyLogic</b></i> (<a href="#borshchev2013">Borshchev 2013</a>) is a multi-method simulation platform that supports not only agent-based general purpose simulations but also it supports system dynamics and process-centric (discrete event) modeling. The flexibility of its modeling language enables the user to capture the complexity and heterogeneity of business, economic and social systems to any desired level of detail. AnyLogic's graphical interface, tools, and library objects allow quick modeling of diverse areas such as manufacturing and logistics, business processes, human resources, consumer and patient behavior. Additionally, the object-oriented model design paradigm supported by AnyLogic provides for modular, hierarchical, and incremental construction of large models. It is probably one the best solutions for simulation if there is no extensive coding background to start with.
+
+<p><dt><b><a name="3.7">3.7</a></b><dd><i><b>Cormas</b></i> (<a href="#le2007">Le Page &amp; Bousquet 2007</a>) is a simulation platform based on the VisualWorks programming environment which allows the development of applications in the Smalltalk object oriented language. Cormas pre-defined entities are Smalltalk generic classes from which, by specialization and refining, users can create specific entities for their own model. It facilitates the construction of agent-based models and the design, monitoring and analyzing of agent-based simulation scenarios. Cormas was primarily oriented towards the representation of interactions between stakeholders about the use of natural renewable resources. Cormas is very popular and it provides some interesting features for real life applications. 
+
+<p><dt><b><a name="3.8">3.8</a></b><dd><i><b>Cougaar</b></i> (<a href="#helsinger2005">Helsinger &amp; Wright 2005</a>) follows a Cognitive Agent Architecture and is a DARPA-funded open-source agent platform that offers special support for logistics problems. The platform is not FIPA-compliant. It facilitates the development of agent based applications that are complex, large scale and distributed. Cougaar's cognitive architecture is another promising feature since the majority of the available platforms does not handle with such issues despite the fact that they are important for simulating human thinking and acting.
+
+<p><dt><b><a name="3.9">3.9</a></b><dd><i><b>CybelePro</b></i> (<a href="#cybelepro2006">CybelePro 2006</a>) provides its users with a robust high-performance infrastructure for rapid development and deployment of large-scale, high performance agent-based systems. CybelePro is the commercial release of Intelligent Automation Inc. Cybele agent infrastructure has been used extensively by the government, industry and academia for applications such as military logistics, modeling, simulation and control of air and ground transportation, communication networks and a development of open systems.
+
+<p><dt><b><a name="3.10">3.10</a></b><dd><i><B>EMERALD</B></i> (<a href="#kravari2010">Kravari et al. 2010</a>) is a quite new implementation framework for interoperable reasoning among agents in the Semantic Web, by using third-party trusted reasoning services. The advantage is that every agent can exchange its position justification arguments with any other agent, without the need for all agents to conform to the same kind of rule paradigm or logic. It is built on top of JADE (presented below) and it is fully FIPA-compliant. Moreover, EMERALD was involved in cross-community interoperations such as in Kravari et al. (<a href="#kravari2012">2012</a>). It supports a variety of logics and languages such as Java, JESS, XML, RDF, RuleML and Prolog. Additionally, EMERALD is the only agent platform that supports trust and reputation mechanisms in order to support trustworthiness and efficient decision making in the multi-agent system. It has been used so far in studying how agents act on behalf of their users in cases such as trading.
+       
+<p><dt><b><a name="3.11">3.11</a></b><dd><i><B>GAMA</B></i> (<a href="#grignard2013">Grignard et al. 2013</a>) is a simulation platform, which aims at providing field experts, modelers, and computer scientists with a complete modeling and simulation development environment for building spatially explicit multi-agent simulations. It provides capabilities concerning the tight combination of 3D visualization, GIS data management, and multi-level modeling. G A M A supports capabilities for building large models written in the GAML agent-oriented language, with an optional graphical modeling tool to support rapid design and prototyping. Users are also able to instantiate agents from GIS data, databases or files and executing large-scale simulations (up to millions of agents) and design rich user interfaces that support deep inspections on agents, user-controlled actions and panels, and multiple multi-layer 2D/3D displays and aspects.
+       
+<p><dt><b><a name="3.12">3.12</a></b><dd><i><b>INGENIAS Development Kit</b></i> (<a href="#gomez-sanz2004">G&#243;mez-Sanz &amp; Pav&#243;n 2004</a>) is a tool for developing Multi-Agent Systems that supports the INGENIAS methodology. INGENIAS promotes a model driven approach based on the use of INGENME (INGENIAS Meta-Editor), a tool for producing self-contained visual editors for languages defined using an XML file. INGENME is used to produce a visual editor for Multi-Agent Systems where the systems' specifications are processed to produce programming code, html documents, or other required products. INGENIAS addresses roundtrip engineering issues as well, by a concrete folder structure and a code-to-specification information migration tool.
+
+<p><dt><b><a name="3.13">3.13</a></b><dd><i><B>JACK</B></i> (<a href="#winikoff2005">Winikoff 2005</a>) is a mature, cross-platform environment for building, running and integrating commercial-grade multi-agent systems. It is built on a sound logical foundation: BDI (Beliefs/Desires/Intentions). BDI is an intuitive and powerful abstraction that allows developers to manage the complexity of the problem. It is entirely written in Java. JACK is highly portable and runs on anything from smartphones to high-end, multi-CPU servers. Its Java foundation means that JACK can run with multiple threads across multiple CPUs, has platform-independent GUIs, and is easily integrated with third-party libraries. JACK is the leading edge commercial BDI-agent toolkit that uses an intuitive language that extends the Java programming language with certain agent specific keywords. It is the first platform with support for capabilities and generic team structures, but does not yet support the FIPA-specifications.
+
+<p><dt><b><a name="3.14">3.14</a></b><dd><i><B>JADE</B></i> (<a href="#bellifemine2003">Bellifemine et al. 2003</a>) is a framework fully implemented in Java. It simplifies the implementation of multi-agent systems through a middle-ware that claims to comply with the FIPA specifications. The agent platform can be distributed across machines (which do not even need to share the same OS) and the configuration can be controlled via a remote GUI. The configuration can be even changed at run-time by moving agents from one machine to another one, as and when required. JADE is completely implemented in the Java language and the minimal system requirement is version 1.2 of JAVA (the run time environment or the JDK), hence it can be adapted to be used on devices with limited resources such as mobile phones. JADE is industry-driven and currently it is the most popular FIPA-compliant agent platform in academic and industrial community. It is a free, open source and stable software distributed by Telecom Italia, the copyright holder. Since May 2003, a JADE Board has been created that supervisions the management of the JADE Project. Currently the JADE Board lists 5members: Telecom Italia, Motorola, Whitestein Technologies AG, Profactor GmbH, and France Telecom R&amp;D.
+
+<p><dt><b><a name="3.15">3.15</a></b><dd><i><b>Jadex</b></i> BDI Agent System (<a href="#braubach2013">Braubach &amp; Pokahr 2013</a>) follows the Belief Desire Intention (BDI) model and facilitates easy intelligent agent construction with sound software engineering foundations. It allows for programming intelligent software agents in XML and Java. The Jadex research project is conducted by the Distributed Systems and Information Systems Group at the University of Hamburg. The developed software framework is available under GNUs LGPL license, and is continuously evolving. Jadex has been put into practice in the context of several research, teaching, and industrial application scenarios some of which are described in its website. It has been used to build applications in different domains such as simulation, scheduling, and mobile computing. For example, Jadex was used to develop a multi-agent application for negotiation of treatment schedules in hospitals (<a href="#braubach2014">Braubach et al. 2014</a>). In the latest version, the programming model of Jadex is based on the notion of active components that are conceptually based on SCA (service component architecture). This allows for designing an application as hierarchical decomposition of components interacting via services and thus helps making complexity controllable. Active components extend SCA in several directions as it is intended to work in concurrent and dynamic distributed systems. 
+
+<p><dt><b><a name="3.16">3.16</a></b><dd><i><B>JAMES II</B></i> (Java Framework for Modeling &amp; Simulation) (<a href="#himmelspach2007">Himmelspach &amp; Uhrmacher 2007</a>) is a pure Java framework, with no external dependencies, for modeling and simulation. It is based on a plug-in architecture, shortly named "plug'n simulate", built for maximum flexibility. The architecture allows any modeling and simulation technique to be integrated into the framework via plug-ins. Moreover, it provides a solid foundation of abstractions, algorithms, workflows and tools, focusing on efficiency. In this context, JAMES II provides hundreds of plug-ins, allowing automatic selection from the available list of alternative plug-ins. Yet, it does not enforce any reuse of its parts but allows its users to choose which functionality they want to apply. Additionally, JAMES II allows full control over experiment types and parameters, such as parameter scans, optimization, computation end policies and number of replications. So far, JAMES II has already been used in various application areas, from small notebook-based to large cluster-based experiments.
+       
+<p><dt><b><a name="3.17">3.17</a></b><dd>Although <i><B>JAS</B></i>, the Java Agent-Based Simulation Library (<a href="#sonnessa2004">Sonnessa 2004</a>) is not a pure agent platform, it acts as such. JAS is a simulation toolkit specifically designed for agent-based simulation modeling. JAS is a Java clone of the Swarm library originally developed by researchers at the Santa Fe Institute. The core of the JAS toolkit is its simulation engine based on the standard discrete event simulation paradigm, which allows time to be managed with high precision and from a multi-scale perspective. Many features of JAS are based on open source third party libraries. The core of the JAS toolkit is represented by the simulation engine. It is based on the standard discrete-event simulation paradigm, which allows managing the time with high precision and multi-scale perspective. Thanks to its discrete-event engine, JAS represents a good compromise in simulating both discrete and continues agent-based models. This makes JAS a generic discrete-event simulation toolkit, also useful to realize process workflow simulation models.
+
+<p><dt><b><a name="3.18">3.18</a></b><dd><i><b>Jason</b></i> (<a href="#bordini2007">Bordini et al. 2007</a>) is a fully-fledged interpreter for an extended version of AgentSpeak, a BDI agent-oriented logic programming language, and is implemented in Java. It implements the operational semantics of that language, and provides a platform for the development of multi-agent systems, with many user-customizable features. Using SACI, a multi-agent system can be distributed over a network effortlessly. Some of the features available in Jason are: speechact based inter-agent communication, annotations on plan labels, fully customizable (in Java) selection functions, trust functions, and overall agent architecture, straightforward extensibility by means of user-defined internal actions, a clear notion of a multi-agent environment, which is implemented in Java (this can be a simulation of a real environment).
+
+<p><dt><b><a name="3.19">3.19</a></b><dd><i><B>JIAC</B></i>, the Java-based Intelligent Agent Componentware (<a href="#hirsch2009">Hirsch et al. 2009</a>) is a Java-based agent architecture and framework that eases the development and the operation of large-scale, distributed applications and services. The framework supports the design, implementation, and deployment of software agent systems. The entire software development process, from conception to deployment of full software systems, is supported by JIAC. It also allows for the possibility of reusing applications and services, and even modifying them during runtime. The focal points of JIAC are distribution, scalability, adaptability and autonomy.
+
+<p><dt><b><a name="3.20">3.20</a></b><dd><b><i>MaDKit</i></b>, the Multiagent Development Kit (<a href="#gutknecht2000">Gutknecht &amp; Ferber 2000</a>) is an open source modular and scalable multiagent platform written in Java and built upon the AGR (Agent/Group/Role) organizational model. MaDKit agents play roles in groups and thus create artificial societies. It provides general agent facilities, such as lifecycle management, message passing and distribution, and allows high heterogeneity in agent architectures and communication languages, and various customizations.
+       
+<p><dt><b><a name="3.21">3.21</a></b><dd><i><b>NetLogo</b></i> (<a href="#tisue2004">Tisue &amp; Wilensky 2004</a>) is a multi-agent programmable modeling environment. It is designed, in the spirit of the Logo programming language, to be "low threshold and no ceiling". NetLogo enables exploration of emergent phenomena; it comes with an extensive models library including models in a variety of domains, such as economics, biology, physics, chemistry, psychology and system dynamics. It can be used both by teachers in the education community and domain experts without a programming background to model related phenomena. Beyond exploration, NetLogo allows authoring of new models and modification of existing models. It also powers HubNet, a technology that uses NetLogo to run participatory simulations in the classroom. For instance, in a participatory simulation, a whole group of users takes part in enacting the behavior of a system, e.g. acting as a separate, independent agent. NetLogo is very popular in the education and research community.
+       
+<p><dt><b><a name="3.22">3.22</a></b><dd><i><B>MASON</B></i> (<a href="#luke2005">Luke et al. 2005</a>) is a fast, easily extendable, discrete event multi-agent simulation toolkit in Java acting as a simulation agent platform. It was designed to serve as the basis for a wide range of multi-agent simulation tasks ranging from swarm robotics to machine learning to social complexity environments. MASON carefully delineates between model and visualisation, allowing models to be dynamically detached from or attached to visualisers and enabling check pointing. 
+       
+<p><dt><b><a name="3.23">3.23</a></b><dd>The <i><b>Repast</b></i> Suite (<a href="#north2007">North et al. 2007</a>), on the other hand, is a family of advanced, free, and open source agent-based modeling and simulation platforms that have collectively been under continuous development for over 14 years. RePast was initially developed at the University of Chicago's Social Science Research Computing Lab. It is a widely used free and open-source, cross-platform, agent-based modeling and simulation toolkit, providing multiple implementations in several languages and many built-in adaptive features. Currently, there are two editions of Repast and several ways to write models in each edition aiming at satisfying many different kinds of users and cases.
+
+<p><dt><b><a name="3.24">3.24</a></b><dd><i><b>SeSAm</b></i> (Shell for Simulated Agent Systems) (<a href="#klugl2009">Klugl 2009</a>) is a generic environment for the development and simulation of Multi-Agent models. Its main focus is to enable scientists to construct models by visual programming, since the agent paradigm is very intuitive, especially when modeling societies. The main entities in a SeSAm model are agents, resources and the world. There are some aspects that allow scaling up for complex multi-agent simulation: user functions, user features and model-specific data types. Simulation runs may be executed for different situations and aggregated into so called experiments. Also model instrumentation for gathering and visualizing simulation data is possible via the so called analysis. Before starting a simulation run, the model is compiled using standard optimization techniques from compiler theory, thus the power of visual programming was combined with fast execution. SeSAm was first a Lisp-based system but since 2000 it is redesigned and implemented in Java.
+
+<p><dt><b><a name="3.25">3.25</a></b><dd>Finally, <i><b>Swarm</b></i> (<a href="#swarmfest2012">Swarmfest 2012</a>) the first re-usable software tool created for agent based modeling and simulation was developed at the Santa Fe Institute in 1994. Swarm was specifically designed for artificial life applications and studies of complexity. It was originally written in Objective-C, and then ported to Java. Swarm was originally developed for multi agent simulation of complex adaptive systems.
+
+<p><dt><b><a name="3.26">3.26</a></b><dd>Next, five tables present the values of the described criteria (section 2) for each of the above agent platforms. The basic characteristics of each platform are presented in Table <a href="#table2">2</a>. The usability characteristics of each agent platform are presented in Table <a href="#table3">3</a>, whereas Table <a href="#table4">4</a> presents the operating characteristics. Pragmatics of each agent platform is presented in Table <a href="#table5">5</a> while, finally, information about the security management in each agent platform is presented in Table <a href="#table6">6</a>. The two last columns of that table include also the main publication of each agent platform and a download link for quick reference and space saving purposes. 
+
+
+<a name=table2></a><table border=0 width="80%">
+<tr><td colspan=7><hr noshade></td></tr>
+<tr><td colspan=7><b>Table 2: </b>Platform properties</td></tr>
+<tr><td colspan=7><hr noshade></td></tr>
+<tr valign=top align=left><td><b><i>Platform properties</i></b></td></tr>
+<tr valign=top align=left><td></td><td><b>Name</b></td><td><b>Developer/<br>Organization</b></td><td><b>Primary domain</b></td><td><b>Latest release</b></td><td><b>License</b></td><td><b>Open source</b></td></tr>
+<tr valign=top align=left><td>1.</td><td><b>Agent Factory</b></td><td>University College Dublin</td><td>General purpose agent based</td><td>AFSE v3.0<br>(07/12/2011)</td><td>LGPL</td><td>Yes</td></tr>
+<tr valign=top align=left><td>2.</td><td><b>AgentBuilder</b></td><td>Acronymics Inc.</td><td>General purpose multi-agent systems</td><td>AgentBuilder Lite/Pro v1.4 (06/11/2004)</td><td>Proprietary, Discounted academic licenses</td><td>No</td></tr>
+<tr valign=top align=left><td>3.</td><td><b>AgentScape</b></td><td>Delft University of Technology</td><td>Large-scale distributed agent systems</td><td>AgentScape2 M5 (r6343)<br>(05/07/2013)</td><td>BSD</td><td>Yes</td></tr>
+<tr valign=top align=left><td>4.</td><td><B>AGLOBE</B></td><td>Czech Technical<br>University</td><td>Real-world simulations</td><td>AGLOBE v5.5<br>(01/01/2008)</td><td>LGPL</td><td>Yes</td></tr>
+<tr valign=top align=left><td>5.</td><td><b><i>AnyLogic</i></b></td><td>The AnyLogic Company</td><td>General purpose, distributed agent based simulations</td><td>AnyLogic 7.0.1<br>(14/04/2014)<br></td><td>Commercial, Academic license</td><td>No</td></tr>
+<tr valign=top align=left><td>6.</td><td><b>Cormas</b></td><td>Cirad research centre</td><td>Natural resources and agent-based simulations</td><td>Cormas2014<br>(12/02/2014)</td><td>GPL</td><td>Yes</td></tr>
+<tr valign=top align=left><td>7.</td><td><b>Cougaar</b></td><td>Raytheon BBN Technologies</td><td>Complex, large-scale, distributed applications</td><td>Cougaar 12.7<br>(27/07/2012)</td><td>Cougaar Open Source License COSL</td><td>Yes</td></tr>
+<tr valign=top align=left><td>8.</td><td><b>CybelePro</b></td><td>Intelligent Automation Inc</td><td>Large-scale distributed systems</td><td>CybelePro 3.1.3<br>(2013)</td><td>Commercial, Academic license</td><td>No</td></tr>
+<tr valign=top align=left><td>9.</td><td><B>EMERALD</B></td><td>LPIS Group, Aristotle University of Thessaloniki</td><td>Distributed applications composed of autonomous entities</td><td>EMERALD v1.0 (23/01/2012)</td><td>LGPL</td><td>Yes</td></tr>
+<tr valign=top align=left><td>10.</td><td><b><I>GAMA</I></b></td><td>IRD/UPMC International Research Unit UMMISCO</td><td>Large-scale distributed spatially explicit agent-based simulations</td><td>GAMA 1.6.1<br>(06/10/2013)</td><td>GPL</td><td>Yes</td></tr>
+<tr valign=top align=left><td>11.</td><td><b>INGENIAS Development Kit</b></td><td>grasia! research group, Universidad Complutense Madrid</td><td>General purpose agent based</td><td>IDK 2.8<br>(04/11/2013)</td><td>CC By-SA<br>GPLv2</td><td>Yes</td></tr>
+<tr valign=top align=left><td>12.</td><td><B>JACK</B></td><td>AOS</td><td>Dynamic and complex environments</td><td>JACK 5.5<br>(02/09/2010)</td><td>Commercial,<br>Academic license</td><td>No</td></tr>
+<tr valign=top align=left><td>13.</td><td><B>JADE</B></td><td>Telecom Italia<br>(TILAB)</td><td>Distributed applications composed of autonomous entities</td><td>Jade 4.3.1 (06/12/2013)</td><td>LGPLv2</td><td>Yes</td></tr>
+<tr valign=top align=left><td>14.</td><td><b>Jadex</b></td><td>Hamburg University</td><td>Distributed applications composed of autonomous BDI entities</td><td>Jadex 2.4.0<br>(20/12/2013)</td><td>LGPLv2</td><td>Yes</td></tr>
+<tr valign=top align=left><td>15.</td><td><B>JAMES II</B></td><td>University of Rostock</td><td>General purpose agent based modeling and simulations</td><td>JAMES II 0.9.6<br>(06/06/2014)</td><td>JAMESLIC<br>(compatible with GPL)</td><td>Yes</td></tr>
+<tr valign=top align=left><td>16.</td><td><B>JAS</B></td><td>Universit&#224; di Torino</td><td>General purpose agent based</td><td>JAS 1.2.1<br>(18/03/2006)</td><td>LGPL;<br>3<sup><sup>rd</sup></sup> party licenses</td><td>Yes</td></tr>
+<tr valign=top align=left><td>17.</td><td><b>Jason</b></td><td>Universities of Rio Grande do Sul and Santa Catarina</td><td>Distributed applications composed of autonomous BDI entities</td><td>Jason 1.4.0<br>(12/12/2013)</td><td>LGPLv2</td><td>Yes</td></tr>
+<tr valign=top align=left><td>18.</td><td><B>JIAC</B></td><td>Technische Universit&#228;t Berlin</td><td>Large-scale distributed systems</td><td>JIACv 5.1.5<br>(12/12/2014)</td><td>Apache License V2</td><td>Yes</td></tr>
+<tr valign=top align=left><td>19.</td><td><b>MaDKit</b></td><td>Institut universitaire de technologie</td><td>Multi-agent systems with agent based simulation</td><td>MaDKit 5.0.5<br>(21/04/2014)</td><td>GPL</td><td>Yes</td></tr>
+<tr valign=top align=left><td>20.</td><td><B>MASON</B></td><td>George Mason University</td><td>Event-driven multiagent simulations</td><td>MASON v17<br>(01/05/2013)</td><td>Academic Free License version 3.0</td><td>Yes</td></tr>
+<tr valign=top align=left><td>21.</td><td><b><i>NetLogo</i></b></td><td>The Center for Connected Learning (CCL)<br>and Computer-Based Modeling, Northwestern University</td><td>Agent-based simulations</td><td>NetLogo 5.0.5  (19/12/2013)</td><td>GPL</td><td>No</td></tr>
+<tr valign=top align=left><td>22.</td><td><b>Repast</b></td><td>University of Chicago</td><td>Agent-based simulations</td><td>Repast Simphony2.1 (12/08/2013)</td><td>New BSD</td><td>Yes</td></tr>
+<tr valign=top align=left><td>23.</td><td><b>SeSAm</b></td><td>&#214;rebro University</td><td>Agent-based simulations</td><td>SeSAm 2.5.1 (02/05/2012)</td><td>LGPL</td><td>Yes</td></tr>
+<tr valign=top align=left><td>24.</td><td><b>Swarm</b></td><td>Swarm Development Group</td><td>General purpose agent based</td><td>Swarm 2.2<br>(12/02/2005)</td><td>GPL</td><td>Yes<tr><td colspan=7><hr noshade></td></tr>
+</table>
+
+
+
+
+<a name=table3></a><table border=0 width="80%">
+<tr><td colspan=7><hr noshade></td></tr>
+<tr><td colspan=7><b>Table 3: </b>Usability overview</td></tr>
+<tr><td colspan=7><hr noshade></td></tr>
+<tr valign=top align=left><td><b><i>Usability</i></b></td></tr>
+<tr valign=top align=left><td></td><td><b>Name</b></td><td><b>Simplicity</b></td><td><b>Learnability</b></td><td><b>Scalability</b></td><td><b>Standard compatibility</b></td><td><b>Communication</b></td></tr>
+<tr valign=top align=left><td>1.</td><td><b>Agent Factory</b></td><td>Simple/Poor in features GUI</td><td>Average </td><td>Good</td><td>Partially FIPA (agent lifecycle)</td><td>HTTP</td></tr>
+<tr valign=top align=left><td>2.</td><td><b>AgentBuilder</b></td><td>Simple/Poor in features GUI</td><td>Easy</td><td>Good</td><td>KQML</td><td>KQML, CORBA and TCP/IP</td></tr>
+<tr valign=top align=left><td>3.</td><td><b>AgentScape</b></td><td>Simple/Poor in features GUI</td><td>Average</td><td>Good</td><td>None known</td><td>Message exchange (platform defined syntax)</td></tr>
+<tr valign=top align=left><td>4.</td><td><B>AGLOBE</B></td><td>Simple/Poor in features GUI</td><td>Easy</td><td>High</td><td>Partially FIPA (ACL), GIS</td><td>ACL<br>no interplatform</td></tr>
+<tr valign=top align=left><td>5.</td><td><b><i>AnyLogic</i></b></td><td>Average (nor simple neither complicated) interface/Rich in features GUI</td><td>Easy</td><td>High</td><td>GIS, 3D capabilities</td><td>Message exchange (platform defined syntax)</td></tr>
+<tr valign=top align=left><td>6.</td><td><b>Cormas</b></td><td>Simple/Some useful for simulation<br>GUI features</td><td>Easy</td><td>Good</td><td>None known</td><td>peer-to-peer</td></tr>
+<tr valign=top align=left><td>7.</td><td><b>Cougaar</b></td><td>Complicated interface/ Some<br>unfamiliar GUI features</td><td>Average</td><td>High</td><td>None known</td><td>Cougaar Message Transport Service (MTS)</td></tr>
+<tr valign=top align=left><td>8.</td><td><b>CybelePro</b></td><td>Average (nor simple neither complicated) interface/ Some useful for simulation<br>GUI features</td><td>Average </td><td>High</td><td>None known</td><td>Message exchange (platform defined syntax)</td></tr>
+<tr valign=top align=left><td>9.</td><td><B>EMERALD</B></td><td>User-friendly, useful GUI, many familiar features (based on JADE platform)</td><td>Easy</td><td>High<br>(on JADE)</td><td>FIPA, Semantic Web standards (see Table 4)</td><td>ACL (Asynchronous)</td></tr>
+<tr valign=top align=left><td>10.</td><td><B>GAMA</B></td><td>Simple/Some useful for simulation<br>GUI features</td><td>Easy</td><td>Good</td><td>FIPA, (GIS, 3D capabilities)</td><td>ACL<br>(GAML messages that represent FIPA ACL messages)</td></tr>
+<tr valign=top align=left><td>11.</td><td><b>INGENIAS Development Kit</b></td><td>Simple/User friendly GUI editor</td><td>Easy</td><td>Good</td><td>AUML</td><td>peer-to-peer</td></tr>
+<tr valign=top align=left><td>12.</td><td><B>JACK</B></td><td>User friendly/ Rich in features GUI</td><td>Easy </td><td>High</td><td>FIPA</td><td>DCI network, TCP/IP</td></tr>
+<tr valign=top align=left><td>13.</td><td><B>JADE</B></td><td>User-friendly, useful GUI, many familiar features</td><td>Easy <br>(many examples)</td><td>High<br></td><td>FIPA,<br>CORBA</td><td>ACL (Asynchronous),<br>MTPs,RMI, IIOP, HTTP, WAP</td></tr>
+<tr valign=top align=left><td>14.</td><td><b>Jadex</b></td><td>User-friendly GUI/Many features</td><td>Average</td><td>High</td><td>FIPA, SOA, WSDL</td><td>HTTP</td></tr>
+<tr valign=top align=left><td>15.</td><td><B>JAMES II</B></td><td>Simple/<br>User friendly GUI editor</td><td>Easy</td><td>High</td><td>None known</td><td>Depend on plug-ins<br>(e.g. via time-stamped messages)</td></tr>
+<tr valign=top align=left><td>16.</td><td><B>JAS</B></td><td>Simple/Poor in features GUI</td><td>Easy</td><td>Average</td><td>Partially FIPA (agent lifecycle), GraphML, XML</td><td>Message exchange (platform defined syntax)</td></tr>
+<tr valign=top align=left><td>17.</td><td><b>Jason</b></td><td>Simple/Some familiar user-friendly GUI features </td><td>Easy</td><td>Good</td><td>Partially FIPA (language)</td><td>speech-act based, KQML</td></tr>
+<tr valign=top align=left><td>18.</td><td><B>JIAC</B></td><td>Average (nor simple neither complicated) interface/ Some useful for distributed systems GUI features</td><td>Average</td><td>High</td><td>None known</td><td>ActiveMQ</td></tr>
+<tr valign=top align=left><td>19.</td><td><b>MaDKit</b></td><td>Complicated  interface (many pop ups)/Rich in features GUI</td><td>Average</td><td>Good</td><td>UML</td><td>peer-to-peer</td></tr>
+<tr valign=top align=left><td>20.</td><td><B>MASON</B></td><td>Complicated  interface/ Useful features for multiple applets</td><td>Average</td><td>Average</td><td>None known</td><td>Message exchange (event-driven, platform defined syntax)</td></tr>
+<tr valign=top align=left><td>21.</td><td><b><i>NetLogo</i></b></td><td>Simple/ Some useful for simulations features</td><td>Easy</td><td>Good</td><td>None known<br>(yet there are extensions for GIS and 3D capabilities)</td><td>Extensions for message exchange (extensions' defined syntax)</td></tr>
+<tr valign=top align=left><td>22.</td><td><b>Repast</b></td><td>Simple/ Limited GUI features </td><td>Easy</td><td>Good</td><td>None known</td><td>peer-to-peer</td></tr>
+<tr valign=top align=left><td>23.</td><td><b>SeSAm</b></td><td>Simple/Rich in features GUI</td><td>Easy</td><td>Good</td><td>None known</td><td>Message exchange (platform defined syntax)</td></tr>
+<tr valign=top align=left><td>24.</td><td><b>Swarm</b></td><td>Complicated  interface/ Limited GUI features</td><td>Average</td><td>Average</td><td>None known</td><td>Message exchange (platform defined syntax)<tr><td colspan=7><hr noshade></td></tr>
+</table>
+
+
+
+
+<a name=table4></a><table border=0 width="80%">
+<tr><td colspan=7><hr noshade></td></tr>
+<tr><td colspan=7><b>Table 4: </b>Operating ability of each agent platform</td></tr>
+<tr><td colspan=7><hr noshade></td></tr>
+<tr valign=top align=left><td><b>Operating ability</b></td></tr>
+<tr valign=top align=left><td></td><td><b>Name</b></td><td><b>Performance</b></td><td><b>Stability</b></td><td><b>Robustness</b></td><td><b>Programming languages</b></td><td><b>Operating systems</b></td></tr>
+<tr valign=top align=left><td>1.</td><td><b>Agent Factory</b></td><td>Good</td><td>Good</td><td>Average</td><td>Java, AFAPL, AgentSpeak</td><td>Any with  JVM</td></tr>
+<tr valign=top align=left><td>2.</td><td><b>AgentBuilder</b></td><td>Good</td><td>Good</td><td>High</td><td>KQML, Java, C,C++</td><td>Windows, Linux, Sun Solaris</td></tr>
+<tr valign=top align=left><td>3.</td><td><b>AgentScape</b></td><td>Good</td><td>Good</td><td>Good</td><td>Java (plus use of XML)</td><td>Any with  JVM</td></tr>
+<tr valign=top align=left><td>4.</td><td><B>AGLOBE</B></td><td>High</td><td>High</td><td>High</td><td>Java</td><td>Any with  JVM</td></tr>
+<tr valign=top align=left><td>5.</td><td><b><i>AnyLogic</i></b></td><td>High</td><td>High</td><td>High</td><td>Java, UML-RT (UML for real time)</td><td>Any with  JVM</td></tr>
+<tr valign=top align=left><td>6.</td><td><b>Cormas</b></td><td>High</td><td>Good</td><td>Good</td><td>SmallTalk</td><td>Win, Linux</td></tr>
+<tr valign=top align=left><td>7.</td><td><b>Cougaar</b></td><td>High</td><td>High</td><td>High</td><td>Java</td><td>Win, Linux</td></tr>
+<tr valign=top align=left><td>8.</td><td><b>CybelePro</b></td><td>High</td><td>High</td><td>High</td><td>Java</td><td>Any with JVM</td></tr>
+<tr valign=top align=left><td>9.</td><td><B>EMERALD</B></td><td>High (on JADE)</td><td>High</td><td>High</td><td>Java, JESS, RuleML, Prolog (plus use of XML, RDF)</td><td>Any with  JVM</td></tr>
+<tr valign=top align=left><td>10.</td><td><B>GAMA</B></td><td>Good</td><td>Good</td><td>Good</td><td>GAML</td><td>Mac OS X, Windows, Linux</td></tr>
+<tr valign=top align=left><td>11.</td><td><b>INGENIAS Development Kit</b></td><td>Good</td><td>Good</td><td>Good</td><td>Java (plus use of XML)</td><td>A Any with  JVM</td></tr>
+<tr valign=top align=left><td>12.</td><td><B>JACK</B></td><td>High</td><td>High</td><td>High</td><td>Java,<br>JACK Agent Language (JAL) (plus use of XML)</td><td>Windows, Macintosh, Unix, generic Java, iPAQ</td></tr>
+<tr valign=top align=left><td>13.</td><td><B>JADE</B></td><td>High<br>(very quick, fast agent communication)</td><td>High</td><td>High</td><td>Java</td><td>Any with  JVM</td></tr>
+<tr valign=top align=left><td>14.</td><td><b>Jadex</b></td><td>High</td><td>Good</td><td>High</td><td>Java (plus use of XML)</td><td>Any with  JVM</td></tr>
+<tr valign=top align=left><td>15.</td><td><B>JAMES II</B></td><td>High</td><td>High</td><td>High</td><td>Java</td><td>Any with  JVM</td></tr>
+<tr valign=top align=left><td>16.</td><td><B>JAS</B></td><td>Good</td><td>Average</td><td>Low</td><td>Java</td><td>Any with  JVM</td></tr>
+<tr valign=top align=left><td>17.</td><td><b>Jason</b></td><td>Good</td><td>High</td><td>Good</td><td>Java, AgentSpeak</td><td>Windows,<br>MacOS,<br>Linux</td></tr>
+<tr valign=top align=left><td>18.</td><td><B>JIAC</B></td><td>High</td><td>High</td><td>High</td><td>Java (plus use of XML)</td><td>Any with  JVM</td></tr>
+<tr valign=top align=left><td>19.</td><td><b>MaDKit</b></td><td>Good</td><td>Good</td><td>Good</td><td>Java, C/C++, Python</td><td>Any with JVM</td></tr>
+<tr valign=top align=left><td>20.</td><td><B>MASON</B></td><td>Good</td><td>Good</td><td>Average</td><td>Java</td><td>Win</td></tr>
+<tr valign=top align=left><td>21.</td><td><b><i>NetLogo</i></b></td><td>Good</td><td>Good</td><td>Average</td><td>NetLogo</td><td>Any with  JVM</td></tr>
+<tr valign=top align=left><td>22.</td><td><b>Repast</b></td><td>High</td><td>High</td><td>High</td><td>Java, C#, C++, Lisp, Prolog, Python</td><td>Any with  JVM</td></tr>
+<tr valign=top align=left><td>23.</td><td><b>SeSAm</b></td><td>Good</td><td>High</td><td>Good</td><td>Java <br>(plus plugin for ontologies)</td><td>Any with JVM</td></tr>
+<tr valign=top align=left><td>24.</td><td><b>Swarm</b></td><td>Average</td><td>Average</td><td>Low</td><td>Java</td><td>Win, Linux<tr><td colspan=7><hr noshade></td></tr>
+</table>
+
+
+
+<a name=table5></a><table border=0 width="80%">
+<tr><td colspan=7><hr noshade></td></tr>
+<tr><td colspan=7><b>Table 5: </b>Pragmatics overview</td></tr>
+<tr><td colspan=7><hr noshade></td></tr>
+<tr valign=top align=left><td><b>Pragmatics</b></td></tr>
+<tr valign=top align=left><td></td><td><b>Name</b></td><td><b>Installation</b></td><td><b>User support</b></td><td><b>Popularity</b></td><td><b>Technological maturity</b></td><td><b>Cost</b></td></tr>
+<tr valign=top align=left><td>1.</td><td><b>Agent Factory</b></td><td>Eclipse plug-in</td><td>Good<br>(docs, mailing list, forum)</td><td>Low </td><td>Stable release,<br>Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>2.</td><td><b>AgentBuilder</b></td><td>Plenty available installers</td><td>Good<br>(Consulting training, example, FAQ, docs, defect reporting, mailing list)</td><td>Medium</td><td>Old but Stable release<br></td><td>AgentBuilder Lite $99<br>AgentBuilder Pro $925-$4,525</td></tr>
+<tr valign=top align=left><td>3.</td><td><b>AgentScape</b></td><td>Installer</td><td>Good<br>(forum, email, docs)</td><td>Low</td><td>Stable release Development status (Active</td><td>Free</td></tr>
+<tr valign=top align=left><td>4.</td><td><B>AGLOBE</B></td><td>Command line usage</td><td>Average<br>(docs, mail contact)</td><td>Medium</td><td>Stable release, Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>5.</td><td><b><i>AnyLogic</i></b></td><td>Installer</td><td>High<br>(extensive documentation and supporting tools)</td><td>Medium</td><td>Stable release, Development status (Active)</td><td>AnyLogic <br>Advanced $6,199<br>Professional $15,800<br>University Researcher License<br>$3,500<br>Educational Licenses<br>$485</td></tr>
+<tr valign=top align=left><td>6.</td><td><b>Cormas</b></td><td>Command line usage</td><td>Good<br>(forum, email, docs)</td><td>Medium</td><td>Latest release beta,<br>Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>7.</td><td><b>Cougaar</b></td><td>Eclipse plug-in</td><td>Good<br>(FAQ, docs, forums, mailing lists)</td><td>Low</td><td>Stable release,<br>Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>8.</td><td><b>CybelePro</b></td><td>Installers</td><td>Good<br>(sales support)</td><td>Low</td><td>Stable release Development status (Active)</td><td>Commercial $1000-$4000,<br>Academic $600-$2400</td></tr>
+<tr valign=top align=left><td>9.</td><td><B>EMERALD</B></td><td>Installer</td><td>Average<br>(documentation, mail contact)</td><td>Low</td><td>Stable release, Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>10.</td><td><B>GAMA</B></td><td>Installer</td><td>Good<br>(forum, email, docs, wiki, social media)</td><td>Low</td><td>Stable release, Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>11.</td><td><b>INGENIAS Development Kit</b></td><td>Command line usage</td><td>Average<br>(docs, mail contact)</td><td>Medium</td><td>Stable release,<br>Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>12.</td><td><B>JACK</B></td><td>Plenty available installers</td><td>High<br>(extensive documentation and supporting tools)</td><td>High</td><td>Stable release Development status (Active)</td><td>Unknown,<br>Free trial version</td></tr>
+<tr valign=top align=left><td>13.</td><td><B>JADE</B></td><td>Command line usage</td><td>High<br>(FAQ, mailing list, defect list, API, docs)</td><td>High (most popular)</td><td>Stable release, Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>14.</td><td><b>Jadex</b></td><td>With the appropriate jar file</td><td>Average<br>(docs, mail contact)</td><td>High</td><td>Stable release, Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>15.</td><td><B>JAMES II</B></td><td>With the appropriate jar file</td><td>Average<br>(docs, wiki, mail contact)</td><td>Medium</td><td>Beta release, Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>16.</td><td><B>JAS</B></td><td>With the appropriate jar file</td><td>Good<br>(API, docs, tutorials, email authors)</td><td>Medium</td><td>Stable release, No longer actively developed</td><td>Free</td></tr>
+<tr valign=top align=left><td>17.</td><td><b>Jason</b></td><td>Windows, MacOS, Linux installers</td><td>High<br>(manual, book, news/mail list, API)</td><td>High</td><td>Stable release, Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>18.</td><td><B>JIAC</B></td><td>With the appropriate jar file</td><td>Good<br>(FAQ, docs, mailing lists)</td><td>Low </td><td>Stable release Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>19.</td><td><b>MaDKit</b></td><td>With the appropriate jar file</td><td>Good<br>(docs, forum, mail contact)</td><td>Medium</td><td>Stable release,<br>Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>20.</td><td><B>MASON</B></td><td>Appropriate file</td><td>Average<br>(documentation, mail contact)</td><td>Medium</td><td>Stable release,<br>Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>21.</td><td><b><i>NetLogo</i></b></td><td>Installer</td><td>Good<br>(FAQ, docs, mail contact, tutorials, examples)</td><td>High</td><td>Stable release Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>22.</td><td><b>Repast</b></td><td>Installers</td><td>Average<br>(docs, mail contact)</td><td>Medium</td><td>Stable release,<br>Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>23.</td><td><b>SeSAm</b></td><td>With the appropriate jar file</td><td>Good<br>(Wiki, docs, documentation)</td><td>Medium</td><td>Stable release,<br>Development status (Active)</td><td>Free</td></tr>
+<tr valign=top align=left><td>24.</td><td><b>Swarm</b></td><td>Appropriate file</td><td>Good<br>(Wiki, docs, mailing lists)</td><td>Medium</td><td>Stable release,<br>Development status (Active)</td><td>Free<tr><td colspan=7><hr noshade></td></tr>
+</table>
+
+
+<a name=table6></a><table border=0 width="80%">
+<tr><td colspan=7><hr noshade></td></tr>
+<tr><td colspan=7><b>Table 6: </b>Security management overview</td></tr>
+<tr><td colspan=7><hr noshade></td></tr>
+<tr valign=top align=left><td><b>Security management</b></td></tr>
+<tr valign=top align=left><td></td><td><b>Name</b></td><td><b>End-to-end security</b></td><td><b>Fairness</b></td><td><b>Platform security</b></td><td><b>Publication</b></td><td><b>Available at</b></td></tr>
+<tr valign=top align=left><td>1.</td><td><b>Agent Factory</b></td><td>Signature and Encryption</td><td>No</td><td>Average</td><td><a href="#russell2011">Russell et al. 2011</a></td><td><a href="#agent2014">Agent Factory 2014</a></td></tr>
+<tr valign=top align=left><td>2.</td><td><b>AgentBuilder</b></td><td>No</td><td>No</td><td>Weak</td><td><a href="#acronymics2004">Acronymics Inc. 2004</a></td><td><a href="#agentbuilder2014">AgentBuilder 2014</a></td></tr>
+<tr valign=top align=left><td>3.</td><td><b>AgentScape</b></td><td>Authentication, private logging</td><td>Yes</td><td>Good</td><td><a href="#oey2010">Oey et al. 2010</a></td><td><a href="#agentscape2014">AgentScape 2014</a></td></tr>
+<tr valign=top align=left><td>4.</td><td><B>AGLOBE</B></td><td>None known</td><td>No</td><td>Strong (closed system)</td><td><a href="#sislak2006">Sislak et al. 2006</a></td><td><a href="#aglobe2014">AGLOBE 2014</a></td></tr>
+<tr valign=top align=left><td>5.</td><td><b><i>AnyLogic</i></b></td><td>Authentication</td><td>Yes</td><td>Strong (closed system)</td><td><a href="#borshchev2013">Borshchev 2013</a></td><td><a href="#anylogic2014">AnyLogic 2014</a></td></tr>
+<tr valign=top align=left><td>6.</td><td><b>Cormas</b></td><td>No</td><td>No</td><td>Strong (closed system)</td><td><a href="#le2007">Le Page &amp; Bousquet 2007</a></td><td><a href="#cormas2014">Cormas 2014</a></td></tr>
+<tr valign=top align=left><td>7.</td><td><b>Cougaar</b></td><td>Authentication</td><td>No</td><td>High</td><td><a href="#helsinger2005">Helsinger &amp; Wright 2005</a></td><td><a href="#cougaar2014">Cougaar 2014</a></td></tr>
+<tr valign=top align=left><td>8.</td><td><b>CybelePro</b></td><td>Authentication</td><td>Yes</td><td>Good</td><td><a href="#cybelepro2006">CybelePro 2006</a></td><td><a href="#cybelepro2014">CybelePro 2014</a></td></tr>
+<tr valign=top align=left><td>9.</td><td><B>EMERALD</B></td><td>Signature and Encryption, HTTPS support</td><td>Yes</td><td>Strong</td><td><a href="#kravari2010">Kravari et al. 2010</a></td><td><a href="#emerald2014">EMERALD 2014</a></td></tr>
+<tr valign=top align=left><td>10.</td><td><B>GAMA</B></td><td>No</td><td>No</td><td>Average</td><td><a href="#grignard2013">Grignard et al. 2013</a></td><td><a href="#gama2014">GAMA 2014</a></td></tr>
+<tr valign=top align=left><td>11.</td><td><b>INGENIAS Development Kit</b></td><td>Not yet</td><td>No</td><td>Average</td><td><a href="#gomez-sanz2004">G&#243;mez-Sanz &amp; Pav&#243;n 2004</a></td><td><a href="#ingenias2014">INGENIAS Development Kit 2014</a></td></tr>
+<tr valign=top align=left><td>12.</td><td><B>JACK</B></td><td>Authentication Domain protection mechanisms utilized in JDK </td><td>Yes</td><td>Strong</td><td><a href="#winikoff2005">Winikoff 2005</a></td><td><a href="#jack2014">JACK 2014</a></td></tr>
+<tr valign=top align=left><td>13.</td><td><B>JADE</B></td><td>Signature and Encryption, HTTPS support</td><td>Yes</td><td>Strong (User authentication, Jaas API)</td><td><a href="#bellifemine2003">Bellifemine et al. 2003</a></td><td><a href="#jade2014">JADE 2014</a></td></tr>
+<tr valign=top align=left><td>14.</td><td><B>JADEX</B></td><td>powerful and flexible security mechanism based on shared secrets</td><td>No</td><td>Strong</td><td><a href="#braubach<br>&2013">Braubach<br>& Pokahr 2013</a></td><td><a href="#jadex2014">JADEX 2014</a></td></tr>
+<tr valign=top align=left><td>15.</td><td><B>JAMES II</B></td><td>None known</td><td>No</td><td>Average</td><td><a href="#himmelspach2007">Himmelspach &amp; Uhrmacher 2007</a></td><td><a href="#james2014">JAMES II 2014</a></td></tr>
+<tr valign=top align=left><td>16.</td><td><B>JAS</B></td><td>None known</td><td>No</td><td>Weak</td><td><a href="#sonnessa2004">Sonnessa 2004</a></td><td><a href="#jas2014">JAS 2014</a></td></tr>
+<tr valign=top align=left><td>17.</td><td><b>Jason</b></td><td>Authentication</td><td>No</td><td>Average</td><td><a href="#bordini2007">Bordini et al. 2007</a></td><td><a href="#jason2014">Jason 2014</a></td></tr>
+<tr valign=top align=left><td>18.</td><td><B>JIAC</B></td><td>Not yet</td><td>No</td><td>Average</td><td><a href="#hirsch2009">Hirsch et al. 2009</a></td><td><a href="#jiac2014">JIAC 2014</a></td></tr>
+<tr valign=top align=left><td>19.</td><td><b>MaDKit</b></td><td>Authentication</td><td>No</td><td>Good</td><td><a href="#gutknecht2000">Gutknecht &amp; Ferber 2000</a></td><td><a href="#madkit2014">MaDKit 2014</a></td></tr>
+<tr valign=top align=left><td>20.</td><td><B>MASON</B></td><td>None known</td><td>No</td><td>Average</td><td><a href="#luke2005">Luke et al. 2005</a></td><td><a href="#mason2014">MASON 2014</a></td></tr>
+<tr valign=top align=left><td>21.</td><td><b><i>NetLogo</i></b></td><td>None known</td><td>Yes</td><td>Average</td><td><a href="#tisue2004">Tisue &amp; Wilensky 2004</a></td><td><a href="#netlogo2014">NetLogo 2014</a></td></tr>
+<tr valign=top align=left><td>22.</td><td><b>Repast</b></td><td>None known</td><td>No</td><td>Average</td><td><a href="#north2007">North et al. 2007</a></td><td><a href="#repast2014">Repast 2014</a></td></tr>
+<tr valign=top align=left><td>23.</td><td><b>SeSAm</b></td><td>None known</td><td>No</td><td>Average</td><td><a href="#klugl2009">Kl&#252;gl 2009</a></td><td><a href="#sesam2014">SeSAm 2014</a></td></tr>
+<tr valign=top align=left><td>24.</td><td><b>Swarm</b></td><td>None known</td><td>No</td><td>Weak</td><td><a href="#swarmfest2012">Swarmfest 2012</a></td><td><a href="#swarm2014">Swarm 2014</a><tr><td colspan=7><hr noshade></td></tr>
+</table>
+
+
+
+</dl><h3><IMG ALIGN=Bottom SRC="/gifs/bullet.gif" WIDTH="23" HEIGHT="23" ALT="* ">Agent Platforms Classification</h3><dl compact>
+
+<dt><b><a name="4.1">4.1</a></b><dd>Developers and users need help in order to distinguish which agent platforms broadly exhibit similar properties and to understand in which situations which choices should be made. To this end, this section presents some classifications that answer the most common questions; e.g. which platforms uses the language I need or know, which is the most suitable for my case, etc., based on various classification criteria.
+
+<h4>Programming language</h4>
+<p><dt><b><a name="4.2">4.2</a></b><dd>Programming languages are important because different languages have different implications in terms of expressiveness, ease of programming, portability, and compatibility. Usually, agent platforms are written in C, C++ or Java but there are various programming languages that may be used to program a multi-agent system. Many of these languages were stemmed from a need for specialization and they were created and used in the context of a specific agent platform. Here (Table <a href="#table7">7</a>) we refer only to languages that are used to program a multi-agent system built on top of the platform and not those that were used to program the platform itself. It is worth mentioning that the main programming language adopted by multi-agent systems is Java. Almost 80% of the platforms employ Java as their primary programming language while about 20% of the platforms use C++ to program models and only 10% use C. Mention that we used XML in the classification although it is not a pure programming language since it is used in many simulation cases for knowledge representation and communication purposes. 
+
+<p><dt><b><a name="4.3">4.3</a></b><dd>Hence, whenever the language is criterion for platform selection, the programming language classification presented here could be a useful tool. For instance, if there is a need for a general-purpose, concurrent and object-oriented language with just a few implementation dependencies then platforms using Java should be chosen. On the other hand, if the developing system/simulation should run without external applications (like the Java virtual machine &#8211; JVM) then platforms using C/C++ should be chosen. Moreover, C++ was designed for infrastructure programming hence platforms using it are suitable for that kind of studies, In cases where researchers want to describe what the system should accomplish in terms of the problem domain, rather than how to accomplish it as a sequence of the programming language primitives the platforms that support declarative/rule programming languages should be used. 
+
+<a name=table7></a><table border=0 width="80%">
+<tr><td colspan=2><hr noshade></td></tr>
+<tr><td colspan=2><b>Table 7: </b>Programming language overview</td></tr>
+<tr><td colspan=2><hr noshade></td></tr>
+<tr valign=top align=left><td><b>Java</b></td><td>JADE, SeSAm, Jadex, JAS, AgentBuilder, EMERALD, Repast, MaDKit, CybelePro, Cormas, AGLOBE, Cougaar, Swarm, MASON,<br>INGENIAS Development Kit, AnyLogic, JAMES II</td></tr>
+<tr valign=top align=left><td><B>C/C++</B></td><td>AgentBuilder, Swarm (Objective C), Repast (plus C#), MaDKit</td></tr>
+<tr valign=top align=left><td><b>declarative/rule programming</b></td><td>Repast (Lisp, Prolog), JADE (JESS), EMERALD (JESS)</td></tr>
+<tr valign=top align=left><td><b>Python</b></td><td>Repast, MaDKit</td></tr>
+<tr valign=top align=left><td><b>AgentSpeak</b></td><td>Jason, Agent Factory (AFSE)</td></tr>
+<tr valign=top align=left><td><b>SmallTalk</b></td><td>Cormas</td></tr>
+<tr valign=top align=left><td><B>JAL</B></td><td>JACK</td></tr>
+<tr valign=top align=left><td><b>NetLogo</b></td><td>NetLogo</td></tr>
+<tr valign=top align=left><td><B>GAML</B></td><td>GAMA</td></tr>
+<tr valign=top align=left><td><B>XML</B></td><td>AgentScape, EMERALD, INGENIAS Development Kit, JACK, Jadex, JIAC</td></tr>
+<tr valign=top align=left><td><b>Multiple languages</b></td><td>AgentScape, EMERALD, INGENIAS Development Kit, JACK, Jadex, JIAC, Jason, MaDKit, Repast, AgentBuilder, AgentFactory<tr><td colspan=2><hr noshade></td></tr>
+</table>
+
+
+
+<h4>FIPA compliance</h4>
+<p><dt><b><a name="4.4">4.4</a></b><dd>The Foundation for Intelligent Physical Agents (FIPA) is an international organization that is dedicated to promoting the industry of intelligent agents by openly developing specifications supporting interoperability among agents and agent-based applications. FIPA-compliance is a reference point for many researchers. Some platforms are fully compliant whereas others adopt only some of the available specifications. For instance, JAS and Agent Factory platforms supports only those specification that refer to the agent lifecycle whereas AGLOBE and Jason support specifications that refer to the communication principles and language, ACL and KQML repsectively. Table <a href="#table8">8</a> presents a FIPA-compliance overview for the above studied agent platforms.
+
+<p><dt><b><a name="4.5">4.5</a></b><dd>Compliance with FIPA specifications provides some specific advantages that could be proven useful or even crucial for some cases. For instance, being compliant to FIPA guarantees the system's architecture and performance due to the powerful and well-tested protocols that enable agent cooperation and interoperability. Hence, FIPA standards are needed whenever dynamic, flexible and reconfigurable cases are studied. Moreover, FIPA specifications are popular in agent-based research and, thus, there is plenty of knowledge and support in the research community. Yet, it is up to the researches to decide if they need FIPA compliance or not and to what extent for their study.
+
+
+<a name=table8></a><table border=0 width="80%">
+<tr><td colspan=2><hr noshade></td></tr>
+<tr><td colspan=2><b>Table 8: </b>FIPA compliance overview</td></tr>
+<tr><td colspan=2><hr noshade></td></tr>
+<tr valign=top align=left><td><b>Full compliance</b></td><td>JADE, Jadex, JACK, EMERALD</td></tr>
+<tr valign=top align=left><td><b>Partial compliance</b></td><td>JAS, Jason, AGLOBE, Agent Factory, SeSAm, GAMA</td></tr>
+<tr valign=top align=left><td><b>No compliance</b></td><td>Cougaar, Swarm, MASON, INGENIAS Development Kit, Cormas, Repast, MaDKit, CybelePro, JIAC, AgentScape, AnyLogic, NetLogo, JAMES II<tr><td colspan=2><hr noshade></td></tr>
+</table>
+
+
+
+<h4>Application Domain</h4>
+<p><dt><b><a name="4.6">4.6</a></b><dd>Some agent platforms are general purpose and can be used for a variety of applications domains while others are domain specific. Having a specialized platform means that it was designed for that domain and it is more efficient to be used there. However, some of these platforms can be used for many other domains. The following table (Table <a href="#table9">9</a>) presents the various domains and the agent platforms that are specialized or commonly used for them. 
+       
+       <p><dt><b><a name="4.7">4.7</a></b><dd>To this end, the following classification indicates which platform could be more suitable for a preferred domain. For instance, if the case is a social study then SeSAm or Repast would be better choices. On the other hand, GIS systems are betters studies using platforms such as AGLOBE, Cougaar or SeSAm. Moreover, there are platforms that can be used in almost every domain like JADE, which is actually the most popular agent platform. However, usually there are more than one choices (platforms) for each domain, hence the final choice depends on a combination of the desirable platforms characterizes. For instance, if there is a need for a general purpose platform that uses C/C++ then MaDKit should be used (combination of Tables <a href="#table7">7</a> and <a href="#table9">9</a> data). 
+
+
+<a name=table9></a><table border=0 width="80%">
+<tr><td colspan=2><hr noshade></td></tr>
+<tr><td colspan=2><b>Table 9: </b>Platforms' application domains overview</td></tr>
+<tr><td colspan=2><hr noshade></td></tr>
+<tr valign=top align=left><td><b>General purpose distributed simulations</b></td><td>JADE, Jadex, Jason, EMERALD, MaDKit, CybelePro, JIAC, AgentScape, AnyLogic, GAMA</td></tr>
+<tr valign=top align=left><td><b>General purpose agent based simulations</b></td><td>JAS, AgentBuilder, Agent Factory (AFSE), Swarm, MASON, INGENIAS Development Kit, Repast, MaDKit, AgentScape, SeSAm, AnyLogic, NetLogo, GAMA, JAMES II</td></tr>
+<tr valign=top align=left><td><b>Scientific simulations</b></td><td>Swarm, MASON, Cormas, Repast (Social Sciences), MaDKit, CybelePro, SeSAm, AnyLogic, GAMA, JAMES II</td></tr>
+<tr valign=top align=left><td><b>Dynamic and complex environments</b></td><td>JACK, Cougaar, CybelePro, AnyLogic</td></tr>
+<tr valign=top align=left><td><b>Real - world - GIS</b></td><td>AGLOBE, Cougaar (integrated with OpenMap), Repast, CybelePro, SeSAm, AnyLogic, GAMA</td></tr>
+<tr valign=top align=left><td><b>Large scale simulations</b></td><td>Cougaar, CybelePro, JIAC, AgentScape, GAMA, JAMES II</td></tr>
+<tr valign=top align=left><td><b>Scheduling &amp; planning</b></td><td>Jadex, CybelePro, SeSAm, AnyLogic, NetLogo, GAMA</td></tr>
+<tr valign=top align=left><td><b>Mobile computing</b></td><td>JADE, Jadex, Agent Factory</td></tr>
+<tr valign=top align=left><td><b>Multiple domains</b></td><td>JADE, Jadex, MaDKit, CybelePro, Cougaar, JIAC, AgentScape, Agent Factory, Repast, SeSAm, AnyLogic, GAMA, JAMES II</td></tr>
+<tr valign=top align=left><td><b>Artificial life and behavioral observation</b></td><td>JADE, Jadex, Jason, SeSAm, EMERALD, JACK, Cougaar, CybelePro, AnyLogic, NetLogo, GAMA</td></tr>
+<tr valign=top align=left><td><b>Biological &amp; social studies</b></td><td>JADE, SeSAm, Jadex, Jason, EMERALD, JACK, Cougaar, CybelePro, MaDKit, Repast, AnyLogic, NetLogom, GAMA, JAMES II</td></tr>
+<tr valign=top align=left><td><b>Economics/eCommerce</b></td><td>JADE, EMERALD, JACK, Cougaar, CybelePro, MaDKit, AnyLogic</td></tr>
+<tr valign=top align=left><td><b>Natural resources &amp; environment</b></td><td>Cormas, Swarm, SeSAm, AnyLogic. NetLogo, GAMA, JAMES II<tr><td colspan=2><hr noshade></td></tr>
+</table>
+
+
+
+<h4>Semantic Web Technologies</h4>
+<p><dt><b><a name="4.8">4.8</a></b><dd>Furthermore, as already mentioned, our intention is to study which agent platforms can be used in the Web, hence we tried to figure out which of them support semantic web technologies. The potential of a platform however has nothing to do with its current maturity in semantic web technologies. EMERALD for instance is fully semantic web oriented while Jadex support some of these technologies, e.g. the XML language. Hence, EMERALD can instantly be used in web applications whereas Jadex has first to be more extended. At the same time, there are plenty of the platforms that do not support yet semantic web technologies but their architecture could be easily extended to that direction. Cormas, for instance, is not yet semantic web oriented but an extension of it where semantic web communication languages will be supported would reveal how agents would act under real situations on behalf of their users. Table <a href="#table10">10</a> presents a classification of the above platforms according to the degree (High, Average, Low) of their support in semantic web technologies (see Tables <a href="#table3">3</a> and <a href="#table4">4</a>). Platforms with an average degree of support usually have adopted one or more semantic web languages (usually XML), for instance SeSAm supports ontologies (the only one), while those with a low degree have poor or no support at all. 
+
+
+<a name=table10></a><table border=0 width="80%">
+<tr><td colspan=2><hr noshade></td></tr>
+<tr><td colspan=2><b>Table 10: </b>Semantic Web technologies support</td></tr>
+<tr><td colspan=2><hr noshade></td></tr>
+<tr valign=top align=left><td><b>High</b></td><td>EMERALD</td></tr>
+<tr valign=top align=left><td><b>Average</b></td><td>Jadex, JACK, JIAC, AgentScape, INGENIAS Development Kit, SeSAm</td></tr>
+<tr valign=top align=left><td><b>Low</b></td><td>JADE, CybelePro, Cougaar, AgentBuilder, AGLOBE, Cormas, Jason, JAS, Agent Factory, Swarm, Repast, MASON, MaDKit, INGENIAS Development Kit, AnyLogic, NetLogo, GAMA, JAMES II<tr><td colspan=2><hr noshade></td></tr>
+</table>
+
+
+
+</dl><h3><IMG ALIGN=Bottom SRC="/gifs/bullet.gif" WIDTH="23" HEIGHT="23" ALT="* ">Conclusions</h3><dl compact>
+
+<dt><b><a name="5.1">5.1</a></b><dd>We live in an increasingly complex world. Systems and models that need to be analyzed are becoming more and more complex. In this context, agent technology could be a powerful and useful tool for researchers. Indeed, programming multiagent systems is rapidly turning into a new discipline of its own. In this article, we have presented all available agent platforms that are or can be used in simulating real-life study cases. This study analyzed twenty four agent platforms developed by different groups, academic or industrial oriented. We figured out that JADE still remains the most popular platform since it is purely designed in Java and supports different kinds of systems operating in the web. Among the platforms are some commercial products which indicate that industry is turning to agent technology. That finding is really hopeful since agent technology has potentials. 
+       
+<p><dt><b><a name="5.2">5.2</a></b><dd>The qualitative comparison and classification intended to provide an overview of the different alternatives. The interested researchers, whenever they need to take a decision upon platform selection, can study the above presented tables (sections 3 and 4) in order to find the intersection that better describes their needs. They can, for instance, start from the domain (Table <a href="#table9">9</a>), limiting their options to a platform group, then they can exclude platforms by examine further characteristics such as the programming language (Table <a href="#table7">7</a>), the learnability (Table <a href="#table3">3</a>) or the current status (Table <a href="#table2">2</a>) of the platforms, ending up to the best for them choice.
+       
+<p><dt><b><a name="5.3">5.3</a></b><dd>We believe that all the platforms compared in the paper are interesting, and that the above comparison could help a developer to decide which platform suites his/her needs better. Such a survey can attract many potential researchers or developers who want to incorporate agent-based technologies into their applications. With this study, we expect to contribute to cover the need of an updated review and encourage future work in the field.
+
+
+
+</dl><hr><h3><img align=Bottom src="/gifs/bullet.gif" width="23" height="23" alt="* "> References</h3><dl compact><dt><dd>
+ <!-- References here -->
+<a name="acronymics2004">ACRONYMICS INC</a>. (2004). AGENTBUILDER: An Integrated Toolkit for Constructing Intelligent. Software Agents. Reference Manual. <<a href="http://www.agentbuilder.com">http://www.agentbuilder.com</a>>. Archived at <<a href="http://www.webcitation.org/6QWerbbZQ">http://www.webcitation.org/6QWerbbZQ</a>>. 
+<p><a name="agent2014">Agent</a> Factory (2014). Available at <<A href="http://sourceforge.net/projects/agentfactory">http://sourceforge.net/projects/agentfactory</a>>. Archived at <<a href="http://www.webcitation.org/6QWewhYJw">http://www.webcitation.org/6QWewhYJw</a>>. 
+<p><a name="agentbuilder2014">AgentBuilder</a> (2014). Available at <<a href="http://www.agentbuilder.com">http://www.agentbuilder.com</a>>. Archived at <<a href="http://www.webcitation.org/6QWerbbZQ">http://www.webcitation.org/6QWerbbZQ</a>>. 
+<p><a name="agentscape2014">AgentScape</a> (2014). Available at <<a href="http://www.agentscape.org">http://www.agentscape.org</a>>. Archived at <<a href="http://www.webcitation.org/6QWf2b9bH">http://www.webcitation.org/6QWf2b9bH</a>>. 
+<p><a name="aglobe2014">AGLOBE</a> (2014). Available at <<a href="http://agents.felk.cvut.cz/projects/aglobe">http://agents.felk.cvut.cz/projects/aglobe</a>>. Archived at <<a href="http://www.webcitation.org/6QWf4ybnz">http://www.webcitation.org/6QWf4ybnz</a>>. 
+<p><a name="anylogic2014">AnyLogic</a> (2014). Available at <<a href="http://www.anylogic.com/">http://www.anylogic.com/</a>>. Archived at <<a href="http://www.webcitation.org/6QWfCrQlW">http://www.webcitation.org/6QWfCrQlW</a>>. 
+<p><a name="bellifemine2003">BELLIFEMINE</a>, F., Caire, G., Poggi, A. & Rimassa, G. (2003). JADE: A white Paper. <i>EXP in search of innovation</i>, <i>3</i>(3), 6&#8211;19. 
+<p><a name="bordini2006">BORDINI</a>, R., Braubach, L., Dastani, M., Seghrouchni, A., Gomez-Sanz, J., Leite, J., O'Hare, G., Pokahr, A. &amp; Ricci, A. (2006). A survey of Programming Languages and Platforms for Multi-Agent Systems. <i>Informatica</i>, <i>30</i>, 33&#8211;44. 
+<p><a name="bordini2007">BORDINI</a>, R., H&#252;bner, J. & Wooldridge, M. (2007). <i>Programming Multi-Agent Systems in AgentSpeak using Jason</i>. Wiley Series in Agent Technology. ISBN: 978-0-470-02900-8. 
+<p><a name="borshchev2013">BORSHCHEV</a>, A. (2013). The Big Book of Simulation Modeling: Multimethod Modeling with Anylogic 6. <i>AnyLogic North America</i>. ISBN: 978-0-9895731-7-7. 
+<p><a name="braubach2013">BRAUBACH</a>, L. &amp; Pokahr, A. (2013). The Jadex Project: Simulation. <i>Multiagent Systems and Applications</i>, <i>45</i>, 107&#8211;128.  <a class="doi" href="http://dx.doi.org/10.1007/978-3-642-33323-1_5" target="_blank">[doi:10.1007/978-3-642-33323-1_5]</a>
+<p><a name="braubach2008">BRAUBACH</a>, L., Pokahr, A. &amp; Lamersdorf, W. (2008). A Universal Criteria Catalog for Evaluation of Heterogeneous Agent Development Artifacts. <i>From Agent Theory to Agent Implementation</i> (AT2AI-6), 19&#8211;28. 
+<p><a name="braubach2014">BRAUBACH</a>, L., Pokahr, A. &amp; Lamersdorf, W. (2014) Negotiation-Based Patient Scheduling in Hospitals - Reengineering Message-Based Interactions with Services. <i>Advanced Intelligent Computational Technologies and Decision Support Systems</i>, <i>486</i>, 107&#8211;121.  <a class="doi" href="http://dx.doi.org/10.1007/978-3-319-00467-9_10" target="_blank">[doi:10.1007/978-3-319-00467-9_10]</a>
+<p><a name="cormas2014">Cormas</a> (2014). Available at <<a href="http://cormas.cirad.fr">http://cormas.cirad.fr</a>>. Archived at <<a href="http://www.webcitation.org/6QWfNMG4t">http://www.webcitation.org/6QWfNMG4t</a>>. 
+<p><a name="cougaar2014">Cougaar</a> (2014). Available at <<a href="http://cougaar.org/wp/downloads/">http://cougaar.org/wp/downloads/</a>>. Archived at <<a href="http://www.webcitation.org/6QWfQXkNx">http://www.webcitation.org/6QWfQXkNx</a>>. 
+<p><a name="cybelepro2006">CYBELEPRO</a> (2006). CybelePro Agent Infrastructure, User's Guide v3.0. Distributed Intelligent Systems, Intelligent Automation Inc. <<a href="http://www.CybelePro.com">http://www.CybelePro.com</a>>. Archived at <<a href="http://www.webcitation.org/6QWfUkZHh">http://www.webcitation.org/6QWfUkZHh</a>>. 
+<p><a name="cybelepro2014">CybelePro</a> (2014). Available at <<a href="http://www.i-a-i.com">http://www.i-a-i.com</a>>. Archived at <<a href="http://www.webcitation.org/6QWfaB5od">http://www.webcitation.org/6QWfaB5od</a>>. 
+<p><a name="emerald2014">EMERALD</a> (2014). Available at <<a href="http://lpis.csd.auth.gr/systems/emerald">http://lpis.csd.auth.gr/systems/emerald</a>>. Archived at <<a href="http://www.webcitation.org/6QWfdRK8E">http://www.webcitation.org/6QWfdRK8E</a>>. 
+<p><a name="finin1994">FININ</a>, T., Fritzson, R., McKay, D. &amp; McEntire, R. (1994). <i>KQML as an agent communication language</i>. Proceedings of the third international conference on Information and knowledge management - CIKM '94, p. 456.  <a class="doi" href="http://dx.doi.org/10.1145/191246.191322" target="_blank">[doi:10.1145/191246.191322]</a>
+<p><a name="gama2014">GAMA</a> (2014). Available at <<a href="https://code.google.com/p/gama-platform/">https://code.google.com/p/gama-platform/</a>>. Archived at <<a href="http://www.webcitation.org/6QWfg3Fhm">http://www.webcitation.org/6QWfg3Fhm</a>>. 
+<p><a name="gomez-sanz2004">G&#211;MEZ-SANZ</a>, J. &amp; Pav&#243;n, J. (2004). INGENIAS Development Kit (IDK) Manual. Facultad de Inform&#225;tica, Universidad Complutense de Madrid, Spain. <<a href="http://ingenias.sourceforge.net">http://ingenias.sourceforge.net</a>>. Archived at <<a href="http://www.webcitation.org/6QWfj0mad">http://www.webcitation.org/6QWfj0mad</a>>. 
+<p><a name="grignard2013">GRIGNARD</a>, A., Taillandier, P., Gaudou, B., An Vo, D., Huynh, N. &amp; Drogoul, A. (2013). <i>GAMA 1.6: Advancing the Art of Complex Agent-Based Modeling and Simulation.</i> In the 16th International Conference on Principles and Practices in Multi-Agent Systems (PRIMA), 8291, 242&#8211;258. 
+<p><a name="gupta2011">GUPTA</a>, R. &amp; Kansal, G. (2011). A Survey on Comparative Study of Mobile Agent Platforms. <i>In Int. Journal of Engineering Science and Technology (IJEST)</i>, <i>3</i>(3), 1943&#8211;1948. 
+<p><a name="gutknecht2000">GUTKNECHT</a>, O. &amp; Ferber, J. (2000). <i>Madkit: a Generic Multi-Agent Platform</i>. Autonomous Agents. AGENTS 2000, Barcelona, ACM Press, 78&#8211;79.  <a class="doi" href="http://dx.doi.org/10.1145/336595.337048" target="_blank">[doi:10.1145/336595.337048]</a>
+<p><a name="helsinger2005">HELSINGER</a>, A. &amp; Wright, T. (2005). <i>Cougaar: A Robust Configurable Multi Agent Platform</i>. Aerospace Conference, IEEE, pp. 1&#8211;10.  <a class="doi" href="http://dx.doi.org/10.1109/aero.2005.1559614" target="_blank">[doi:10.1109/aero.2005.1559614]</a>
+<p><a name="himmelspach2007">HIMMELSPACH</a>, J. &amp; Uhrmacher, A. M. (2007) <i>Plug'n simulate</i>. Proceedings of the 40th Annual Simulation Symposium. IEEE Computer Society, 137&#8211;143.  <a class="doi" href="http://dx.doi.org/10.1109/anss.2007.34" target="_blank">[doi:10.1109/anss.2007.34]</a>
+<p><a name="hirsch2009">HIRSCH</a>, B., Konnerth, T. &amp; He&#223;ler, A. (2009). Merging Agents and Services &#8211; the JIAC Agent Platform. <i>InMulti-Agent Programming: Languages, Tools and Applications</i>, 159&#8211;185.  <a class="doi" href="http://dx.doi.org/10.1007/978-0-387-89299-3_5" target="_blank">[doi:10.1007/978-0-387-89299-3_5]</a>
+<p><a name="holz2011">HOLZ</a>, T., Campbell, A.G., O'Hare, G.M.P, Stafford, J.W., Martin, A. &amp; Dragone, M. (2011). MiRA &#8211; Mixed Reality Agents. <i>International Journal of Human-Computer Studies</i>,  <i>69</i>(4), 251&#8211;268.  <a class="doi" href="http://dx.doi.org/10.1016/j.ijhcs.2010.10.001" target="_blank">[doi:10.1016/j.ijhcs.2010.10.001]</a>
+<p><a name="ingenias2014">INGENIAS</a> Development Kit (2014). Available at <<a href="http://ingenias.sourceforge.net">http://ingenias.sourceforge.net</a>>. Archived at <<a href="http://www.webcitation.org/6QWfnwdDZ">http://www.webcitation.org/6QWfnwdDZ</a>>. 
+<p><a name="iso/iec2001">ISO/IEC 9126-1:2001</a> (2001). International Organization for Standadization (ISO). Software engineering &#8211; Product quality &#8211; Part 1: Quality model. 
+<p><a name="iso9241-110:2006">ISO9241-110:2006</a> (2006). International Organization for Standadization (ISO). Ergonomics of Human-SystemInteraction-Part 110: Dialogue Principles. 
+<p><a name="jack2014">JACK</a> (2014). Available at <<a href="http://www.aosgrp.com">http://www.aosgrp.com</a>>. Archived at <<a href="http://www.webcitation.org/6QWfrNv7Q">http://www.webcitation.org/6QWfrNv7Q</a>>. 
+<p><a name="jade2014">JADE</a> (2014). Available at <<a href="http://jade.tilab.com/">http://jade.tilab.com/</a>>. Archived at <<a href="http://www.webcitation.org/6QWftr9s8">http://www.webcitation.org/6QWftr9s8</a>>. 
+<p><a name="jadex2014">JADEX</a> (2014). Available at <<a href="http://www.activecomponents.org">http://www.activecomponents.org</a>>. Archived at <<a href="http://www.webcitation.org/6QWfuhUEI">http://www.webcitation.org/6QWfuhUEI</a>>. 
+<p><a name="james2014">JAMES II</a> (2014). Available at <<a href="http://wwwmosi.informatik.uni-rostock.de/jamesii.org/">http://wwwmosi.informatik.uni-rostock.de/jamesii.org/</a>>. Archived at <<a href="http://www.webcitation.org/6SGmUtVSq">http://www.webcitation.org/6SGmUtVSq</a>>. 
+<p><a name="jas2014">JAS</a> (2014). Available at <<a href="http://jaslibrary.sourceforge.net/download.html">http://jaslibrary.sourceforge.net/download.html</a>>. Archived at <<a href="http://www.webcitation.org/6QWfxLRlw">http://www.webcitation.org/6QWfxLRlw</a>>. 
+<p><a name="jason2014">Jason</a> (2014). Available at <<a href="http://jason.sf.net">http://jason.sf.net</a>>. Archived at <<a href="http://www.webcitation.org/6QWfxy7QT">http://www.webcitation.org/6QWfxy7QT</a>>. 
+<p><a name="jiac2014">JIAC</a> (2014). Available at <<a href="http://www.jiac.de">http://www.jiac.de</a>>. Archived at <<a href="http://www.webcitation.org/6QWg0d4wv">http://www.webcitation.org/6QWg0d4wv</a>>. 
+<p><a name="kaminka2004">KAMINKA</a>, G. A. (2004). <i>Robots are Agents, Too!</i>. In Proceedings of the 6th international joint conference on Autonomous agents and multiagent systems (AAMAS '07). ACM, New York, NY, USA, Article 4. 
+<p><a name="klugl2009">KL&#220;GL</a>, F. (2009). SeSAm: Visual Programming and Participatory Simulation for Agent-Based Models. In. D. Weyns and A. Uhrmacher (eds) <i>Agents, Simulations and Applications</i>, chapter 16, Taylor and Francis. 
+<p><a name="kravari2012">KRAVARI</a>, K., Bassiliades, N. &amp; Boley, H. (2012). Cross-Community Interoperation Between Knowledge-Based Multi-Agent Systems: A Study on EMERALD and Rule Responder. <i>Journal of Expert Systems With Applications</i>, <i>39</i>(10), 9571&#8211;9587.  <a class="doi" href="http://dx.doi.org/10.1016/j.eswa.2012.02.160" target="_blank">[doi:10.1016/j.eswa.2012.02.160]</a>
+<p><a name="kravari2010">KRAVARI</a>, K., Kontopoulos, E. &amp; Bassiliades, N. (2010). EMERALD: A Multi-Agent System for Knowledge-based Reasoning Interoperability in the Semantic Web. <i>6th Hellenic Conference on Artificial Intelligence (SETN 2010)</i>, Springer Berlin / Heidelberg, LNCS, 6040/2010, 173&#8211;182.  <a class="doi" href="http://dx.doi.org/10.1007/978-3-642-12842-4_21" target="_blank">[doi:10.1007/978-3-642-12842-4_21]</a>
+<p><a name="kubera2010">KUBERA</a>, Y., Mathieu, P. &amp; Picault, S. (2010). <i>Everything can be Agent!</i>. Proceedings of the ninth International Joint Conference on Autonomous Agents and Multi-Agent Systems (AAMAS'2010), 1547&#8211;1548. 
+<p><a name="le2007">LE PAGE</a>, C. &amp; Bousquet, F. (2007). The Cormas platform. Tutorial. ESSA 2007: <i>4e Conf&#233;rence de l'Association Europ&#233;enne de Simulation Sociale</i>. Toulouse, France. 
+<p><a name="luke2005">LUKE</a>, S., Cioffi-Revilla, C., Panait, L., Sullivan, K. &amp; Balan, G. (2005). MASON: A Multi-Agent Simulation Environment.<i> In Simulation: Transactions of the society for Modeling and Simulation International</i>, <i>82</i>(7), 517&#8211;527.  <a class="doi" href="http://dx.doi.org/10.1177/0037549705058073" target="_blank">[doi:10.1177/0037549705058073]</a>
+<p><a name="madkit2014">MaDKit</a> (2014). Available at <<a href="http://www.madkit.net">http://www.madkit.net</a>>. Archived at <<a href="http://www.webcitation.org/6QWg6q1Fj">http://www.webcitation.org/6QWg6q1Fj</a>>. 
+<p><a name="mason2014">MASON</a> (2014). Available at <<a href="http://cs.gmu.edu/~eclab/projects/mason/">http://cs.gmu.edu/~eclab/projects/mason/</a>>. Archived at <<a href="http://www.webcitation.org/6QWg89lRa">http://www.webcitation.org/6QWg89lRa</a>>. 
+<p><a name="mills2009">MILLS</a> D (2009). Industry Roadmap to Web 3.0 &amp; Multibillion Dollar Market Opportunities. <i>Project10X Semantic Wave Report</i>, Washington, DC. 
+<p><a name="netlogo2014">NetLogo</a> (2014). Available at <<a href="http://ccl.northwestern.edu/">http://ccl.northwestern.edu/</a>>. Archived at <<a href="http://www.webcitation.org/6QWgCXyHq">http://www.webcitation.org/6QWgCXyHq</a>>. 
+<p><a name="nguyen2002">NGUYEN</a>, G., Dang, T.T., Hluchy, L., Laclavik, M., Balogh, Z. &amp; Budinska, I. (2002). Agent Platform Evaluation and Comparison. Institute of Informatics, <i>Slovak Academy of Sciences</i>. 
+<p><a name="nikolai2009">NIKOLAI</a>, C. &amp; Madey, G. (2009). Tools of Trade: A Survey of Various Agent Based Modeling Platforms, <i>Journal of Artificial Societies and Social Simulation</i>, <i>12</i>(2):2 <<A href="http://jasss.soc.surrey.ac.uk/12/2/2.html">http://jasss.soc.surrey.ac.uk/12/2/2.html</a>>. 
+<p><a name="north2007">NORTH</a>, M.J., Howe, T.R., Collier, N.T. &amp; Vos, J.R. (2007). A Declarative Model Assembly Infrastructure for Verification and Validation. <i>In Advancing Social Simulation: The First World Congress </i>(129&#8211;140). Springer, Heidelberg. 
+<p><a name="oey2010">OEY</a>, M.A., van Splunter, S., Ogston, E., Warnier, M. &amp; Brazier, F.M.T. (2010). <i>A Framework for Developing Agent-Based Distributed Applications</i>. Proceedings of the 2010 IEEE/WIC/ACM International Conference on Intelligent Agent Technology (IAT-10), IEEE/WIC/ACM, 2, 470&#8211;474.  <a class="doi" href="http://dx.doi.org/10.1109/WI-IAT.2010.134" target="_blank">[doi:10.1109/WI-IAT.2010.134]</a>
+<p><a name="repast2014">Repast</a> (2014). Available at <<a href="http://repast.sourceforge.net/">http://repast.sourceforge.net/</a>>. Archived at <<a href="http://www.webcitation.org/6QWgJsJfv">http://www.webcitation.org/6QWgJsJfv</a>>. 
+<p><a name="resnick2000">RESNICK</a>, P., Kuwabara, K., Zeckhauser, R. &amp; Friedman, E. (2000). Reputation systems. <i>Communications of the ACM</i>, <i>43</i>(12), 45&#8211;48.  <a class="doi" href="http://dx.doi.org/10.1145/355112.355122" target="_blank">[doi:10.1145/355112.355122]</a>
+<p><a name="russell2011">RUSSELL</a>, S., Jordan, H., O'Hare, G.M.P. &amp; Collier, R.W. (2011). <i>Agent Factory: A Framework for Prototyping Logic-Based AOP Languages</i>. In Proceedings of the Ninth German Conference on Multi-Agent System Technologies (MATES 2011), 6973, 125&#8211;136.  <a class="doi" href="http://dx.doi.org/10.1007/978-3-642-24603-6_13" target="_blank">[doi:10.1007/978-3-642-24603-6_13]</a>
+<p><a name="schurr2005">SCHURR</a>, N., Marecki, J., Tambe, M., Scerri, P., Kasinadhuni, N. &amp; Lewis, J.P. (2005). The Future of Disaster Response: Humans Working with Multiagent Teams using DEFACTO (PDF). <i>In AAAI Spring Symposium on AI Technologies for Homeland Security</i>. 
+<p><a name="sesam2014">SeSAm</a> (2014). Available at <<a href="http://www.simsesam.de">http://www.simsesam.de</a>>. Archived at <<a href="http://www.webcitation.org/6QWgNBeCL">http://www.webcitation.org/6QWgNBeCL</a>>. 
+<p><a name="sislak2006">SISLAK</a>, D., Rehak, M., Pechoucek, M. &amp; Pavlicek, D. (2006). Deployment of A-globe Multi-Agent Platform. In Proceedings of the Fifth International Joint Conference on Autonomous Agents and Multiagent Systems, 1447&#8211;1448.  <a class="doi" href="http://dx.doi.org/10.1145/1160633.1160908" target="_blank">[doi:10.1145/1160633.1160908]</a>
+<p><a name="sonnessa2004">SONNESSA</a>, M. (2004). JAS: Java Agent-based Simulation library. User's Guide version 1.0. <<a href="http://jaslibrary.sourceforge.net/">http://jaslibrary.sourceforge.net/</a>>. Archived at <<a href="http://www.webcitation.org/6QWgPmPAA">http://www.webcitation.org/6QWgPmPAA</a>>. 
+<p><a name="sun2004">SUN</a>, R. &amp; Naveh, I., (2004). Simulating Organizational Decision-Making Using a Cognitively Realistic Agent Model. <i>Journal of Artificial Societies and Social Simulation</i>, <i>7</i>(3), 5 <<a href="http://jasss.soc.surrey.ac.uk/7/3/5.html">http://jasss.soc.surrey.ac.uk/7/3/5.html</a>>. 
+<p><a name="swarm2014">Swarm</a> (2014). Available at <<a href="http://www.swarm.org">http://www.swarm.org</a>>. Archived at <<a href="http://www.webcitation.org/6QWgU1rxp">http://www.webcitation.org/6QWgU1rxp</a>>. 
+<p><a name="swarmfest2012">SWARMFEST</a> (2012). SDG's annual agent-based modeling conference. <<a href="http://www.swarm.org/index.php/Swarmfest_2012">http://www.swarm.org/index.php/Swarmfest_2012</a>>. Archived at <<a href="http://www.webcitation.org/6QWgWxpcI">http://www.webcitation.org/6QWgWxpcI</a>>. 
+<p><a name="tisue2004">TISUE</a>, S. &amp; Wilensky, U. (2004, updated 2013). <i>NetLogo: Design and implementation of a multi-agent modeling environment</i>. In Proceedings of the Agent 2004 Conference on Social Dynamics: Interaction, Reflexivity and Emergence, Chicago, Illinois. 
+<p>
+<a name="winikoff2005">WINIKOFF</a>, M. (2005). JACK intelligent agents: An industrial strength platform. <i>In Multi-Agent Programming. Springer</i>, <i>15</i>, 175&#8211;193.
+
+
+</dl>
+    </div> <!-- article -->
+</div> <!-- content -->
+<div class="footer" id="footer">
+	<img src="/gifs/line-rain.gif" width="100%" height="4" alt="----">
+	<p>
+	| <a href="/JASSS.html">JASSS Home</a>
+	| <a href="/current.html">Current issue</a>
+	| <a href="/admin/info.html">Information</a>
+	| <a href="/admin/search.html">Search</a>
+	| <a href="/admin/notices.html">Notices</a>
+	| <a href="/admin/archive.html">Back issues</a>
+	| <a href="/admin/comments.html">Comments</a>
+	</p>
+	<p style="text-align: left;">
+	&copy; <a href="/admin/copyright.html">Copyright JASSS</a>
+	</p>
+</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,5 @@
+%% "(BDI_Bel Semanta (S5_Possible (BDI_Intend $sender (S5_Necessary (CLIL_Goal $receiver $characteristic_term)))))",
+%% "(BDI_Bel Semanta (S5_Possible (BDI_Bel $sender (S5_Possible (KARO_A $receiver $characteristic_term)))))",
+
+bdi_Bel(semanta,s5_Possible(bdi_Intend($sender,s5_Necessary(clil_Goal($receiver,$characteristic_term))))).
+bdi_Bel(semanta,s5_Possible(bdi_Bel($sender,s5_Possible(karo_A($receiver,$characteristic_term))))).

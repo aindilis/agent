@@ -1,0 +1,34 @@
+Accurate reasoner:[1][2][3][4] An accurate reasoner never believes any false proposition. (modal axiom T)
+Ap(Bpp)
+Inaccurate reasoner:[1][2][3][4] An inaccurate reasoner believes at least one false proposition.
+Ep(Bp&¬p)
+Conceited reasoner:[1][4] A conceited reasoner believes his or her beliefs are never inaccurate. A conceited reasoner will necessarily lapse into an inaccuracy.
+B(¬Ep(Bp&¬p))
+Consistent reasoner:[1][2][3][4] A consistent reasoner never simultaneously believes a proposition and its negation. (modal axiom D)
+¬Ep((Bp&B¬p))
+Normal reasoner:[1][2][3][4] A normal reasoner is one who, while believing p, also believes he or she believes p (modal axiom 4).
+Ap(BpBBp)
+Peculiar reasoner:[1][4] A peculiar reasoner believes proposition p while also believing he or she does not believe p. Although a peculiar reasoner may seem like a strange psychological phenomenon (see Moore's paradox), a peculiar reasoner is necessarily inaccurate but not necessarily inconsistent.
+Ep(Bp&B¬Bp)
+Regular reasoner:[1][2][3][4] A regular reasoner is one for whom all beliefs are distributive over logical operations. (modal axiom K)
+Ap(q(B(pq)(BpBq)))
+Reflexive reasoner:[1][4] A reflexive reasoner is one for whom every proposition p has some q such that the reasoner believes q≡(Bq→p). So if a reflexive reasoner of type 4 [see below] believes Bp→p, he or she will believe p. This is a parallelism of Löb's theorem for reasoners.
+Unstable reasoner:[1][4] An unstable reasoner is one for whom there is some proposition p such that he or she believes he or she believes p, but who does not really believe p. This is just as strange a psychological phenomenon as peculiarity; however, an unstable reasoner is not necessarily inconsistent.
+Stable reasoner:[1][4] A stable reasoner is not unstable. That is, for every p, if he or she believes Bp then he or she believes p. Note that stability is the converse of normality. We will say that a reasoner believes he or she is stable if for every proposition p, he or she believes BBp→Bp (believing: "If I should ever believe that I believe p, then I really will believe p").
+BBpBp
+Modest reasoner:[1][4] A modest reasoner is one for whom every believed proposition p,  only if he or she believes p. A modest reasoner never believes Bp→p unless he or she believes p. Any reflexive reasoner of type 4 is modest. (Löb's Theorem)
+B(Bp→p)→Bp
+Queer reasoner:[4] A queer reasoner is of type G and believes he or she is inconsistent—but is wrong in this belief.
+Timid reasoner:[4] A timid reasoner is afraid to believe p [i.e., he or she does not believe p] if he or she believes 
+[edit]Increasing levels of rationality
+
+Type 1 reasoner:[1][2][3][4][5] A type 1 reasoner has a complete knowledge of propositional logic i.e., he or she sooner or later believes every tautology (any proposition provable by truth tables) (modal axiom N). Also, his or her set of beliefs (past, present and future) is logically closed under modus ponens. If he or she ever believes p and believes p→q (p implies q) then he or she will (sooner or later) believe q (modal axiom K). This is equivalent to modal system K.
+p  Bp
+(Bp&B(pq))Bq
+Type 1* reasoner:[1][2][3][4] A type 1* reasoner believes all tautologies; his or her set of beliefs (past, present and future) is logically closed under modus ponens, and for any propositions p and q, if he or she believes p→q, then he or she will believe that if he or she believes p then he or she will believe q. The type 1* reasoner has a shade more self awareness than a type 1 reasoner.
+B(pq)B(BpBq)
+Type 2 reasoner:[1][2][3][4] A reasoner is of type 2 if he or she is of type 1, and if for every p and q he or she (correctly) believes: "If I should ever believe both p and p→q, then I will believe q." Being of type 1, he or she also believes the logically equivalent proposition: B(p→q)→(Bp→Bq). A type 2 reasoner knows his or her beliefs are closed under modus ponens.
+B((Bp&B(pq))Bq)
+Type 3 reasoner:[1][2][3][4] A reasoner is of type 3 if he or she is a normal reasoner of type 2.
+Type 4 reasoner:[1][2][3][4][5] A reasoner is of type 4 if he or she is of type 3 and also believes he or she is normal.
+Type G reasoner:[1][4] A reasoner of type 4 who believes he or she is modest.

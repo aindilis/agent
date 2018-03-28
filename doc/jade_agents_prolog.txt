@@ -1,0 +1,742 @@
+/*
+Msury Mahunnah
+msury.mahunnah@ttu.ee
+Department of Informatics
+Tallinn University of Technology
+24th April, 2013
+*/
+
+
+//Agents Resoning by using Prolog Rules
+
+
+
+
+
+
+
+
+//AGENTS
+//PATIENT AGENT
+
+package agents;
+
+
+import jade.content.lang.Codec;
+import jade.content.lang.sl.SLCodec;
+import jade.content.onto.Ontology;
+import jade.core.Agent;
+import ontology.MyOntology;
+import behaviours.PatientReceiveMessage;
+import behaviours.PatientSendMessage;
+
+
+@SuppressWarnings("serial")
+public class PatientAgent extends Agent {
+	//Initializing FIPA-SL (Semantic Language)
+	private Codec codec = new SLCodec();
+	//Initializing ontology class MyOntology
+	private Ontology ontology = MyOntology.getInstance();
+	
+ 
+protected void setup() {
+
+	//registering ontology and codec language (FIPA-SL)
+	getContentManager().registerLanguage(codec);
+	getContentManager().registerOntology(ontology);
+	
+	
+  // Printout a welcome message 
+	  System.out.println("HELLO! PATIENT-AGENT "+getAID().getLocalName()+" IS READY.");
+
+      
+	  //add a waker behavior which sends the physiological data to the Physician Agent
+	    addBehaviour(new PatientSendMessage(this, 5000));
+	  //add a ticker behavior which receives analysis results from the physician
+	    addBehaviour(new PatientReceiveMessage(this, 1000));
+  
+
+  }
+	
+ 
+	protected void takeDown(){
+		System.out.println("PATIENT-AGENT "+getAID().getLocalName()+" HAS TERMINATED");
+	}
+  
+}
+
+
+//PHYSICIAN AGENT
+
+package agents;
+
+
+import jade.content.lang.Codec;
+import jade.content.lang.sl.SLCodec;
+import jade.content.onto.Ontology;
+import jade.core.Agent;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+
+import ontology.MyOntology;
+import behaviours.PhysicianReceiveMessage;
+
+
+@SuppressWarnings("serial")
+public class PhysicianAgent extends Agent {
+	
+	private String language;
+	//Initializing FIPA-SL (Semantic Language)
+	private Codec codec = new SLCodec();
+	//Initializing ontology class MyOntology
+	private Ontology ontology = MyOntology.getInstance();
+	
+
+@SuppressWarnings("deprecation")
+protected void setup() { 
+	
+
+	//registering ontology and codec language (FIPA-SL)
+	getContentManager().registerLanguage(codec);
+	getContentManager().registerOntology(ontology);
+	
+	
+    // Printout a welcome message 
+	  System.out.println("HELLO! PHYSICIAN-AGENT "+getAID().getLocalName()+" IS READY.");  
+  
+	  Object[] args = getArguments();	  
+	  if (args != null && args.length > 0){
+		  //Obtain the language spoken by the physician passed as the argument
+		  language = (String) args[0];
+		  System.out.println("LANGUAGE SPOKEN BY "+getAID().getLocalName()+" IS: "+language);
+		 
+			
+		  
+		  
+		  //Register service provided by the physician to the DF
+		  DFAgentDescription dfd = new DFAgentDescription();
+		  dfd.setName(getAID());
+		  ServiceDescription sd = new ServiceDescription();
+		  sd.setType("OBSERVATION ANALYSIS");
+		  sd.setName("BLOOD GLUCOSE");
+		  dfd.addServices(sd);
+		  try {
+		  DFService.register(this, dfd);
+		  }
+		  catch (FIPAException fe) {
+		  fe.printStackTrace();
+		  }
+		  
+		  // a ticker behavior to wait for the message from the patient		  
+		  addBehaviour(new PhysicianReceiveMessage(language));
+	  }
+	  else {
+		  System.out.println("NO LANGUAGE HAS BEEN ASSIGNED");
+		  doDelete();
+	  }  
+	  }
+  
+  protected void takeDown(){
+	// Deregister from the directory facilitator (yellow pages)
+	  try {
+	  DFService.deregister(this);
+	  }
+	  catch (FIPAException fe) {
+	  fe.printStackTrace();
+	  }
+	  
+	  System.out.println("PHYSICIAN-AGENT "+getAID().getLocalName()+" HAS TERMINATED");
+  }
+  
+ }
+
+
+
+//BEHAVIOURS
+
+//PATIENT SEND MESSAGE
+
+package behaviours;
+
+
+
+import jade.content.lang.Codec.CodecException;
+import jade.content.onto.OntologyException;
+import jade.core.AID;
+import jade.core.Agent;
+import jade.core.behaviours.WakerBehaviour;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.lang.acl.ACLMessage;
+import ontology.Share;
+import ontology.Test;
+
+
+
+@SuppressWarnings("serial")
+public class PatientSendMessage extends WakerBehaviour {
+	
+	//Declare a list for storing the identification numbers of available physician agents
+	AID [] physiciansList;
+    
+    
+	//Constructor
+	public PatientSendMessage(Agent a, long period) {
+		super(a, period);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+	protected void handleElapsedTimeout() {
+		
+		
+		  //Searching in Directory Facilitator (DF) for a given service from a list available physician agents 
+		  DFAgentDescription template = new DFAgentDescription();
+		  ServiceDescription sd = new ServiceDescription();
+		  sd.setType("OBSERVATION ANALYSIS");
+		  sd.setName("BLOOD GLUCOSE");
+		  template.addServices(sd);
+
+		  try {				
+		  DFAgentDescription[] result = DFService.search(myAgent, template);
+		  physiciansList = new AID[result.length];
+		  for (int i = 0; i < result.length; ++i) {
+		  physiciansList[i] = result[i].getName();
+		  }
+		  }
+		  catch (FIPAException fe) {
+		  fe.printStackTrace();
+		  }
+		
+		  
+		 //Prepare the physiological data to be sent to the physicians
+		 //Prepare the test results from the concept class in the ontology
+		  
+		  
+		  
+			Test t  = new Test();
+			t.setName("fS-Gluc");
+			t.setValue(50);					
+			t.setUnits("mmol");
+			
+			
+		  /*
+			
+			 Test t  = new Test();
+			 t.setName("B-HGB");
+			 t.setValue(300);					
+			 t.setUnits("grams");
+		
+		*/
+			
+		//Prepare the other shared knowledge from the predicate class in the ontology	
+			Share share = new Share();
+			share.setPatient_Id("IDK1234");
+			share.setPatient_Language("ENGLISH");
+			share.setTest(t);
+			
+			
+		  //Prepare message to be sent to the list of available physicians
+		  ACLMessage cfp= new ACLMessage(ACLMessage.CFP);
+		  for (int i = 0; i < physiciansList.length; i++) {
+			  cfp.addReceiver(physiciansList[i]);
+		  }
+		  
+		  //Set the FIPA-SL content language
+		  cfp.setLanguage(myAgent.getContentManager().getLanguageNames()[0]); 
+		  //Set the ontology which provides knowledge sharing
+		  cfp.setOntology(myAgent.getContentManager().getOntologyNames()[0]);
+		  cfp.setConversationId("CHECK PHYSIOLOGICAL CONDITIONS");
+		  cfp.setReplyWith("cfp"+System.currentTimeMillis());  //Unique value
+		  
+		  //Sending a request to a list of available Physician
+		  try {
+				// Let JADE convert from Java objects to string
+				myAgent.getContentManager().fillContent(cfp, share);
+				myAgent.send(cfp);
+				}
+				catch (CodecException ce) {
+				ce.printStackTrace();
+				}
+				catch (OntologyException oe) {
+				oe.printStackTrace();
+			}
+		  
+		  
+		  //Message send by the patient to the physicians
+		  System.out.println("\nPATIENT AGENT "+ myAgent.getAID().getLocalName()+" SENT MESSAGE TO PHYSICIANS");
+		  
+		  
+		
+	}
+
+}
+
+
+
+//PHYSICIAN RECEIVE MESSAGE
+
+package behaviours;
+
+
+import jade.content.ContentElement;
+import jade.content.lang.Codec.CodecException;
+import jade.content.onto.OntologyException;
+import jade.core.AID;
+import jade.core.behaviours.CyclicBehaviour;
+import jade.lang.acl.ACLMessage;
+import jpl.Atom;
+import jpl.Float;
+import jpl.Query;
+import jpl.Term;
+import ontology.Share;
+import ontology.Test;
+
+@SuppressWarnings("serial")
+public class PhysicianReceiveMessage extends CyclicBehaviour {
+	
+	private String language;	
+    private String testName;
+    private double testValue;
+    private String testUnits;
+    private String replyToPatient;
+  
+	
+    //Constructor
+	public PhysicianReceiveMessage(String l) {
+		super();
+		language = l;
+	}
+	
+	
+	@SuppressWarnings("deprecation")
+	public void action() {		
+	
+		//Receive the message as soon as it arrives
+		ACLMessage receivedMessage = myAgent.blockingReceive();
+		
+		  if (receivedMessage != null){
+			  String msgFromPatient = receivedMessage.getContent();
+			  AID patientAgentID = receivedMessage.getSender();
+			  
+			  //Received message is printed by the Physician
+			  System.out.println("\nMESSAGE RECEIVED BY "+ myAgent.getAID().getLocalName()+" FROM "+patientAgentID.getLocalName()+": "+ msgFromPatient);
+			  
+			  //Processing of the received message
+			  
+			  //Extracting the message content/objects
+			  ContentElement ce = null;
+			  
+			  
+				// Let JADE convert from String to Java objects			
+					try {
+						
+						ce = myAgent.getContentManager().extractContent(receivedMessage);
+					} catch (CodecException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (OntologyException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				
+				if (ce instanceof Share) {					
+				//extract contents from the predicate class	
+				Share share = (Share) ce;
+				String patientID = share.getPatient_Id();
+				String patientLanguage = share.getPatient_Language();
+				
+				//extract contents from the concept class
+				Test t = new Test();
+				t = share.getTest();
+				testName = t.getName();
+				testValue = t.getValue();
+				testUnits = t.getUnits();
+				
+							  
+			  //Execute some analysis of the data received from the patient
+			  //Prepare contents of the the message to be replied to the patient
+				
+			  replyToPatient = "RESPONSE MESSAGE FROM " + myAgent.getAID().getLocalName() + " MESSAGE TO PATIENT WITH ID. NUMBER: " + patientID + "\n";
+			  
+			  
+			  
+			  System.out.println();			
+				//Connect and open prolog file
+				Query q1 = 
+				    new Query( 
+				        "consult", 
+				        new Term[] {new Atom("C:/Users/Msury Mahunnah/workspace/AOM_2013/resources/condition_analysis.pl")} 
+				    );
+				
+			  System.out.println( "consult " + (q1.query() ? "succeeded" : "failed"));
+			  
+			  
+			  
+			  
+			  Query q2 = 
+				    new Query( 
+				        "same_language", 
+				        new Term[] {new Atom(language.toLowerCase()),new Atom(patientLanguage.toLowerCase())} 
+				    );
+				System.out.println( 
+						myAgent.getAID().getLocalName() + ": " + 
+				    ( q2.query() ? "WE SPEAK SAME LANGUAGE :), I CAN TREAT YOU \n" : "SORRY, WE SPEAK DIFFERENT LANGUAGES, LOOK FOR ANOTHER PHYSICIAN \n" ) 
+				);
+				
+				replyToPatient = replyToPatient + (q2.query() ? "WE SPEAK SAME LANGUAGE :), I CAN TREAT YOU \n" : "SORRY, WE SPEAK DIFFERENT LANGUAGES, LOOK FOR ANOTHER PHYSICIAN \n" ) ; 				
+				
+				
+				
+				
+				if (testName.equals("fS-Gluc")){
+				
+				Query q3 = 
+				    new Query( 
+				        "critical_glucose", 
+				        new Term[] { new Float(testValue) , new Atom(testUnits.toLowerCase())} 
+				    );
+				System.out.println( 
+						myAgent.getAID().getLocalName() + ": " + 
+				    ( q3.query() ? "THIS PATIENT HAS CRITICAL GLUCOSE LEVEL \n" : "THE GLUCOSE LEVEL FOR THIS PATIENT IS NORMAL \n" ) 
+				);
+				
+				replyToPatient = replyToPatient + ( q3.query() ? "THIS PATIENT HAS CRITICAL GLUCOSE LEVEL \n" : "THE GLUCOSE LEVEL FOR THIS PATIENT IS NORMAL \n" ) ;
+				
+				}else if (testName.equals("B-HGB")){
+				
+				
+				Query q4 = 
+				    new Query( 
+				        "critical_haemoglobin", 
+				        new Term[] {new Float(testValue) ,new Atom(testUnits.toLowerCase())}  
+				    );
+				System.out.println( 
+						myAgent.getAID().getLocalName() + ": " + 
+				    ( q4.query() ? "THIS PATIENT HAS CRITICAL LEVEL OF HAEMOGLOBIN IN BLOOD \n" : "THE LEVEL OF HAEMOGLOBIN IN THE BLOOD OF THIS PATIENT IS NORMAL \n" ) 
+				);
+				
+				replyToPatient = replyToPatient + ( q4.query() ? "THIS PATIENT HAS CRITICAL LEVEL OF HAEMOGLOBIN IN BLOOD \n" : "THE LEVEL OF HAEMOGLOBIN IN THE BLOOD OF THIS PATIENT IS NORMAL \n" ) ;
+			  
+				}
+									  
+			
+				
+              
+              //Creating a reply message
+			  ACLMessage reply = receivedMessage.createReply();
+			  reply.setPerformative(ACLMessage.INFORM);			  
+              reply.setContent(replyToPatient);
+              
+              //Display contents of the replied message
+			  System.out.println(replyToPatient);
+			  
+			  //Send reply message to patient
+			  myAgent.send(reply);
+			  }	
+		
+	}
+	
+}
+}
+
+
+// PATIENT RECEIVE MESSAGE
+
+package behaviours;
+
+
+import jade.core.AID;
+import jade.core.Agent;
+import jade.core.behaviours.TickerBehaviour;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+
+@SuppressWarnings("serial")
+public class PatientReceiveMessage extends TickerBehaviour {
+	
+	private MessageTemplate mt;
+	private String response;
+	  
+	
+    //Constructor
+	public PatientReceiveMessage(Agent a, long period) {
+		super(a, period);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	protected void onTick() {
+		
+		//Patient receives the message from physicians
+		  ACLMessage reply= myAgent.receive(mt);
+		  
+		  if (reply != null) {
+			  if(reply.getPerformative() == ACLMessage.INFORM){
+				 //Extract contents from the replied message
+				response=reply.getContent();
+				AID physicianID=reply.getSender();
+				
+				//Display the received message
+				System.out.println("RESPONSE FROM "+physicianID.getLocalName()+": " + response);					  
+			  } 
+		  }else{
+			  block();
+		  }
+		
+		
+		
+	}
+	
+}
+
+//ONTOLOGY CLASSES
+// MY ONTOLOGY CLASS
+
+package ontology;
+
+import jade.content.onto.*;
+import jade.content.schema.*;
+
+@SuppressWarnings("serial")
+public class MyOntology extends Ontology {
+	
+	public static final String ONTOLOGY_NAME = "medical-test-ontology";
+	
+	
+	public static final String TEST = "test";
+	public static final String NAME = "name";
+	public static final String VALUE = "value";
+	public static final String UNITS = "units";
+	
+	public static final String SHARE = "share";
+	public static final String SHARE_PATIENT_ID = "patient_Id";
+	public static final String SHARE_PATIENT_LANGUAGE = "patient_Language";
+	public static final String SHARE_TEST = "test";
+	
+	
+	private static Ontology theInstance = new MyOntology();
+	
+	public static Ontology getInstance(){
+		return theInstance;
+	}
+	
+	private MyOntology(){
+		super(ONTOLOGY_NAME, BasicOntology.getInstance());
+		
+		try {
+			
+			
+			add(new ConceptSchema(TEST), Test.class);
+			add(new PredicateSchema(SHARE), Share.class);
+			
+			
+			
+			// Structure of the schema for the Test concept
+			ConceptSchema cs = (ConceptSchema) getSchema(TEST);
+			cs.add(NAME, (PrimitiveSchema) getSchema(BasicOntology.STRING));
+			cs.add(VALUE, (PrimitiveSchema) getSchema(BasicOntology.FLOAT));
+			cs.add(UNITS, (PrimitiveSchema) getSchema(BasicOntology.STRING));
+			
+			
+			
+			// Structure of the schema for the Share action agent
+			PredicateSchema as = (PredicateSchema) getSchema(SHARE);
+			as.add(SHARE_PATIENT_ID, (PrimitiveSchema) getSchema(BasicOntology.STRING));
+			as.add(SHARE_PATIENT_LANGUAGE, (PrimitiveSchema) getSchema(BasicOntology.STRING));	
+			as.add(SHARE_TEST, (ConceptSchema) getSchema(TEST));
+			
+			
+		}
+		catch (OntologyException oe){
+			oe.printStackTrace();
+		}		
+		
+	}
+	
+}
+
+
+
+
+//PREDICATE CLASS
+
+package ontology;
+
+import jade.content.Predicate;
+
+@SuppressWarnings("serial")
+public class Share implements Predicate {
+	
+	private String patient_Id;
+	private String patient_Language;
+	private Test test;
+	
+	public void setPatient_Id(String pid){
+		patient_Id = pid;
+	}
+	
+	public String getPatient_Id(){
+		return patient_Id;
+	}
+	
+	public void setPatient_Language(String l){
+		patient_Language = l;
+	}
+	
+	public String getPatient_Language(){
+		return patient_Language;
+	}
+	
+	public void setTest (Test t){
+		test = t;
+	}
+	
+	public Test getTest(){
+		return test;
+	}
+	
+}
+
+
+
+
+//CONCEPT CLASS
+
+package ontology;
+
+
+import jade.content.Concept; 
+
+
+
+@SuppressWarnings("serial")
+public class Test implements Concept {
+	String name;	
+	double value;
+	String units;
+
+	public void setName (String n){
+		name = n;
+	}
+	
+	public String getName(){
+		return name;
+	}
+	
+	public void setValue (double v){
+		value = v;
+	}
+	
+	public double getValue(){
+		return value;
+	}
+	
+	public void setUnits (String u){
+		units = u;
+	}
+	
+	public String getUnits(){
+		return units;
+	}
+}
+
+
+
+
+
+//SIMPLE PROLOG FILE FOR LANGUAGE CHECKING
+//CONDITION_ANALYSIS.pl
+
+language(estonian).
+language(english).
+language(russian).
+language(finnish).
+same_language(X,X) :- language(X).
+
+
+minimum_glucose(2.2).
+maximum_glucose(25).
+glucose_units(mmol).
+
+
+low_glucose(X,Y) :- minimum_glucose(Z),X<Z,glucose_units(Y).
+high_glucose(X,Y) :- maximum_glucose(Z),X>Z,glucose_units(Y).
+critical_glucose(X,Y) :- low_glucose(X,Y); high_glucose(X,Y).
+
+minimum_haemoglobin(66).
+maximum_haemoglobin(220).
+haemoglobin_units(grams).
+
+
+low_haemoglobin(X,Y) :- minimum_haemoglobin(Z),X<Z,haemoglobin_units(Y).
+high_haemoglobin(X,Y) :- maximum_haemoglobin(Z),X>Z,haemoglobin_units(Y).
+critical_haemoglobin(X,Y) :- low_haemoglobin(X,Y); high_haemoglobin(X,Y).
+
+
+
+
+
+
+//SAMPLE PROGRAM ARGUMENTS
+//-gui PATIENT_1:agents.PatientAgent();PHYSICIAN_1:agents.PhysicianAgent(ESTONIAN);PHYSICIAN_2:agents.PhysicianAgent(ENGLISH);
+
+
+//SAMPLE OUTPUT MESSAGES
+
+/*
+
+INFO: --------------------------------------
+Agent container Main-Container@10.192.6.183 is ready.
+--------------------------------------------
+HELLO! PHYSICIAN-AGENT PHYSICIAN_2 IS READY.
+HELLO! PHYSICIAN-AGENT PHYSICIAN_1 IS READY.
+HELLO! PATIENT-AGENT PATIENT_1 IS READY.
+LANGUAGE SPOKEN BY PHYSICIAN_1 IS: ESTONIAN
+LANGUAGE SPOKEN BY PHYSICIAN_2 IS: ENGLISH
+
+MESSAGE RECEIVED BY PHYSICIAN_2 FROM PATIENT_1: ((share IDK1234 ENGLISH (test :name fS-Gluc :value 50.0 :units mmol)))
+
+PATIENT AGENT PATIENT_1 SENT MESSAGE TO PHYSICIANS
+
+MESSAGE RECEIVED BY PHYSICIAN_1 FROM PATIENT_1: ((share IDK1234 ENGLISH (test :name fS-Gluc :value 50.0 :units mmol)))
+
+
+% C:/Users/Msury Mahunnah/workspace/AOM_2013/resources/condition_analysis.pl compiled 0.00 sec, 18 clauses
+consult succeeded
+consult succeeded
+PHYSICIAN_1: SORRY, WE SPEAK DIFFERENT LANGUAGES, LOOK FOR ANOTHER PHYSICIAN 
+
+PHYSICIAN_2: WE SPEAK SAME LANGUAGE :), I CAN TREAT YOU 
+
+PHYSICIAN_1: THIS PATIENT HAS CRITICAL GLUCOSE LEVEL 
+
+RESPONSE MESSAGE FROM PHYSICIAN_1 MESSAGE TO PATIENT WITH ID. NUMBER: IDK1234
+SORRY, WE SPEAK DIFFERENT LANGUAGES, LOOK FOR ANOTHER PHYSICIAN 
+THIS PATIENT HAS CRITICAL GLUCOSE LEVEL 
+
+PHYSICIAN_2: THIS PATIENT HAS CRITICAL GLUCOSE LEVEL 
+
+RESPONSE MESSAGE FROM PHYSICIAN_2 MESSAGE TO PATIENT WITH ID. NUMBER: IDK1234
+WE SPEAK SAME LANGUAGE :), I CAN TREAT YOU 
+THIS PATIENT HAS CRITICAL GLUCOSE LEVEL 
+
+RESPONSE FROM PHYSICIAN_1: RESPONSE MESSAGE FROM PHYSICIAN_1 MESSAGE TO PATIENT WITH ID. NUMBER: IDK1234
+SORRY, WE SPEAK DIFFERENT LANGUAGES, LOOK FOR ANOTHER PHYSICIAN 
+THIS PATIENT HAS CRITICAL GLUCOSE LEVEL 
+
+RESPONSE FROM PHYSICIAN_2: RESPONSE MESSAGE FROM PHYSICIAN_2 MESSAGE TO PATIENT WITH ID. NUMBER: IDK1234
+WE SPEAK SAME LANGUAGE :), I CAN TREAT YOU 
+THIS PATIENT HAS CRITICAL GLUCOSE LEVEL 
+
+
+
+
+*/
+
+

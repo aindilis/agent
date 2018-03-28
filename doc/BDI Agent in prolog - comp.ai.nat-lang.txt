@@ -1,0 +1,475 @@
+Toggle navigation [comp] compgroups
+
+  •  
+  • [group16] groups
+  • [users16] users
+  • [clock16] stream
+  • [icon_searc] search
+  • [earth16] browse
+  • [add16] post
+  • [info16] about
+  • [key] register
+
+
+
+
+
+BDI Agent in prolog
+
+Hi,
+
+My problem is to write basic functions of BDI Agent in prolog. The
+problem
+description(case) is about Tileworld and only one agent is invloved.
+Please
+give me some ideas for the problem.
+
+The Tileworld consists of a two-dimensional grid of locations,
+extending to
+infinity in both directions. Some locations contain "food" resources
+(of
+varying values), which agents must "eat" in order to score points. An
+agent
+eats a piece of food by moving to its location and executing an eat
+action.
+Agents can move one square at a time either horizontally or
+vertically. The
+world is dynamic in that food may spontaneously appear at a randomly
+determined location at any time.
+
+The agent's beliefs at any time simply consist of a list containing
+one term
+of the form at(X,Y) representing the current location of the agent.
+The
+agent's beliefs are always correct.
+
+The agent's goals at any time are a list of locations of food items
+and
+their values. Each goal of the agent is represented as an term
+goal(X,Y,S),
+where (X,Y) is the location of the food and S is its value.
+
+The agent's intentions are these goals ordered according to some
+priority.
+To fulfil an intention, the agent's action is just to move along some
+path
+towards the corresponding goal and collect the reward (the actual path
+is
+determined at run time).
+
+There are three types of action the agent can execute in any one
+cycle:
+null - the agent does nothing
+eat(X,Y) - the agent eats the food at (X,Y) and gains the associated
+reward
+move(X,Y) - the agent moves to the location (X,Y)
+
+The agent's prioritization strategy is very simple: each new goal is
+inserted into the list of intentions in order of the closeness of the
+food
+item to the agent's current position (closer items coming earlier in
+the
+list). However, once a goal is incorporated into the list of
+intentions, it
+is never re-prioritized with respect to existing goals as the agent
+moves
+about (hence after some time the list may not accurately reflect the
+closeness of food to the agent).
+
+The agent chooses to go towards the food item nearest to the agent
+when it
+appeared. The
+initial state of the world is always that there is no food and the
+agent is
+at the location (0,0).
+
+HERE ARE THE QUESTIONS. PLEASE GIVE ME SOME IDEAS OR ALGORITHMS. I AM
+LOST!!
+
+1. How to write a Prolog procedure incorporate intentions(Options,
+Beliefs,
+Intentions, Intentions1) which has four arguments: a list of options
+each of
+the form goal(X,Y,S), a list of beliefs (here containing one term of
+the
+form at(X,Y)), the current list of intentions each of the form
+goal(X,Y,S),
+and computes a list which contains the new options inserted into the
+current
+list of intentions in order of the Manhattan distance of the goal from
+the
+agent's current location. If an option is the same distance from the
+agent
+as an existing goal, the new goal should be placed later in the list.
+
+2. How to write a Prolog procedure select action(Beliefs, Intentions,
+Action) which takes the agent's beliefs (a singleton list containing
+an term for the agent's location) and the list of intentions, and
+computes an action to be taken by the agent. Note that the goal
+selected by the agent is the first on the list of intentions, and in
+the case of a move action, the action should specify the coordinates
+to which the agent should move (being one square from the agent's
+current location). Due to the use of Manhattan distance and the fact
+that there are no obstacles in the world, the exact path the agent
+takes towards the goal does not matter much, so choose the simplest
+way of implementing this procedure.
+
+3. How to write two Prolog procedures update beliefs(Observation,
+Beliefs,
+Beliefs1) and update intentions(Observation, Intentions, Intentions1)
+to
+compute the lists of beliefs and intentions resulting from the agent's
+observations. (one line for each possible observation type)!
+
+4. How to write a Prolog procedure trigger(Events, Options) which
+takes a
+list of events, each of the form food(X,Y,S) and computes a list of
+options
+for the agent, each of the form goal(X,Y,S).
+
+_______________
+
+The following Prolog program implements the experimental setup,
+including the generation of events (appearance of food) and the
+execution of actions, and the agent's BDI interpretation cycle and
+observation functions. It consists of one agent in the Tileworld that
+repeatedly executes the BDI interpretation cycle for 20 iterations.
+The produced code must work with this program.
+
+% Simulates a single agent in the Tileworld where food appears on each
+cycle
+% at randomly % determined locations in the 10x10 grid with
+probability 0.3
+
+% run a trial of 20 cycles of the BDI interpreter starting with the
+agent at (0,0)
+
+agent_trial :-
+        init,
+        agent_trials(0, 20, [at(0,0)], [], 0, Score),
+        write('Total score: '), print(Score), !.
+
+
+% initial state of the world
+
+init :-
+        assert(robot_at(0,0)).
+
+
+% run trials up to N
+
+agent_trials(N, N, _, _, Score, Score) :- !.
+
+agent_trials(N1, N, Beliefs, Intentions, Score, Score2) :-
+        N1 < N,
+        agent_cycle(N1, Beliefs, Beliefs1, Intentions, Intentions1, S),
+        Score1 is Score + S,
+        N2 is N1 + 1,
+        agent_trials(N2, N, Beliefs1, Intentions1, Score1, Score2).
+
+
+% the BDI interpretation cycle used by the agent
+
+agent_cycle(N, Beliefs, Beliefs1, Intentions, Intentions2, S) :-
+        write('Cycle '), write(N), print(':'),
+        new_events(N, Events),
+        trigger(Events, Options),
+        incorporate_intentions(Options, Beliefs, Intentions, Intentions1),
+        write('    Intentions: '), print(Intentions1),
+        select_action(Beliefs, Intentions1, Action),
+        write('    Action: '), write(Action),
+        execute(Action, S),
+        write(' scores '), print(S),
+        observe(Action, Observation),
+        write('    Observation: '), print(Observation),
+        update_beliefs(Observation, Beliefs, Beliefs1),
+        write('    New Beliefs: '), print(Beliefs1),
+        update_intentions(Belief, Intentions1, Intentions2),
+        write('    New Intentions: '), print(Intentions2).
+
+
+%  with probability 0.3, a new food item appears in random location on
+the 10x10 grid
+
+new_events(N, [food(X,Y,S)]) :-
+        Prob is random(1),
+        Prob =< 0.3, !,
+        X is round(random(10)),
+        Y is round(random(10)),
+        S is round(random(10)),
+        write('    Events: food value '), write(S), write(' appears at '),
+write('('), write(X), write(','), write(Y), print(')'),
+        assert(food(X, Y, S)).
+
+new_events(N, []) :-
+        print('    Events: none').
+
+
+% execute action in the Tileworld -- always successfully!
+
+execute(null, 0).
+
+execute(eat(X,Y), S) :-
+        retract(food(X, Y, S)),
+        assert(eaten(X,Y)).
+
+execute(move(X1,Y1), 0) :-
+        retract(robot_at(U, V)),
+        distance((U,V), (X1,Y1), 1),
+        assert(robot_at(X1, Y1)).
+
+
+% observe result of action -- always correctly!
+
+observe(null, at(X,Y)) :-
+        robot_at(X, Y).
+
+observe(move(_,_), at(X,Y)) :-
+        robot_at(X, Y).
+
+observe(eat(_,_), eaten(X,Y)) :-
+        retract(eaten(X,Y)).
+
+Thanks.
+
+Regards,
+Joe
+
+[plus32] 0 [minus32]
+
+[user]neilyork82
+4/23/2004
+[group]comp.ai.nat-lang [i] [article]1739 articles. [star2]0 followers. 
+[733c9b273b]arin280 (56) is leader. Post Follow
+
+[reply] 2 Replies
+[eye] 26 Views
+
+[a]Similar Articles
+
+0.003 - 55
+[a]See related articles to this posting
+
+
+
+"Joe" wrote in message
+news:b490f776.0404221809.679fd38e@posting.google.com...
+Bla, bla, bla...
+
+What on earth has this to with natural language?
+
+--
+Mail sent to this email address is automatically deleted
+(unread) on the server. Send replies to the newsgroup.
+
+
+
+[plus32] 0 [minus32]
+
+[user]Nameless
+4/23/2004
+
+"Joe" <neilyork82@yahoo.com> wrote in message
+news:b490f776.0404221809.679fd38e@posting.google.com...
+> Hi,
+>
+> My problem is to write basic functions of BDI Agent in prolog.
+
+Joe,
+
+Suggest you take this up with your TA. Doing your homework via the net does
+not lead to personal growth.
+
+
+
+[plus32] 0 [minus32]
+
+[user]Gorbag
+4/23/2004
+
+Reply:
+[                    ]
+[                    ]
+[                    ]
+[                    ]
+[                    ]
+[                    ]
+[                    ]
+
+[Post Reply] [Insert Signature]
+
+
+[a] Similar Artilces:
+
+ai ai ai
+Hello , I work for a small transporting company, our clients send us pick-up
+adressess by fax and by e-mail. We give every pick up order a number,
+chronologically in the way we receive the orders. Than,we make a table in which
+we type every pick-up order. Afterwards, we give every driver a number of
+pick-ups. We also give the drivers a list with all the adressess. To make these
+lists, we make a query (which results in a report) for every driver. In the
+query we type in all the numbers (the pick up numbers) Everything works very
+well, BUT for example: we get...
+
+where else do people talk about ai and nat-lang?
+I notice that comp.ai has been down for months and wonder if the community has
+migrated over to some web-site message board or something? If people aren't
+using comp.ai (and aren't using comp.ai.nat-lang that much either) - where are
+they? "Craig Harris" <harris@SummerEyes.com> wrote in message
+news:76ydnZ2dnZ1Y-zf1nZ2dnQonkt6dnZ2dRVn-y52dnZ0@megapath.net... >I notice that
+comp.ai has been down for months > and wonder if the community has migrated
+over > to some web-site message board or something? > > If people aren't using
+comp....
+
+Why Not Prolog in Prolog ?
+Prolog can do anything that C or C++ can do. But for the 2 outstanding prolog
+systems , SWI- and GNU prolog , the source codes are not written in prolog .
+Why not ? If only it was in prolog ! Really if only !! On 28 Apr 2006 18:27:44
+-0700, newser.bbs@bbs.ee.ncu.edu.tw wrote: >Prolog can do anything that C or
+C++ can do. >But for the 2 outstanding prolog systems , SWI- and GNU prolog , >
+the source codes are not written in prolog . >Why not ? Do this yourself. A.L.
+On 28 Apr 2006 18:27:44 -0700 newser.bbs@bbs.ee.ncu.edu.tw wrote: > Prolog can
+do anything that C or C++ ca...
+
+NAT to NAT
+Hi I am running VNC on a machine on my network behind my NAT router. I have
+forwarded the ports and everything and have checked that they work by using the
+tools at: http://www.psi-rho.com/dsltools/ (i used the webserver one because
+VNC's reply shows in it. The ports are open and reply back and everything and i
+have even managed to get friends to connect to me but when i go to college i
+cant connect. I am assuming that my college uses NAT too. Could this be causing
+problems? I first assumed that they had blocked the port so i even tried using
+the webserver in VNC to connect. I realised t...
+
+agent without ai
+hiya all java source code public warningbox wb; public button connectbutton;
+public menuitem consoleitem; public menu filemenu; public button connectbutton;
+public stringdialog maindialog; could you show me how to debug agent design and
+its association with ai security? find some ideas at http://sourceforge.net/
+projects/tinyreverseprox/ when we talk about agent ...
+
+agent and the concept of ai
+hiya java source code // the menu bar and sub-menus public menuitem
+artvectoritem; public int numarticles; ...
+
+AI in software agents
+hi i would like to know how are artificial intelligence and statistical
+tenchniques used in software agents?? thanks mike wrote: > i would like to know
+how are artificial intelligence and statistical > tenchniques used in software
+agents?? Here are some key words for a google search: "Bayesian Analysis"
+"Markov chains" "Latent Semantic Indexing" I'm sure there are others from a
+different perspectives. Perhpas if you asked a more specific question, you
+would get a more specific answer. Patty LSI would be great for parallelization,
+we discussed ...
+
+translate nat-lang ?????
+hello to every body (gia kai xara se olous [greeklish]) allow my friends, does
+anybody know how i can translate for example "english language to pseudo code
+(algorithm code)" or "pseudo code to sourse code(c/c++,clips,java etc.)" or
+"any sourse language to an other destining language" I have listen last 2 weeks
+about translation commercial packet TRADOS 6.5. But it was multiterminology
+lexicon and it was dificult to trainning this software. my friends if anybody
+of you, know any algorithm (ann,expert,generic,mametic etc) please infom me
+THA...
+
+Prolog AI for Game of Go
+Hi everybody, I am unable to find some useful information on how to create a
+simple AI in Prolog for the Game of Go. Can you give me any pointers? Thank
+you, Vasile Vasile V. Alaiba <vasile.alaiba@gmail.com> wrote: > Hi everybody, >
+I am unable to find some useful information on how to create a simple > AI in
+Prolog for the Game of Go. Can you give me any pointers? [...] A sentence
+containing all of simple, Prolog, AI and "Go" is an oxymoron. :) If you
+absolutely have to be there (overnight?) better start tracing down the
+reference chain from www.cs.berkeley.e...
+
+AI agents for learning from the web?
+Has anyone written a good AI agent that basically learns by searching the web?
+I would think of such a tool could be run in parrell by many servers then in a
+short time alot of information can be "learned" quickly. I could easily write a
+web spider to parse through text on websites and move on to the next linked
+page. Then I could store the data in a database for doing intelligent searches
+and identifing trend. I am thinking some kind of neural network could be
+devised to process the data. [ comp.ai is moderated. To submit, just post and
+be patient, or if ] [ that fails mail your ...
+
+Agents, the other (not very serious) way to AI
+aka chinese bureaucracy Take a group of people (thousands?), and assign each
+one the role of a concept or situation, acting the role of a hofstadter style
+'active symbol'. Have them break up a task amongst themselves, but without
+doing anything too individually intelligent. If you have enough of an idea to
+break up the task (but not enough initially to implement the subtasks on a
+computer), the crowd as a whole acts as a (slow and probably idiotic with
+possible occasional flurries of genius) mind. At this point you should have a
+truly creative bureaucracy, which would be a fi...
+
+Agent++ Agent development
+I download the SNMP++ and Agent++ API's from the net. I am trying to build an
+agent using the APIs I have taken a MIB table and trying to register this oid
+in the agent. If anyone provide me about how to start with, it would be
+helpful.. Thanks, Karthik N Hi Karthik, To get help on AGENT++/SNMP++ etc.
+please subscribe to the AGENT++ mailing list at: http://lists.agentpp.org/
+mailman/listinfo/agentpp Basically, registering an instrumented SMI table is
+subclassing MibTable and then calling mib.add(new MyMibTable(...)); where "mib"
+is an instance of the Mi...
+
+ai and the particular case of agent
+hiya all this sample code is similar public menu filemenu; public button
+listbutton; public list articlelisttext; // the connection to the
+network-related functions and associated data public makelistbox mlb; public
+menuitem postitem; public stringdialog maindialog; public menu filemenu; public
+button vectorbutton; public button listbutton; public makelistbox mlb; // the
+connection to the network-related functions and associated data ...
+
+BDI Agents with Matlab/Simulink
+Hello everyone, i'm going to develot a Multi-Agent Simulation system using
+Matlab/Simulink. For the overall simulation i think Simulink is a very powerful
+tool to use. However i'm not sure how to implement the actual agents using BDI
+(Belief-Desire-Intention) Model? Are there any examples for BDI Agents
+developed with Matlab/Simulink? Is there any chance to insert agents from other
+frameworks (e.g. JADE)? Best Regards Sebastian JADEX ...
+
+[a] Web resources about - BDI Agent in prolog - comp.ai.nat-lang
+
+Prolog - Wikipedia, the free encyclopedia
+This article is about the programming language. For the narrative device, see
+Prologue . For other uses, see Prologue (disambiguation) . Prolog ...
+
+[icon_340] Prolog Mobile on the App Store on iTunes
+Get Prolog Mobile on the App Store. See screenshots and ratings, and read
+customer reviews.
+
+Open Directory - Computers: Programming: Languages
+about dmoz - dmoz blog - report abuse/spam - help the entire directory only in
+Programming/Languages Description Top : Computers : Programming ...
+
+[150px-1879_Sp] English-language spelling reform - Wikipedia, the free
+encyclopedia
+For hundreds of years, many groups and individuals have advocated spelling
+reform for English . Spelling reformers seek to make English spelling ...
+
+Dictionary or Glossary?
+The AI Dictionary , ML Dictionary , NLP Dictionary ,and Prolog Dictionary are
+could more precisely be described as glossaries rather than dictionaries. ...
+
+Introduction
+Introduction
+
+[ResearchPic] David Poole - Research
+Combining logic and probability/decision making or what is called relational
+probabilistic reasoning or statistical relational AI, particularly ...
+
+Computers Books
+Computers Books. Discount prices on, Artificial Intelligence, Bioinformatics,
+Buyer's Guides, CAD-CAM books, textbooks.
+
+FindPage - APL wiki
+Search: APL Wiki Login FindPage RecentChanges FindPage HelpContents Immutable
+Page Comments Info Attachments More Actions: Raw Text Print View ...
+
+Index of STart Vol. 3 No. 8 articles
+STart Vol. 3 No. 8 - March 1989 - Pen & Pixel Yes, But Is It Art? The ST as an
+Artistic Tool by Heather Leitch SEURAT Super-Powered Paint Program ...
+
+Resources last updated: 2/9/2016 12:12:23 AM
+feedback | privacy policy | All Times Are GMT(UTC)
+ShareThis Copy and Paste

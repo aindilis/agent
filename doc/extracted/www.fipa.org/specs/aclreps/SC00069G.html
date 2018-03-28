@@ -1,0 +1,2121 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 10 (filtered)">
+<title>FIPA ACL Message Representation in Bit-efficient Encoding Specification</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\FF2D\FF33 \660E\671D";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Century Old Style";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Sans Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Helvetica;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-align:justify;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h4
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h5
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h6
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.1in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:8.0pt;
+	font-family:Helvetica;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-3.3pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoListContinue, li.MsoListContinue, div.MsoListContinue
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.15pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-20.15pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:red;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+strong
+	{font-family:"Book Antiqua";}
+em
+	{font-family:"Book Antiqua";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.zzCover, li.zzCover, div.zzCover
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.Code
+	{font-family:"Courier New";}
+p.Heading2, li.Heading2, div.Heading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallCode
+	{font-family:"Courier New";}
+span.SmallNormal
+	{font-family:"Book Antiqua";}
+span.SmallStrong
+	{font-family:"Book Antiqua";
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.Abbrevs, li.Abbrevs, div.Abbrevs
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Titre3h3, li.Titre3h3, div.Titre3h3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.source, li.source, div.source
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+p.Normaleparagraph, li.Normaleparagraph, div.Normaleparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.listanumerata, li.listanumerata, div.listanumerata
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.pre, li.pre, div.pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="SK_Preliminary"></a><a
+name="MLS_Field_MERGEFORMAT"></a><a name="MLS_Field_QUOTE"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a><b><span lang=EN-GB
+style='font-size:18.0pt'>&nbsp;</span></b></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><b><span lang=EN-GB style='font-size:18.0pt'>FOUNDATION
+FOR INTELLIGENT PHYSICAL AGENTS</span></b><b><span
+lang=EN-GB style='font-size:18.0pt'><a name="_Ref479045812"></a></span></b></p>
+
+<p class=Standardparagraph><a name="MLS_Field_CHARFORMAT"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><a
+name="_Toc468339237"></a><a name="_Ref461935548"></a><a name="_Ref461935540"></a><a
+name="_Ref461701353"></a><a name="_Ref461701311"><span style='font-size:24.0pt'>FIPA
+ACL Message</span></a><span style='font-size:24.0pt'> Representation in<br>
+Bit-Efficient Encoding Specification</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt'>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  title</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=Standardparagraph align=left style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-align:left'><span lang=EN-GB style='layout-grid-mode:both'>FIPA
+  ACL Message Representation in Bit-Efficient Encoding Specification</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  number</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=FR>SC00069G</span></p>
+  </td>
+  <td width=145 valign=top style='width:108.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=FR>Document
+  source</span></b></p>
+  </td>
+  <td width=177 valign=top style='width:132.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=FR>FIPA TC Agent
+  Management</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  status</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Standard</span></p>
+  </td>
+  <td width=145 valign=top style='width:108.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Date
+  of this status</span></b></p>
+  </td>
+  <td width=177 valign=top style='width:132.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2002/12/03</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Supersedes</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA00024</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Contact</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>fab@fipa.org</span></p>
+  </td>
+ </tr>
+ <tr style='height:3.5pt'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt;height:3.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Change
+  history</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt;height:3.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>See <i>Informative
+  Annex A — ChangeLog</i></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>©
+1996-2002 Foundation for Intelligent Physical Agents <br>
+http://www.fipa.org/<i><br>
+Geneva, Switzerland</i></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='text-align:center'><b><span
+  lang=EN-GB>Notice</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:108.45pt'>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:108.45pt'>
+  <p class=Standardparagraph><span lang=EN-GB>Use of the technologies described
+  in this specification may infringe patents, copyrights or other intellectual
+  property rights of FIPA Members and non-members. Nothing in this
+  specification should be construed as granting permission to use any of the
+  technologies described. Anyone planning to make use of technology covered by
+  the intellectual property rights of others should first obtain permission
+  from the holder(s) of the rights. FIPA strongly encourages anyone
+  implementing any part of this specification to determine first whether
+  part(s) sought to be implemented are covered by the intellectual property of
+  others, and, if so, to obtain appropriate licenses or other permission from
+  the holder(s) of such intellectual property prior to implementation. This
+  specification is subject to change without notice. Neither FIPA nor any of
+  its Members accept any responsibility whatsoever for damages or liability,
+  direct or consequential, which may result from the use of this specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=zzContents><span lang=EN-GB>Foreword</span></p>
+
+<p class=Standardparagraph>The Foundation for Intelligent Physical Agents
+(FIPA) is an international organization that is dedicated to promoting the
+industry of intelligent agents by openly developing specifications supporting
+interoperability among agents and agent-based applications. This occurs through
+open collaboration among its member organizations, which are companies and
+universities that are active in the field of agents. FIPA makes the results of
+its activities available to all interested parties and intends to contribute
+its results to the appropriate formal standards bodies where appropriate. </p>
+
+<p class=Standardparagraph>The members of FIPA are individually and
+collectively committed to open competition in the development of agent-based
+applications, services and equipment. Membership in FIPA is open to any
+corporation and individual firm, partnership, governmental body or
+international organization without restriction. In particular, members are not
+bound to implement or use specific agent-based standards, recommendations and
+FIPA specifications by virtue of their participation in FIPA. </p>
+
+<p class=Standardparagraph>The FIPA specifications are developed through direct
+involvement of the FIPA membership. The status of a specification can be either
+Preliminary, Experimental, Standard, Deprecated or Obsolete.<i> </i>More detail
+about the process of specification may be found in the FIPA <span lang=EN-GB>Document
+Policy [f-out-00000] and the FIPA Specifications Policy [f-out-00003]</span>. A
+complete overview of the FIPA specifications and their current status may be
+found on the FIPA Web site.</p>
+
+<p class=Standardparagraph>FIPA is a non-profit association registered in
+Geneva, Switzerland. As of June 2002, the 56 members of FIPA represented many<i>
+</i>countries worldwide. Further information about FIPA as an organization,
+membership information, FIPA specifications and upcoming meetings may be found on
+the FIPA Web site at http://www.fipa.org/.</p>
+
+<p class=zzContents><span lang=EN-GB>Contents</span></p>
+
+<p class=MsoToc1><a name="_Ref449499969"></a><a
+href="#_Toc26669889"><span lang=EN-GB>1</span><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span><span
+lang=EN-GB>Scope</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26669890"><span lang=EN-GB>2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Bit-Efficient ACL
+Representation</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669891"><span lang=EN-GB>2.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Component Name</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669892"><span lang=EN-GB>2.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Syntax</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669893"><span lang=EN-GB>2.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Using Dynamic Code Tables</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669894"><span lang=EN-GB>2.4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Notes on the Grammar Rules</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26669895"><span lang=EN-GB>3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>References</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26669896"><span lang=EN-GB>4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Informative Annex A —
+ChangeLog</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669897"><span lang=EN-GB>4.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>2002/11/01 - version F by
+TC X2S</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669898"><span lang=EN-GB>4.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>2002/12/03 - version G by
+FIPA Architecture Board</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoNormal></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=Section2>
+
+<h1><a name="_Toc26669889"></a><a name="_Toc485557306"><span lang=EN-GB>1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Scope</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>This document deals
+with message transportation between inter-operating agents and also forms part
+of the FIPA Agent Management Specification [FIPA00023]. It contains
+specifications for:</span></p>
+
+<p class=MsoNormal><i><span lang=EN-GB style='color:black'>&nbsp;</span></i></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Syntactic representation of
+ACL in a bit-efficient form.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc480605373"></a><a name="_Ref466517059"></a><a
+name="_Toc26669890"></a><a name="_Toc485557307"><span lang=EN-GB>2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Bit-Efficient ACL Representation</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>This section defines
+the message transport syntax for a bit-efficient encoding which is expressed in
+standard EBNF format<a href="#_ftn1" name="_ftnref1" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span lang=EN-GB
+style='font-size:10.0pt;font-family:Helvetica;color:black'>[1]</span></span></span></a>
+(see <i>Table 1</i>).</span></p>
+
+<p class=MsoBodyText2><span lang=EN-GB style='font-style:normal'>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Grammar rule
+  component</span></b></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Example</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Terminal tokens are
+  enclosed in double quotes</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&quot;(&quot;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Non-terminals are
+  written as capitalised identifiers</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Expression</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Square brackets
+  denote an optional construct</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>[
+  &quot;,&quot; OptionalArg ]</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Vertical bars denote
+  an alternative between choices</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Integer
+  | Float</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Asterisk denotes zero
+  or more repetitions of the preceding expression</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Digit*</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Plus denotes one or
+  more repetitions of the preceding expression</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Alpha+</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Parentheses are used
+  to group expansions</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>(
+  A | B )*</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Productions are
+  written with the non-terminal name on the left-hand side, expansion on the
+  right-hand side and terminated by a full stop</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>ANonTerminal
+  = &quot;terminal&quot;.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>0x??</span><span
+  lang=EN-GB> is a hexadecimal byte</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoCommentText><span lang=EN-GB style='font-family:Courier'>0x00</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB
+style='color:black'>Table 1: </span></b><span lang=EN-GB style='color:black'>EBNF
+Rules</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc26669891"></a><a name="_Toc485557308"></a><a
+name="_Toc480609944"></a><a name="_Toc480609272"><span lang=EN-GB>2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Component Name</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The name assigned to
+this component is:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB style='font-family:Courier;layout-grid-mode:both'>fipa.acl.rep.bitefficient.std</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc26669892"></a><a name="_Toc485557309"><span lang=EN-GB>2.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Syntax</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>ACLCommunicativeAct
+    = Message.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Message                 =
+Header MessageType MessageParameter* EndofMsg.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Header                  =
+MessageId Version.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>MessageId               =
+0xFA</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0xFB</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0xFC.                       /* See comment 1 below */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Version                 =
+Byte.                       /* See comment 2 below */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>EndofMsg                =
+EndOfCollection.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>EndOfCollection         =
+0x01.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>MessageType             =
+PredefinedMsgType</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+UserDefinedMsgType.         /* See comment 3 below */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>UserDefinedMsgType      =
+0x00 MsgTypeName.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>MsgTypeName             =
+BinWord.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>MessageParameter        =
+PredefinedParam </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+UserDefinedMsgParam.        /* See comment 4 below */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>UserDefinedMsgParam     =
+0x00 ParameterName ParameterValue.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>ParameterName           =
+BinWord.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>ParamterValue           =
+BinExpression.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>PredefinedMsgType       =
+0x01                  /* accept-proposal  */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x02                  /* agree            */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x03                  /* cancel           */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x04                  /* cfp              */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x05                  /* confirm          */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x06                  /* disconfirm       */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x07                  /* failure          */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x08                  /* inform           */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x09                  /* inform-if        */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x0a                  /* inform-ref       */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x0b                  /* not-understood   */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        </span><span
+style='font-family:Courier'>| 0x0c                  /* propagate        */</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                        |
+0x0d                  /* propose          */</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                        |
+0x0e                  /* proxy            */</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                        </span><span
+lang=EN-GB style='font-family:Courier'>| 0x0f                  /* query-if         */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x10                  /* query-ref        */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x11                  /* refuse           */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x12                  /* reject-proposal  */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x13                  /* request          */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x14                  /* request-when     */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x15                  /* request-whenever */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x16.                 /* subscribe        */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>PredefinedMsgParam      =
+0x02 AgentIdentifier  /* sender          */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x03 RecipientExpr    /* receiver        */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        </span><span
+style='font-family:Courier'>| 0x04 MsgContent       /* content         */</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                        </span><span
+lang=EN-GB style='font-family:Courier'>| 0x05 ReplyWithParam   /* reply-with   
+  */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x06 ReplyByParam     /* reply-by        */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x07 InReplyToParam   /* in-reply-to     */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x08 ReplyToParam     /* reply-to        */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x09 Language         /* language        */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x0a Encoding         /* encoding        */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x0b Ontology         /* ontology        */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x0c Protocol         /* protocol        */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x0d ConversationID.  /* conversation-id */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>AgentIdentifier         =
+0x02 AgentName </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                         
+[Addresses]</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                         
+[Resolvers]</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                         
+(UserDefinedParameter)*</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                         
+EndOfCollection.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>AgentName               =
+BinWord.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Addresses               =
+0x02 UrlCollection.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Resolvers               =
+0x03 AgentIdentifierCollection.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>UserDefinedParameter    =
+0x04 BinWord BinExpression. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>UrlCollection           =
+(Url)* EndofCollection.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Url                     =
+BinWord.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>AgentIdentifierCollection
+</span></p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:.5in'><span lang=FR
+style='font-family:Courier'>= (AgentIdentifier)* EndOfCollection.</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>RecipientExpr           =
+AgentIdentifierCollection.</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>MsgContent              =
+BinString.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>ReplyWithParam          =
+BinExpression.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>ReplyByParam            =
+BinDateTimeToken.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>InReplyToParam          =
+BinExpression.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>ReplyToParam            =
+RecipientExpr.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Language                =
+BinExpression.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Encoding                =
+BinExpression.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Ontology                =
+BinExpression.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Protocol                =
+BinWord.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>ConversationID          =
+BinExpression.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>BinWord                 =
+0x10 Word 0x00</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x11 Index.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>BinNumber               =
+0x12 Digits           /* Decimal number     */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x13 Digits.          /* Hexadecimal number */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Digits                  =
+CodedNumber+.         </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>BinString               =
+0x14 String 0x00      /* New string literal                */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x15 Index<sup>                        </sup>/* String literal from code table   
+*/</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x16 Len8 ByteSeq     /* New ByteLengthEncoded string      */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x17 Len16 ByteSeq    /* New ByteLengthEncoded string      */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x18 Index<sup>                        </sup>/* ByteLengthEncoded from code
+table */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x19 Len32 ByteSeq.   /* New ByteLengthEncoded string      */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>BinDateTimeToken        <span
+style='color:black'>= 0x20 BinDate                      /* Absolute time     */
+</span></span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+0x21 BinDate                      /* Relative time (+) */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+0x22 BinDate                      /* Relative time (-) */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+0x24 BinDate TypeDesignator       /* Absolute time     */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+0x25 BinDate TypeDesignator       /* Relative time (+) */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+0x26 BinDate TypeDesignator.      /* Relative time (-) */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>BinDate                 =
+Year Month Day Hour<sup> </sup>Minute<sup> </sup>Second<sup> </sup>Millisecond.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                                                /*
+See comment 8 below */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>BinExpression           =
+BinExpr</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0xFF BinString.       /* See comment 9 below */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>BinExpr                 =
+BinWord</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+BinString</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+BinNumber</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+ExprStart BinExpr* ExprEnd.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>ExprStart               =i
+0x60              /* Level down (i.e. ‘(’ –character)     */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x70 Word 0x00     /* Level down, new word follows         */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x71 Index         /* Level down, word code follows        */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x72 Digits        /* Level down, number follows           */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x73 Digits        /* Level down, hex number follows       */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x74 String 0x00   /* Level down, new string follows       */</span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span lang=EN-GB style='font-family:
+Courier'>                  | 0x75 Index         /* Level down, string code
+follows      */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x76 Len8 String   /* Level down, new byte string (1 byte) */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x77 Len16 String  /* Level down, new byte string (2 byte) */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x78 Len32 String  /* Level down, new byte string (4 byte) */</span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span lang=EN-GB style='font-family:
+Courier'>                  | 0x79 Index.        /* Level down, byte string code
+follows */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>ExprEnd                 =
+0x40               /* Level up (i.e. ‘)’ –character)       */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x50 Word 0x00     /* Level up, new word follows           */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x51 Index         /* Level up, word code follows          */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x52 Digits        /* Level up, number follows             */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x53 Digits        /* Level up, hexadecimal number follows */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x54 String 0x00   /* Level up, new string follows         */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x55 Index         /* Level up, string code follows        */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x56 Len8 String   /* Level up, new byte string (1 byte)   */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x57 Len16 String  /* Level up, new byte string (2 byte)   */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x58 Len32 String  /* Level up, new byte string (4 byte)   */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+0x59 Index.        /* Level up, byte string code follows   */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>ByteSeq                 =
+Byte*.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Index                   =
+Byte</span></p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>| Short.                /* See comment 6 below */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Len8                    =
+Byte.                 /* See comment 7 below */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Len16                   =
+Short.                /* See comment 7 below */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Len32                   =
+Long.                 /* See comment 7 below */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Year                    =
+Byte Byte.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Month                   =
+Byte.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Day                     =
+Byte.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Hour                    =
+Byte.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Minute                  =
+Byte.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Second                  =
+Byte.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Millisecond             =
+Byte Byte.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Word                    =
+/* as in [FIPA00070]   */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>String                  =
+/* as in [FIPA00070]   */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>CodedNumber             =
+/* See comment <a name="_Hlt466609659"></a></span><span
+lang=EN-GB style='font-family:Courier'>5</span><span
+lang=EN-GB style='font-family:Courier'> below */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>TypeDesignator          =
+/* as in [FIPA00070]   */</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<h2><a name="_Toc26669893"></a><a name="_Toc485557310"></a><a
+name="_Toc480605375"><span lang=EN-GB>2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Using Dynamic Code Tables</span></a><span
+lang=EN-GB> </span></h2>
+
+<p class=MsoBodyText2><span lang=EN-GB style='font-style:normal'>The transport
+syntax can be used with or without dynamic code table. Using dynamic code
+tables is an optional feature, which gives more compact output but might not be
+appropriate if communicating peers does not have sufficient memory (for
+example, in case of low-end PDAs or smart phones).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>To use dynamic code tables the encoder
+inserts new entries (for example, </span><span lang=EN-GB style='font-family:
+Courier'>Word</span><span lang=EN-GB>, </span><span lang=EN-GB
+style='font-family:Courier'>String</span><span lang=EN-GB>, etc.) into a code
+table while constructing bit-efficient representation for ACL message. The code
+table is initially empty and whenever a new entry is added to the code table,
+the smallest available code number is allocated to it. There is no need to
+transfer these index codes explicitly over the communication channel. Once the
+code table becomes full and a new code needs to be added, the sender first
+removes </span><span lang=EN-GB style='font-family:Courier'>size&gt;&gt;3</span><a
+href="#_ftn2" name="_ftnref2" title=""><span class=MsoFootnoteReference><span
+lang=EN-GB><span class=MsoFootnoteReference><span lang=EN-GB style='font-size:
+10.0pt;font-family:Helvetica'>[2]</span></span></span></span></a><span
+lang=EN-GB> entries from the code table using a Least Recently Used (LRU)
+algorithm<span style='color:red'> </span>and then adds a new entry to code
+table. For example, should the code table size be 512 entries, 64 entries are
+removed. Correspondingly the decoder removes entries from the code table when
+it receives a new entry from the encoder. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The size of the code table, if used, is
+between 256 (2<sup>8</sup>) and 65536 (2<sup>16</sup>) entries. The output of
+this code table is always one or two bytes (one byte only when the code table
+size is 2<sup>8</sup>). Using two-byte output code wastes some bits, but allows
+for much faster parsing of messages. The code table is unidirectional, that is,
+if sender A adds something to the code table when sending a message to B, then
+B cannot use this code table entry when sending a message back to A.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoBodyText2><span lang=EN-GB style='font-style:normal'>Both peers
+must agree the code table size before its usage; this process is not part of
+this specification. Furthermore, having more compact output, one code table
+should be applied to more than one message; the method of mapping messages to
+appropriate code table is not part of this specification.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:12.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h2><a name="_Toc485557311"></a><a name="_Toc480605376"></a><a
+name="_Toc26669894"><span lang=EN-GB>2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notes on the Grammar Rules</span></a></h2>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><a
+name="_Ref466462314"><span lang=EN-GB>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The first byte defines the message identifier.
+The identifier byte can be used to separate bit-efficient ACL messages from
+(for example) string-based messages and separate different coding schemes. The
+value </span></a><span lang=EN-GB style='font-family:Courier'>0xFA</span><span
+lang=EN-GB> defines a bit-efficient coding scheme without dynamic code tables
+and the value </span><span lang=EN-GB style='font-family:Courier'>0xFB</span><span
+lang=EN-GB> defines a bit-efficient coding scheme with dynamic code tables. The
+message identifier </span><span lang=EN-GB style='font-family:Courier'>0xFC</span><span
+lang=EN-GB> is used when dynamic code tables are being used, but the sender
+does not want to update code tables (even if message contains strings that
+should be added to code table).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><a
+name="_Ref466462326"><span lang=EN-GB>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The second byte defines the version number. The
+version number byte contains the major version number in the upper four bits
+and minor version number in the lower four bits. This specification defines
+version 1.0 (coded as </span></a><span lang=EN-GB style='font-family:Courier'>0x10</span><span
+lang=EN-GB>).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><a
+name="_Ref466537567"><span lang=EN-GB>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>All message types defined in this specification
+have a predefined code. If an encoder sends an ACL message with a message type
+which has no predefined code, it must use the extension mechanism which adds a
+new message type into code table (if code tables are being used).</span></a><span
+lang=EN-GB> </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><a
+name="_Ref466537629"><span lang=EN-GB>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>All message parameters defined in this
+specification have a predefined code.</span></a><span lang=EN-GB> If a message
+contains a user defined message parameter, an extension mechanism is used (byte
+</span><span lang=EN-GB style='font-family:Courier'>0x00</span><span
+lang=EN-GB>) and new entry is added to code table (if code table is used).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><a
+name="_Ref466465521"><span lang=EN-GB>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Numbers are coded by reserving four bits for
+each digit in the number’s ASCII representation, that is, two ASCII numbers are
+coded into one byte. <i>Table 1</i> shows a 4-bit code for each number and
+special codes that may appear in ASCII coded numbers.</span></a></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.25in'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.25in;text-indent:0in'><span
+lang=EN-GB>If the ASCII presentation of a number contains odd number
+characters, the last four bits of the coded number are set to zero (the </span><span
+lang=EN-GB style='font-family:Courier'>Padding</span><span lang=EN-GB> token),
+otherwise an additional </span><span lang=EN-GB style='font-family:Courier'>0x00</span><span
+lang=EN-GB> byte is added to end of coded number. If the number to be coded is
+integer, decimal number, or octal number, the identifier byte </span><span
+lang=EN-GB style='font-family:Courier'>0x12</span><span lang=EN-GB> is used.
+For hexadecimal numbers, the identifier byte </span><span lang=EN-GB
+style='font-family:Courier'>0x13</span><span lang=EN-GB> is used. Hexadecimal
+numbers are converted to integers before coding (the coding scheme does not
+allow characters from </span><span lang=EN-GB style='font-family:Courier'>a</span><span
+lang=EN-GB> through </span><span lang=EN-GB style='font-family:Courier'>f</span><span
+lang=EN-GB> to appear in number form).</span></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.25in'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.25in;text-indent:0in'><span
+lang=EN-GB>Numbers are never added to a dynamic code table.</span></p>
+
+<p class=MsoBodyTextIndent style='margin-left:0in;text-indent:0in'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid;height:13.35pt'>
+  <td width=100 valign=top style='width:74.7pt;border:solid black 1.5pt;
+  border-right:solid black 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:13.35pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Token</span></b></p>
+  </td>
+  <td width=122 valign=top style='width:91.8pt;border-top:solid black 1.5pt;
+  border-left:none;border-bottom:solid black 1.5pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.35pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Code</span></b></p>
+  </td>
+  <td width=42 valign=top style='width:31.5pt;border-top:solid black 1.5pt;
+  border-left:none;border-bottom:solid black 1.5pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.35pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>&nbsp;</span></b></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:solid black 1.5pt;
+  border-left:none;border-bottom:solid black 1.5pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:13.35pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Token</span></b></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border:solid black 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt;height:13.35pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Code</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:16.0pt'>
+  <td width=100 valign=top style='width:74.7pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Padding</span></p>
+  </td>
+  <td width=122 valign=top style='width:91.8pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>0000</span></p>
+  </td>
+  <td width=42 rowspan=8 valign=top style='width:31.5pt;border-top:none;
+  border-left:none;border-bottom:solid black 1.5pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>7</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>1000</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:16.0pt'>
+  <td width=100 valign=top style='width:74.7pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>0</span></p>
+  </td>
+  <td width=122 valign=top style='width:91.8pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>0001</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>8</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>1001</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:16.0pt'>
+  <td width=100 valign=top style='width:74.7pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>1</span></p>
+  </td>
+  <td width=122 valign=top style='width:91.8pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>0010</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>9</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>1010</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:16.0pt'>
+  <td width=100 valign=top style='width:74.7pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>2</span></p>
+  </td>
+  <td width=122 valign=top style='width:91.8pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>0011</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>+</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>1100</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:16.0pt'>
+  <td width=100 valign=top style='width:74.7pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>3</span></p>
+  </td>
+  <td width=122 valign=top style='width:91.8pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>0100</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>E</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>1101</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:16.0pt'>
+  <td width=100 valign=top style='width:74.7pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>4</span></p>
+  </td>
+  <td width=122 valign=top style='width:91.8pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>0101</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>-</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>1110</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:16.0pt'>
+  <td width=100 valign=top style='width:74.7pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>5</span></p>
+  </td>
+  <td width=122 valign=top style='width:91.8pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>0110</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>.</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>1111</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:16.0pt'>
+  <td width=100 valign=top style='width:74.7pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.5pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>6</span></p>
+  </td>
+  <td width=122 valign=top style='width:91.8pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.5pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>0111</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.5pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+  <td width=117 valign=top style='width:87.75pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.5pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:16.0pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoSubtitle><a name="_Ref445631653"><b><span lang=EN-GB
+style='font-size:10.0pt;font-family:Helvetica'>&nbsp;</span></b></a></p>
+
+<p class=MsoSubtitle><b><span lang=EN-GB style='font-size:10.0pt;font-family:
+Helvetica'>Table </span></b><b><span
+lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'>1</span></b><b><span
+lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'>: </span></b><span
+lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'>Binary Representation
+of Number Tokens</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoBodyTextIndent style='margin-left:.25in;text-indent:-.25in'><a
+name="_Ref466465469"><span lang=EN-GB>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:Courier'>Index</span><span
+lang=EN-GB> is a pointer to code table entry and its size (in bits) depends on
+the code table size. If the code table size is 256 entries, the size of the
+index is one byte; otherwise its size is two bytes (represented in network byte
+order).</span></a></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><a
+name="_Ref466465479"><span lang=EN-GB>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:Courier'>Byte</span><span
+lang=EN-GB> is a one-byte code word, </span></a><span lang=EN-GB
+style='font-family:Courier'>Short</span><span lang=EN-GB> is a short integer
+(two bytes, network byte order) and </span><span lang=EN-GB style='font-family:
+Courier'>Long</span><span lang=EN-GB> is a long integer (four bytes, network
+byte order).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><a
+name="_Ref466462991"><span lang=EN-GB>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Dates are coded as numbers, that is, four bits
+are reserved for each ASCII number (see comment 5 above). Information whether the type designator is present or not, is coded into identifier byte. These fields always have static length (two bytes for year and milliseconds, one byte for other components). </span></a></p>
+
+<p class=pre style='margin-left:.5in'><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><a
+name="_Ref466463027"><span lang=EN-GB>9.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>None of the actual content of the message (the
+information contained in the </span></a><span lang=EN-GB style='font-family:
+Courier'>content</span><span lang=EN-GB> parameter of the ACL message) is coded
+nor are any of its components are added to a code table</span><span lang=EN-GB>.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><i><span lang=EN-GB>&nbsp;</span></i></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26669895"></a><a name="_Toc485557312"><span lang=EN-GB>3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>References</span></a></h1>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00023]      </span><span
+lang=EN-GB>FIPA Agent Management Specification<span style='color:black'>.
+Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00023/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00067]      </span><span
+lang=EN-GB>FIPA Agent Message Transport Service Specification<span
+style='color:black'>. Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00067/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[FIPA00070]      FIPA ACL Message
+Representation in String Specification. <span style='color:black'>Foundation
+for Intelligent Physical Agents, 2000.<br>
+</span></span><span lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00070/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[FIPA00075]      FIPA Agent Message
+Transport Protocol for IIOP Specification. <span style='color:black'>Foundation
+for Intelligent Physical Agents, 2000.<br>
+</span></span><span lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00075/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26669896"></a><a name="_Ref23733518"></a><a
+name="_Toc522505973"></a><a name="_Toc522504001"><span lang=EN-GB>4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Informative Annex A — ChangeLog</span></a></h1>
+
+<h2><a name="_Toc26669897"><span lang=EN-GB>4.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>2002/11/01 - version F by TC X2S</span></a></h2>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>Page 2, line 56:             Removed
+sentence on compatibility issue with FIPA00075</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Page
+4, line 158:           </span></b><b><span lang=EN-GB style='font-family:Courier'>MsgContent</span><span
+lang=EN-GB> value changed from </span></b><b><span lang=EN-GB style='font-family:
+Courier'>BinExpression</span><span lang=EN-GB> to </span></b><b><span
+lang=EN-GB style='font-family:Courier'>BinString</span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Page
+4, line 193:           Added signs to </span></b><b><span lang=EN-GB
+style='font-family:Courier'>BinDateTimeToken</span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>&nbsp;</span></b></p>
+
+<h2><a name="_Toc26669898"></a><a name="_Toc26669208"><span lang=EN-GB>4.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>2002/12/03 - version G by FIPA Architecture
+Board</span></a></h2>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Entire
+document:              Promoted to Standard status</p>
+
+<p class=MsoNormal align=left style='text-align:left'><b>&nbsp;</b></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[1]</span></span></span></span></a><span
+lang=EN-GB> White space is not allowed between tokens.</span></p>
+
+</div>
+
+<div id=ftn2>
+
+<p class=MsoFootnoteText><a href="#_ftnref2" name="_ftn2" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[2]</span></span></span></span></a><span
+lang=EN-GB> Right shifted by 3 bit positions – approximately 10%.</span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

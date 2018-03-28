@@ -1,0 +1,12 @@
+﻿ body{background: #35465c}
+ 
+ #similar, .a2 {color:#FFFFFF}
+.ForumPostContentText {
+    font-family: Arial;
+    font-size: 11pt;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: keep-all;
+}
+
+.panel, .panel-heading, .well {border-radius:1px}

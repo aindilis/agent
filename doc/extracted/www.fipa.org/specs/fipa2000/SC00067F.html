@@ -1,0 +1,2828 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 10 (filtered)">
+<title>FIPA Agent Message Transport Service</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\FF2D\FF33 \660E\671D";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Century Old Style";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Sans Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Helvetica;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-align:justify;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h4
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h5
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h6
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.1in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:8.0pt;
+	font-family:Helvetica;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-3.3pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoListContinue, li.MsoListContinue, div.MsoListContinue
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.15pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-20.15pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:red;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+strong
+	{font-family:"Book Antiqua";}
+em
+	{font-family:"Book Antiqua";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+code
+	{font-family:"Arial Unicode MS";}
+p.zzCover, li.zzCover, div.zzCover
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.Code
+	{font-family:"Courier New";}
+p.Heading2, li.Heading2, div.Heading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallCode
+	{font-family:"Courier New";}
+span.SmallNormal
+	{font-family:"Book Antiqua";}
+span.SmallStrong
+	{font-family:"Book Antiqua";
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.Abbrevs, li.Abbrevs, div.Abbrevs
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Titre3h3, li.Titre3h3, div.Titre3h3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.source, li.source, div.source
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+p.Normaleparagraph, li.Normaleparagraph, div.Normaleparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.listanumerata, li.listanumerata, div.listanumerata
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.pre, li.pre, div.pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.toprocess, li.toprocess, div.toprocess
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:blue;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="SK_Preliminary"></a><a
+name="MLS_Field_MERGEFORMAT"></a><a name="MLS_Field_QUOTE"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a><b><span lang=EN-GB
+style='font-size:18.0pt'>&nbsp;</span></b></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><b><span lang=EN-GB style='font-size:18.0pt'>FOUNDATION
+FOR INTELLIGENT PHYSICAL AGENTS</span></b><b><span
+lang=EN-GB style='font-size:18.0pt'><a name="_Ref479045812"></a></span></b></p>
+
+<p class=Standardparagraph><a name="MLS_Field_CHARFORMAT"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt'>FIPA Agent Message Transport Service<br>
+Specification</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt'>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  title</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA
+  Agent Message Transport Service Specification</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  number</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>SC00067F</span></p>
+  </td>
+  <td width=145 valign=top style='width:108.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  source</span></b></p>
+  </td>
+  <td width=177 valign=top style='width:132.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=FR>FIPA TC Agent
+  Management</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  status</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Standard</span></p>
+  </td>
+  <td width=145 valign=top style='width:108.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Date
+  of this status</span></b></p>
+  </td>
+  <td width=177 valign=top style='width:132.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2002/12/03</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Supersedes</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA00024</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Contact</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>fab@fipa.org</span></p>
+  </td>
+ </tr>
+ <tr style='height:3.5pt'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt;height:3.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Change
+  history</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt;height:3.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>See <i>Informative
+  Annex A — ChangeLog</i></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>©
+1996-2002 Foundation for Intelligent Physical Agents <br>
+http://www.fipa.org/<i><br>
+Geneva, Switzerland</i></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='text-align:center'><b><span
+  lang=EN-GB>Notice</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:108.45pt'>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:108.45pt'>
+  <p class=Standardparagraph><span lang=EN-GB>Use of the technologies described
+  in this specification may infringe patents, copyrights or other intellectual
+  property rights of FIPA Members and non-members. Nothing in this
+  specification should be construed as granting permission to use any of the
+  technologies described. Anyone planning to make use of technology covered by
+  the intellectual property rights of others should first obtain permission
+  from the holder(s) of the rights. FIPA strongly encourages anyone
+  implementing any part of this specification to determine first whether
+  part(s) sought to be implemented are covered by the intellectual property of
+  others, and, if so, to obtain appropriate licenses or other permission from
+  the holder(s) of such intellectual property prior to implementation. This
+  specification is subject to change without notice. Neither FIPA nor any of
+  its Members accept any responsibility whatsoever for damages or liability,
+  direct or consequential, which may result from the use of this specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=zzContents><span lang=EN-GB>Foreword</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>The Foundation for Intelligent
+Physical Agents (FIPA) is an international organization that is dedicated to
+promoting the industry of intelligent agents by openly developing
+specifications supporting interoperability among agents and agent-based
+applications. This occurs through open collaboration among its member
+organizations, which are companies and universities that are active in the
+field of agents. FIPA makes the results of its activities available to all
+interested parties and intends to contribute its results to the appropriate
+formal standards bodies where appropriate. </span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>The members of FIPA are
+individually and collectively committed to open competition in the development
+of agent-based applications, services and equipment. Membership in FIPA is open
+to any corporation and individual firm, partnership, governmental body or
+international organization without restriction. In particular, members are not
+bound to implement or use specific agent-based standards, recommendations and
+FIPA specifications by virtue of their participation in FIPA. </span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>The FIPA specifications are
+developed through direct involvement of the FIPA membership. The status of a
+specification can be either Preliminary, Experimental, Standard, Deprecated or Obsolete.<i>
+</i>More detail about the process of specification may be found in the FIPA
+Document Policy [f-out-00000] and the FIPA Specifications Policy [f-out-00003].
+A complete overview of the FIPA specifications and their current status may be
+found on the FIPA Web site.</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>FIPA is a non-profit association
+registered in Geneva, Switzerland. As of June 2002, the 56 members of FIPA
+represented many<i> </i>countries worldwide. Further information about FIPA as
+an organization, membership information, FIPA specifications and upcoming
+meetings may be found on the FIPA Web site at http://www.fipa.org/.</span></p>
+
+<p class=zzContents><span lang=EN-GB>Contents</span></p>
+
+<p class=MsoToc1><a name="_Ref449499969"></a><a
+href="#_Toc26669813"><span lang=EN-GB>1</span><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span><span
+lang=EN-GB>Scope</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26669814"><span lang=EN-GB>2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Agent Message Transport
+Reference Model</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669815"><span lang=EN-GB>2.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Reference Model</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669816"><span lang=EN-GB>2.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Message Structure</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26669817"><span lang=EN-GB>3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Message Transport Service</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669818"><span lang=EN-GB>3.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Message Envelope</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669819"><span lang=EN-GB>3.1.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Updating Message Envelope
+Information</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669820"><span lang=EN-GB>3.1.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Additional Message Envelope
+Parameters</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669821"><span lang=EN-GB>3.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Agent Identifiers and
+Transport Addresses</span><span lang=EN-GB style='color:windowtext;display:
+none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669822"><span lang=EN-GB>3.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Agent Communication Channel</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669823"><span lang=EN-GB>3.3.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Standard Interfaces</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669824"><span lang=EN-GB>3.3.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Proprietary Interfaces</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669825"><span lang=EN-GB>3.3.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Message Handling Behaviour</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669826"><span lang=EN-GB>3.3.4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Message Envelope
+Interpretation</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669827"><span lang=EN-GB>3.3.5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Forwarding Messages</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669828"><span lang=EN-GB>3.3.6</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Handling a Single Receiver</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669829"><span lang=EN-GB>3.3.7</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Handling Multiple Transport
+Addresses for a Single Receiver</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669830"><span lang=EN-GB>3.3.8</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Handling Multiple Receivers</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669831"><span lang=EN-GB>3.3.9</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Delivering Messages</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669832"><span lang=EN-GB>3.3.10</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>    </span><span lang=EN-GB>Using a Name Resolution
+Service</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669833"><span lang=EN-GB>3.3.11</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>    </span><span lang=EN-GB>Error and Confirmation
+Messages</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669834"><span lang=EN-GB>3.4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Using the Message Transport
+Service</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669835"><span lang=EN-GB>3.4.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Sending Messages</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669836"><span lang=EN-GB>3.4.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Receiving Messages</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669837"><span lang=EN-GB>3.5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Querying Message Transport
+Service Polices and Capabilities</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669838"><span lang=EN-GB>3.5.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Agent Platform Transport
+Descriptions</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26669839"><span lang=EN-GB>4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Agent Message Transport
+Ontology</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669840"><span lang=EN-GB>4.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Object Descriptions</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669841"><span lang=EN-GB>4.1.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Message Envelope
+Description</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26669842"><span lang=EN-GB>4.1.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Received Object Description</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26669843"><span lang=EN-GB>5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>References</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26669844"><span lang=EN-GB>6</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Informative Annex A —
+ChangeLog</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669845"><span lang=EN-GB>6.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>2001/10/08 - version D by
+FIPA Architecture Board</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669846"><span lang=EN-GB>6.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>2002/11/01 - version E by
+FIPA X2S</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26669847"><span lang=EN-GB>6.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>2002/12/03 - version F by
+FIPA Architecture Board</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoNormal></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=Section2>
+
+<h1><a name="_Toc26669813"></a><a name="_Toc490023401"><span lang=EN-GB>1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Scope</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>This document deals
+with message transportation between inter-operating agents and also forms part
+of the FIPA Agent Management specification (see [FIPA00023]). It contains
+specifications for:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>A reference model for an
+agent Message Transport Service, and,</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB style='layout-grid-mode:both'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Definitions for the
+expression of message transport information to an agent Message Transport
+Service.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc480605339"></a><a name="_Toc26669814"></a><a
+name="_Toc490023402"><span lang=EN-GB>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Agent Message Transport Reference Model</span></a></h1>
+
+<h2><a name="_Toc26669815"></a><a name="_Toc490023403"><span lang=EN-GB
+style='color:black'>2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Reference Model</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The reference model for
+agent message transport comprises three levels (see<i> Figure 1</i>):</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>The Message Transport
+Protocol (MTP) is used to carry out the physical transfer of messages between
+two ACCs.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>The Message Transport
+Service (MTS) is a service provided by the AP to which an agent is attached.
+The MTS supports the transportation of FIPA ACL messages between agents on any
+given AP and between agents on different APs.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>The ACL represents the
+payload of the messages carried by both the MTS and MTP.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><span
+lang=EN-GB><img width=278 height=294 src="SC00067F_files/image001.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB
+style='color:black'>Figure 1:</span></b><span lang=EN-GB style='color:black'>
+Message Transport Reference Model</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+style='color:black'>&nbsp;</span></p>
+
+<h2><a name="_Toc26669816"></a><a name="_Toc490023404"></a><a
+name="_Toc480605341"><span lang=EN-GB style='color:black'>2.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Message Structure</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>In its abstract form, a
+message is made up of two parts: a message envelope expressing transport
+information and a message payload comprising the ACL message of the agent
+communication.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>For the purposes of message interpretation
+by an agent:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>ACL semantics are defined only over the ACL
+message delivered in the message payload of a message (see [FIPA00023]).</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>All information in the message envelope is
+supporting information only. How and if this information is used to by an agent
+for any kind of additional inference is undefined by FIPA. However, under some
+circumstances, an agent might be required to process the envelope information
+in order to properly interpret the received message payload; for instance when
+the payload has been encrypted or in order to discover the ACL representation
+used by the sender.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica;color:black'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26669817"></a><a name="_Toc490023405"></a><a
+name="_Toc480605342"><span lang=EN-GB style='color:black'>3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Message Transport Service</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The MTS provides a
+mechanism for the transfer of ACL messages between agents. The agents involved
+may be local to a single AP or on different APs. On any given AP, the MTS is
+provided by an Agent Communication Channel (ACC).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<h2><a name="_Toc26669818"></a><a name="_Toc490023406"><span lang=EN-GB>3.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message Envelope</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>Any MTP may use a
+different internal representation to describe a message envelope, but must
+express the same terms, represent the same semantics and perform the
+corresponding actions.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The following are
+general statements about the form of a message envelope:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>A message envelope comprises
+a collection of parameters,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>A parameter is a name/value
+pair,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>A message envelope contains
+at least the mandatory </span><span lang=EN-GB style='font-family:Courier;
+color:black'>to</span><span lang=EN-GB style='color:black'>, </span><span
+lang=EN-GB style='font-family:Courier'>from</span><span lang=EN-GB
+style='color:black'>, </span><span lang=EN-GB style='font-family:Courier'>date</span><span
+lang=EN-GB style='color:black'> </span><span lang=EN-GB>and<span
+style='color:black'> </span></span><span lang=EN-GB style='font-family:Courier'>acl-representation</span><span
+lang=EN-GB style='color:black'> parameters, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>A message envelope can
+contain optional parameters.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB>Each ACC handling a message may add new information to the message
+envelope, but it may never overwrite existing information. ACCs can add new
+parameters to a message envelope which override existing parameters that have
+the same parameter name; the mechanism for disambiguating message envelope
+entries is specified by each concrete message envelope syntax. </span></p>
+
+<p class=MsoNormal><i><span lang=EN-GB style='color:black'>&nbsp;</span></i></p>
+
+<h3><a name="_Toc26669819"></a><a name="_Toc490023407"></a><a
+name="_Toc480605346"><span lang=EN-GB>3.1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Updating Message Envelope Information</span></a></h3>
+
+<p class=toprocess><span lang=EN-GB style='color:windowtext'>To update a value
+in one of the envelope parameters, the ACC must add a new copy of the message
+envelope parameter (containing the new value) to the envelope. </span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Since this mechanism permits multiple
+occurrences of the same parameters in a message envelope (with different
+values), each concrete message envelope syntax must provide a general mechanism
+for identifying which copy of the parameter is current..</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc26669820"></a><a name="_Toc490023408"></a><a
+name="_Toc480605347"><span lang=EN-GB>3.1.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Additional Message Envelope Parameters</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>Additional parameters not defined in this
+document can be added to the envelope as well as to all the frames defined in this
+specification. The prefatory string “</span><span lang=EN-GB style='font-family:
+Courier'>X-</span><span lang=EN-GB>” must be used for the names of these
+non-FIPA standard additional parameters and implementations are free to ignore
+such additional parameters.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:blue'>&nbsp;</span></p>
+
+<h2><a name="_Toc26669821"></a><a name="_Toc490023409"></a><a
+name="_Toc480605348"><span lang=EN-GB style='color:black'>3.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Agent Identifiers and
+Transport Addresses</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>Agent Identifiers (AIDs)
+and transport addresses are defined in [FIPA00023].</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:blue'>&nbsp;</span></p>
+
+<h2><a name="_Toc26669822"></a><a name="_Toc490023410"><span lang=EN-GB>3.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Agent Communication Channel</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The ACC is an entity providing a service
+directly to the agents on an AP. The ACC may access information provided by the
+other AP services (such as the AMS and DF) to carry out its message transport
+tasks.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc26669823"></a><a name="_Toc490023411"><span lang=EN-GB>3.3.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Standard Interfaces</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>When messages are received over a message
+interface advertised as implementing one of the FIPA standard MTPs, these
+messages must be handled as specified in Section<i> </i>3.3.3.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc26669824"></a><a name="_Toc490023412"><span lang=EN-GB>3.3.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Proprietary Interfaces</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>FIPA does not specify how agents
+communicate using proprietary interfaces with the MTS.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc26669825"></a><a name="_Toc490023413"></a><a
+name="_Toc480605352"></a><a name="_Ref456499767"><span lang=EN-GB
+style='color:black'>3.3.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Message Handling Behaviour</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>To provide the MTS, an ACC must transfer
+the messages it receives in accordance with the transport instructions
+contained in the message envelope.<span style='color:black'> An ACC is only
+required to read the message envelope; it is not required to parse the message
+payload. </span>In performing message transfer tasks, the ACC may be required
+to obtain information from the AMS or DF on its own AP. Some implementations of
+ACCs may provide some form of buffering capability to help agents manage their
+messages.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<h3><a name="_Toc26669826"></a><a name="_Toc490023414"><span lang=EN-GB>3.3.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message Envelope Interpretation</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>The message forwarding behaviour of an ACC
+is determined by the instructions for message delivery that are expressed in
+the message envelope (see <i>Table 1</i>).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=168 valign=top style='width:1.75in;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Parameter</span></b></p>
+  </td>
+  <td width=534 valign=top style='width:400.5pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>to</span></p>
+  </td>
+  <td width=534 valign=top style='width:400.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>If no </span><span
+  lang=EN-GB style='font-family:Courier'>intended-receiver</span><span
+  lang=EN-GB> parameter is present, then the information in this parameter is
+  used to generate </span><span lang=EN-GB style='font-family:Courier'>intended-receiver</span><span
+  lang=EN-GB> field for the messages the ACC subsequently forwards. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>from</span></p>
+  </td>
+  <td width=534 valign=top style='width:400.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>If
+  required, the ACC returns error and confirmation messages to the agent
+  specified in this parameter.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>comments</span></p>
+  </td>
+  <td width=534 valign=top style='width:400.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>None.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>acl-representation</span></p>
+  </td>
+  <td width=534 valign=top style='width:400.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>None.
+  This information is intended for the final recipient of the message. </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>payload-length</span></p>
+  </td>
+  <td width=534 valign=top style='width:400.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The
+  ACC may use this information to improve parsing efficiency.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>payload-encoding</span></p>
+  </td>
+  <td width=534 valign=top style='width:400.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>None.
+  This information is intended for the final recipient of the message.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>date</span></p>
+  </td>
+  <td width=534 valign=top style='width:400.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=pre><span lang=EN-GB style='font-family:Helvetica'>None. This
+  information is intended for the final recipient of the message.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>intended-receiver</span></p>
+  </td>
+  <td width=534 valign=top style='width:400.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>An ACC
+  uses this parameter to determine where this instance of a message should be
+  sent. If this parameter is not provided, then the first ACC to receive the
+  message should generate an </span><span lang=EN-GB style='font-family:Courier'>intended-receiver</span><span
+  lang=EN-GB> parameter using the </span><span lang=EN-GB style='font-family:
+  Courier'>to</span><span lang=EN-GB> parameter.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>received</span></p>
+  </td>
+  <td width=534 valign=top style='width:400.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>A new </span><span
+  lang=EN-GB style='font-family:Courier'>received</span><span lang=EN-GB>
+  parameter is added to the envelope by each ACC that the message passes
+  through. Each ACC handling a message must add a completed received parameter.
+  If an ACC receives a message it has already stamped, it is free to discard
+  the message without any need to generate an error message.</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=168 valign=top style='width:1.75in;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>transport-behaviour</span></p>
+  </td>
+  <td width=534 valign=top style='width:400.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Reserved
+  for future use.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB style='color:blue'>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><b><span lang=EN-GB>Table 1:</span></b><span
+lang=EN-GB> Agent Communication Channel Interpretation of Message Envelope</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<h3><a name="_Toc26669827"></a><a name="_Toc490023415"></a><a
+name="_Ref473968837"><span lang=EN-GB>3.3.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Forwarding Messages</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The recipients of a
+message are specified in the </span><span lang=EN-GB style='font-family:Courier;
+color:black'>to</span><span lang=EN-GB style='color:black'> parameter of a
+message envelope and take the form of AIDs. Depending upon the presence of </span><span
+lang=EN-GB style='font-family:Courier'>intended-receiver</span><span
+lang=EN-GB style='color:black'> parameter, the ACC forwards the message in one
+of the following ways: </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>If an ACC receives a message envelope without an
+</span><span lang=EN-GB style='font-family:Courier'>intended-receiver</span><span
+lang=EN-GB> parameter, then it generates a new </span><span lang=EN-GB
+style='font-family:Courier'>intended-receiver</span><span lang=EN-GB> parameter
+from the </span><span lang=EN-GB style='font-family:Courier'>to</span><span
+lang=EN-GB> parameter (possibly containing multiple AIDs). It may also generate
+multiple copies of the message with different </span><span lang=EN-GB
+style='font-family:Courier'>intended-receiver</span><span lang=EN-GB>
+parameters if multiple receivers are specified. In all cases, t<span
+style='color:black'>he ACC </span>is required to process all entries in the </span><span
+lang=EN-GB style='font-family:Courier'>to</span><i><span lang=EN-GB> </span></i><span
+lang=EN-GB>field parameter <span style='color:black'>and enforced not to add
+and not to remove any AID that was contained in the original message.</span>
+The </span><span lang=EN-GB style='font-family:Courier'>intended-receiver</span><span
+lang=EN-GB> parameters form a delivery path showing the route that a message
+has taken.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>If an ACC receives a message envelope with an </span><span
+lang=EN-GB style='font-family:Courier'>intended-receiver</span><span
+lang=EN-GB> parameter,</span><span lang=EN-GB> this is used for delivery of
+this instance of the message and the </span><span lang=EN-GB style='font-family:
+Courier'>to</span><span lang=EN-GB> parameter is ignored.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>If an ACC receives a message envelope with more
+than one </span><span lang=EN-GB style='font-family:Courier'>intended-receiver</span><span
+lang=EN-GB> parameter, the most recent is used.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Before forwarding the message, the ACC adds
+a completed </span><span lang=EN-GB style='font-family:Courier'>received</span><span
+lang=EN-GB> </span><span lang=EN-GB>parameter to the message envelope. Once an
+ACC has forwarded a message it no longer needs to keep any record of the
+existence of that message.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<h3><a name="_Toc26669828"></a><a name="_Toc490023416"></a><a
+name="_Ref473974316"><span lang=EN-GB>3.3.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Handling a Single Receiver</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>In delivering a message to a single
+receiver specified in the </span><span lang=EN-GB style='font-family:Courier'>to</span><span
+lang=EN-GB> or </span><span lang=EN-GB style='font-family:Courier'>intended-receiver</span><span
+lang=EN-GB> parameters of a message envelope, the ACC forwards the message to
+one of the addresses in the </span><span lang=EN-GB style='font-family:Courier'>addresses</span><span
+lang=EN-GB> parameter of the AID. If this address leads to another ACC, then it
+is the task of the receiving ACC to deliver the message to the receiving agent
+(if the agent is resident on the local AP) or to forward it on to another ACC
+(if the agent is not locally resident).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc26669829"></a><a name="_Toc490023417"></a><a
+name="_Ref473971935"><span lang=EN-GB>3.3.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Handling Multiple Transport Addresses for a
+Single Receiver</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The AID given in the </span><span
+lang=EN-GB style='font-family:Courier'>to</span><span lang=EN-GB
+style='color:black'> or </span><span lang=EN-GB style='font-family:Courier;
+color:black'>intended-receiver</span><span lang=EN-GB style='color:black'>
+parameter (in the case of both parameters being present, the information in the
+</span><span lang=EN-GB style='font-family:Courier;color:black'>intended-receiver</span><span
+lang=EN-GB style='color:black'> parameter is used) of a message envelope may
+contain multiple transport addresses for a single receiving agent. The ACC uses
+the following method to try to deliver the message:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Try to deliver the message to the <i>first</i>
+transport address in the </span><span lang=EN-GB style='font-family:Courier'>addresses</span><span
+lang=EN-GB> parameter; the first is chosen to reflect the fact that the
+transport address list in an AID is ordered by preference<span
+style='color:black'>.</span></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>If this fails, because the
+agent or AP was not available or because the ACC does not support the
+appropriate message transport protocol, etc., then the ACC creates a new </span><span
+lang=EN-GB style='font-family:Courier;color:black'>intended-receiver</span><span
+lang=EN-GB style='color:black'> parameter containing the AID with the failed
+transport address removed. The ACC then attempts to send the message to the
+next transport address in AID in the intended receiver list (now the first in
+the newly created </span><span lang=EN-GB style='font-family:Courier;
+color:black'>intended-receiver</span><span lang=EN-GB style='color:black'>
+parameter).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>If delivery is still
+unsuccessful when all transport addresses have been tried (or the AID contained
+no transport addresses), the ACC may try to resolve the AID using the name
+resolution services listed in the </span><span lang=EN-GB style='font-family:
+Courier;color:black'>resolvers</span><span lang=EN-GB style='color:black'>
+parameter of the AID. Again, the name resolution services should be tried in
+the order of their appearance. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>Finally, if all previous
+message delivery attempts have failed, then an appropriate error message for
+the final failure is passed back to the sending agent (see Section<i> </i>3.3.11).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<h3><a name="_Toc26669830"></a><a name="_Toc490023418"></a><a
+name="_Ref463596195"><span lang=EN-GB>3.3.8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Handling Multiple Receivers</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>An ACC uses the
+following rules in delivering messages to multiple intended receivers<a
+href="#_ftn1" name="_ftnref1" title=""><span class=MsoFootnoteReference><span
+class=MsoFootnoteReference><span lang=EN-GB style='font-size:10.0pt;font-family:
+Helvetica;color:black'>[1]</span></span></span></a>:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>If an ACC receives a message
+envelope with no </span><span lang=EN-GB style='font-family:Courier;color:black'>intended-receiver</span><span
+lang=EN-GB style='color:black'> parameter and a </span><span lang=EN-GB
+style='font-family:Courier'>to</span><span lang=EN-GB style='color:black'>
+parameter containing more than one AID, it may or may not split these up to
+form separate messages<a href="#_ftn2" name="_ftnref2" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span lang=EN-GB
+style='font-size:10.0pt;font-family:Helvetica;color:black'>[2]</span></span></span></a>.
+Each message would contain a subset of the agents named in the </span><span
+lang=EN-GB style='font-family:Courier'>to</span><span lang=EN-GB
+style='color:black'> and </span><span lang=EN-GB style='font-family:Courier'>intended-receiver</span><span
+lang=EN-GB style='color:black'> parameters.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>If an ACC receives a message
+envelope with an </span><span lang=EN-GB style='font-family:Courier;color:black'>intended-receiver</span><span
+lang=EN-GB style='color:black'> parameter containing more than one AID, it may
+or may not split these up to form separate messages.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>If an ACC splits a message
+as described above, then it is enforced not to add and not to remove any AID
+that was contained in the original message</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The resulting messages
+are handled as in the single receiver case (see Section<i> </i>3.3.6).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<h3><a name="_Toc26669831"></a><a name="_Toc490023419"></a><a
+name="_Toc449518928"><span lang=EN-GB>3.3.9<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Delivering Messages</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>Once a message has arrived at ACC which can
+directly deliver it to the agent or agents named in the </span><span
+lang=EN-GB style='font-family:Courier'>intended-receiver</span><span
+lang=EN-GB> parameter of the message envelope, this ACC should pass the message
+to the agents concerned. This specification does not specify how final message
+delivery is performed; the message may be passed to the agents using any of the
+ACC proprietary or standard MTP interfaces. An ACC should deliver the whole
+message, including the message envelope, to the receiving agent. However,
+particular AP implementations may provide middleware layers to free agents from
+the task of processing the envelope.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>If an ACC receives a message it has already
+stamped, then it is free to discard the message without any need to generate an
+error message.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc26669832"></a><a name="_Toc490023420"></a><a
+name="_Ref473968994"><span lang=EN-GB>3.3.10<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Using a </span></a><span lang=EN-GB>Name
+Resolution Service</span></h3>
+
+<p class=MsoNormal><span lang=EN-GB>In certain circumstances, if an AID for a
+receiver contains no transport addresses then the ACC may try to resolve the
+AID by contacting one of the entities listed in the </span><span lang=EN-GB
+style='font-family:Courier'>resolvers</span><span lang=EN-GB> parameter of the
+AID, as specified in [FIPA00023]. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc26669833"></a><a name="_Toc490023421"></a><a
+name="_Toc480605353"></a><a name="_Ref462040225"><span lang=EN-GB>3.3.11<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB>Error and Confirmation Messages</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>Error and confirmation messages sent to <i>a
+sending agent</i> by the MTS are in the form of ACL messages over the MTS.
+These MTS information messages are sent on behalf of the AMS agent responsible
+(the </span><span lang=EN-GB style='font-family:Courier'>sender</span><span
+lang=EN-GB> parameter of the message must be set the local AMS’s AID) of the
+ACC’s AP<a href="#_ftn3" name="_ftnref3" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span lang=EN-GB
+style='font-size:10.0pt;font-family:Helvetica'>[3]</span></span></span></a>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB> </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>If an error message needs to be returned,
+the message generated must follow the exception model defined in [FIPA00023]
+such that:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The communicative act is a </span><span
+lang=EN-GB style='font-family:Courier'>failure</span><span lang=EN-GB>,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The failed action is the ACL message that was
+not delivered properly,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The predicate symbol is </span><span lang=EN-GB
+style='font-family:Courier'>internal-error</span><span lang=EN-GB>, and,</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The argument parameter is a string describing
+the error which occurred (the form and content of which is
+implementation-dependent and can be ignored by implementations). </span></p>
+
+<p class=toprocess><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>This generated </span><span lang=EN-GB
+style='font-family:Courier'>failure</span><span lang=EN-GB> ACL message must
+include the same </span><span lang=EN-GB style='font-family:Courier'>conversation-id</span><span
+lang=EN-GB> value as the message that was not delivered and must contain the
+expression in the </span><span lang=EN-GB style='font-family:Courier'>reply-with</span><span
+lang=EN-GB> field (of the message that was not delivered) in its </span><span
+lang=EN-GB style='font-family:Courier'>in-reply-to</span><span lang=EN-GB>
+parameter.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc26669834"></a><a name="_Toc490023422"></a><a
+name="_Toc480605354"><span lang=EN-GB>3.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Using the Message Transport Service</span></a></h2>
+
+<h3><a name="_Toc26669835"></a><a name="_Toc490023423"></a><a
+name="_Toc480605355"><span lang=EN-GB style='color:black'>3.4.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Sending Messages</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>An agent has three
+options when sending a message to another agent resident on a remote AP (see <i>Figure
+2</i>):</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Agent A sends the message to
+its local ACC using a proprietary or standard interface. The ACC then takes
+care of sending the message to the correct remote ACC using a suitable MTP. The
+remote ACC will eventually deliver the message.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Agent A sends the message
+directly to the ACC on the remote AP on which Agent B resides. This remote ACC
+then delivers the message to B. To use this method, </span><span lang=EN-GB>Agent
+A must support access to one of the remote ACC’s MTP interfaces.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Agent A sends the message
+directly to Agent B, by using a direct communication mechanism. The message
+transfer, addressing, buffering of messages and any error messages must be
+handled by the sending and receiving agents. This communication mode is not
+covered by FIPA.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img
+width=429 height=170 src="SC00067F_files/image002.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB
+style='color:black'>Figure 2: </span></b><span lang=EN-GB style='color:black'>Three
+Methods of Communication between Agents on Different Agent Platforms<a
+href="#_ftn4" name="_ftnref4" title=""><span class=MsoFootnoteReference><span
+class=MsoFootnoteReference><span lang=EN-GB style='font-size:10.0pt;font-family:
+Helvetica;color:black'>[4]</span></span></span></a></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc26669836"></a><a name="_Toc490023424"></a><a
+name="_Toc480605356"><span lang=EN-GB>3.4.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Receiving Messages</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>An agent receives an
+entire message including both the message envelope and message payload.
+Consequently, the receiving agent has access to all of the message transport
+information expressed in the message envelope, such as encryption details, ACL
+representation information, the delivery path of the message, etc.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc26669837"></a><a name="_Toc490023425"></a><a
+name="_Toc480605357"><span lang=EN-GB>3.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Querying Message Transport Service Polices and
+Capabilities</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>An AP must support
+queries about its message transport policies and capabilities. Information
+pertinent to the MTS (such as the particular MTPs supported by an ACC) is given
+in the AP description, that can be accessed by sending a </span><span
+lang=EN-GB style='font-family:Courier;color:black'>get-description</span><span
+lang=EN-GB style='color:black'> request to an AMS (see [FIPA00023]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc26669838"></a><a name="_Toc490023426"></a><a
+name="_Toc480605358"></a><a name="_Ref466439655"><span lang=EN-GB>3.5.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Agent Platform Transport Descriptions</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>The transport description forms part of an
+AP and is expressed in </span><span lang=EN-GB style='font-family:Courier'>fipa-sl0</span><span
+lang=EN-GB>. The following transport description is for an AP which supports
+IIOP and HTTP based transports:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>(ap-description</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'> :name myAPDescription</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'> :ap-services </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  (set </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>   (ap-service</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    :name myIIOPMTP</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    :type fipa.mts.mtp.iiop.std</span></p>
+
+<p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>    :addresses </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     (sequence</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      
+corbaloc:iiop:agents.fipa.org:10100/acc</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>       IOR:00000000002233</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      
+corbaname::agents.fipa.org:10000/nameserver#acc))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>   (ap-service</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    :name myHTTPMTP</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    :type fipa.mts.mtp.http.std</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    :addresses </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     (sequence</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>       http://agents.fipa.org:8080/acc))</span><span
+lang=EN-GB style='font-family:Courier'>)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>For more information on how to generate a
+concrete representation of a transport description, see [FIPA00061] and
+[FIPA00008]. </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26669839"></a><a name="_Toc490023428"><span lang=EN-GB>4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Agent Message Transport Ontology</span></a></h1>
+
+<h2><a name="_Toc26669840"></a><a name="_Toc490023429"></a><a
+name="_Toc485124628"><span lang=EN-GB style='color:black'>4.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Object Descriptions</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>This section describes a set of frames that
+represent the classes of objects in the domain of discourse within the
+framework of the </span><span lang=EN-GB style='font-family:Courier'>fipa-agent-management</span><span
+lang=EN-GB> ontology. The closure of symbols of this ontology can be obtained
+through the companion document [FIPA00023] that specifies additional set of
+frames of this ontology. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The following terms are used to describe
+the objects of the domain:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoList><span lang=EN-GB style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Frame</span></b><span lang=EN-GB>. This is
+the mandatory name of this entity that must be used to represent each instance
+of this class.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Ontology</span></b><span lang=EN-GB>. This is
+the name of the ontology, whose domain of discourse includes the parameters
+described in the table.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Parameter</span></b><span lang=EN-GB>. This
+is the mandatory name of a parameter of this frame. </span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Description</span></b><span lang=EN-GB>. This
+is a natural language description of the semantics of each parameter.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Presence</span></b><span lang=EN-GB>. This
+indicates whether each parameter is mandatory or optional.</span></p>
+
+<p class=MsoHeader><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Type</span></b><span lang=EN-GB>. This is the
+type of the values of the parameter: Integer, Word, String, URL, Term, Set or
+Sequence.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Reserved Values</span></b><span lang=EN-GB>.
+This is a list of FIPA-defined constants that can assume values for this
+parameter.</span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica;
+color:red'>&nbsp;</span></p>
+
+<h3><a name="_Toc26669841"></a><a name="_Toc490023430"><span lang=EN-GB>4.1.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message Envelope Description</span></a></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Frame</span></b></p>
+  <p class=MsoNormal><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>envelope</span></p>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>fipa-agent-management</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=369 colspan=3><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Parameter</span></b></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Presence</span></b></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Type</span></b></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Reserved Values</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>to</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>This
+  contains the names of the primary recipients of the message.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Mandatory</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Sequence
+  of </span><span lang=EN-GB style='font-family:Courier'>agent-identifier</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>from</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>This
+  is the name of the agent who actually sent the message.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Mandatory</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>agent-identifier</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>comments</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='color:black'>This is a comment in the message envelope.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>string</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>acl-representation</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>This
+  is the name of the syntax representation of the message payload.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB>Mandatory</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>string</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>fipa.acl.rep.bitefficient.std</span></p>
+  <p class=MsoNormal><span style='font-family:Courier'>fipa.acl.rep.string.std</span></p>
+  <p class=MsoNormal><span style='font-family:Courier'>fipa.acl.rep.xml.std</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>payload-length</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='color:black'>This contains the length in bytes of the message payload.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>string</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>payload-encoding</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='color:black'>This contains the language encoding of the message
+  payload.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Optional<a href="#_ftn5" name="_ftnref5"
+  title=""><span class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+  lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'>[5]</span></span></span></a></span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>string</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>US-ASCII</span></p>
+  <p class=MsoFootnoteText><span lang=EN-GB style='font-size:10.0pt;font-family:
+  Courier'>ISO-8859-1</span></p>
+  <p class=MsoFootnoteText><span lang=EN-GB style='font-size:10.0pt'>...</span></p>
+  <p class=MsoFootnoteText><span lang=EN-GB style='font-size:10.0pt;font-family:
+  Courier'>ISO-8859-9</span></p>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>UTF-8</span></p>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Shift_JIS</span></p>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>EUC-JP</span></p>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>ISO-2022-JP</span></p>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>ISO-2022-JP-2</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>date</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='color:black'>This contains the creation date and time of the message
+  envelope </span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Mandatory</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>date</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>intended-receiver</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>This
+  is the name of the agents to whom this instance of a message is to be
+  delivered.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Sequence
+  of </span><span lang=EN-GB style='font-family:Courier'>agent-identifier</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>received</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='color:black'>This is a stamp representing the receipt of a message by
+  an ACC.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>received-object</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>transport-behaviour</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>This
+  contains the transport requirements of the message.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=pre><span lang=EN-GB style='font-family:Helvetica'>(Undefined)<a
+  href="#_ftn6" name="_ftnref6" title=""><span class=MsoFootnoteReference><span
+  class=MsoFootnoteReference><span lang=EN-GB style='font-size:10.0pt;
+  font-family:Helvetica'>[6]</span></span></span></a></span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><a name="_Ref462037525"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<h3><a name="_Toc26669842"></a><a name="_Toc490023431"><span lang=EN-GB>4.1.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Received Object Description</span></a><span
+lang=EN-GB> </span></h3>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='margin-left:5.4pt;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Frame</span></b></p>
+  <p class=MsoNormal><b><span lang=EN-GB>Ontology</span></b></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>received-object</span></p>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>fipa-agent-management</span></p>
+  </td>
+  <td style='border:none;border-bottom:solid windowtext 1.5pt;padding:0in 0in 0in 0in'
+  width=369 colspan=3><p class='MsoNormal'>&nbsp;</td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Parameter</span></b></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Description</span></b></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Presence</span></b></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Type</span></b></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB>Reserved Values</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>by</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The
+  URL representing the transport address of the receiving ACC.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Mandatory</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>url</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>from</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The
+  URL representing the transport address of the sending ACC.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>url</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>date</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='color:black'>The date when a message was received.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Mandatory</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>date</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>id</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>The
+  unique identifier of a message. It is required that uniqueness be guaranteed
+  within the scope of the sending ACC only.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>string</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=127 valign=top style='width:95.0pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>via</span></p>
+  </td>
+  <td width=207 valign=top style='width:155.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>The
+  type of MTP the message was delivered over.</span></p>
+  </td>
+  <td width=80 valign=top style='width:60.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB>Optional</span></p>
+  </td>
+  <td width=100 valign=top style='width:75.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='font-family:Courier'>string</span></p>
+  </td>
+  <td width=189 valign=top style='width:141.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>fipa.mts.mtp.iiop.std</span></p>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>fipa.mts.mtp.http.std</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26669843"></a><a name="_Toc490023434"><span lang=EN-GB>5<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>References</span></a></h1>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[FIPA00007]      FIPA Content Languages
+Specification<span style='color:black'>. Foundation for Intelligent Physical
+Agents, 2000. </span></span><span lang=EN-GB style='font-family:Courier;
+color:black'>http://www.fipa.org/specs/fipa00007/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[FIPA00008]      FIPA SL Content Language
+Specification<span style='color:black'>. Foundation for Intelligent Physical
+Agents, 2000. </span></span><span lang=EN-GB style='font-family:Courier;
+color:black'>http://www.fipa.org/specs/fipa00008/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[FIPA00014]      FIPA Nomadic Application
+Support Specification<span style='color:black'>. Foundation for Intelligent
+Physical Agents, 2000. </span></span><span lang=EN-GB style='font-family:Courier;
+color:black'>http://www.fipa.org/specs/fipa00014/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00023]      </span><span
+lang=EN-GB>FIPA Agent Management Specification<span style='color:black'>. Foundation
+for Intelligent Physical Agents, 2000. </span></span><span lang=EN-GB
+style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00023/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[FIPA00061]      FIPA Agent Communication
+Language Specification. <span style='color:black'>Foundation for Intelligent
+Physical Agents, 2000.<br>
+</span></span><span lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00061/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[ISO8601]         Date Elements and
+Interchange Formats, Information Interchange-Representation of Dates and Times.
+International Standards Organisation, 1998.<br>
+</span><span lang=EN-GB style='font-family:Courier'>http://www.iso.ch/cate/d15903.html</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[RFC822]          Uniform
+Resource Identifiers: Generic Syntax. Request for Comments, 1992. </span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.ietf.org/rfc/rfc0822.txt</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[RFC2396]         Standard
+for the Format of APRA Internet Text Messages. Request for Comments, 1998.<br>
+</span><span lang=EN-GB style='font-family:Courier;color:black'>http://www.ietf.org/rfc/rfc2396.txt</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<h1 style='page-break-before:always'><a name="_Toc26669844"></a><a
+name="_Ref23731411"></a><a name="_Toc8528740"></a><a name="_Ref531401721"></a><a
+name="_Toc522504001"></a><a name="_Toc522505973"><span lang=EN-GB>6<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Informative Annex A — ChangeLog</span></a></h1>
+
+<h2><a name="_Toc26669845"></a><a name="_Toc8528741"><span lang=EN-GB>6.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>2001/10/08 - version D by FIPA Architecture
+Board</span></a></h2>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+lang=EN-GB>Page 8, lines 315-319:      Removed section 3.5.2 which included
+references to obsolete specifications FIPA00077 and FIPA00078</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc26669846"></a><a name="_Toc8528742"><span lang=EN-GB>6.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>2002/11/01 - version E by FIPA </span></a><span
+lang=EN-GB>X2S</span></h2>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Entire
+document:              Changed all symbols to lowercase</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Entire document:              <span
+lang=EN-GB>Replaced all references</span> to message body and message content
+with message payload</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Entire document:              <span
+lang=EN-GB>Removed the symbol </span><span lang=EN-GB style='font-family:Courier'>:</span><span
+lang=EN-GB> from all the parameter names </span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+lang=EN-GB>Entire document:              Removed reference to [FIPA00073] and
+to WAP specifications</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Entire document:            Removed
+the </b><b><span style='font-family:Courier'>encrypted</span></b><b> parameter
+and references to it</b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 2, Figure
+1:             <span lang=EN-GB>Figure redrawn to be more accurate</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+lang=EN-GB>Page 2, line 108:              Added a sentence to clarify that
+agents might need processing of the envelope</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 3,
+line 144:              Made clear the usage of additional message envelope
+parameters</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 4,
+lines 157-160:      Deleted paragraph on baseline MTP</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 4,
+line 178:              Added a sentence about the possibility when an ACC can discard
+a stamped message</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 4,
+line 178:              <span style='font-family:Courier'>transport-behaviour</span>
+parameter reserved for future use            </p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 5,
+line 189:              Added sentence to reinforce a requirement of ACC to
+process all <span style='font-family:Courier'>to</span> parameter entries</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 6,
+line 236:              Added sentence to reinforce a requirement of ACC to
+maintain the AID list in an original message</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 6,
+line 246:              Added a sentence about the possibility when an ACC can discard
+a stamped message     </p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 6,
+lines 249-250:      Deleted sentence on the interface to the name resolution
+service</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 6,
+line 262:             Added clarification on the generation of failure message
+for non-delivered messages</b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 6,
+lines 265-266:     Clarified that implementation can ignore arguments of </b><b><span
+style='font-family:Courier'>internal-error</span></b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 7,
+lines 303-311:      Modified the example according to the new definition of <span
+style='font-family:Courier'>ap-description</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 9,
+line 325:              Added a note that references [FIPA00023] for the closure
+of <span style='font-family:Courier'>fipa-agent-management</span> ontology</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 9,
+line 344:              Added reserved values for <span style='font-family:Courier'>acl-representation</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 9,
+line 344:             </b><b>Relaxed the requirement that the parameter </b><b><span
+style='font-family:Courier'>date</span></b><b> had to be added by the sending
+agent</b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 10,
+line 346:           Added requirement for sending ACC to generate unique </b><b><span
+style='font-family:Courier'>id</span></b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 10,
+line 346:            Added reserved values for the <span style='font-family:
+Courier'>via</span> parameter</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 10,
+lines 348-351:   Removed definitions of </b><b><span style='font-family:Courier'>ap-transport-description</span></b><b>
+and </b><b><span style='font-family:Courier'>mtp-description</span></b><b> made
+obsolete by the new definition of </b><b><span style='font-family:Courier'>ap-description</span></b><b>
+in [FIPA00023]</b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>&nbsp;</p>
+
+<h2><a name="_Toc26669847"></a><a name="_Toc26669208"><span lang=EN-GB>6.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>2002/12/03 - version F by FIPA Architecture
+Board</span></a></h2>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Entire
+document:              Promoted to Standard status</p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[1]</span></span></span></span></a><span
+lang=EN-GB> An ACC may decide to optimise the delivery of messages where a
+given message is intended for multiple receivers that reside on the same host. However,
+whether an ACC decides to make this optimisation or not, the semantics of
+message delivery within an ACC must remain the same. This is so that optimised ACCs
+and non-optimised ACCs can inter-operate.</span></p>
+
+</div>
+
+<div id=ftn2>
+
+<p class=MsoFootnoteText><a href="#_ftnref2" name="_ftn2" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[2]</span></span></span></span></a><span
+lang=EN-GB> <span style='color:black'>Not splitting up messages may be more
+efficient when several copies would be delivered to the same address.</span></span></p>
+
+</div>
+
+<div id=ftn3>
+
+<p class=MsoFootnoteText><a href="#_ftnref3" name="_ftn3" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[3]</span></span></span></span></a><span
+lang=EN-GB> How the message is generated (whether by the AMS or by the ACC on
+behalf of the AMS) is not specified by FIPA.</span></p>
+
+</div>
+
+<div id=ftn4>
+
+<p class=MsoFootnoteText><a href="#_ftnref4" name="_ftn4" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[4]</span></span></span></span></a><span
+lang=EN-GB> A fourth possibility (not illustrated) is that instead of
+completing the last two stages of the first path, the ACC on the first platform
+contacts Agent B directly – this depends upon the address that the ACC is
+delivering to.</span></p>
+
+</div>
+
+<div id=ftn5>
+
+<p class=MsoFootnoteText><a href="#_ftnref5" name="_ftn5" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[5]</span></span></span></span></a><span
+lang=EN-GB> If this field is not present, the default value </span><span
+lang=EN-GB style='font-family:Courier'>US-ASCII</span><span lang=EN-GB> is
+assumed for the content encoding. </span></p>
+
+</div>
+
+<div id=ftn6>
+
+<p class=MsoFootnoteText><a href="#_ftnref6" name="_ftn6" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[6]</span></span></span></span></a><span
+lang=EN-GB> Reserved for future use.</span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

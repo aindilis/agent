@@ -1,0 +1,1452 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 10 (filtered)">
+<title>FIPA Agent Message Transport Protocol for IIOP</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\FF2D\FF33 \660E\671D";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Century Old Style";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Sans Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Geneva;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Monotype Sorts";}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Helvetica;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-align:justify;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h4
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h5
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h6
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.1in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:8.0pt;
+	font-family:Helvetica;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-3.3pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:red;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+strong
+	{font-family:"Book Antiqua";}
+em
+	{font-family:"Book Antiqua";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.zzCover, li.zzCover, div.zzCover
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.Code
+	{font-family:"Courier New";}
+p.Heading2, li.Heading2, div.Heading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallCode
+	{font-family:"Courier New";}
+span.SmallNormal
+	{font-family:"Book Antiqua";}
+span.SmallStrong
+	{font-family:"Book Antiqua";
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.Abbrevs, li.Abbrevs, div.Abbrevs
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Titre3h3, li.Titre3h3, div.Titre3h3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.source, li.source, div.source
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+p.Normaleparagraph, li.Normaleparagraph, div.Normaleparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="SK_Preliminary"></a><a
+name="MLS_Field_MERGEFORMAT"></a><a name="MLS_Field_QUOTE"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a><b><span lang=EN-GB
+style='font-size:18.0pt'>&nbsp;</span></b></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><b><span lang=EN-GB style='font-size:18.0pt'>FOUNDATION
+FOR INTELLIGENT PHYSICAL AGENTS</span></b><b><span
+lang=EN-GB style='font-size:18.0pt'><a name="_Ref479045812"></a></span></b></p>
+
+<p class=Standardparagraph><a name="MLS_Field_CHARFORMAT"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt'>FIPA Agent Message Transport Protocol<br>
+for IIOP Specification</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  title</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal><span lang=EN-GB>FIPA Agent Message Transport Protocol for
+  IIOP Specification</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  number</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=Normalparagraph><span lang=EN-GB style='font-family:Helvetica'>SC00075G</span></p>
+  </td>
+  <td width=145 valign=top style='width:108.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  source</span></b></p>
+  </td>
+  <td width=177 valign=top style='width:132.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA TC
+  Agent Management</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  status</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Standard</span></p>
+  </td>
+  <td width=145 valign=top style='width:108.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Date
+  of this status</span></b></p>
+  </td>
+  <td width=177 valign=top style='width:132.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2002/12/03</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Supersedes</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA00024</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Contact</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>fab@fipa.org</span></p>
+  </td>
+ </tr>
+ <tr style='height:3.5pt'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt;height:3.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Change
+  history</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt;height:3.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>See <i>Informative
+  Annex B — ChangeLog</i></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>©
+1996-2002 Foundation for Intelligent Physical Agents <br>
+http://www.fipa.org/<i><br>
+Geneva, Switzerland</i></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='text-align:center'><b><span
+  lang=EN-GB>Notice</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:108.45pt'>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:108.45pt'>
+  <p class=Standardparagraph><span lang=EN-GB>Use of the technologies described
+  in this specification may infringe patents, copyrights or other intellectual
+  property rights of FIPA Members and non-members. Nothing in this
+  specification should be construed as granting permission to use any of the
+  technologies described. Anyone planning to make use of technology covered by the
+  intellectual property rights of others should first obtain permission from
+  the holder(s) of the rights. FIPA strongly encourages anyone implementing any
+  part of this specification to determine first whether part(s) sought to be
+  implemented are covered by the intellectual property of others, and, if so,
+  to obtain appropriate licenses or other permission from the holder(s) of such
+  intellectual property prior to implementation. This specification is subject
+  to change without notice. Neither FIPA nor any of its Members accept any
+  responsibility whatsoever for damages or liability, direct or consequential,
+  which may result from the use of this specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=zzContents><span lang=EN-GB>Foreword</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>The Foundation for Intelligent
+Physical Agents (FIPA) is an international organization that is dedicated to
+promoting the industry of intelligent agents by openly developing
+specifications supporting interoperability among agents and agent-based
+applications. This occurs through open collaboration among its member
+organizations, which are companies and universities that are active in the
+field of agents. FIPA makes the results of its activities available to all
+interested parties and intends to contribute its results to the appropriate
+formal standards bodies where appropriate. </span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>The members of FIPA are
+individually and collectively committed to open competition in the development
+of agent-based applications, services and equipment. Membership in FIPA is open
+to any corporation and individual firm, partnership, governmental body or
+international organization without restriction. In particular, members are not
+bound to implement or use specific agent-based standards, recommendations and
+FIPA specifications by virtue of their participation in FIPA. </span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>The FIPA specifications are
+developed through direct involvement of the FIPA membership. The status of a
+specification can be either Preliminary, Experimental, Standard, Deprecated or
+Obsolete.<i> </i>More detail about the process of specification may be found in
+the FIPA Document Policy [f-out-00000] and the FIPA Specifications Policy
+[f-out-00003]. A complete overview of the FIPA specifications and their current
+status may be found on the FIPA Web site.</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>FIPA is a non-profit association
+registered in Geneva, Switzerland. As of June 2002, the 56 members of FIPA
+represented many<i> </i>countries worldwide. Further information about FIPA as
+an organization, membership information, FIPA specifications and upcoming
+meetings may be found on the FIPA Web site at http://www.fipa.org/.</span></p>
+
+<p class=zzContents><span lang=EN-GB>Contents</span></p>
+
+<p class=MsoToc1><a name="_Ref449499969"></a><a
+href="#_Toc26670623"><span lang=EN-GB>1</span><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span><span
+lang=EN-GB>Scope</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26670624"><span lang=EN-GB>2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Message Transport Protocol
+for IIOP</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670625"><span lang=EN-GB>2.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Component Name</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670626"><span lang=EN-GB>2.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Interface Definition</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670627"><span lang=EN-GB>2.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>ACC Processing of IDL
+Envelope</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670628"><span lang=EN-GB>2.4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Concrete Message Envelope
+Syntax</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26670629"><span lang=EN-GB>3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>References</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26670630"><span lang=EN-GB>4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span>Informative Annex A<span lang=EN-GB> — URL
+Schemes for IIOP Addresses</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26670631"><span lang=EN-GB>5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Informative Annex B —
+ChangeLog</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670632"><span lang=EN-GB>5.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>2002/11/01 - version F by
+TC X2S</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670633"><span lang=EN-GB>5.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>2002/12/03 - version G by
+FIPA Architecture Board</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoNormal></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=Section2>
+
+<h1><a name="_Toc26670623"></a><a name="_Toc493403122"><span lang=EN-GB>1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Scope</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>This document deals
+with message transportation between inter-operating agents and also forms part
+of the FIPA Agent Management Specification [FIPA00023]. It contains
+specifications for:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The transport of messages between agents using
+the Internet Inter-Orb Protocol (IIOP - see [OMGiiop]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc480605362"></a><a name="_Ref456499681"></a><a
+name="_Ref456499121"></a><a name="_Toc26670624"></a><a name="_Toc493403123"><span
+lang=EN-GB>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Message Transport Protocol for IIOP</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>This MTP is based on the transfer of an OMG
+IDL structure containing the message envelope and an octet sequence
+representing the ACL message body. The envelope and the message body are
+transferred together within a single IIOP one-way invocation [OMGiiop].</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Once the request has been received, the
+message envelope is used by the ACC to obtain the instructions and information
+needed to correctly handle the message body<span style='color:black'>.</span></span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<h2><a name="_Toc26670625"></a><a name="_Toc493403124"><span lang=EN-GB>2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Component Name</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The name assigned to
+this component is:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>fipa.mts.mtp.iiop.std</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<h2><a name="_Toc26670626"></a><a name="_Toc493403125"></a><a
+name="_Toc480605363"></a><a name="_Ref456499969"><span lang=EN-GB>2.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Interface Definition</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The following IDL specifies the message
+transport interface. This interface contains a single operation </span><span
+lang=EN-GB style='font-family:Courier'>message()</span><span lang=EN-GB> that
+requires a single argument. This argument has two attributes: a sequence of </span><span
+lang=EN-GB style='font-family:Courier'>Envelope</span><span lang=EN-GB>
+structures holding the message envelope and the payload, that is a sequence of
+octets containing the ACL message body.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>module FIPA {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  typedef
+sequence&lt;Envelope&gt; Envelopes;</span></p>
+
+<p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>  typedef
+sequence&lt;octet&gt; Payload;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  struct FipaMessage
+{</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    Envelopes messageEnvelopes;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    Payload   messageBody;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  };</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  interface MTS
+{</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    oneway void
+message(in FipaMessage aFipaMessage);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  };</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>};</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<h2><a name="_Toc480605366"></a><a name="_Toc26670627"></a><a
+name="_Toc493403126"><span lang=EN-GB>2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>ACC Processing of IDL Envelope</span></a><span
+lang=EN-GB>  </span></h2>
+
+<p class=MsoNormal><span lang=EN-GB>According to [FIPA00067], a FIPA compliant
+ACC is not allowed to modify any element of the envelope that it receives. It
+is however allowed to update a value in one of the envelope parameters by
+adding a new </span><span lang=EN-GB style='font-family:Courier'>Envelope</span><span
+lang=EN-GB> element at the end of the </span><span lang=EN-GB style='font-family:
+Courier'>messageEnvelope</span><span lang=EN-GB>s sequence. This new element is
+required to have only those parameter values that the ACC wishes to add or
+update plus a new </span><span lang=EN-GB style='font-family:Courier'>ReceivedObject</span><span
+lang=EN-GB> element as mandated in [FIPA00067].</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>As a consequence, an ACC that receives a
+message must implement the procedure described in the following pseudo-code.
+The procedure recomposes the full envelope structure with its latest values for
+each parameter. The procedure simply shows that the ACC starts from the last
+envelope in the sequence and continues until it has all the required values for
+each parameter of the envelope.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>EnvelopeWithAllFields
+:= new empty Envelope;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>while ((EnvelopeWithAllFields
+does not contain values for all its fields) </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        OR (all
+Envelopes in the sequence have been processed)) {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // the ACC
+gets the next envelope in the sequence starting from the end</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  tempEnvelope
+= getNextEnvelope;  </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:12.0pt'><span lang=EN-GB
+style='font-family:Courier'>foreach field in an envelope {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    if ((this
+field has no value in envelopeWithAllFields) </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        AND
+(this field has a value in tempEnvelope))</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>   then copy
+the value of this field from tempEnvelope to envelopeWithAllFields</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  }</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>}</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>EnvelopeWithAllFields</span><span
+lang=EN-GB> now contains the latest values for all its fields.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>For example:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Envelope(0):</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  to = tizio</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  from = caio</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  aclRepresentation
+= XML</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  received = …</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Envelope (1):</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  from = caio@molfetta.it</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  received = …</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>Envelope (2):</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  intended-receiver
+= tizio@villardora.it</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  received = …</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>EnvelopeWithAllFields:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'> to = tizio                               
+(from envelope 0)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'> from = caio@molfetta.it                  
+(from envelope 1)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'> intended-receiver
+= tizio@villardora.it   (from envelope 2)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'> date = 25 May
+2000                        (from envelope 0)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<h2><a name="_Toc26670628"></a><a name="_Toc493403127"><span lang=EN-GB>2.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Concrete Message Envelope Syntax</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The abstract envelope syntax from
+[FIPA00067] maps into a set of OMG IDL structured types, all of which are
+enclosed within the FIPA module.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The following standard convention applies
+for the identification of optional parameters: an empty string and an empty
+sequence identify the non-presence of a parameter. In the case of the </span><span
+lang=EN-GB style='font-family:Courier'>payload-length</span><span lang=EN-GB>
+parameter (which is a number) any negative value can be used to identify the
+non-presence of the parameter. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The complete IDL definition is:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>module FIPA {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // No need
+for an URL struct, since it's only put in the</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // message
+envelope for informational purposes.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  typedef
+string URL;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // this
+generic type is used to represent user-defined, non FIPA-defined,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // properties
+that are added to the message envelope in the form of a</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // keyword
+and value pair.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  struct
+Property {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    string
+keyword;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    any value;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  };</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  struct AgentID
+{  // Agent Identifier</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    string
+name;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    sequence&lt;URL&gt;     
+addresses;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    sequence&lt;AgentID&gt; 
+resolvers;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    sequence&lt;Property&gt;
+userDefinedProperties;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  };</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  typedef
+sequence&lt;AgentID&gt; AgentIDs;  // sequence of Agent Identifiers</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // IDL struct
+to represent a time stamp. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // It is
+based on the ISO8601 format with extension for millisecond durations.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // The value
+of the typeDesignator must be a valid </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // AlphaCharacter,
+i.e. ['a'-'z' , 'A'-'Z'], that identifies the timezone.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // ISO8601
+reports the mapping between typeDesignator and timezone.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // The typeDesignator
+for UTC is the character 'Z'.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // If the
+value of typeDesignator is not an AlphaCharacter, it defaults</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  // to the
+local timezone.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  struct DateTime
+{</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    short
+year;           // year (e.g. 2000)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    short
+month;          // between 1 and 12</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    short
+day;            // between 1 and 31</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    short
+hour;           // between 0 and 23</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    short
+minutes;        // between 0 and 59</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    short
+seconds;        // between 0 and 59</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    short
+milliseconds;   // between 0 and 999       </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    char  typeDesignator;
+// see comment above</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  };</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  struct ReceivedObject
+{</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    URL by;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    URL from;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    DateTime
+date;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    string id;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    string via;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  };</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  typedef sequence&lt;Property&gt;
+TransportBehaviourType;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  typedef
+sequence&lt;AgentID,1&gt; OptAgentID;       </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  typedef
+sequence&lt;DateTime,1&gt; OptDateTime; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  typedef
+sequence&lt;TransportBehaviourType,1&gt; OptTransportBehaviourType; </span></p>
+
+<p class=MsoHeader><span lang=EN-GB style='font-family:Courier'>  typedef
+sequence&lt;ReceivedObject,1&gt; OptReceivedObject;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  struct
+Envelope { </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     AgentIDs     
+            to; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     OptAgentID               
+from; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     string                   
+comments; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     string                   
+aclRepresentation; </span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:Courier'>     long                     
+payloadLength; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     string                   
+payloadEncoding; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     OptDateTime              
+date; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     AgentIDs                 
+intendedReceiver; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     OptReceivedObject        
+received; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     OptTransportBehaviourType
+transportBehaviour; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     sequence&lt;Property&gt;       
+userDefinedProperties; // user-defined properties</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  };</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  typedef
+sequence&lt;Envelope&gt; Envelopes;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  typedef
+sequence&lt;octet&gt; Payload;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  struct FipaMessage
+{</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    Envelopes messageEnvelopes;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    Payload   messageBody;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  }; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  interface MTS
+{</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    oneway void
+message(in FipaMessage aFipaMessage);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  };</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>};</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><i><span lang=EN-GB>&nbsp;</span></i></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26670629"></a><a name="_Toc493403128"><span lang=EN-GB>3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>References</span></a></h1>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00023]      </span><span
+lang=EN-GB>FIPA Agent Management Specification<span style='color:black'>. Foundation
+for Intelligent Physical Agents, 2000. </span></span><span lang=EN-GB
+style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00023/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00067]      </span><span
+lang=EN-GB>FIPA Agent Message Transport Service Specification<span
+style='color:black'>. Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00067/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[OMGiiop]         OMG </span><span
+lang=EN-GB>Internet Inter-ORB Protocol Specification, Common Object Request
+Broker Architecture 2.2. Object Management Group<span style='color:black'>,
+1999.</span></span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[OMGint]           ORB
+Interoperability Architecture</span><span lang=EN-GB>, CORBA V2.3. Object
+Management Group<span style='color:black'>, June 1999.</span></span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[OMGnam]        </span>Common
+Object Services Specification, Naming Service: v1.1<span lang=EN-GB>. Object
+Management Group<span style='color:black'>, 00-08-07, 2000.</span></span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica;color:black'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc531401521"></a><a name="_Ref531401391"></a><a
+name="_Ref531401388"></a><a name="_Toc522504001"></a><a name="_Toc26670630"><span
+lang=EN-GB>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Informative Annex A <span lang=EN-GB>— URL Schemes for IIOP Addresses</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>Section 3.6 of OMG Naming Service specifications
+[OMGnam] and section 13.6 of OMG ORB Interoperability Architecture [OMGint] </span>describe
+the Uniform Resource Locator (URL) schemes available to represent a CORBA
+object or a CORBA object bound in a Naming Service and that can be used within
+FIPA to represent valid IIOP addresses:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;text-autospace:
+none'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>IOR</span>.<i>  </i>The string
+form of an IOR <span style='font-family:Courier'>(IOR:&lt;hex_octet</span><span
+style='font-family:Courier'>s&gt;)</span> is a valid URL. The scheme name is <b>IOR
+</b>and the text after the <span style='font-family:Courier'>:</span> is
+defined in the CORBA 2.3 specification, Section 13.6.6. The IOR URL is robust
+and insulates the client from the encapsulated transport information and object
+key used to reference the object. This URL format is independent of Naming
+Service.</p>
+
+<p class=MsoNormal style='text-indent:135.0pt;text-autospace:none'><i>&nbsp;</i></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;text-autospace:
+none'><span lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>corbaloc</span>.<i> </i>It is
+difficult for humans to exchange IORs through non-electronic means because of their
+length and the text encoding of binary information. The <span style='font-family:
+Courier'>corbaloc</span><i> </i>URL scheme provides URLs that are familiar to
+people and similar to ftp or http URLs. The <span style='font-family:Courier'>corbaloc</span><i>
+</i>URL is described in the CORBA 2.3 Specification, Section 13.6.6. This URL
+format is independent of the Naming Service.</p>
+
+<p class=MsoNormal style='text-autospace:none'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;text-autospace:
+none'><span lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>corbaname</span><i>. </i>A <span
+style='font-family:Courier'>corbaname</span><i> </i>URL is similar to a <span
+style='font-family:Courier'>corbaloc</span><i> </i>URL. However a <span
+style='font-family:Courier'>corbaname</span><i> </i>URL also contains a stringified
+name that identifies a binding in a naming context. </p>
+
+<p class=MsoNormal style='text-autospace:none'>&nbsp;</p>
+
+<p class=MsoNormal style='text-autospace:none'>Refer to the OMG specs for how
+to use a CORBA Naming Resolution Service and for the complete syntax of the
+used URL schemes.</p>
+
+<p class=MsoHeader style='text-autospace:none'><span lang=EN-GB>&nbsp;</span></p>
+
+<h1 style='page-break-before:always'><a name="_Toc26670631"></a><a
+name="_Ref23734667"><span lang=EN-GB>5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Informative Annex B — ChangeLog</span></a></h1>
+
+<h2><a name="_Toc26670632"></a><a name="_Toc531401523"><span lang=EN-GB>5.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>2002/11/01 - version F by </span></a><span
+lang=EN-GB>TC X2S</span></h2>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 3,
+line 146:             Removed </b><b><span style='font-family:Courier'>strings</span></b><b>
+type definition </b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 4,
+line 207:             Removed </b><b><span style='font-family:Courier'>encrypted</span></b><b>
+parameter</b></p>
+
+<p class=MsoNormal><span lang=FR>&nbsp;</span></p>
+
+<h2><a name="_Toc26670633"></a><a name="_Toc26669208"><span lang=EN-GB>5.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>2002/12/03 - version G by FIPA Architecture
+Board</span></a></h2>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Entire
+document:              Promoted to Standard status</p>
+
+<p class=MsoNormal><span lang=FR>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

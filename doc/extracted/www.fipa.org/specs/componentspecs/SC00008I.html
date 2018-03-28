@@ -1,0 +1,4293 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 10 (filtered)">
+<title>FIPA SL Content Language Specification</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\FF2D\FF33 \660E\671D";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Century Old Style";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Sans Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Helvetica;
+	font-weight:bold;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-align:justify;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	font-weight:bold;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-weight:bold;}
+h4
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h5
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h6
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.1in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoIndex1, li.MsoIndex1, div.MsoIndex1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-10.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoIndex2, li.MsoIndex2, div.MsoIndex2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-10.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoIndex3, li.MsoIndex3, div.MsoIndex3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-10.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoIndex4, li.MsoIndex4, div.MsoIndex4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-10.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoIndex5, li.MsoIndex5, div.MsoIndex5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-10.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoIndex6, li.MsoIndex6, div.MsoIndex6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-10.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoIndex7, li.MsoIndex7, div.MsoIndex7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-10.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoIndex8, li.MsoIndex8, div.MsoIndex8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-10.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoIndex9, li.MsoIndex9, div.MsoIndex9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-10.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoNormalIndent, li.MsoNormalIndent, div.MsoNormalIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:8.0pt;
+	font-family:Helvetica;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoIndexHeading, li.MsoIndexHeading, div.MsoIndexHeading
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoTof, li.MsoTof, div.MsoTof
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-20.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoEnvelopeAddress, li.MsoEnvelopeAddress, div.MsoEnvelopeAddress
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:2.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoEnvelopeReturn, li.MsoEnvelopeReturn, div.MsoEnvelopeReturn
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Arial;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoEndnoteText, li.MsoEndnoteText, div.MsoEndnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToa, li.MsoToa, div.MsoToa
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-10.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoMacroText, li.MsoMacroText, div.MsoMacroText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoToaHeading, li.MsoToaHeading, div.MsoToaHeading
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoList2, li.MsoList2, div.MsoList2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoList3, li.MsoList3, div.MsoList3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoList4, li.MsoList4, div.MsoList4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoList5, li.MsoList5, div.MsoList5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-align:left;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoListBullet3, li.MsoListBullet3, div.MsoListBullet3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet4, li.MsoListBullet4, div.MsoListBullet4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet5, li.MsoListBullet5, div.MsoListBullet5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber3, li.MsoListNumber3, div.MsoListNumber3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber4, li.MsoListNumber4, div.MsoListNumber4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListNumber5, li.MsoListNumber5, div.MsoListNumber5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:left;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoClosing, li.MsoClosing, div.MsoClosing
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:3.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoSignature, li.MsoSignature, div.MsoSignature
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:3.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-3.3pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoListContinue, li.MsoListContinue, div.MsoListContinue
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListContinue2, li.MsoListContinue2, div.MsoListContinue2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListContinue3, li.MsoListContinue3, div.MsoListContinue3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListContinue4, li.MsoListContinue4, div.MsoListContinue4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListContinue5, li.MsoListContinue5, div.MsoListContinue5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.25in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoMessageHeader, li.MsoMessageHeader, div.MsoMessageHeader
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.75in;
+	background:#CCCCCC;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoSalutation, li.MsoSalutation, div.MsoSalutation
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoBodyTextFirstIndent, li.MsoBodyTextFirstIndent, div.MsoBodyTextFirstIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-indent:10.5pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoBodyTextFirstIndent2, li.MsoBodyTextFirstIndent2, div.MsoBodyTextFirstIndent2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-indent:10.5pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoNoteHeading, li.MsoNoteHeading, div.MsoNoteHeading
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:left;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:red;}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	line-height:200%;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoBodyTextIndent3, li.MsoBodyTextIndent3, div.MsoBodyTextIndent3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	font-size:8.0pt;
+	font-family:Helvetica;}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:0in;
+	margin-right:1.0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+strong
+	{font-family:"Book Antiqua";}
+em
+	{font-family:"Book Antiqua";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoAutoSig, li.MsoAutoSig, div.MsoAutoSig
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+address
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-weight:bold;}
+p.zzCover, li.zzCover, div.zzCover
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:left;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.Code
+	{font-family:"Courier New";}
+p.Heading2, li.Heading2, div.Heading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallCode
+	{font-family:"Courier New";}
+span.SmallNormal
+	{font-family:"Book Antiqua";}
+span.SmallStrong
+	{font-family:"Book Antiqua";
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.Abbrevs, li.Abbrevs, div.Abbrevs
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Titre3h3, li.Titre3h3, div.Titre3h3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:left;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.source, li.source, div.source
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+p.Normaleparagraph, li.Normaleparagraph, div.Normaleparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.Figuretitle, li.Figuretitle, div.Figuretitle
+	{margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:11.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Boxparagraph, li.Boxparagraph, div.Boxparagraph
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:left;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.item, li.item, div.item
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.foreword, li.foreword, div.foreword
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:left;
+	font-size:10.0pt;
+	font-family:Arial;}
+span.CODE0
+	{font-family:"Courier New";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="SK_Preliminary"></a><a
+name="MLS_Field_MERGEFORMAT"></a><a name="MLS_Field_QUOTE"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a><b><span style='font-size:
+18.0pt'>&nbsp;</span></b></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="_Ref489082311"></a><b><span
+style='font-size:18.0pt'>FOUNDATION FOR INTELLIGENT PHYSICAL AGENTS</span></b><b><span style='font-size:18.0pt'><a name="_Ref479045812"></a></span></b></p>
+
+<p class=Standardparagraph><a name="MLS_Field_CHARFORMAT">&nbsp;</a></p>
+
+<p class=Standardparagraph>&nbsp;</p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+style='font-size:24.0pt'>FIPA SL Content Language Specification</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+style='font-size:24.0pt'>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b>Document title</b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'>FIPA SL Content
+  Language Specification</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b>Document number</b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'>SC00008I</p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b>Document source</b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'>FIPA TC Communication</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b>Document status</b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'>Standard</p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b>Date of this status</b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'>2002/12/03</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b>Supersedes</b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'>FIPA00003</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b>Contact</b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'>fab@fipa.org</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b>Change history</b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'>See <i>Informative Annex
+  B — ChangeLog</i></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=Standardparagraph align=left style='text-align:left'>&nbsp;</p>
+
+<p class=Standardparagraph align=left style='text-align:left'>&nbsp;</p>
+
+<p class=Standardparagraph align=left style='text-align:left'>&nbsp;</p>
+
+<p class=Standardparagraph align=left style='text-align:left'>&nbsp;</p>
+
+<p class=Standardparagraph align=left style='text-align:left'>&nbsp;</p>
+
+<p class=Standardparagraph align=left style='text-align:left'>&nbsp;</p>
+
+<p class=Standardparagraph align=left style='text-align:left'>&nbsp;</p>
+
+<p class=Standardparagraph align=left style='text-align:left'>&nbsp;</p>
+
+<p class=Standardparagraph align=left style='text-align:left'>&nbsp;</p>
+
+<p class=Standardparagraph align=left style='text-align:left'>&nbsp;</p>
+
+<p class=Standardparagraph align=left style='text-align:left'>&nbsp;</p>
+
+<p class=Standardparagraph align=left style='text-align:left'>© 1996-2002
+Foundation for Intelligent Physical Agents <br>
+http://www.fipa.org/<i><br>
+Geneva, Switzerland</i></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='text-align:center'><b>Notice</b></p>
+  </td>
+ </tr>
+ <tr style='height:108.45pt'>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:108.45pt'>
+  <p class=Standardparagraph>Use of the technologies described in this
+  specification may infringe patents, copyrights or other intellectual property
+  rights of FIPA Members and non-members. Nothing in this specification should
+  be construed as granting permission to use any of the technologies described.
+  Anyone planning to make use of technology covered by the intellectual
+  property rights of others should first obtain permission from the holder(s)
+  of the rights. FIPA strongly encourages anyone implementing any part of this
+  specification to determine first whether part(s) sought to be implemented are
+  covered by the intellectual property of others, and, if so, to obtain
+  appropriate licenses or other permission from the holder(s) of such
+  intellectual property prior to implementation. This specification is subject
+  to change without notice. Neither FIPA nor any of its Members accept any
+  responsibility whatsoever for damages or liability, direct or consequential,
+  which may result from the use of this specification.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=zzContents>Foreword</p>
+
+<p class=Standardparagraph>The Foundation for Intelligent Physical Agents
+(FIPA) is an international organization that is dedicated to promoting the
+industry of intelligent agents by openly developing specifications supporting
+interoperability among agents and agent-based applications. This occurs through
+open collaboration among its member organizations, which are companies and
+universities that are active in the field of agents. FIPA makes the results of
+its activities available to all interested parties and intends to contribute
+its results to the appropriate formal standards bodies where appropriate. </p>
+
+<p class=Standardparagraph>The members of FIPA are individually and
+collectively committed to open competition in the development of agent-based
+applications, services and equipment. Membership in FIPA is open to any
+corporation and individual firm, partnership, governmental body or
+international organization without restriction. In particular, members are not
+bound to implement or use specific agent-based standards, recommendations and
+FIPA specifications by virtue of their participation in FIPA. </p>
+
+<p class=Standardparagraph>The FIPA specifications are developed through direct
+involvement of the FIPA membership. The status of a specification can be either
+Preliminary, Experimental, Standard, Deprecated or Obsolete.<i> </i>More detail
+about the process of specification may be found in the FIPA <span lang=EN-GB>Document
+Policy [f-out-00000] and the FIPA Specifications Policy [f-out-00003]</span>. A
+complete overview of the FIPA specifications and their current status may be
+found on the FIPA Web site.</p>
+
+<p class=Standardparagraph>FIPA is a non-profit association registered in
+Geneva, Switzerland. As of June 2002, the 56 members of FIPA represented many<i>
+</i>countries worldwide. Further information about FIPA as an organization,
+membership information, FIPA specifications and upcoming meetings may be found
+on the FIPA Web site at http://www.fipa.org/.</p>
+
+<p class=zzContents>Contents</p>
+
+<p class=MsoToc1><a name="_Ref449499969"></a><a href="#_Toc26668851">1<span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span>Scope<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26668852">2<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span>Grammar
+FIPA SL Concrete Syntax<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668853">2.1<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>Lexical
+Definitions<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26668854">3<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span>Notes
+on FIPA SL Semantics<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668855">3.1<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>Grammar
+Entry Point: FIPA SL Content Expression<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668856">3.2<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>Well-Formed
+Formulas<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668857">3.3<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>Atomic
+Formula<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668858">3.4<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>Terms<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668859">3.5<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>Referential
+Operators<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26668860">3.5.1<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>Iota<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26668861">3.5.2<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>Any<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc26668862">3.5.3<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>All<span
+style='color:windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668863">3.6<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>Functional
+Terms<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668864">3.7<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>Result
+Predicate<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668865">3.8<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>Actions
+and Action Expressions<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668866">3.9<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>Notes
+on the Grammar Rules<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668867">3.10<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>    </span>Representation
+of Time<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26668868">4<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span>Reduced
+Expressivity Subsets of FIPA SL<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>14</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668869">4.1<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>FIPA
+SL0: Minimal Subset<span style='color:windowtext;display:none;text-decoration:
+none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>14</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668870">4.2<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>FIPA
+SL1: Propositional Form<span style='color:windowtext;display:none;text-decoration:
+none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>15</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668871">4.3<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>FIPA
+SL2: Decidability Restrictions<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>16</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26668872">5<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span>References<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>19</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26668873">6<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span>Informative
+Annex A — Syntax and Lexical Notation<span style='color:windowtext;display:
+none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>20</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26668874">7<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span>Informative
+Annex B — ChangeLog<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>21</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668875">7.1<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>2002/11/01
+- version H by TC X2S<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>21</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26668876">7.2<span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>      </span>2002/12/03
+- version I by FIPA Architecture Board<span style='color:windowtext;display:
+none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>21</span></a></p>
+
+<p class=MsoNormal></p>
+
+</div>
+
+<span style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=Section2>
+
+<h1><a name="_Toc26668851"></a><a name="_Toc505478630">1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Scope</a></h1>
+
+<p class=MsoNormal><span style='color:black'>This specification defines a
+concrete syntax for the FIPA Semantic Language (SL) content language. This
+syntax and its associated semantics are suggested as a candidate content language
+for use in conjunction with the FIPA Agent Communication Language (see
+[FIPA00037]). In particular, the syntax is defined to be a sub-grammar of the
+very general s-expression syntax.</span></p>
+
+<p class=MsoNormal><i><span style='color:black'>&nbsp;</span></i></p>
+
+<b><span style='font-size:14.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26668852"></a><a name="_Toc505478631">2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Grammar FIPA SL Concrete Syntax</a></h1>
+
+<p class=MsoNormal align=left style='text-align:left'>This content language is
+denoted by the normative constant <span style='font-family:Courier'>fipa-sl</span>
+in the <span style='font-family:Courier'>:language</span> parameter of an ACL
+message. See<i> </i>Section 6 for an explanation of the used syntactic notation.</p>
+
+<p class=MsoNormal align=left style='text-align:left'>&nbsp;</p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=FR
+style='font-family:Courier'>Content                = &quot;(&quot; ContentExpression+
+&quot;)&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=FR
+style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=FR
+style='font-family:Courier'>ContentExpression      = IdentifyingExpression</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=FR
+style='font-family:Courier'>                       | ActionExpression </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=FR
+style='font-family:Courier'>                       | Proposition.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=FR
+style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Proposition            = Wff.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Wff                    = AtomicFormula</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;(&quot; UnaryLogicalOp  Wff
+&quot;)&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;(&quot; BinaryLogicalOp Wff Wff
+&quot;)&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;(&quot; Quantifier      Variable Wff
+&quot;)&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;(&quot; ModalOp         Agent Wff
+&quot;)&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;(&quot; ActionOp        ActionExpression
+&quot;)&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;(&quot; ActionOp        ActionExpression
+Wff &quot;)&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>UnaryLogicalOp         = &quot;not&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>BinaryLogicalOp        = &quot;and&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;or&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;implies&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;equiv&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>AtomicFormula          = PropositionSymbol</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;(&quot; BinaryTermOp    TermOrIE TermOrIE
+&quot;)&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;(&quot; PredicateSymbol TermOrIE+
+&quot;)&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;true&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;false&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>BinaryTermOp           = &quot;=&quot;                       </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;result&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Quantifier             = &quot;forall&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;exists&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>ModalOp                = &quot;B&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;U&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;PG&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;I&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>ActionOp               = &quot;feasible&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;done&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>TermOrIE<a href="#_ftn1" name="_ftnref1" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+style='font-size:10.0pt;font-family:Courier'>[1]</span></span></span></a>              
+= Term</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | IdentifyingExpression.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Term                   = Variable</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | FunctionalTerm</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | ActionExpression</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | Constant</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | Sequence</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | Set.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>IdentifyingExpression  = &quot;(&quot; ReferentialOperator TermOrIE Wff
+&quot;)&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>ReferentialOperator    = &quot;iota&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;any&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;all&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>      </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>FunctionalTerm         = &quot;(&quot; FunctionSymbol TermOrIE*
+&quot;)&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;(&quot; FunctionSymbol Parameter*
+&quot;)&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Constant               = NumericalConstant</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | String</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | DateTime.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>NumericalConstant      = Integer </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | Float. </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Variable               = VariableIdentifier. </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>ActionExpression       = &quot;(&quot; &quot;action&quot; Agent TermOrIE
+&quot;)&quot; </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;(&quot; &quot;|&quot; ActionExpression ActionExpression
+&quot;)&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;(&quot; &quot;;&quot; ActionExpression ActionExpression
+&quot;)&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>PropositionSymbol      = String. </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>PredicateSymbol        = String. </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>FunctionSymbol         = String. </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Agent                  = TermOrIE. </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Sequence               = &quot;(&quot; &quot;sequence&quot; TermOrIE*
+&quot;)&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Set                    = &quot;(&quot; &quot;set&quot; TermOrIE*
+&quot;)&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Parameter              = ParameterName ParameterValue. </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>ParameterValue         = TermOrIE.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<h2><a name="_Toc26668853"></a><a name="_Toc505478632"></a><a
+name="_Ref489080321">2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Lexical Definitions</a></h2>
+
+<p class=MsoNormal align=left style='text-align:left'>All white space, tabs,
+carriage returns and line feeds between tokens should be skipped by the lexical
+analyser. See Section<i> </i>6 for an explanation of the used notation. </p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>String                 = Word</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | ByteLengthEncodedString</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | StringLiteral.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier;color:black'>ByteLengthEncodedString =
+&quot;#&quot; DecimalLiteral+ &quot;\&quot;&quot; &lt;byte sequence&gt;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Word                   = [~ &quot;\0x00&quot; - &quot;\0x20&quot;,
+&quot;(&quot;, &quot;)&quot;, &quot;#&quot;, &quot;0&quot; - &quot;9&quot;,
+&quot;:&quot;, &quot;-&quot;, &quot;?&quot;]</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                         [~ &quot;\0x00&quot; - &quot;\0x20&quot;,
+&quot;(&quot;, &quot;)&quot;]*.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>ParameterName          = &quot;:&quot; String.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>VariableIdentifier     = &quot;?&quot; String.    </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Sign                   = [ &quot;+&quot; , &quot;-&quot; ].</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Integer                = Sign? DecimalLiteral+</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | Sign? &quot;0&quot; [&quot;x&quot;,
+&quot;X&quot;] HexLiteral+.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Dot                    = &quot;.&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Float                  = Sign? FloatMantissa FloatExponent?</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | Sign? DecimalLiteral+ FloatExponent.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>FloatMantissa          = DecimalLiteral+ Dot DecimalLiteral* </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | DecimalLiteral* Dot DecimalLiteral+.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=Normalparagraph><span style='font-family:Courier'>FloatExponent         
+= Exponent Sign? DecimalLiteral+.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Exponent               = [&quot;e&quot;,&quot;E&quot;].</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'> </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>DecimalLiteral         = [&quot;0&quot; - &quot;9&quot;].</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>HexLiteral             = [&quot;0&quot; - &quot;9&quot;, &quot;A&quot;
+- &quot;F&quot;, &quot;a&quot; - &quot;f&quot;].</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'> </span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>StringLiteral          = &quot;\&quot;&quot;( [~ &quot;\&quot;&quot;]</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                       | &quot;\\\&quot;&quot; )*&quot;\&quot;&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>DateTime               = Sign? Year Month Day &quot;T&quot; Hour
+Minute</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                         Second MilliSecond TypeDesignator?.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Year                   = DecimalLiteral DecimalLiteral DecimalLiteral DecimalLiteral.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Month                  = DecimalLiteral DecimalLiteral.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Day                    = DecimalLiteral DecimalLiteral.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Hour                   = DecimalLiteral DecimalLiteral.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Minute                 = DecimalLiteral DecimalLiteral.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>Second                 = DecimalLiteral DecimalLiteral.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>MilliSecond            = DecimalLiteral DecimalLiteral DecimalLiteral.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>TypeDesignator         = [&quot;a&quot; - &quot;z&quot; ,
+&quot;A&quot; – &quot;Z&quot;].</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'>&nbsp;</p>
+
+<b><span style='font-size:14.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26668854"></a><a name="_Toc505478633">3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Notes on FIPA SL Semantics</a></h1>
+
+<p class=MsoNormal>This section contains explanatory notes on the intended
+semantics of the constructs introduced in above.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668855"></a><a name="_Toc505478634">3.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Grammar Entry Point: FIPA SL Content Expression</a></h2>
+
+<p class=MsoNormal>An FIPA SL content expression may be used as the content of
+an ACL message. There are three cases:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>A proposition, which may be assigned a truth value in a given
+context. Precisely, it is a well-formed formula (Wff) using the rules described
+in the <span style='font-family:Courier'>Wff</span> production. A proposition
+is used in the <span style='font-family:Courier'>inform</span> communicative
+act (CA) and other CAs derived from it.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>An action, which can be performed. An action may be a single
+action or a composite action built using the sequencing and alternative
+operators. An action is used as a content expression when the act is <span
+style='font-family:Courier'>request</span> and other CAs derived from it.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>An identifying reference expression (IRE), which identifies an
+object in the domain. This is the Referential operator and is used in the <span
+style='font-family:Courier'>inform-ref</span> macro act and other CAs derived
+from it.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Other valid content expressions may result from the
+composition of the above basic cases. For instance, an action-condition pair
+(represented by an <span style='font-family:Courier'>ActionExpression</span>
+followed by a <span style='font-family:Courier'>Wff</span>) is used in the <span
+style='font-family:Courier'>propose</span> act; an action-condition-reason
+triplet (represented by an <span style='font-family:Courier'>ActionExpression</span>
+followed by two <span style='font-family:Courier'>Wff</span>s) is used in the <span
+style='font-family:Courier'>reject-proposal</span> act. These are used as
+arguments to some ACL CAs in [FIPA00037].</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668856"></a><a name="_Toc505478635">3.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Well-Formed Formulas</a></h2>
+
+<p class=MsoNormal>A well-formed formula is constructed from an atomic formula,
+whose meaning will be determined by the semantics of the underlying domain
+representation or recursively by applying one of the construction operators or
+logical connectives described in the <span style='font-family:Courier'>Wff</span>
+grammar rule. These are:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(not &lt;Wff&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Negation. The truth value of this
+expression is false if <span style='font-family:Courier'>Wff</span> is true.
+Otherwise it is true.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(and &lt;Wff0&gt; &lt;Wff1&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Conjunction. This expression is
+true iff<a href="#_ftn2" name="_ftnref2" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+style='font-size:10.0pt;font-family:Helvetica'>[2]</span></span></span></a>
+well-formed formulae <span style='font-family:Courier'>Wff0</span> and <span
+style='font-family:Courier'>Wff1</span> are both true, otherwise it is false.</p>
+
+<p class=MsoNormal style='text-indent:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(or &lt;Wff0&gt; &lt;Wff1&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Disjunction. This expression is
+false iff well-formed formulae <span style='font-family:Courier'>Wff0</span>
+and <span style='font-family:Courier'>Wff1</span> are both false, otherwise it
+is true.</p>
+
+<p class=MsoNormal style='text-indent:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(implies &lt;Wff0&gt;
+&lt;Wff1&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Implication. This expression is
+true if either <span style='font-family:Courier'>Wff0</span> is false or
+alternatively if <span style='font-family:Courier'>Wff0</span> is true and <span
+style='font-family:Courier'>Wff1</span> is true. Otherwise it is false. The
+expression corresponds to the standard material implication connective <span
+style='font-family:Courier'>Wff0</span> <span style='font-family:Symbol'>Þ</span>
+<span style='font-family:Courier'>Wff1</span>.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(equiv &lt;Wff0&gt;
+&lt;Wff1&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Equivalence. This expression is
+true if either <span style='font-family:Courier'>Wff0</span> is true and <span
+style='font-family:Courier'>Wff1</span> is true, or alternatively if <span
+style='font-family:Courier'>Wff0</span> is false and <span style='font-family:
+Courier'>Wff1</span> is false. Otherwise it is false.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(forall &lt;variable&gt; &lt;Wff&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Universal quantification. The
+quantified expression is true if <span style='font-family:Courier'>Wff</span>
+is true for every value of value of the quantified variable.</p>
+
+<p class=MsoNormal style='text-indent:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(exists &lt;variable&gt; &lt;Wff&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Existential quantification. The
+quantified expression is true if there is at least one value for the variable
+for which <span style='font-family:Courier'>Wff</span> is true.</p>
+
+<p class=MsoNormal style='text-indent:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(B &lt;agent&gt; &lt;expression&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Belief. It is true that <span
+style='font-family:Courier'>agent</span> believes that <span style='font-family:
+Courier'>expression</span> is true.</p>
+
+<p class=MsoNormal style='text-indent:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(U &lt;agent&gt;
+&lt;expression&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Uncertainty. It is true that <span
+style='font-family:Courier'>agent</span> is uncertain of the truth of <span
+style='font-family:Courier'>expression</span>. <span style='font-family:Courier'>Agent
+</span>neither believes <span style='font-family:Courier'>expression</span> nor
+its negation, but believes that <span style='font-family:Courier'>expression</span>
+is more likely to be true than its negation.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(I &lt;agent&gt;
+&lt;expression&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Intention. It is true that <span
+style='font-family:Courier'>agent</span> intends that <span style='font-family:
+Courier'>expression</span> becomes true and will plan to bring it about.</p>
+
+<p class=MsoNormal style='text-indent:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(PG &lt;agent&gt;
+&lt;expression&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Persistent goal. It is true that <span
+style='font-family:Courier'>agent</span> holds a persistent goal that <span
+style='font-family:Courier'>expression</span> becomes true, but will not
+necessarily plan to bring it about.</p>
+
+<p class=MsoNormal style='text-indent:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(feasible &lt;ActionExpression&gt;
+&lt;Wff&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>It is true that <span
+style='font-family:Courier'>ActionExpression</span> (or, equivalently, some
+event) can take place and just afterwards <span style='font-family:Courier'>Wff</span>
+will be true.</p>
+
+<p class=MsoNormal style='text-indent:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(feasible &lt;ActionExpression&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Same as <span style='font-family:
+Courier'>(feasible &lt;ActionExpression&gt; true)</span>.</p>
+
+<p class=MsoNormal style='text-indent:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(done &lt;ActionExpression&gt;
+&lt;Wff&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>It is true that <span
+style='font-family:Courier'>ActionExpression</span> (or, equivalently, some
+event) has just taken place and just before that <span style='font-family:Courier'>Wff</span>
+was true.</p>
+
+<p class=MsoNormal style='text-indent:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(done &lt;ActionExpression&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Same as <span style='font-family:
+Courier'>(done &lt;ActionExpression&gt; true)</span>.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668857"></a><a name="_Toc505478636">3.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Atomic Formula</a></h2>
+
+<p class=MsoNormal>The atomic formula represents an expression which has a
+truth value in the language of the domain of discourse. Three forms are
+defined:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>A given propositional symbol may be defined in the domain
+language, which is either true or false,</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Two terms may or may not be equal under the semantics of the
+domain language, or,</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Some predicate is defined over a set of zero or more arguments,
+each of which is a term.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The FIPA SL representation does not define a meaning for the
+symbols in atomic formulae: this is the responsibility of the domain language
+representation and ontology. Several forms are defined:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>true false</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>These symbols represent the true
+proposition and the false proposition.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(= Term1 Term2)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>Term1</span>
+and <span style='font-family:Courier'>Term2</span> denote the same object under
+the semantics of the domain.</p>
+
+<p class=MsoNormal>             </p>
+
+<p class=MsoNormal>Other predicates may be defined over a set of arguments,
+each of which is a term, by using the <span style='font-family:Courier'>(PredicateSymbol</span>
+<span style='font-family:Courier'>Term+)</span> production.</p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>The FIPA SL representation does not define a meaning for
+other symbols in atomic formulae: this is the responsibility of the domain
+language representation and the relative ontology.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668858"></a><a name="_Toc505478637">3.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Terms</a></h2>
+
+<p class=MsoNormal>Terms are either themselves atomic (constants and variables)
+or recursively constructed as a functional term in which a functor is applied
+to zero or more arguments. Again, FIPA SL only mandates a syntactic form for
+these terms. With small number of exceptions (see below), the meanings of the
+symbols used to define the terms are determined by the underlying domain
+representation.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Note that, as mentioned above, no legal well-formed
+expression contains a free variable, that is, a variable not declared in any
+scope within the expression. Scope introducing formulae are the quantifiers (<span
+style='font-family:Courier'>forall</span>, <span style='font-family:Courier'>exists</span>)
+and the reference operators <span style='font-family:Courier'>iota</span>, <span
+style='font-family:Courier'>any</span> and <span style='font-family:Courier'>all</span>.
+Variables may only denote terms, not well-formed formulae.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668859"></a><a name="_Toc505478638"></a><a
+name="_Toc488768268">3.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Referential Operators</a></h2>
+
+<h3><a name="_Toc26668860"></a><a name="_Toc505478639">3.5.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Iota</a></h3>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(iota&nbsp;&lt;term&gt;&nbsp;&lt;formula&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>The <span style='font-family:Courier'>iota</span>
+operator introduces a scope for the given expression (which denotes a term), in
+which the given identifier, which would otherwise be free, is defined. An
+expression containing a free variable is not a well-formed FIPA SL expression.
+The expression <span style='font-family:Courier'>(iota</span> <span
+style='font-family:Courier'>x</span> <span style='font-family:Courier'>(P</span>
+<span style='font-family:Courier'>x))</span> may be read as “the <span
+style='font-family:Courier'>x</span> such that <span style='font-family:Courier'>P</span>
+[is true] of <span style='font-family:Courier'>x</span>”. The <span
+style='font-family:Courier'>iota</span> operator is a constructor for terms
+which denote objects in the domain of discourse.</p>
+
+<p class=MsoNormal style='margin-left:.25in'><br>
+Notice that, unlike a term, an identifying expression can have different
+interpretations by different agents because its formal definition depends on
+the KB.</p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Formal Definition</b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>A <span style='font-family:Courier'>iota</span><i>
+</i>expression can only be evaluated with respect to a given theory. Suppose KB
+is a knowledge base such that T (KB) is the theory generated from KB by a given
+reasoning mechanism. Formally, <span style='font-family:Symbol'>i</span>(<span
+style='font-family:Symbol'>t</span>, <span style='font-family:Symbol'>f</span>)<span
+style='font-family:Symbol'>=</span><span style='font-family:Symbol'>q</span><span
+style='font-family:Symbol'>t</span> iff <span style='font-family:Symbol'>q</span><span
+style='font-family:Symbol'>t</span> is a term that belongs to the set <span
+style='font-family:Symbol'>S</span><span style='font-family:Symbol'>=</span>{<span
+style='font-family:Symbol'>q</span><span style='font-family:Symbol'>t</span>: <span
+style='font-family:Symbol'>q</span><span style='font-family:Symbol'>f</span><span
+style='font-family:Symbol'>Î</span>T (KB)} and <span style='font-family:Symbol'>S</span>
+is a singleton; or <span style='font-family:Symbol'>i</span>(<span
+style='font-family:Symbol'>t</span>, <span style='font-family:Symbol'>f</span>)
+is undefined if <span style='font-family:Symbol'>S</span> is not a singleton.
+In this definition <span style='font-family:Symbol'>q</span> is a most general
+variable substitution, <span style='font-family:Symbol'>q</span><span
+style='font-family:Symbol'>t</span> is the result of applying <span
+style='font-family:Symbol'>q</span> to <span style='font-family:Symbol'>t</span>,
+and <span style='font-family:Symbol'>q</span><span style='font-family:Symbol'>f</span>
+is the result of applying <span style='font-family:Symbol'>q</span> to <span
+style='font-family:Symbol'>f</span>. This implies that a failure occurs if no
+object or more than one object satisfies the condition specified in the <span
+style='font-family:Courier'>iota</span><i> </i>operator.</p>
+
+<p class=MsoNormal style='margin-left:.25in'><br>
+If <span style='font-family:Symbol'>i</span>(<span style='font-family:Symbol'>t</span>,
+<span style='font-family:Symbol'>f</span>) is undefined then any term,
+identifying expression or well-formed formula containing <span
+style='font-family:Symbol'>i</span>(<span style='font-family:Symbol'>t</span>, <span
+style='font-family:Symbol'>f</span>) is also undefined.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Example 1</b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>This example depicts an
+interaction between agent A and B that makes use of the <span style='font-family:
+Courier'>iota</span> operator, where agent A is supposed to have the following
+knowledge base KB={P(A), Q(1, A), Q(1, B)}.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(query&#8209;ref
+</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender (agent-identifier :name B)</span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span style='font-family:
+Courier'>     :receiver (set (agent-identifier :name A))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+</span><span lang=FR style='font-family:Courier'>:content</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>    &quot;((iota ?x (p ?x)))&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span style='font-family:Courier'>:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:reply&#8209;with query1)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(inform
+</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender (agent-identifier :name A)  </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name B)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+</span><span lang=FR style='font-family:Courier'>:content </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>    &quot; ((= (iota ?x (p ?x)) a)) &quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span style='font-family:Courier'>:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:in&#8209;reply&#8209;to query1)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>The only object that satisfies
+proposition P(x) is <span style='font-family:Courier'>a</span>, therefore, the <span
+style='font-family:Courier'>query&#8209;ref</span> message is replied by the <span
+style='font-family:Courier'>inform</span><i> </i>message as shown.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Example 2</b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>This example shows another
+successful interaction but more complex than the previous one.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(query&#8209;ref
+</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender (agent-identifier :name B)  </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name A))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+</span><span lang=FR style='font-family:Courier'>:content</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>    &quot;((iota ?x (q ?x ?y)))&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span style='font-family:Courier'>:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:reply&#8209;with query2)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(inform
+</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender (agent-identifier :name A)  </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name B))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+</span><span lang=FR style='font-family:Courier'>:content</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>    &quot;((= (iota ?x (q ?x ?y)) 1))&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span style='font-family:Courier'>:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:in&#8209;reply&#8209;to query2)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>The most general substitutions <span
+style='font-family:Symbol'>q</span> such that <span style='font-family:Symbol'>q</span>Q(x,
+y) can be derived from KB are <span style='font-family:Symbol'>q</span><sub>1</sub><span
+style='font-family:Symbol'>=</span>{x/1, y/A} and <span style='font-family:
+Symbol'>q</span><sub>2</sub><span style='font-family:Symbol'>=</span>{x/1,
+y/B}. Therefore, the set <span style='font-family:Symbol'>S</span><span
+style='font-family:Symbol'>=</span>{<span style='font-family:Symbol'>q</span><span
+style='font-family:Symbol'>t</span>: <span style='font-family:Symbol'>q</span><span
+style='font-family:Symbol'>f</span><span style='font-family:Symbol'>Î</span>T(KB)}<span
+style='font-family:Symbol'>=</span>{{x/1, y/A}x, {x/1, y/B}x }<span
+style='font-family:Symbol'>=</span>{1} is a singleton and hence <span
+style='font-family:Courier'>(iota</span> <span style='font-family:Courier'>?x</span>
+<span style='font-family:Courier'>(q</span> <span style='font-family:Courier'>?x</span>
+<span style='font-family:Courier'>?y))</span> represents the object 1.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Example 3</b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Finally, this example shows an
+unsuccessful interaction using the <span style='font-family:Courier'>iota</span><i>
+</i>operator. In this case, agent A cannot evaluate the <span style='font-family:
+Courier'>iota</span><i> </i>expression and therefore a failure message is
+returned to agent B</p>
+
+<p class=MsoNormal style='margin-left:.25in'><br>
+<span style='font-family:Courier'>(query&#8209;ref </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender (agent-identifier :name B)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name A))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+</span><span lang=FR style='font-family:Courier'>:content</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>    &quot;((iota ?y (q ?x ?y)))&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span style='font-family:Courier'>:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:reply&#8209;with query3)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(failure
+</span></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><span style='font-family:
+Courier'>     :sender (agent-identifier :name A)  </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name B))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:content</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>   
+</span><span style='font-family:Courier'>&quot;</span><span style='font-family:
+Courier'>((action (agent-identifier :name A)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>     
+(inform&#8209;ref </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>       
+:sender (agent-identifier :name A) </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>       
+:receiver (set (agent-identifier :name B))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>       
+</span><span lang=FR style='font-family:Courier'>:content</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>          \&quot;((iota ?y (q ?x ?y)))\&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>        </span><span style='font-family:Courier'>:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>   
+    :in&#8209;reply&#8209;to query3))&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>   
+more&#8209;than&#8209;one&#8209;answer)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:in&#8209;reply&#8209;to query3)</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>The most general substitutions
+that satisfy Q(x, y) are <span style='font-family:Symbol'>q</span><sub>1</sub><span
+style='font-family:Symbol'>=</span>{x/1, y/a} and <span style='font-family:
+Symbol'>q</span><sub>2</sub><span style='font-family:Symbol'>=</span>{x/1,
+y/b}, therefore, the set <span style='font-family:Symbol'>S</span><span
+style='font-family:Symbol'>=</span>{<span style='font-family:Symbol'>q</span><span
+style='font-family:Symbol'>t</span>: <span style='font-family:Symbol'>q</span><span
+style='font-family:Symbol'>f</span><span style='font-family:Symbol'>Î</span>T(KB)}<span
+style='font-family:Symbol'>=</span>{{x/1, y/A}y, {x/1, y/B}y}<span
+style='font-family:Symbol'>=</span>{A, B}, which is not a singleton. This means
+that the <span style='font-family:Courier'>iota</span><i> </i>expression used
+in this interaction is not defined.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h3><a name="_Toc26668861"></a><a name="_Toc505478640">3.5.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Any</a></h3>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(any &lt;term&gt;
+&lt;formula&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>The <span style='font-family:Courier'>any</span>
+operator is used to denote any object that satisfies the proposition
+represented by <span style='font-family:Courier'>formula</span>.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>Notice that, unlike a term, an identifying
+expression can have different interpretations by different agents because its
+formal definition depends on the KB.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Formal Definition</b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>An <span style='font-family:Courier'>any</span>
+expression can only be evaluated with respect to a given theory. Suppose KB is
+a knowledge base such that T(KB) is the theory generated from KB by a given
+reasoning mechanism. Formally, any(<span style='font-family:Symbol'>t</span>, <span
+style='font-family:Symbol'>f</span>)<span style='font-family:Symbol'>=</span><span
+style='font-family:Symbol'>q</span><span style='font-family:Symbol'>t</span> iff
+<span style='font-family:Symbol'>q</span><span style='font-family:Symbol'>t</span>
+is a term that belongs to the set <span style='font-family:Symbol'>S</span><span
+style='font-family:Symbol'>=</span>{<span style='font-family:Symbol'>q</span><span
+style='font-family:Symbol'>t</span>: <span style='font-family:Symbol'>q</span><span
+style='font-family:Symbol'>f</span><span style='font-family:Symbol'>Î</span>T(KB)};
+or any(<span style='font-family:Symbol'>t</span>, <span style='font-family:
+Symbol'>f</span>) is undefined if <span style='font-family:Symbol'>S</span> is
+the empty set. In this definition <span style='font-family:Symbol'>q</span> is
+a most general variable substitution, <span style='font-family:Symbol'>q</span><span
+style='font-family:Symbol'>t</span> is the result of applying <span
+style='font-family:Symbol'>q</span> to <span style='font-family:Symbol'>t</span>,
+and <span style='font-family:Symbol'>q</span><span style='font-family:Symbol'>f</span>
+is the result of applying <span style='font-family:Symbol'>q</span> to <span
+style='font-family:Symbol'>f</span>.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>If the set <span style='font-family:
+Symbol'>S</span> is empty then any term, identifying expression or well-formed
+formula containing any(<span style='font-family:Symbol'>t</span>, <span
+style='font-family:Symbol'>f</span>) is undefined.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>If the set <span style='font-family:
+Symbol'>S</span> is not empty, then for any formula <span style='font-family:
+Symbol'>y</span> containing any(<span style='font-family:Symbol'>t</span>, <span
+style='font-family:Symbol'>f</span>) let <span style='font-family:Symbol'>y</span>'
+be the formula obtained from <span style='font-family:Symbol'>y</span> by
+replacing any(<span style='font-family:Symbol'>t</span>, <span
+style='font-family:Symbol'>f</span>) with a variable x (not occurring in <span
+style='font-family:Symbol'>y</span>) and let s_k be a new Skolem constant. Then
+<span style='font-family:Symbol'>y</span> is true when {x/s_k}<span
+style='font-family:Symbol'>y</span>' element_of T(KB union {<span
+style='font-family:Symbol'>t</span>/s_k}<span style='font-family:Symbol'>f</span>),
+<span style='font-family:Symbol'>y</span> is false when {x/s_k}not(<span
+style='font-family:Symbol'>y</span>’) element_of T(KB union {<span
+style='font-family:Symbol'>t</span>/s_k}<span style='font-family:Symbol'>f</span>),
+and otherwise <span style='font-family:Symbol'>y</span> is undefined.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>In other words if <span
+style='font-family:Symbol'>y</span> contains any(<span style='font-family:Symbol'>t</span>,
+<span style='font-family:Symbol'>f</span>), <span style='font-family:Symbol'>y</span>
+is true if a modified form of <span style='font-family:Symbol'>y</span>
+obtained by replacing the any expression in it with a new constant s_k can be
+inferred based on the assumption that phi holds of s_k. <span style='font-family:
+Symbol'>y</span> is false if not(<span style='font-family:Symbol'>y</span>)
+inferred in a similar way. This definition is needed to avoid the following contradiction:</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(implies</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+(and (= Stephen (any ?x (fipa-member ?x)))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>      
+(= Farooq  (any ?x (fipa-member ?x))))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>  (=
+Stephen Farooq))</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>This definition implies that
+failures only occur if there are no objects satisfying the condition specified
+as the second argument of the <span style='font-family:Courier'>any</span> operator.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>If any(<span style='font-family:
+Symbol'>t</span>, <span style='font-family:Symbol'>f</span>) is undefined then
+any term, identifying expression or well-formed formula containing any(<span
+style='font-family:Symbol'>t</span>, <span style='font-family:Symbol'>f</span>)
+is also undefined.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Example 4</b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Assuming that agent A has the
+following knowledge base KB={P(A), Q(1, A), Q(1, B)}, this example shows a
+successful interaction with agent A using the <span style='font-family:Courier'>any</span>
+operator.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'><a name="_Ref480077962"><span
+style='font-family:Courier'>(query&#8209;ref</span></a></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender (agent-identifier :name B)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name A))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+</span><span lang=FR style='font-family:Courier'>:content</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>    &quot;((any (sequence ?x ?y) (q ?x ?y)))&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span style='font-family:Courier'>:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:reply&#8209;with query1)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(inform</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender (agent-identifier :name A)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name B))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:content</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>   
+&quot;((= (any (sequence ?x ?y) (q ?x ?y)) (sequence 1 a)))&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:in&#8209;reply&#8209;to query1)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>The most general substitutions <span
+style='font-family:Symbol'>q</span> such that <span style='font-family:Symbol'>q</span>Q(x,
+y) can be derived from KB are {x/1, y/A} and {x/1, y/B}, therefore <span
+style='font-family:Symbol'>S</span><span style='font-family:Symbol'>=</span>{<span
+style='font-family:Symbol'>q</span>Sequence(x, y): <span style='font-family:
+Symbol'>q</span>Q(x, y)<span style='font-family:Symbol'>Î</span>T(KB)}={Sequence(1,
+A), Sequence(1, B)}. Using this set, agent A chooses the first element of <span
+style='font-family:Symbol'>S</span> as the appropriate answer to agent B.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Example 5</b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>This example shows an unsuccessful
+interaction with agent A, using the <span style='font-family:Courier'>any</span>
+operator.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(query&#8209;ref
+</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender   (agent-identifier :name B) </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name A))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:content</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>   
+&quot;((any ?x (r ?x)))&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:reply&#8209;with query2)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(failure
+</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender (agent-identifier :name A) </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name B))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:content</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>   
+&quot;((action (agent-identifier :name A)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>       
+(inform&#8209;ref</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>         
+:sender (agent-identifier :name A)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>         
+:receiver (set (agent-identifier :name B))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>         
+:content </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>           
+\&quot;((any ?x (r ?x)))\&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>         
+:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>         
+:in&#8209;reply&#8209;to query2))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>   
+(unknown&#8209;predicate r))&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:in&#8209;reply&#8209;to query2)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>Since agent A does not know the <span
+style='font-family:Courier'>r</span> predicate, the answer to the query that
+had been sent by agent B cannot be determined, therefore a failure<i> </i>message
+is sent to agent B from agent A. The failure message specifies the failure’s
+reason (that is, unknown&#8209;predicate <span style='font-family:Courier'>r</span>)</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h3><a name="_Toc26668862"></a><a name="_Toc505478641">3.5.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>All</a></h3>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Courier'>(all &lt;term&gt;
+&lt;formula&gt;)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>The <span style='font-family:Courier'>all</span>
+operator is used to denote the set of all objects that satisfy the proposition
+represented by <span style='font-family:Courier'>formula</span>.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>Notice that, unlike a term, an
+identifying expression can have different interpretations by different agents
+because its formal definition depends on the KB.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Formal Definition</b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>An <span style='font-family:Courier'>all</span>
+expression can only be evaluated with respect to a given theory. Suppose KB is
+a knowledge base such that T(KB) is the theory generated from KB by a given
+reasoning mechanism. Formally, all(<span style='font-family:Symbol'>t</span>, <span
+style='font-family:Symbol'>f</span>)<span style='font-family:Symbol'>=</span>{<span
+style='font-family:Symbol'>q</span><span style='font-family:Symbol'>t</span>: <span
+style='font-family:Symbol'>q</span><span style='font-family:Symbol'>f</span><span
+style='font-family:Symbol'>Î</span>T(KB)}. Notice that all(<span
+style='font-family:Symbol'>t</span>, <span style='font-family:Symbol'>f</span>)
+may be a singleton or even an empty set. In this definition <span
+style='font-family:Symbol'>q</span> is a most general variable substitution, <span
+style='font-family:Symbol'>q</span><span style='font-family:Symbol'>t</span> is
+the result of applying <span style='font-family:Symbol'>q</span> to <span
+style='font-family:Symbol'>t</span>, and <span style='font-family:Symbol'>q</span><span
+style='font-family:Symbol'>f</span> is the result of applying <span
+style='font-family:Symbol'>q</span> to <span style='font-family:Symbol'>f</span>.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>If no objects satisfy the
+condition specified as the second argument of the <span style='font-family:
+Courier'>all</span> operator, then the identifying expression denotes an empty
+set.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Example 6 </b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Suppose agent A has the following
+knowledge base KB={P(A), Q(1, A), Q(1, B)}. This example shows a successful
+interaction between agent A and B that make use of the <span style='font-family:
+Courier'>all</span> operator.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(query&#8209;ref
+</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender (agent-identifier :name B)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name A))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+</span><span lang=FR style='font-family:Courier'>:content</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>    &quot;((all (sequence ?x ?y) (q ?x ?y)))&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=FR style='font-family:
+Courier'>  </span><span style='font-family:Courier'>:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:reply&#8209;with query1)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(inform
+</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender (agent-identifier :name A) </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name B))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:content</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>   
+&quot;(( = (all (sequence ?x ?y) (q ?x ?y)) (set(sequence 1 a)(sequence 1
+b))))&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:in&#8209;reply&#8209;to query1)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>The set of the most general
+substitutions <span style='font-family:Symbol'>q</span> such that <span
+style='font-family:Symbol'>q</span>Q(x, y) can be derived from KB is {{x/1,
+y/A}, {x/1, y/B}}, therefore all(Sequence(x, y), Q(x, y))<span
+style='font-family:Symbol'>=</span>{Sequence(1, A), Sequence(1, B)}.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Example 7</b></p>
+
+<p class=MsoNormal style='margin-left:.25in'>Following Example 6, if there is
+no possible answer to a query making use of the <span style='font-family:Courier'>all</span>
+operator, then the agent should return the empty set.</p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(query&#8209;ref
+</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender (agent-identifier :name B) </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name A))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:content </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>   
+&quot;((all ?x (q ?x c)))&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:reply&#8209;with query2)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>(inform
+</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:sender (agent-identifier :name A) </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:receiver (set (agent-identifier :name B))</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:content </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'>   
+&quot;((= (all ?x (q ?x c))(set)))&quot;</span></p>
+
+<p class=MsoListContinue style='margin-bottom:0in;margin-bottom:.0001pt'><span
+style='font-family:Courier'>  :language fipa-sl</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-family:Courier'> 
+:in&#8209;reply&#8209;to query2)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in'>Since there is no possible
+substitution for x such that Q(x, C) can be derived from KB, then all(x, Q(x,
+c))={}. In this interaction the term <span style='font-family:Courier'>(set)</span>
+represents the empty set.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668863"></a><a name="_Toc505478642">3.6<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Functional Terms</a></h2>
+
+<p class=MsoNormal>A functional term refers to an object via a functional
+relation (referred by the <span style='font-family:Courier'>FunctionSymbol</span>)
+with other objects (that is, the terms or parameters), rather than using the
+direct name of that object, for example, <span style='font-family:Courier'>(fatherOf</span>
+<span style='font-family:Courier'>Jesus)</span> rather than <span
+style='font-family:Courier'>God</span>.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Two syntactical forms can be used to express a functional
+term. In the first form the functional symbol is followed by a list of terms
+that are the arguments of the function symbol. The semantics of the arguments
+is position-dependent, for example, <span style='font-family:Courier'>(divide</span>
+<span style='font-family:Courier'>10</span> <span style='font-family:Courier'>2)</span>
+where 10 is the dividend and 2 is the divisor. In the second form each argument
+is preceded by its name, for example, <span style='font-family:Courier'>(divide</span>
+<span style='font-family:Courier'>:dividend</span> <span style='font-family:
+Courier'>10</span> <span style='font-family:Courier'>:divisor</span> <span
+style='font-family:Courier'>2)</span>. The encoder is required to adopt the
+following criteria to select which form to use in order to represent a
+functional term. The first form, that is, the position-dependent form, should
+be used to encode all those functional terms for which the ontology does not
+specify the names of the parameters (for example, all the functions of the <span
+style='font-family:Courier'>fipa-agent-management</span> ontology). The second
+form, that is, the parameter-name dependent form, must be used to encode all
+those functional terms for which the ontology does specify the names of the
+parameters but not their position (for example, all the object descriptions of
+the <span style='font-family:Courier'>fipa-agent-management</span> ontology).
+This second form is particularly appropriate to represent descriptions where
+the function symbol should be interpreted as the constructor of an object,
+while the parameters represent the attributes of the object.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The following is an example of an object, instance of a
+vehicle class:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:Courier'>(vehicle</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>  :colour red</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>  :max-speed 100</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>  :owner (Person</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>    :name Luis</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>    :nationality
+Portuguese))</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Some ontologies may decide to give a description of some
+concepts only in one or both of these two forms, that is by specifying, or not,
+a default order to the arguments of each function in the domain of discourse.
+How this order is specified is outside the scope of this specification.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Functional terms can be constructed by a domain functor
+applied to zero or more terms.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668864"></a><a name="_Toc505478643">3.7<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Result Predicate</a></h2>
+
+<p class=MsoNormal>A common need is to determine the result of performing an
+action or evaluating a term. To facilitate this operation, a standard predicate
+<span style='font-family:Courier'>result</span>, of arity two, is introduced to
+the language. <span style='font-family:Courier'>result/2</span> has the
+declarative meaning that the result of evaluating a term, or equivalently of
+performing an action, encoded by the first argument term, is the second
+argument term. However, it is expected that this declarative semantics will be
+implemented in a more efficient, operational way in any given FIPA SL
+interpreter.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>A typical use of the <span style='font-family:Courier'>result</span>
+predicate is with a variable scoped by <span style='font-family:Courier'>iota</span>,
+giving an expression whose meaning is, for example, ”the <span
+style='font-family:Courier'>x</span> which is the result of agent <span
+style='font-family:Courier'>i</span> performing <span style='font-family:Courier'>act</span>”:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:Courier'>(iota x (result (action i
+act) x)))</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668865"></a><a name="_Toc505478644">3.8<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Actions and Action Expressions</a></h2>
+
+<p class=MsoNormal>Action expressions are a special subset of terms. An action
+itself is introduced by the keyword <span style='font-family:Courier'>action</span>
+and comprises the agent of the action (that is, an identifier representing the
+agent performing the action) and a term denoting the action which is [to be]
+performed. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Notice that a specific type of action is an ACL communicative
+act (CA). When expressed in FIPA SL, syntactically an ACL communicative act is
+an action where the agent of the action is the <span style='font-family:Courier'>sender
+</span>of the CA, and the term denotes the CA including all its parameters
+where the performative should be used as a function symbol, as referred by the
+used ontology. Example 5 includes an example of an ACL CA, encoded as a <span
+style='font-family:Courier'>String</span>, whose content embeds another CA. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Two operators are used to build terms denoting composite CAs:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The sequencing operator (<span style='font-family:Courier'>;</span>)
+denotes a composite act in which the first action (represented by the first
+operand) is followed by the second action, and,</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The alternative operator (<span style='font-family:Courier'>|</span>)
+denotes a composite act in which either the first action occurs, or the second,
+but not both.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc505478645"></a><a name="_Toc26668866"></a><a name="_Toc8721150"></a><a
+name="_Toc495289278"></a><a name="_Toc480605372"></a><a name="_Toc405389473"></a><a
+name="_Toc389055482">3.9<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Notes on the Grammar Rules</a></h2>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>The standard definitions for integers
+and floating point are assumed. </span>However, due to the necessarily
+unpredictable nature of cross-platform dependencies, agents should not make
+strong assumptions about the precision with which another agent is able to represent
+a given numerical value. FIPA SL assumes only 32-bit representations of both
+integers and floating point numbers. Agents should not exchange message
+contents containing numerical values requiring more than 32 bits to encode
+precisely, unless some prior arrangement is made to ensure that this is valid.</p>
+
+<p class=MsoNormal><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>All keywords are case-insensitive.</span></p>
+
+<p class=MsoNormal><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='color:black'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>A length encoded string is a context
+sensitive lexical token. Its meaning is as follows: the message envelope of the
+token is everything from the leading </span><span style='font-family:Courier;
+color:black'>#</span><span style='color:black'> to the separator </span><span
+style='font-family:Courier;color:black'>&quot;</span><span style='color:black'>
+(inclusive). Between the markers of the message envelope is a decimal number
+with at least one digit. This digit then determines that <i>exactly</i> that
+number of 8-bit bytes are to be consumed as part of the token, without
+restriction. It is a lexical error for less than that number of bytes to be
+available.</span></p>
+
+<p class=MsoNormal><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='color:black'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>Note that not all implementations of
+the ACC (see [FIPA00067]) will support the transparent transmission of 8-bit
+characters. It is the responsibility of the agent to ensure, by reference to internal
+API of the ACC, that a given channel is able to faithfully transmit the chosen
+message encoding.</span></p>
+
+<p class=MsoNormal><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='color:black'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>Strings encoded in accordance with
+[ISO2022] may contain characters which are otherwise not permitted in the
+definition of </span><span class=CODE0><span style='font-family:Courier;
+color:black'>Word</span></span><span style='color:black'>. These characters are
+ESC (</span><span style='font-family:Courier;color:black'>0x1B</span><span
+style='color:black'>), SO (</span><span style='font-family:Courier;color:black'>0x0E</span><span
+style='color:black'>) and SI (</span><span style='font-family:Courier;
+color:black'>0x0F</span><span style='color:black'>). This is due to the
+complexity that would result from including the full [ISO2022] grammar in the
+above EBNF description. Hence, despite the basic description above, a word may
+contain any well-formed [ISO2022] encoded character, other (representations of)
+parentheses, spaces, or the </span><span style='font-family:Courier;color:black'>#</span><span
+style='color:black'> character. </span>Strings must be enclosed between quote
+symbols. If the quote symbol itself needs to be part of the String, then it
+must be escaped by a <span style='font-family:Courier'>\</span> character.</p>
+
+<p class=MsoNormal><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='color:black'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>The format for time tokens is defined
+in section 3.10.</span></p>
+
+<p class=MsoNormal><span style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='color:black'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>An agent is represented by its agent-identifier using the
+standard format from [FIPA00023].</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668867"></a><a name="_Ref22553349">3.10<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Representation
+of Time</a></h2>
+
+<p class=MsoNormal>Time tokens are based on [ISO8601], with extension for relative
+time and millisecond durations. Time expressions may be absolute, or relative.
+Relative times are distinguished by the sign character <span style='font-family:
+Courier'>+</span> or <span style='font-family:Courier'>-</span> appearing as
+the first character in the token. If no type designator is given, the local
+time zone is then used. The type designator for UTC is the character <span
+style='font-family:Courier'>Z</span>; UTC is preferred to prevent time zone
+ambiguities. Note that years must be encoded in four digits. As an example,
+8:30 am on 15th April, 1996 local time would be encoded as:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:Courier'>19960415T083000000</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The same time in UTC would be:</p>
+
+<p class=MsoNormal> </p>
+
+<p class=MsoNormal><span style='font-family:Courier'>19960415T083000000Z</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>while&nbsp;one&nbsp;hour,&nbsp;15&nbsp;minutes&nbsp;and&nbsp;35&nbsp;milliseconds&nbsp;from&nbsp;now&nbsp;would&nbsp;be:</p>
+
+<p class=MsoNormal><br>
+<span style='font-family:Courier'>+00000000T011500035</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<b><span style='font-size:14.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26668868"></a><a name="_Toc505478648">4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Reduced Expressivity Subsets of FIPA SL</a></h1>
+
+<p class=MsoNormal>The FIPA SL definition given above is a very expressive
+language, but for some agent communication tasks it is unnecessarily powerful.
+This expressive power has an implementation cost to the agent and introduces
+problems of the decidability of modal logic. To allow simpler agents, or agents
+performing simple tasks, to do so with minimal computational burden, this
+section introduces semantic and syntactic subsets of the full FIPA SL content
+language for use by the agent when it is appropriate or desirable to do so.
+These subsets are defined by the use of profiles, that is, statements of
+restriction over the full expressive power of FIPA SL. These profiles are
+defined in increasing order of expressivity as FIPA-SL0, FIPA-SL1 and FIPA-SL2.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Note that these subsets of FIPA SL, with additional
+ontological commitments (that is, the definition of domain predicates and constants)
+are used in other FIPA specifications.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668869"></a><a name="_Toc505478649">4.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>FIPA SL0: Minimal Subset</a></h2>
+
+<p class=MsoNormal>Profile 0 is denoted by the normative constant <span
+style='font-family:Courier'>fipa-sl0</span> in the <span style='font-family:
+Courier'>language</span> parameter of an ACL message. Profile 0 of FIPA SL is
+the minimal subset of the FIPA SL content language. It allows the
+representation of actions, the determination of the result a term representing
+a computation, the completion of an action and simple binary propositions. The
+following defines the FIPA SL0 grammar:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Content            =
+&quot;(&quot; ContentExpression+ &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ContentExpression  = ActionExpression
+</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   |
+Proposition.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Proposition        = Wff.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Wff                = AtomicFormula</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   |
+&quot;(&quot; ActionOp ActionExpression &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>AtomicFormula      = PropositionSymbol</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   |
+&quot;(&quot; &quot;result&quot;        Term Term &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   |
+&quot;(&quot; PredicateSymbol Term+ &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   |
+&quot;true&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   |
+&quot;false&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ActionOp           =
+&quot;done&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Term               =
+Constant</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   | Set</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   |
+Sequence </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   | FunctionalTerm</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   | ActionExpression.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ActionExpression   =
+&quot;(&quot; &quot;action&quot; Agent Term &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>      </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>FunctionalTerm     =
+&quot;(&quot; FunctionSymbol Term* &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   |
+&quot;(&quot; FunctionSymbol Parameter* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Parameter          =  ParameterName
+ParameterValue.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ParameterValue     = Term.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Agent              = Term.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>FunctionSymbol     =
+String.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>PropositionSymbol  =
+String.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>PredicateSymbol    =
+String.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Constant           = NumericalConstant</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   |
+String </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                   | DateTime.
+</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Set                =
+&quot;(&quot; &quot;set&quot; Term* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Sequence           =
+&quot;(&quot; &quot;sequence&quot; Term* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>NumericalConstant  = Integer <br>
+                   | Float. </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The same lexical definitions described in Section 2.1<i> </i>apply for FIPA SL0.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668870"></a><a name="_Toc505478650">4.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>FIPA SL1: Propositional Form</a></h2>
+
+<p class=MsoNormal>Profile 1 is denoted by the normative constant <span
+style='font-family:Courier'>fipa-sl1</span> in the <span style='font-family:
+Courier'>language</span> parameter of an ACL message. Profile 1 of FIPA SL
+extends the minimal representational form of FIPA SL0 by adding Boolean
+connectives to represent propositional expressions. The following defines the
+FIPA SL1 grammar:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Content               =
+&quot;(&quot; ContentExpression+ &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ContentExpression     = ActionExpression
+</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+Proposition.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Proposition           = Wff.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Wff                   = AtomicFormula</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; UnaryLogicalOp  Wff &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; BinaryLogicalOp Wff Wff &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; ActionOp        ActionExpression &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>UnaryLogicalOp        =
+&quot;not&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>BinaryLogicalOp       =
+&quot;and&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;or&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>AtomicFormula         = PropositionSymbol</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; &quot;result&quot;        Term Term &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; PredicateSymbol Term+ &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;true&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;false&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ActionOp              =
+&quot;done&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Term                  =
+Constant</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+Set</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+Sequence </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      | FunctionalTerm</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      | ActionExpression.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ActionExpression      =
+&quot;(&quot; &quot;action&quot; Agent Term &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>      </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>FunctionalTerm        =
+&quot;(&quot; FunctionSymbol Term* &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; FunctionSymbol Parameter* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Parameter             = ParameterName
+ParameterValue.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ParameterValue        =
+Term.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Agent                 =
+Term.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>FunctionSymbol        =
+String.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>PropositionSymbol     =
+String.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>PredicateSymbol       =
+String.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Constant              = NumericalConstant</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+String </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      | DateTime.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Set                   =
+&quot;(&quot; &quot;set&quot; Term* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Sequence              =
+&quot;(&quot; &quot;sequence&quot; Term* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>NumericalConstant     = Integer <br>
+                      | Float. </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The same lexical definitions described in Section 2.1<i> </i>apply for FIPA SL1.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668871"></a><a name="_Toc505478651">4.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>FIPA SL2: Decidability Restrictions</a></h2>
+
+<p class=MsoNormal>Profile 2 is denoted by the normative constant <span
+style='font-family:Courier'>fipa-sl2</span> in the <span style='font-family:
+Courier'>language</span> parameter of an ACL message. Profile 2 of FIPA SL
+allows first order predicate and modal logic, but is restricted to ensure that
+it must be decidable. Well-known effective algorithms exist that can derive
+whether or not an FIPA SL2 Wff is a logical consequence of a set of Wffs (for
+instance KSAT and Monadic). The following defines the FIPA SL2 grammar:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Content               =
+&quot;(&quot; ContentExpression+ &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ContentExpression     = IdentifyingExpression</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      | ActionExpression
+</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+Proposition.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Proposition           = PrenexExpression.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Wff                   = AtomicFormula</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; UnaryLogicalOp  Wff &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; BinaryLogicalOp Wff Wff &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; ModalOp         Agent PrenexExpression &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; ActionOp        ActionExpression &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; ActionOp        ActionExpression PrenexExpression &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>UnaryLogicalOp        =
+&quot;not&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>BinaryLogicalOp       =
+&quot;and&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;or&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;implies&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;equiv&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>AtomicFormula         = PropositionSymbol</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; &quot;=&quot;             TermOrIE TermOrIE &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; &quot;result&quot;        TermOrIE TermOrIE &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; PredicateSymbol TermOrIE+ &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      </span><span
+lang=FR style='font-family:Courier'>| &quot;true&quot;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>                     
+| &quot;false&quot;.</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>PrenexExpression     
+= UnivQuantExpression</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>                     
+| ExistQuantExpression</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>                     
+| Wff.</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>UnivQuantExpression  
+= &quot;(&quot; &quot;forall&quot; Variable Wff &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>                     
+| &quot;(&quot; &quot;forall&quot; Variable UnivQuantExpression &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>                     
+| &quot;(&quot; &quot;forall&quot; Variable ExistQuantExpression &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>ExistQuantExpression 
+= &quot;(&quot; &quot;exists&quot; Variable Wff &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>                      </span><span
+style='font-family:Courier'>| &quot;(&quot; &quot;exists&quot; Variable ExistQuantExpression
+&quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>TermOrIE              =
+Term</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      | IdentifyingExpression.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Term                  = 
+Variable</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      | FunctionalTerm</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      | ActionExpression</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+Constant</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+Sequence</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+Set.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>      </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>IdentifyingExpression =
+&quot;(&quot; ReferentialOp TermOrIE Wff &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ReferentialOp         =
+&quot;iota&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;any&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;all&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>FunctionalTerm        =
+&quot;(&quot; FunctionSymbol TermOrIE* &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; FunctionSymbol Parameter* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Parameter             = ParameterName
+ParameterValue.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ParameterValue        = TermOrIE.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ActionExpression      =
+&quot;(&quot; &quot;action&quot; Agent TermOrIE &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; &quot;|&quot; ActionExpression ActionExpression &quot;)&quot;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;(&quot; &quot;;&quot; ActionExpression ActionExpression &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Variable              = VariableIdentifier.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Agent                 = TermOrIE.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>FunctionSymbol        =
+String.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Constant              = NumericalConstant
+</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+String </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      | DateTime.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>ModalOp               = &quot;B&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                      | &quot;U&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                      | &quot;PG&quot;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>                      | &quot;I&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>ActionOp              =
+&quot;feasible&quot; </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>                      |
+&quot;done&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>PropositionSymbol     =
+String.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>PredicateSymbol       = String.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Set                   =
+&quot;(&quot; &quot;set&quot; TermOrIE* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>Sequence              =
+&quot;(&quot; &quot;sequence&quot; TermOrIE* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier'>NumericalConstant      = Integer <br>
+                       | Float. </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>The same lexical definitions described in Section 2.1<i> </i>apply for FIPA SL2.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The <span style='font-family:Courier'>Wff</span> production
+of FIPA SL2 no longer directly contains the logical quantifiers, but these are
+treated separately to ensure only prefixed quantified formulas, such as:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:Courier'>(forall ?x1</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>  (forall ?x2 </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>    (exists ?y1</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>      </span><span
+lang=FR style='font-family:Courier'>(exists ?y2 </span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier'>        (Phi ?x1
+?x2 ?y1 ?y2)))))</span></p>
+
+<p class=MsoNormal><span lang=FR>&nbsp;</span></p>
+
+<p class=MsoNormal>Where <span style='font-family:Courier'>(Phi</span> <span
+style='font-family:Courier'>?x1</span> <span style='font-family:Courier'>?x2</span>
+<span style='font-family:Courier'>?y1</span> <span style='font-family:Courier'>?y2)</span>
+does not contain any quantifier.</p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>The grammar of FIPA SL2 still allows for quantifying-in
+inside modal operators. For example, the following formula is still admissible
+under the grammar:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:Courier'>(forall ?x1 </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>  (or </span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>    (B i (p ?x1))</span></p>
+
+<p class=MsoNormal><span style='font-family:Courier'>    (B j (q ?x1))))</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>It is not clear that formulae of this kind are decidable.
+However, changing the grammar to express this context sensitivity would make
+the EBNF form above essentially unreadable. Thus, the following additional
+mandatory constraint is placed on well-formed content expressions using FIPA
+SL2: Within the scope of an <span style='font-family:Courier'>SLModalOperator</span>
+only closed formulas are allowed, that is, formulas without free variables<i>.</i></p>
+
+<p class=MsoHeader>&nbsp;</p>
+
+<b><span style='font-size:14.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26668872"></a><a name="_Toc505478652">5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>References</a></h1>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span style='color:black'>[FIPA00023]      </span>FIPA
+Agent Management Specification<span style='color:black'>. Foundation for
+Intelligent Physical Agents, 2000. </span><span style='font-family:Courier;
+color:black'>http://www.fipa.org/specs/fipa00023/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span style='color:black'>[FIPA00037]      FIPA Agent
+Communication Language Overview. Foundation for Intelligent Physical Agents,
+2000.<br>
+</span><span style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00037/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'>[ISO8601]         Date Elements and Interchange Formats,
+Information Interchange-Representation of Dates and Times. International
+Standards Organisation, 1998.<br>
+<span style='font-family:Courier'>http://www.iso.ch/cate/d15903.html</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span style='font-family:Courier'>&nbsp;</span></p>
+
+<b><span style='font-size:14.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26668873"></a><a name="_Toc505478653"></a><a
+name="_Ref495288621"></a><a name="_Ref495288533"></a><a name="_Ref489082316"></a><a
+name="_Ref489082313">6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Informative Annex A — Syntax and Lexical Notation</a></h1>
+
+<p class=MsoNormal>The syntax is expressed in standard EBNF format. For
+completeness, the notation is given in <i>Table 2.</i></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:328.05pt;border:solid black 1.5pt;
+  border-right:solid black 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Grammar rule component            </b></p>
+  </td>
+  <td width=264 valign=top style='width:198.1pt;border:solid black 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Example</b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:328.05pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Terminal tokens are enclosed in double quotes</p>
+  </td>
+  <td width=264 valign=top style='width:198.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>&quot;(&quot;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:328.05pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Non terminals are written as capitalised identifiers</p>
+  </td>
+  <td width=264 valign=top style='width:198.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>Expression</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:328.05pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Square brackets denote an optional construct</p>
+  </td>
+  <td width=264 valign=top style='width:198.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>[ &quot;,&quot; OptionalArg
+  ]</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:328.05pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Vertical bar denotes an alternative</p>
+  </td>
+  <td width=264 valign=top style='width:198.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>Integer | Real</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:328.05pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Asterisk denotes zero or more repetitions of the preceding
+  expression</p>
+  </td>
+  <td width=264 valign=top style='width:198.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>Digit *</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:328.05pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Plus denotes one or more repetitions of the preceding
+  expression</p>
+  </td>
+  <td width=264 valign=top style='width:198.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>Alpha +</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:328.05pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Parentheses are used to group expansions</p>
+  </td>
+  <td width=264 valign=top style='width:198.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>( A | B ) *</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:328.05pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.5pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Productions are written with the non-terminal name on the
+  left-hand side, expansion on the right-hand side and terminated by a full stop</p>
+  </td>
+  <td width=264 valign=top style='width:198.1pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.5pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>AnonTerminal = &quot;an
+  expansion&quot;.</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>Table 2:</b> EBNF
+Rules</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Some slightly different rules apply for the generation of
+lexical tokens. Lexical tokens use the same notation as above, with the
+exceptions noted in <i>Table 3</i>.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:327.65pt;border:solid black 1.5pt;
+  border-right:solid black 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Lexical rule component       </b></p>
+  </td>
+  <td width=264 valign=top style='width:197.7pt;border:solid black 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Example</b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:327.65pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Square brackets enclose a character set</p>
+  </td>
+  <td width=264 valign=top style='width:197.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>[&quot;a&quot;,
+  &quot;b&quot;, &quot;c&quot;]</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:327.65pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Dash in a character set denotes a range</p>
+  </td>
+  <td width=264 valign=top style='width:197.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>[&quot;a&quot; -
+  &quot;z&quot;]</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:327.65pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Tilde denotes the complement of a character set if it is
+  the first character</p>
+  </td>
+  <td width=264 valign=top style='width:197.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>[~ &quot;(&quot;,
+  &quot;)&quot;]</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=437 valign=top style='width:327.65pt;border-top:none;border-left:
+  solid black 1.5pt;border-bottom:solid black 1.5pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Post-fix question-mark operator denotes that the preceding
+  lexical expression is optional (may appear zero or one times)</p>
+  </td>
+  <td width=264 valign=top style='width:197.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.5pt;border-right:solid black 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span style='font-family:Courier'>[&quot;0&quot; -
+  &quot;9&quot;]? [&quot;0&quot; - &quot;9&quot;]</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><b>Table 3:</b>
+Lexical Rules</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<b><span style='font-size:14.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26668874"></a><a name="_Toc8718591"></a><a name="_Ref8531939"></a><a
+name="_Toc522504001">7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Informative Annex B — ChangeLog</a></h1>
+
+<h2><a name="_Toc26668875"></a><a name="_Toc8718592"></a><a name="_Ref8531931">7.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2002/11/01 - version H by TC </a>X2S</h2>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Entire
+document:              Fixed bugs in the examples, by adding quotes and
+converting symbols into lower case</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Entire
+document:              Added new non-terminal symbol <span style='font-family:
+Courier'>TermOrIE</span> and replaced all occurrences of <span
+style='font-family:Courier'>Term</span> with <span style='font-family:Courier'>TermOrIE</span></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 2,
+line 72:                Added symbol identifying <span style='font-family:Courier'>fipa-sl</span>
+content language</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 2,
+lines 104-112:     Removed superfluous binary term operators</b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 3,
+lines 139-149:     Removed superfluous functional term operators</b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 3,
+lines 180-184:     Removed superfluous arithmetic operators</b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 4,
+line 224:             Added optional </b><b><span style='font-family:Courier'>Sign</span>
+symbol to represent relative time</b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Pages 6,
+lines 342-373:    Removed description of superfluous equality operators</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 8,
+line 398:              Added note on interpretation of <span style='font-family:
+Courier'>iota</span> identifying expression</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 8,
+line 406:              Added note on interpretation of <span style='font-family:
+Courier'>iota</span> identifying expression</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 9,
+line 488&nbsp;:             Added note on interpretation of <span
+style='font-family:Courier'>any</span> identifying expression</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 9,
+line 494:              Improved the definition of <span style='font-family:
+Courier'>any</span> identifying expression</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 9,
+line 497:              Improved the definition of <span style='font-family:
+Courier'>any</span> identifying expression</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 10,
+line 556:            Added note on interpretation of <span style='font-family:
+Courier'>all</span> identifying expression</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 11,
+line 619:           Added requirement on encoding functional terms</b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 12,
+line 639:            Removed Table 1 on description of superfluous functional operators</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 12,
+lines 660-662:    Removed ambiguity in representing communicative acts in SL</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 12,
+line 664:            Added description of the actor of an ACL Message</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 13,
+lines 672-674:    Removed section on agent identifiers</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 13,
+lines 375-380:    Extended the section on Numerical Constants to incorporate
+more details on Grammar Rules</p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 13,
+lines 682-692&nbsp;:   Extended the section on Date and Time Constants to add a
+description of relative time</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2><a name="_Toc26668876">7.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2002/12/03 - version I by FIPA Architecture Board</a></h2>
+
+<p class=MsoNormal>Entire document:           Promoted to Standard status</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+style='font-size:8.0pt;font-family:Helvetica'>[1]</span></span></span></a> Note
+that this grammar rule is used to group and represent both Terms and
+Identifying Expressions.</p>
+
+</div>
+
+<div id=ftn2>
+
+<p class=MsoFootnoteText><a href="#_ftnref2" name="_ftn2" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+style='font-size:8.0pt;font-family:Helvetica'>[2]</span></span></span></a> If
+and only if.</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

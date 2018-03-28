@@ -1,0 +1,3864 @@
+<html>
+
+<head>
+<meta name=Generator content="Microsoft Office HTML Filter 2.0">
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content="Microsoft Word 9">
+<title>FIPA Security Specification</title>
+<style>
+<!--
+ 
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+h1
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;}
+h2
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h3
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:Arial;}
+h4
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	page-break-after:avoid;
+	font-size:9.0pt;
+	font-family:Arial;}
+h5
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	font-size:11.0pt;
+	font-family:Arial;
+	font-weight:normal;}
+h6
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-weight:normal;
+	font-style:italic;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	font-size:9.0pt;
+	font-family:Arial;
+	font-weight:bold;
+	font-style:italic;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Arial;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{
+	margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.5in;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:Arial;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Century Old Style";
+	font-weight:bold;}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.5pt;
+	margin-bottom:.0001pt;
+	text-indent:-70.5pt;
+	line-height:150%;
+	font-size:10.0pt;
+	font-family:Arial;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Tahoma;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Definition, li.Definition, div.Definition
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:13.0pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.Special, li.Special, div.Special
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{
+	margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.berschrift1h1, li.berschrift1h1, div.berschrift1h1
+	{
+	margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Terms, li.Terms, div.Terms
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.artist, li.artist, div.artist
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	layout-grid-mode:line;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph><a name="MLS_Field_QUOTE"></a><a
+name="MLS_Field_MERGEFORMAT"></a><a name=IsolibMLS></a><a
+name="MLS_Field_CHARFORMAT"></a><a name="MLS_Field_ALPHABETIC"></a><a name="MLS_Field_AUTONUMLGL"></a></p>
+
+<p class=Special align=center style='text-align:center;'><b><span lang=EN-GB style='font-size:17.0pt;font-family:Arial;'>FOUNDATION FOR INTELLIGENT PHYSICAL AGENTS</span></b></p>
+
+<p class=FIPA-AM><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=FIPA-AM><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Special align=center style='text-align:center;'><span
+lang=EN-GB style='font-size:26.0pt;font-family:Arial;'>FIPA 98
+Specification</span></p>
+
+<p class=FIPA-AM><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Special align=center style='text-align:center;'><span
+lang=EN-GB style='font-size:22.0pt;font-family:Arial;'>Part 10,
+Version 1.0</span></p>
+
+<p class=FIPA-AM><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Special align=center style='text-align:center;'><span
+lang=FR style='font-size:24.0pt;font-family:Arial;'>Agent Security Management</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><b><i><span
+lang=EN-GB style='font-size:18.0pt;font-family:Arial;'>Obsolete</span></i></b></p>
+
+<p class=Standardparagraph><span lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Standardparagraph style='margin-bottom:6.0pt;'><span
+lang=EN-GB style='font-family:Arial;'>Publication date: 23<sup>rd</sup> October 1998</span></p>
+
+<p class=Standardparagraph style='margin-bottom:6.0pt'><span lang=EN-GB
+style='font-family:Arial;'>Copyright © 1998 by FIPA - Foundation for Intelligent Physical Agents</span></p>
+
+<p class=Standardparagraph style='margin-bottom:6.0pt'><i><span lang=EN-GB style='font-family:Arial;'>Geneva, Switzerland</span></i></p>
+
+<p class=MsoNormal align=center style='text-align:center'><i>&nbsp;</i></p>
+
+<p class=MsoNormal align=center style='text-align:center'><i>This is one part of the first version of the FIPA 98 Specification as
+released in October 1998.<br>
+The latest version of this document may be found on the FIPA web site:</i></p>
+
+<p class=MsoNormal align=center style='margin-bottom:6.0pt;text-align:center'><b><i>http://www.fipa.org</i></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><i>Comments and questions regarding this document and the specifications
+therein should be addressed to:<br>
+<b>fipa98@fipa.org</b></i></p>
+
+<p class=MsoNormal align=center style='text-align:center'><i>It is planned to introduce a web-based mechanism for submitting
+comments to the specifications.<br>
+Please refer to the web site for FIPA's latest policy and procedure for dealing
+with issues regarding the specification.</i></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=679 valign=top style='width:509.4pt;border:solid black .75pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph><span lang=EN-GB style='font-family:Arial;'>Notice</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=679 valign=top style='width:509.4pt;border:solid black .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph><span lang=EN-GB style='font-family:Arial;'>Use of the
+  technologies described in this specification may infringe patents, copyrights
+  or other intellectual property rights of FIPA Members and non-members.
+  Nothing in this specification should be construed as granting permission to
+  use any of the technologies described. Anyone planning to make use of
+  technology covered by the intellectual property rights of others should first
+  obtain permission from the holder(s) of the rights. FIPA strongly encourages
+  anyone implementing any part of this specification to determine first whether
+  part(s) sought to be implemented are covered by the intellectual property of
+  others, and, if so, to obtain appropriate licenses or other permission from
+  the holder(s) of such intellectual property prior to implementation. This
+  FIPA 98 Specification is subject to change without notice. Neither FIPA nor
+  any of its Members accept any responsibility whatsoever for damages or
+  liability, direct or consequential, which may result from the use of this
+  specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+<b><span style='font-size:16.0pt;font-family:Arial;'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;'>Contents</span></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoToc1>1.    Scope....................................................................................................................................................... 3</p>
+
+<p class=MsoToc2>1.1            Background.............................................................................................................................................................................................. 3</p>
+
+<p class=MsoToc2>1.2            Assumptions............................................................................................................................................................................................. 3</p>
+
+<p class=MsoToc2>1.3            Security Issues Addressed in FIPA 98................................................................................................................................................ 3</p>
+
+<p class=MsoToc2>1.4            Security Issues Not Addressed in
+FIPA 98......................................................................................................................................... 3</p>
+
+<p class=MsoToc1>2.    Normative References................................................................................................................ 3</p>
+
+<p class=MsoToc1>3.    Terms and definitions................................................................................................................... 3</p>
+
+<p class=MsoToc1>4.    Symbols (and abbreviated terms)........................................................................................ 3</p>
+
+<p class=MsoToc1>5.    Security Management................................................................................................................... 3</p>
+
+<p class=MsoToc2>5.1            Security Related Platform Interfaces.................................................................................................................................................. 3</p>
+
+<p class=MsoToc3>5.1.1              The Agent Platform Security
+Manager  (APSM)........................................................................................................................ 3</p>
+
+<p class=MsoToc3>5.1.2              The Agent Management System (AMS)..................................................................................................................................... 3</p>
+
+<p class=MsoToc3>5.1.3              The Directory Facilitator (DF)........................................................................................................................................................ 3</p>
+
+<p class=MsoToc2>5.2            Agent Communication Security............................................................................................................................................................ 3</p>
+
+<p class=MsoToc3>5.2.1              Transport Level Protection............................................................................................................................................................. 3</p>
+
+<p class=MsoToc3>5.2.2              Secure Messaging Examples.......................................................................................................................................................... 3</p>
+
+<p class=MsoToc3>5.2.3              Security Profiling.............................................................................................................................................................................. 3</p>
+
+<p class=MsoToc2>5.3            Auditing..................................................................................................................................................................................................... 3</p>
+
+<p class=MsoToc3>5.3.1              Audit Events..................................................................................................................................................................................... 3</p>
+
+<p class=MsoToc3>5.3.2              Audit Log Administration.............................................................................................................................................................. 3</p>
+
+<p class=MsoToc3>5.3.3              Audit Log Security.......................................................................................................................................................................... 3</p>
+
+<p class=MsoToc3>5.3.4              Audit Log Analysis......................................................................................................................................................................... 3</p>
+
+<p class=MsoToc3>5.3.5              Administrator Notification.............................................................................................................................................................. 3</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<span lang=FR style='font-size:10.0pt;font-family:Helvetica;color:black;
+layout-grid-mode:line'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=Standardparagraph><a name="_Toc410734252"><b><span lang=EN-GB style='font-size:12.0pt;font-family:Arial;'>Foreword</span></b></a></p>
+
+<p class=MsoBodyText><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;'>The Foundation for Intelligent Physical Agents (FIPA)
+is a non-profit association registered in Geneva, Switzerland. FIPA’s purpose
+is to promote the success of emerging agent-based applications, services and
+equipment. This goal is pursued by making available in a timely manner, internationally
+agreed specifications that maximise interoperability across agent-based
+applications, services and equipment. This is realised through the open
+international collaboration of member organisations, which are companies and
+universities active in the agent field. FIPA intends to make the results of its
+activities available to all interested parties and to contribute the results of
+its activities to appropriate formal standards bodies.</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;'>&nbsp;</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;'>This specification has been developed through direct
+involvement of the FIPA membership. The 48 members of FIPA (October 1998)
+represent 13 countries world-wide. </span></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB style='font-family:Arial;'>Membership in FIPA is open to any corporation and
+individual firm, partnership, governmental body or international organisation
+without restriction. By joining FIPA each member declares himself individually
+and collectively committed to open competition in the development of
+agent-based applications, services and equipment. Associate Member status is
+usually chosen by those entities who want to be members of FIPA without using
+the right to influence the precise content of the specifications through
+voting.</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;'>The members are not restricted in any way from
+designing, developing, marketing and/or procuring agent-based applications,
+services and equipment. Members are not bound to implement or use specific
+agent-based standards, recommendations and FIPA specifications by virtue of
+their participation in FIPA. </span></p>
+
+<p class=MsoBodyText><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;'>&nbsp;</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;'>This specification is published as FIPA 98
+specifications ver 1.0. All these parts have undergone an intense review by
+members as well as non-members during the past year as preliminary versions
+have been available on the FIPA web site. FIPA members as well as many
+non-members have been conducting validation trials of the FIPA 97 specification
+during 1998 and will continue to subject the new output to further validation
+during the coming months. During 1999 FIPA will publish revised versions of the
+current specifications and is also planning to continue work on further
+specifications of agent based technology.</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Standardparagraph><b><span lang=EN-GB
+style='font-size:12.0pt;font-family:Arial;'>Introduction</span></b></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB style='font-family:Arial;'>The FIPA specifications represent the primary output
+of FIPA. It is important to appreciate that these specifications have been
+derived from examining requirements on agent technology posed by specific
+industrial applications chosen by FIPA so far, and described in Parts 4, 5, 6,
+and 7 of the FIPA 97 specifications.</span></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB style='font-family:Arial;'>FIPA specifies the interfaces of the different
+components in the environment with which an agent can interact, i.e. humans,
+other agents, non-agent software and the physical world. FIPA produces two
+kinds of specifications:</span></p>
+
+<p class=Standardparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+lang=EN-GB style='font-family:Symbol;'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB style='font-family:Arial;'>normative </span></b><span lang=EN-GB style='font-family:Arial;'>specifications mandating the
+external behavior of an agent and ensuring interoperability with other
+FIPA-specified subsystems; </span></p>
+
+<p class=Standardparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+lang=EN-GB style='font-family:Symbol;'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span
+lang=EN-GB style='font-family:Arial;'>informative</span></b><span lang=EN-GB style='font-family:Arial;'> specifications of applications
+providing guidance to industry on the use of FIPA technologies.</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB style='font-family:Arial;'>In October 1997, FIPA released its
+first set of specifications, called FIPA 97, Version 1.0. During 1998, comments
+on this specification were received. Based upon these comments, parts of FIPA
+97 were superseded by a second version released in October 1998, introducing
+minor changes only.</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB style='font-family:Arial;'>Furthermore, in October 1998 FIPA
+released a new set of specifications, called FIPA 98, version 1.0, of which
+this document is a part.</span></p>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Arial;color:black;
+layout-grid-mode:line'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=Standardparagraph><span lang=EN-GB style='font-family:Arial;'>The following tables provide an
+overview of the complete set of FIPA specifications.</span></p>
+
+<p class=Standardparagraph><b><span
+lang=EN-GB style='font-family:Arial;'>Sorted by part:</span></b></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;'>
+ <tr>
+  <td width=91 colspan=2 valign=top style='width:68.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-top:3.0pt;margin-right:0in;
+  margin-bottom:3.0pt;margin-left:0in;'>&nbsp;</p>
+  </td>
+  <td width=196 valign=top style='width:147.15pt;border:solid windowtext .75pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:center;'><b><i><span lang=EN-GB style='font-family:Arial;'>Released
+  October 1997</span></i></b></p>
+  </td>
+  <td width=402 colspan=2 valign=top style='width:301.75pt;border:solid windowtext .75pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:center;'><b><i><span lang=EN-GB style='font-family:Arial;'>Released
+  October 1998</span></i></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=91 colspan=2 valign=top style='width:68.5pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph style='margin-top:3.0pt;margin-right:0in;
+  margin-bottom:3.0pt;margin-left:0in;'><b><span lang=EN-GB
+  style='font-family:Arial;'>Part</span></b></p>
+  </td>
+  <td width=196 valign=top style='width:147.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><b><span
+  lang=EN-GB style='font-family:Arial;'>FIPA 97 Version 1.0</span></b></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><b><span
+  lang=EN-GB style='font-family:Arial;'>FIPA 97 Version 2.0</span></b></p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><b><span
+  lang=EN-GB style='font-family:Arial;'>FIPA 98 Version 1.0</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>1</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><i><span
+  lang=EN-GB style='font-family:Arial;'>Agent Management</span></i></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent
+  Management</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent
+  Management Extensions</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>2</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><i><span
+  lang=EN-GB style='font-family:Arial;'>ACL</span></i></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>ACL</span></p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>3</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent Software
+  Integration</span></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>4</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>I</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Personal
+  Travel Assistant</span></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>5</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>I</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Personal
+  Assistant</span></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>6</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>I</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Audio Visual
+  Entertainment &amp; Broadcasting</span></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>7</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>I</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Network
+  Management &amp; Provision</span></p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>8</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Human-Agent
+  Interaction</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>10</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent
+  Security Management</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>11</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent
+  Management Support for Mobility</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>12</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>N</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Ontology
+  Service</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=54 valign=top style='width:40.4pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>13</span></p>
+  </td>
+  <td width=37 valign=top style='width:28.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>I/M</span></p>
+  </td>
+  <td width=196 valign=top style='width:147.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=142 valign=top style='width:106.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=260 valign=top style='width:195.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Developer’s
+  Guide</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt;'><span lang=EN-GB
+style='font-family:Arial;'>N == normative; I == informative; M == methodology</span><span lang=EN-GB style='font-size:12.0pt;font-family:Arial;'>; </span><i><span lang=EN-GB style='font-family:Arial;'>Italicised ==
+superseded</span></i></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt;'><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Standardparagraph><b><span
+lang=EN-GB style='font-family:Arial;'>Sorted by topic:</span></b></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;'>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border:solid windowtext .75pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='text-align:left;'><b><span
+  lang=EN-GB style='font-family:Arial;'>Topic</span></b></p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-left:7.7pt;text-align:
+  left;text-indent:-7.7pt;'><b><span lang=EN-GB style='font-family:Arial;'>FIPA 97</span></b><i><span
+  lang=EN-GB style='font-family:Arial;'>(Version 1.0, unless otherwise indicated)</span></i></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border:solid windowtext .75pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-left:8.75pt;text-align:
+  left;text-indent:-8.75pt;'><b><span lang=EN-GB style='font-family:Arial;'>FIPA 98 </span></b><span lang=EN-GB style='font-family:Arial;'>Version 1,0</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border:solid windowtext .75pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent Management</span></p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB
+  style='font-family:Arial;'>1. Basic System <i>(Version 2.0)</i></span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>1. Extension
+  to Basic System</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>10. Agent
+  Security Management</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>11. Agent
+  Management Support for Mobility </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border:solid windowtext .75pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent
+  Communication<br><br></span></p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>2. Agent
+  Communication Language<br>    <i>(Version 2.0)</i></span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>8.
+  Human-Agent Interaction</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>12. Ontology
+  Service</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Agent S/W
+  Integration<br><br></span></p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border:none;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>3. Agent
+  Software Integration<br>    </span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border:solid windowtext .75pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>Reference
+  Applications</span></p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border-top:solid windowtext .75pt;
+  border-left:none;border-bottom:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>4. Personal
+  Travel Assistant</span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>5. Personal
+  Assistant</span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border-top:none;border-left:
+  solid windowtext .75pt;border-bottom:none;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border:none;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'><span lang=EN-GB style='font-family:Arial;'>6.
+  Audio/Visual Entertainment &amp;<br>    Broadcasting</span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 valign=top style='width:116.1pt;border:solid windowtext .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+  <td width=257 valign=top style='width:192.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:.6pt;text-align:left;text-indent:-.6pt;'><span lang=EN-GB
+  style='font-family:Arial;'>7. Network Management &amp;<br>    Provisioning</span></p>
+  </td>
+  <td width=278 valign=top style='width:208.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=left style='margin-top:3.0pt;margin-right:
+  0in;margin-bottom:3.0pt;margin-left:0in;text-align:left;'>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt;'><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt;'><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt;'><span lang=EN-GB
+style='font-family:Arial;'>The parts of the FIPA 98 specifications are briefly described below</span><span lang=EN-GB style='font-size:12.0pt;font-family:Arial;'>.</span></p>
+
+<p class=Standardparagraph style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:6.0pt;margin-left:0in;'><b><span
+lang=EN-GB style='font-family:Arial;'>Part 1 - Agent Management</span></b><a
+name="_Toc353003785"></a><a name="_Toc353073920"></a><a name="_Toc353954976"></a><a
+name="_Toc357853660"></a><a name="_Toc359645201"></a><a name="_Toc377358156"></a><a
+name="_Toc377361530"></a><a name="_Toc377361549"></a><a name="_Toc378578798"></a></p>
+
+<p class=Normalparagraph style='text-align:justify'><span lang=EN-GB
+style='font-family:Arial;'>This part
+covers agent management for inter-operable agents, and is thus <span
+style='color:black'>primarily concerned with defining open standard interfaces
+for accessing agent management services. It also specifies an agent management
+ontology</span> and <span style='color:black'>agent platform message transport</span>.
+This specification incorporates and further enhances the FIPA 97, Part 1,
+Version 2.0 specification.  <span
+style='color:black'>The internal design and implementation of intelligent
+agents and agent management infrastructure is not mandated by FIPA and is
+outside the scope of this part.</span></span></p>
+
+<p class=berschrift1h11 style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+6.0pt;margin-left:0in;line-height:normal;page-break-after:auto;'><span
+lang=EN-GB style='font-size:10.0pt;font-family:Arial;'>Part 8 – Human-Agent Interaction</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span lang=EN-GB style='font-family:Arial;'>This part deals
+with the human-agent interaction part of an agent system. It specifies two
+agent services: User Dialog Management Service (UDMS) and User Personalization
+Service (UPS). A UDMS wraps many types of software components for user
+interfaces allowing for ACL level of interaction between agents and human
+users. A UPS can maintain user models and supports their construction by either
+accepting explicit information about the user or by learning from observations
+of user behavior. </span></p>
+
+<p class=Standardparagraph style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:6.0pt;margin-left:0in;'><b><span
+lang=EN-GB style='font-family:Arial;'>Part 10 – 
+Agent Security Management</span></b></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span lang=EN-GB style='font-family:Arial;'>Security risks
+exist throughout agent management: during registration, agent-agent
+interaction, agent configuration, 
+agent-agent platform interaction, user-agent interaction and agent
+mobility. The Security Management specification identifies the key security
+threats in agent management and specifies facilities for securing agent-agent
+communication via the FIPA agent platform. This specification represents the
+minimal set of technologies required and is complementary to the existing FIPA
+97 and FIPA 98, Part 1 specifications. This part does not mandate every
+FIPA-compliant agent platform to support agent security management.</span></p>
+
+<p class=Standardparagraph style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:6.0pt;margin-left:0in;'><b><span
+lang=EN-GB style='font-family:Arial;'>Part 11 – Agent Management Support for Mobility</span></b></p>
+
+<p class=Normalparagraph style='text-align:justify'><span lang=EN-GB style='font-family:Arial;'>This specification represents a normative framework for
+supporting software agent mobility using the FIPA agent platform. This
+framework represents the minimal set of technologies required and is
+complementary to the existing FIPA 97 and FIPA 98, Part 1 specifications.
+Wherever possible, it refers to existing standards in this area. The framework
+supports additional non-mobile agent management operations such as agent
+configuration. The specification does not mandate that every FIPA-compliant
+agent platform must support agent mobility, nor does it cover the specific
+requirements for agents on mobile devices with intermittent connectivity, which
+is covered by the scope of the existing FIPA Agent Management activity.</span></p>
+
+<p class=MsoBodyText style='margin-top:12.0pt;'><b><span
+lang=EN-GB style='font-size:10.0pt;font-family:Arial;'>Part 12 – Ontology Service</span></b></p>
+
+<p class=MsoBodyText><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;'>This part deals with technologies enabling agents to
+manage explicit, declaratively represented ontologies. It specifies an ontology
+service provided to a community of agents by a dedicated Ontology Agent. It
+allows for discovering public ontologies in order to access and maintain them;
+translating expressions between different ontologies and/or different content
+languages; responding to queries for relationships between terms or between
+ontologies; and, facilitating identification of a shared ontology for
+communication between two agents.</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;'>The specification deals only with the communicative
+interface to such a service while internal implementation and capabilities are
+left to developers. The interaction protocols, communicative acts and, in
+general, the vocabulary that agents must adopt when using this service are
+defined. The specification does not mandate the storage format of ontologies,
+but only the way the ontology service is accessed. However, in order to specify
+the service, an explicit representation formalism, or meta-ontology, has been
+specified allowing communication of knowledge between agents. </span></p>
+
+<p class=Standardparagraph style='margin-top:12.0pt;margin-right:0in;
+margin-bottom:6.0pt;margin-left:0in;'><b><span
+lang=EN-GB style='font-family:Arial;'>Part 13 – FIPA 97 Developer's Guide</span></b></p>
+
+<p class=MsoBodyText><span lang=EN-GB
+style='font-size:10.0pt;font-family:Arial;'>The Developer’s Guide is meant to be a companion
+document to the FIPA 97 specifications, and is intended to clarify areas of
+specific interest and potential confusion. Such areas include issues that span
+more than one of the normative parts of FIPA 97.</span></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Arial;color:black;
+layout-grid-mode:line'><br clear=all style='page-break-before:always;'>
+</span>
+
+<div class=Section2>
+
+<h1 style='margin-left:0in;text-indent:0in'><a name="_Toc410734253"></a><a
+name="_Toc436810816">1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Scope</a></h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The FIPA 98 Agent Security Management specification outlines
+the requirements for secure intra- and inter-platform communication and the
+requirements for platform auditing. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The FIPA 98 Agent Security Management specification
+introduces the notion of an Agent Platform Security Manager (APSM). The basic
+security model is for agents to communicate through APSM’s on their respective
+hosts. The APSM communicates via FIPA ACL and is responsible for maintaining
+the platform security policy. </p>
+
+<h2 style='margin-left:0in;text-indent:0in'><a name="_Toc436810817">1.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Background</a></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Security risks exist throughout the agent life-cycle. These
+risks are present during agent management, registration, execution,
+agent-to-agent communication, user-agent interaction, and agent mobility. Many
+of these security risks have been identified in this specification and will be
+handled by existing counter measures that are well known.  </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The following six security threats apply to agents and
+multi-agent systems: </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b>Disclosure: </b>A
+breach in the confidentiality of an agent's private data or meta-data. For
+example,an entity eavesdrops on the
+communication between agents and extracts information on the goals, plans,
+capabilities, etc. of these agents.  </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b>Alteration: </b>Theunauthorized
+modification or corruptionof an
+agent, its state, or data.For
+example,an Agent Communication
+Channel modifies the content of a message.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b>Copy and Replay: </b>An attempt tocopy an agent, or a message, and clone or retransmit it. For example,a malicious platform createsan illegal copy, or a clone, of an
+agent, ora message from an agent is
+illegally copied and retransmitted.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b>Denial of Service: </b>Anattack that attempts to deny resources
+to the platform or an agent.  For
+example,an agent floods the
+Directory Facilitator Agent with requests and the Directory Facilitator is
+unable to provide its services to other agents.  </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b>Repudiation: </b>An
+agent,or agent platform, denies
+that it has received/sent a message or taken a specific action. For example,a commitment between two agents as the
+result of a contract negotiation is later ignored by one of the agents, the
+agent denies the negotiation has ever taken place and refuses to honor its part
+of the commitment.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b>Spoofing and
+Masquerading: </b>An unauthorized agent, or agent platform, claims the identity
+of another,  authorized or unauthorized,
+agent or agent platform. For example,an
+agent registers as a Directory Facilitator Agent and therefore receives
+information from other registering agents. 
+</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>FIPA 98 Security Management addresses mutual agent security
+issues for agent-to-agent interaction based upon the following assumptions and
+guiding principles:</p>
+
+<h2 style='margin-left:0in;text-indent:0in'><a name="_Toc436810818">1.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Assumptions</a></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The security features supported by this specification
+are guaranteed only if all incoming and outgoing communication is channeled
+through the APSM. It should be noted that direct agent-to-agent communication
+which is not mediated by the FIPA 98 Part 10 compliant AP can present
+significant security risks if no alternative, or underlying, security
+mechanisms are in place. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Agents trust the underlying platform security
+management to be sufficient for its agent communication needs. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The APSM respects the agents’ wishes and tries to
+facilitate the agent’s security requirements, but ultimately the APSM is
+responsible for enforcing the platform policy. The APSM, or an APSM-stub, at
+each host negotiates secure inter-platform agent-to-agent communications. When the
+agent does not have a secure way to communicate with the home APSM, for
+example, when the agent and the APSM of the platform are on different hosts, an
+APSM-stub is required on the agent host for the agent to communicate securely
+with the home APSM.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>FIPA 98 Agent Security Management will reuse and refer
+to existing security standards and solutions whenever possible.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>This specification does not define how a PKI is
+established, nor how initial public key pairs and certificates are established
+for agents and agent platforms. 
+However, the security capabilities defined in this specification rely on
+their existence.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Certificate administration functions (revoke, issue,
+etc) are handled by services outside the agent platform. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>For the security capabilities described by this
+specification to work properly, the AMS, ACC, and DF components that form a
+platform must communicate securely through some means outside the scope of the
+specification.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>FIPA 98 distinguishes between intra-platform and
+inter-platform communication. The APSM should accept direct requests only from
+agents on its own platform; other requests should be via other APSMs acting as
+intermediaries.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The DF is a useful way of discovering capabilities of a
+registered agent.  By extending the
+information registered to include security-related information, the DF can
+provide additional support for the security functions described in this
+specification. However, the DF should not be used to store sensitive
+information. For example, the DF can store certificates, but should not store
+private keys.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The platform profile can become a standard way for an
+agent to discover the security transport mechanism supported at the agent
+platform, if its contents are extended accordingly and a means of inquiry is
+provided.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>This specification does not preclude an agent from
+encrypting its payload (:content tag) prior to sending the message to the APSM.
+It is assumed that the sending and receiving agents have negotiated the
+encryption mechanism in order to support end-to-end confidentiality.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2 style='margin-left:0in;text-indent:0in'><a name="_Toc436810819">1.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Security Issues Addressed in FIPA 98</a></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>This specification does not mandate the use of security
+features. Instead, it mandates how agents and agent platforms may interoperate
+in a secure fashion, if security is desired.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>This specification allows for security management to be
+implemented at the message transport layer, through the use of security
+services available from a shared transport protocol at the agent platform.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>At the agent level, this specification relies on an
+asynchronous messaging model of communications, as opposed to a
+session-oriented model.  All information
+regarding the protection mechanisms employed to encapsulate a given message is
+provided with the message.  At the
+transport level, the protection mechanisms may be either message- or
+session-oriented.  An agent is free to
+request any transport-level mechanism available at the agent platform where it
+is situated, but the APSM decides if this request conforms to the platform security
+policy. </p>
+
+<h2 style='margin-left:0in;text-indent:0in;page-break-before:always'><a
+name="_Toc436810820">1.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Security Issues Not Addressed in FIPA 98</a></h2>
+
+<p class=Normalparagraph><span style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Public key infrastructures (PKI), based on X.509 public
+key certificates and certificate revocation lists, are not addressed in FIPA
+98. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Payment protocols (e.g., SET) or micro payment
+mechanisms are not addressed in this specification. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>This specification does not cover denial of service
+attacks that arise from access to native resources.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Mobile agent security is not currently addressed by
+this specification.  The specification
+has been written so as not to preclude mobility. Mobile agent security will be
+addressed in future security specifications.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Access control of local resources is beyond the scope
+of this specification. For example, agent read/write access to databases. </p>
+
+<p class=MsoNormal style='page-break-after:avoid'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:14.15pt;text-indent:-14.15pt;page-break-after:
+avoid;'><span style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Security measures for routine system administration.</p>
+
+<p class=MsoNormal style='page-break-after:avoid'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:14.15pt;text-indent:-14.15pt;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Security
+measures for non-agent software that is corrupted and poses a security threat
+to the agent system.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:14.15pt;text-indent:-14.15pt;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Security
+measures for non-agent related security issues, for example user identification
+to operating systems.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:14.15pt;text-indent:-14.15pt;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>There
+still may be agent-specific security risks that have yet to be identified.  Particularly, the agent-specific paradigm of
+non-deterministic intelligent autonomous collaboration probably gives rise to
+new security risks comparable to those known in real world social societies.</p>
+
+<p class=MsoNormal><a name="_Toc410734254">&nbsp;</a></p>
+
+<h1 style='margin-left:0in;text-indent:0in'><a name="_Toc436810821">2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Normative
+References</a></h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>[1]        FIPA 97 Parts 1-3</p>
+
+<p class=MsoNormal>[<a name=itux509v3></a>2]        ITU
+X.509 v3</p>
+
+<p class=MsoNormal>[3]        PKIX
+Standard IETF, URL
+&lt;http://www.ietf.org/internet-drafts/draft-ietf-pkix-ipki3cmp-08.txt&gt;</p>
+
+<p class=MsoBodyTextIndent>[4]        Cryptographic
+Message Syntax Standard, Public Key Cryptography Standards (PKCS) #7, RSA
+Laboratories, November 1993, URL <a
+href="http://www.rsa.com/rsalabs/pubs/PKCS/html/pkcs-7.html">http://www.rsa.com/rsalabs/pubs/PKCS/html/pkcs-7.html</a></p>
+
+<p class=MsoBodyTextIndent>[5]        CORBA
+Facilities: Mobile Agent System Interoperability Facilities Standard</p>
+
+<p class=MsoBodyTextIndent>[6]        ISO/IEC
+9594, <i>Information Technology - Open
+Systems Interconnection -The Directory</i>. Also published as ITU-T X.500
+series - <a href="http://www.itu.ch/">http://www.itu.ch</a></p>
+
+<p class=MsoBodyTextIndent>[7]        ISO/IEC
+9594-8, <i>Information Technology - Open
+Systems Interconnection -The Directory: Authentication Framework</i>. Also
+published as ITU-T X.509 - <a href="http://www.itu.ch/">http://www.itu.ch</a></p>
+
+<p class=MsoBodyTextIndent>[8]        ISO/IEC
+8824-1, <i>Information Technology - Open
+Systems Interconnection -Abstract Syntax NotationOne(ANS.1): Specification of
+Basic Notation</i>. Also published as the ITU-T X.680 series - <a
+href="http://www.itu.ch/">http://www.itu.ch</a></p>
+
+<p class=MsoBodyTextIndent>[9]        B.
+Schneier, <i>Applied Cryptography</i>, 2<sup>nd</sup>
+Edition, (New York: Wiley, 1995).</p>
+
+<p class=MsoBodyTextIndent>[10]       A.J.
+Menezes, P.C. van Oorschot, and S.A. Vanstone, <i>Handbook of Applied Cryptography</i> (Boca Raton, FL: CRC Press, 1996)</p>
+
+<p class=MsoBodyTextIndent>&nbsp;</p>
+
+<p class=MsoBodyTextIndent>&nbsp;</p>
+
+<p class=MsoBodyTextIndent>&nbsp;</p>
+
+<p class=MsoBodyTextIndent>&nbsp;</p>
+
+<p class=MsoBodyTextIndent>&nbsp;</p>
+
+<h1 style='margin-left:0in;text-indent:0in'><a name="_Toc436810822"><span
+lang=EN-GB>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Terms
+and definitions</span></a></h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><a name="_Toc405631776">For the purposes of this
+specification, the following terms and definitions apply:</a></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Action</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>A basic construct which represents some activity which an agent may
+perform. A special class of actions is the communicative acts.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Agent</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>An Agent is the fundamental actor in a domain.  It combines one or more service capabilities into a unified and
+integrated execution model which can include access to external software, human
+users  and communication facilities. </span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Agent
+cloning </span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>The process by
+which an agent creates a copy of itself on an agent platform.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Agent
+code </span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>The set of
+instructions used by an agent.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Agent
+Communication Language (ACL)</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>A language with precisely defined syntax, semantics and pragmatics that
+is the basis of communication between independently designed and developed
+software agents. ACL is the primary subject of the FIPA 97 specification, part
+2</span><span lang=EN-GB>.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Agent
+Communication Channel (ACC)</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>The Agent
+Communication Channel is an agent which uses information provided by the Agent
+Management System to route messages between agents within the platform and to
+agents resident on other platforms.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Agent
+data </span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>Any data
+associated with an agent.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Agent
+invocation </span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>The process by
+which an agent can create another instance of an agent on an agent platform.</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>Agent Management System (AMS)</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>The Agent Management System is an agent which manages the creation,
+deletion, suspension, resumption, authentication and migration of agents on the
+agent platform and provides a “white pages” directory service for all agents
+resident on an agent platform. It stores the mapping between globally unique
+agent names (or GUID) and local transport addresses used by the platform.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Agent
+Platform</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>An Agent Platform provides an infrastructure in which agents can be
+deployed. An agent must be registered on a platform in order to interact with
+other agents on that platform or indeed other platforms. An AP consists of
+three capability sets ACC, AMS and default Directory Facilitator.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Agent
+Platform Security Manager (APSM)</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An Agent
+Platform Security Manager is responsible for maintaining the agent platform
+security policy. The APSM is responsible for providing transport-level security
+and creating agent audit logs. The APSM negotiates the requested intra- and
+inter-domain security services of other APSM's in concert with the implemented
+distributed computing architectures, such as CORBA, COM, DCE, on behalf of an
+agent in its domain.</span></p>
+
+<p class=Terms><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB>ARB Agent</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>An agent which provides the Agent Resource Broker (ARB) service. There
+must be at least one such an agent in each Agent Platform in order to allow the
+sharing of non-agent services.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Communicative
+Act</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>A special class of actions that correspond to the basic building blocks
+of dialogue between agents. A communicative act has a well-defined, declarative
+meaning independent of the content of any given act. CAs are modelled on speech
+act theory. Pragmatically, CAs are performed by an agent sending a message to
+another agent, using the message format described in FIPA97, part 2.</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>Content</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>That part of a communicative act which represents the domain dependent
+component of the communication. Note that &quot;the content of a message&quot;
+does not refer to &quot;everything within the message, including the
+delimiters&quot;, as it does in some languages, but rather specifically to the
+domain specific component. In the ACL semantic model, a content expression may
+be composed from propositions, actions or IRE's.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Content
+Language</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>The <i>content</i> of a FIPA message
+refers to whatever the communicative act applies to. If, in general terms, the
+communicative act is considered as a sentence, the content is the grammatical
+object of the sentence. This content can be encoded in any language, the <i>content language</i>, denoted by the
+:language parameter of the communicative act. </span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>Conversation</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>An ongoing sequence of communicative acts exchanged between two (or
+more) agents relating to some ongoing topic of discourse. A conversation may
+(perhaps implicitly) accumulate context that is used to determine the meaning
+of later messages in the conversation.</span></p>
+
+<p class=Terms><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB>CORBA</span></p>
+
+<p class=Definition><i><span lang=EN-GB style='font-family:Arial;'>Common Object
+Request Broker Architecture</span></i><span
+lang=EN-GB style='font-family:Arial;'>, an established standard allowing object-oriented
+distributed systems to communicate through the remote invocation of object methods.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Directory
+Facilitator</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>The Directory
+Facilitator [1] is an agent that provides a “yellow pages” directory service
+for the agents. It stores descriptions of the agents and the services they
+offer. </span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Explicit
+&amp; Implicit</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An ontology is
+<i>explicit</i> when it is specified in
+declarative form as a set of axioms and definitions (e.g. as a set of
+Ontolingua statements) that an agent can refer to (e.g. by means of an OKBC
+interface). An ontology is <i>implicit</i>,
+when the assumptions on the meaning of its vocabulary are only implicitly
+embedded in some piece of software.</span></p>
+
+<p class=Terms><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB>Feasibility Precondition (FP)</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>The conditions (i.e. one or more propositions) which need be true before
+an agent can (plan to) execute an action.</span></p>
+
+<p class=Terms><span lang=FR
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Knowledge
+model</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>It is a
+specification of the set of primitives used by a certain class of
+representation languages. As such, a knowledge model can be considered as a
+meta-ontology. For instance, several ontology servers use an object oriented
+model of knowledge based on primitive notions like classes, frames, properties,
+constraints, axioms and functions. FIPA adopts for the specification of these
+notions the OKBC version 2.0.4 Knowledge Model, which is called
+FIPA-meta-ontology or FIPA knowledge model.</span></p>
+
+<p class=Terms><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB>Illocutionary effect</span></p>
+
+<p class=Definition><span lang=EN-GB>See speech act theory.</span></p>
+
+<p class=Terms><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB>Knowledge Querying and Manipulation Language
+(KQML)</span></p>
+
+<p class=Definition><span lang=EN-GB>A de facto (but widely used) specification of a
+language for inter-agent communication. In practice, several </span><span lang=EN-GB style='font-family:Arial;'>implementations
+and variations exist.</span></p>
+
+<p class=Terms><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB>Local Agent Platform </span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>The Local Agent Platform is the AP to which an agent is attached and
+which represents an ultimate destination for messages directed to that agent.</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>Message</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>An individual unit of communication between two or more agents. A
+message corresponds to a communicative act, in the sense that a message encodes
+the communicative act for reliable transmission between agents. Note that
+communicative acts can be recursively composed, so while the outermost act is
+directly encoded by the message, taken as a whole a given message may represent
+multiple individual communicative acts.</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>Message content</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>See content.</span></p>
+
+<p class=Terms><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB>Message transport service</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>The message transport service is an abstract service provided by the
+agent management platform to which the agent is (currently) attached. The
+message transport service provides for the reliable and timely delivery of
+messages to their destination agents, and also provides a mapping from agent
+logical names to physical transport addresses.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Meta-ontology</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>For allowing a
+FIPA agent to communicate through ACL messages aboutontologies, it is necessary to describe the concepts used to speak
+about anontology. This description
+is called the meta-ontology. It is an ontologyitself as it provides the ontology to refer to another ontology.
+Therefore,the meta-ontology should
+be powerful enough to deal with all potentiallyavailable ontologies and make explicit, at least informally, these
+concepts</span>.</p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Mobile
+agent&nbsp;</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An agent that
+is not reliant upon the agent platform where it began executing and can
+subsequently transport itself between agent platforms.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Mobility </span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>The property
+or characteristic of an agent that allows it to travel between agent platforms.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Ontology</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An ontology is
+an explicit specification of the structure of a certain domain (e.g.
+e-commerce, sport, …). For the practical goals of FIPA (that is enabling
+development and deployment of inter-operable agent-based applications), this
+includes a vocabulary (i.e. a list of logical constants and predicate symbols)
+for referring to the subject area, and a set of logical statements expressing
+the constraints existing in the domain and restricting the interpretation of
+the vocabulary. Ontologies therefore provide a vocabulary for representing and
+communicating knowledge about some topic and a set of relationships and
+properties that hold for the entities denoted by that vocabulary.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Ontology
+Agent</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An agent that
+provides the Ontology Service specified in this specification. The main
+objective of the Ontology Agent is to offer to FIPA agents a unified view of
+the services offered by the different ontology servers. Its second objective is
+to allow an ontology server to be known by FIPA agents. Moreover some ontology
+agents can provide the agents with services such as translation facilities.
+Like any other FIPA agent, the ontology agent has to be registered to the DF
+and to provide the DF with the published ontologies and available services. </span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Ontology
+Name</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>The ontologies
+referred to by the agents can be provided by different ontology servers.
+Consequently, these ontology names are constructed from: the OA name, and the
+ontology logical name (given by the ontology designer e.g. “car “). </span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Ontology
+Server</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>Provider of an
+Ontology Service, not necessarily in the FIPA domain, or FIPA-compliant.
+Examples of ontology servers already existing outside FIPA are: Ontolingua,
+XML/RDF ontology servers, ODL databases ontologies servers. Access to the
+services provided by these ontologies servers are based on various APIs such as
+the OKBC interface, the ODL interface or HTTP.</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>Ontology sharing problem</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>The problem of ensuring that two agents that wish to converse do, in
+fact, share a common ontology for the domain of discourse. Minimally, agents
+should be able to discover whether or not they share a mutual understanding of
+the domain constants. </span></p>
+
+<p class=Terms><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB>Perlocutionary Effect</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>See speech act theory.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Personalization</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An agent’s
+ability to take individual preferences and characteristics of users into
+account and adapt its behavior to these factors.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Proposition</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>A statement
+which can be either true or false. A closed proposition is one which contains
+no variables, other than those defined within the scope of a quantifier.</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>Protocol</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>A common pattern of conversations used to perform some generally useful
+task. The protocol is often used to facilitate a simplification of the
+computational machinery needed to support a given dialogue task between two
+agents. Throughout this document, we reserve protocol to refer to dialogue
+patterns between agents, and networking protocol to refer to underlying
+transport mechanisms such as TCP/IP.</span></p>
+
+<p class=Terms><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB>Rational Effect (RE)</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>The rational effect of an action is a representation of the effect that
+an agent can expect to occur as a result of the action being performed. In
+particular, the rational effect of a communicative act is the Perlocutionary
+effect an agent can expect the CA to have on a recipient agent. Note that the
+recipient is not bound to ensure that the expected effect comes about; indeed
+it may be impossible for it to do so. Thus an agent may use its knowledge of
+the rational effect in order to plan an action, but it is not entitled to
+believe that the rational effect necessarily holds having performed the act.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Software
+Service</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An
+instantiation of a connection to a software system.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Software
+System</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>A software
+entity which is not conformant to the FIPA Agent Management specification.</span></p>
+
+<p class=Terms><span lang=FR
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Speech
+Act</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>The notion of a speech act is derived from the linguistic analysis of
+human communication. It is based on the idea that with language the speaker not
+only makes statements, but also performs actions, e.g. a request or an
+assertion. In this context, a verb denoting a speech act, is called a <i>performative</i>, since saying it makes it
+so. See FIPA97, part 2 for more details.</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Terms><span lang=EN-GB
+style='font-family:Arial;'>Speech Act Theory</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-family:Arial;'>A theory of communications which is used as the basis for ACL. Speech
+act theory is derived from the linguistic analysis of human communication. It
+is based on the idea that with language the speaker not only makes statements,
+but also performs actions. A speech act can be put in a stylised form that
+begins &quot;I hereby request …&quot; or &quot;I hereby declare …&quot;. In
+this form the verb is called the performative, since saying it makes it so.
+Verbs that cannot be put into this form are not speech acts, for example
+&quot;I hereby solve this equation&quot; does not actually solve the equation.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Stationary
+agent&nbsp;</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An agent that
+executes only upon the agent platform where it begins executing and is reliant
+upon it.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>TCP/IP</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>A networking
+protocol used to establish connections and transmit data between hosts </span></p>
+
+<p class=Definition>&nbsp;</p>
+
+<p class=Terms><span lang=FR>User
+Agent</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An agent which
+interacts with a human user.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>User
+Dialog Management Service</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An agent
+service in order for FIPA agents to interact with human users; by converting
+ACL into media/formats which human users can understand and vice versa,
+managing the communication channel between agents and users, and identifying
+users interacting with agents.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>User ID</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An identifier
+for a real user.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>User Model</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>A user model
+contains assumptions about user preferences, capabilities, skills, knowledge,
+etc, which may be acquired by inductive processing based on observations about
+the user. User models normally contain knowledge bases which are directly
+manipulated and administered.</span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>User
+Personalization Service</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An agent
+service that offers abilities to support personalization, e.g. by maintaining
+user profiles or forming complex user models by learning from observations of
+user behavior. </span></p>
+
+<p class=Terms><span lang=FR>&nbsp;</span></p>
+
+<p class=Terms><span lang=FR>Wrapper
+Agent</span></p>
+
+<p class=Definition><span
+style='font-family:Arial;'>An agent which
+provides the FIPA-WRAPPER service to an agent domain on the Internet.</span></p>
+
+<p class=Definition><span lang=EN-GB
+style='font-size:11.0pt;font-family:Arial;'>&nbsp;</span></p>
+
+<h1 style='margin-left:0in;text-indent:0in'><a
+name="_Toc436810823"><span lang=EN-GB>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB>Symbols (and abbreviated terms)</span></a></span></h1>
+
+<p class=Definition><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:150%'>ACC:                Agent Communication Channel</p>
+
+<p class=MsoNormal style='line-height:150%'>ACL:                Agent Communication Language</p>
+
+<p class=MsoNormal style='line-height:150%'>AMS:               Agent Management System</p>
+
+<p class=MsoNormal style='line-height:150%'>AP:                  Agent
+Platform </p>
+
+<p class=MsoNormal style='line-height:150%'>API:                 Application Programming Interface</p>
+
+<p class=MsoNormal style='line-height:150%'>APSM:             Agent Platform Security Manager</p>
+
+<p class=Normalparagraph style='line-height:150%'><span style='font-family:
+Arial;'>ARB:                Agent Resource Broker</span></p>
+
+<p class=MsoNormal style='line-height:150%'>CA:                  Communicative
+Act</p>
+
+<p class=MsoNormal style='line-height:150%'>CORBA:           Common Object Request Broker Architecture </p>
+
+<p class=MsoNormal style='line-height:150%'>DB:                  Database
+</p>
+
+<p class=MsoNormal style='line-height:150%'>DCOM:             Distributed COM</p>
+
+<p class=MsoNormal style='line-height:150%'>DF:                  Directory
+Facilitator</p>
+
+<p class=MsoNormal style='line-height:150%'>FIPA:               Foundation for Intelligent Physical Agents</p>
+
+<p class=MsoNormal style='line-height:150%'>FP:                  Feasibility Precondition</p>
+
+<p class=MsoNormal style='line-height:150%'>GUID:               Global Unique Identifier</p>
+
+<p class=MsoNormal style='line-height:150%'>HAP:                Home Agent Platform</p>
+
+<p class=MsoNormal style='line-height:150%'>HTTP:               Hypertext Transmission Protocol </p>
+
+<p class=MsoNormal style='line-height:150%'>IDL:                  Interface Definition Language </p>
+
+<p class=MsoNormal style='line-height:150%'>IIOP:                Internet Inter-ORB Protocol</p>
+
+<p class=MsoNormal style='line-height:150%'>IRE:                 Identifying Referring Expression</p>
+
+<p class=MsoNormal style='line-height:150%'>OMG:               Object Management Group</p>
+
+<p class=MsoNormal style='line-height:150%'>ORB:                Object Request Broker 
+</p>
+
+<p class=artist style='line-height:150%'><span lang=EN-GB style='font-family:
+Arial;'>RE:                  Rational Effect</span></p>
+
+<p class=MsoBodyTextIndent2>RMI:                 
+Remote Method Invocation, an inter-process communication method embodied in
+Java </p>
+
+<p class=MsoNormal style='line-height:150%'>SL:                   Semantic
+Language</p>
+
+<p class=Normalparagraph style='line-height:150%'><span style='font-family:
+Arial;'>SMTP:              Simple Mail Transfer Protocol</span></p>
+
+<p class=MsoNormal style='line-height:150%'>SQL:                Structured Query Language</p>
+
+<p class=MsoNormal style='line-height:150%'>S/W:                Software System</p>
+
+<p class=MsoNormal style='line-height:150%'>TCP / IP:          Transmission Control Protocol / Internet Protocol</p>
+
+<h1 style='margin-left:0in;text-indent:0in'><a name="_Toc436810824">5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>Security
+Management</a></h1>
+
+<h2 style='margin-left:0in;text-indent:0in'><a name="_Toc436810825">5.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Security Related Platform Interfaces</a></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>This section describes 
+the logical components and interfaces necessary to support security
+management on a FIPA compliant agent platform. This section introduces the
+Agent Platform Security Manager (APSM) and its responsibilities with respect to
+maintaining the agent platform and infrastructure security policies. Figure 1
+shows a graphical representation of the APSM reference concept.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>
+
+<table cellpadding=0 cellspacing=0 align=left>
+ <tr>
+  <td width=98 height=3></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><img width=412 height=300 src="OC00020A_image001.gif"></td>
+ </tr>
+</table>
+
+</span>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<br clear=ALL>
+
+<p class=MsoCaption align=center style='text-align:center'>Figure 1 – Agent Platform Security
+Management Reference Concept</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h3 style='margin-left:0in;text-indent:0in'><a name="_Toc436810826">5.1.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The Agent Platform Security Manager  (APSM)</a> </h3>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The APSM is responsible for maintaining platform and
+infrastructure security policies. The APSM is responsible for run-time
+activities, such as, communications, providing transport-level security, and
+creating audit trails. FIPA 98 security cannot be guaranteed unless, at a
+minimum, all communication between agents are carried out through the APSM. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The APSM is responsible for negotiating the requested inter-
+and intra-domain security services with other APSM’s in concert with the implemented
+distributed computing architecture, such as CORBA, COM, DCE, on behalf of the
+agents in its domain. The APSM is responsible for enforcing the security policy
+of its domain, and can at its discretion, upgrade the level of security
+requested by an agent. The APSM cannot downgrade the level of services
+requested by an agent, but must inform the agent that the service level
+requested cannot be provided.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'><a name="_Toc436810827">5.1.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The Agent Management System (AMS)</a></h3>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The AMS is responsible for managing the administrative
+activities of an agent platform, including creation/deletion of agents,
+registration of agents at the platform, and control over access to and use of
+the ACC.  There is only one AMS for each
+agent platform.  The AMS for the
+platform on which an agent is created is called the home agent platform, and is
+responsible for vouching for an agent’s identity.  If the agent platform is in any way considered to be trusted,
+that trust must begin with the AMS. 
+Therefore, it is reasonable to consider that an AMS may possess a public
+key pair and associated certificate that among other things provides the basis
+for inter-platform security from the message transport service. The AMS can
+keep the agent key pairs in secure storage (e.g. hashed) for mapping to user
+identity. The basic capabilities of the platform are described within the
+platform profile.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Users should maintain their own private keys, but during
+disconnected operation, the AMS may require access to this private key in order
+for the user’s agent to sign their agent’s secure transactions. In this case,
+it would be up to the user to trust the AMS, and the AMS’s responsibility to
+protect the private key against unauthorized disclosure.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'><a name="_Toc436810828">5.1.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>The Directory Facilitator (DF)</a></h3>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Several parameters defined in fipa-man-df-agent-descriptions
+may be used to determine the security context of a registered agent.  They include the :interaction-protocols,
+:agent-type, :agent-services, and :ownership parameters.  For example, an agent may wish to use the
+security services of a Certificate Authority. 
+The :agent-services parameter indicates whether Certificate Authority
+services are supported by any agent registered by that DF.  When a search operation is used to discover
+an agent by a particular entity, the :agent-services parameter can be used
+either to constrain the search to an agent which supports Certificate Authority
+services, or to select from the results of a search which was not constrained
+by this parameter.  This facility, of
+course, requires that agents provide the search parameters of interest when
+they register with the DF. The DF should not be used to store sensitive
+information. For example, the DF can store certificates, but should not store
+private keys as all information in the DF is made public.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>This specification extends the set of defined parameters for
+DF registry entries to provide more support for security operations.  The new parameter security-context is
+defined which may contain the following parts:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>:agent-certificate</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>:owner-certificate</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>:security-encapsulation-method</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The :agent-certificate and :owner-certificate parts
+respectively convey one or more  public
+key certificates of an agent and of the agent’s owner.  The :security-encapsulation-method conveys
+the various methods of encapsulation supported directly by the agent.  Multiple certificates apply in situations
+where an agent or an agent’s owner has established public key pairs for
+different policies, functions, or domains. 
+With the addition of the first two parts, the DF essentially becomes a
+default repository for agent certificates. 
+Since public key certificates are signed objects, there is no
+requirement on the DF to protect this information beyond that of any other
+parameter.  These optional parameters,
+if present, are necessary for security encapsulation to occur.  </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Note that there is always one DF for each agent platform,
+referred to as the default DF.  A DF may
+register with other DFs to represent an arbitrary network of
+relationships.  While the DF can be
+considered a form of certificate repository, it is not a replacement for
+repositories that may be established as part of a general, public key
+certificate infrastructure.  The latter,
+for example, would contain certification revocation lists needed to verify that
+a particular certificate has not been revoked before its expiration date.  Both the ACC and AMS can register with a
+DF.  At a minimum, the AMS must register
+with the default DF of the platform.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2 style='margin-left:0in;text-indent:0in'><a name="_Toc436810829">5.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Agent Communication Security</a></h2>
+
+<h3 style='margin-left:0in;text-indent:0in'><a name="_Toc436810830">5.2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Transport Level Protection</a></h3>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Transport level protection relies on the :envelope parameter
+to indicate the security services the transport mechanism will apply to a
+message with regard to transport-level security.  The entire ACL message, including the :envelope parameter, is
+treated as the payload and processed (e.g., encrypted, signed, etc.)
+accordingly.  While the agent requests
+the security services, the responsibility for encapsulating the message lies
+with the internal message transport mechanism. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoBodyText><span style='font-size:10.0pt;font-family:Arial;'>The format of the :envelope parameter
+information is a list of keyword/value/ or keyword/level pairs.  The keyword “security” identifies transport
+level encapsulation.  The keyword is
+followed by one or more of the following values: “confidentiality”, “integrity”,
+“authentication”, and “non-repudiation”. 
+Each of these values can be associated with a level of security (low,
+medium, high), or the agent can allow the APSM to select a level of security
+consistent with the domain’s security policy. The mapping of these values to
+specific transport level security services depends on the particular protocols
+supported by the agent platform.  Table
+5.1 below identifies typical interpretations for common transport protocol
+mechanisms. This list may be expanded to include other security requirements, such
+as payment mechanism. Table 5.2 describes the meanings of low, medium, and high
+levels of security.</span></p>
+
+<p class=MsoBodyText><span style='font-size:10.0pt;font-family:Arial;'>&nbsp;</span></p>
+
+<p class=MsoBodyText><span style='font-size:10.0pt;font-family:Arial;'>The specification allows agents to
+request specific security mechanisms (e.g., DES, DES3, etc.) or the agent may
+optionally choose to use proprietary mechanisms (e.g. encrypt the :content), but
+the agent may not override the security policy of the APSM. </span></p>
+
+<p class=MsoBodyText><span style='font-size:10.0pt;font-family:Arial;'>&nbsp;</span></p>
+
+<p class=MsoBodyText><b>Security Service
+Mappings for the :envelope Parameter</b></p>
+
+<p class=MsoBodyText><b>&nbsp;</b></p>
+
+<p class=MsoBodyText><span style='font-size:10.0pt;font-family:Arial;'>An agent can request that the APSM
+provide one, or more, of the following security services. An agent will
+typically request confidentiality, integrity, and authentication for
+inter-platform communication involving separate security domains, but the agent
+is free to select any combination of the services listed in Table 5.1. Most
+authentication mechanisms include confidentiality and integrity security
+mechanisms. The APSM can, in accordance with the platform security policy,
+provide security services even if the agent has not explicitly requested them. </span></p>
+
+<p class=MsoNormal style='
+page-break-after:avoid;'><b><span style='font-size:12.0pt;'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='
+page-break-after:avoid;'><b><span style='font-size:12.0pt;'>Table 5.1
+Security Services</span></b></p>
+
+<p class=MsoNormal style='
+page-break-after:avoid'><b><span
+style='font-size:12.0pt;'>&nbsp;</span></b></p>
+
+<div align=center>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:.75pt;border-right:.75pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'><b>Security
+  Keyword</b></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'><b>Description</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Confidentiality</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>The message is encrypted for the receiver.  An eavesdropper won’t be able to view or
+  derive the original plain text.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Integrity</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>A one-way hash of the message (i.e., message digest)
+  is calculated and sent along with the message to the receiver.  The recipient is then able to verify
+  whether the message has been tampered with.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Authentication</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>The message is signed on behalf of the sender, the
+  recipient is able to verify the sender’s identity.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Non-repudiation</p>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>The agent requests a level of authentication,
+  integrity, and confidentiality to ensure non-repudiation and receives
+  verifying information.</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<h1>&nbsp;</h1>
+
+<p class=MsoNormal>An agent can request a low, medium, or high level of
+confidentiality and can defer to the platform’s security policy to decide what
+mechanism to use to a ensure low, medium, or high level of confidentiality.
+These confidentiality levels are provided so that the agent is not burdened
+with the responsibility of knowing about and deciding on specific security
+mechanisms, but is only responsible for determining the sensitivity of the data
+which it produces. The meaning of these levels is assumed to change over time,
+and it is up to the APSM to map the security levels to its security policy.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;'>Table 5.2
+Confidentiality Levels</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;'>&nbsp;</span></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div align=center>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:.75pt;border-right:.75pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'><b>Confidentiality
+  Level Request</b></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'><b>Description</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Low</p>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Lowest applicable level of encryption (to yield best
+  performance, e.g. 40-bit, or 56-bit).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Medium</p>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>An intermediate level of confidentiality provided by
+  the platform.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>High</p>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Highest possible level of encryption provided by the
+  platform (i.e. 128-bit).</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<h1><a name="_Toc425295228">&nbsp;</a></h1>
+
+<p class=MsoNormal>Alternatively, an
+agent can request that the APSM provide a specific security mechanism to ensure
+confidentiality. If the APSM cannot satisfy the agent request, the APSM must
+notify the agent that it cannot provide the requested service. Table 5.3 lists
+confidentiality mechanisms that may be requested by the agent from the APSM.
+The agent is free to request any other confidentiality mechanism that may be
+supported by the APSM.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;'>Table 5.3 Confidentiality Mechanisms</span></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div align=center>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:.75pt;border-right:.75pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'><b>Confidentiality Mechanism</b></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'><b>Description</b></p>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>DES-40</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Data
+  Encryption Standard</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>DES-56</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Data
+  Encryption Standard</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>IDEA</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>International
+  Data Encryption Algorithm</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RC2</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RSA Data
+  Security</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RC4</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RSA</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RC5</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RSA</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RC6</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RSA</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Blowfish</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Blowfish</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>CAST</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>CAST</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>SAFER</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>SAFER</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>AES</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Advanced
+  Encryption Standard</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Other or
+  Proprietary</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt;'>&nbsp;</span></b></p>
+
+<p class=MsoNormal>An agent can
+request that the APSM provide a specific security mechanism to ensure the
+integrity of a message. Table 5.4 lists integrity mechanisms that may be
+requested by the agent from the APSM. The agent is free to request any other
+integrity mechanism that may be supported by the APSM.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;'>Table 5.4 Integrity Mechanisms</span></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div align=center>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:.75pt;border-right:.75pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'><b>Integrity Mechanism</b></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'><b>Description</b></p>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Message
+  Authentication Code (MAC)</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>SHA-1</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Secure Hash
+  Algorithm</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>MD2</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RSA Security</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>MD4</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RSA Security</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>MD5</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RSA Security</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RIPEM</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RIPEM-160</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>HMAC</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Keyed
+  Hashing</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Other or
+  Proprietary</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;'>&nbsp;</span></b></p>
+
+<p class=MsoNormal>An agent can
+request that the APSM provide a specific security mechanism to ensure the
+authentication of a message. Table 5.5 lists authentication mechanisms that may
+be requested by the agent from the APSM. The agent is free to request any other
+authentication mechanism that may be supported by the APSM.</p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;'>Table 5.5 Authentication Mechanisms</span></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div align=center>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:1.5pt;border-left:
+  1.5pt;border-bottom:.75pt;border-right:.75pt;border-color:windowtext;
+  border-style:solid;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'><b>Authentication Mechanism</b></p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:solid windowtext 1.5pt;
+  border-left:none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'><b>Description</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Digital
+  Signature Algorithm (DSA)</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>FIPS 186,
+  Part 1 ANSI X9.30</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Diffie-Hellman
+  Key Exchange</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RSA
+  Algorithm</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>RSA Security</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Kerberos</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Normalparagraph style='
+  page-break-after:avoid'><span
+  style='font-family:Arial;'>MIT</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext .75pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>ECDSA</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .75pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Elliptic
+  Curve Digital Signature Algorithm</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext .75pt;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>Other or
+  Proprietary</p>
+  </td>
+  <td width=295 valign=top style='width:221.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='
+  page-break-after:avoid'>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h3 style='margin-left:0in;text-indent:0in'><a
+name="_Toc436810831">5.2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Secure Messaging Examples</a></span></h3>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>An agent may
+request a low, medium, or high level security mechanism. The following example
+shows how the security parameters would fit into the letter construct :</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>(letter</p>
+
+<p class=MsoNormal>:envelope
+(</p>
+
+<p class=MsoNormal>            :destination(</p>
+
+<p class=MsoNormal>                        (:name
+acc@iiop://somewhere.org:50/acc)</p>
+
+<p class=MsoNormal>                        (:address
+iiop://somewhere.org:50/acc))</p>
+
+<p class=MsoNormal>                        :return-address (</p>
+
+<p class=MsoNormal>                                   (:name
+acc@iiop://agentland.com:50/acc)</p>
+
+<p class=MsoNormal>                                   (:address
+iiop://agentland.com:50/acc))</p>
+
+<p class=MsoNormal>                        :confidentiality low</p>
+
+<p class=MsoNormal>                        :integrity high    </p>
+
+<p class=MsoNormal>                                   )</p>
+
+<p class=MsoNormal>:message
+</p>
+
+<p class=MsoNormal style='margin-left:35.4pt;'>(refuse</p>
+
+<p class=MsoNormal>                                   :sender
+acc@iiop://agentland.com:50/acc </p>
+
+<p class=MsoNormal>                                   :receiver
+acc@iiop://somewhere.org:50/acc</p>
+
+<p class=MsoNormal>                                   :ontology
+fipa-agent-management</p>
+
+<p class=MsoNormal style='margin-left:35.4pt;text-indent:35.4pt;'>:language SL1</p>
+
+<p class=MsoNormal>                        :context  fipa-request</p>
+
+<p class=MsoNormal>                        :content</p>
+
+<p class=MsoNormal>                                   .............)</p>
+
+<p class=MsoNormal>)</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Alternatively, an
+agent may specify a specific implementation of a security mechanism. The
+following example shows how an agent's request for a specific implementation of
+a security mechanism would fit into the letter construct:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>(letter</p>
+
+<p class=MsoNormal>:envelope
+(</p>
+
+<p class=MsoNormal>            :destination(</p>
+
+<p class=MsoNormal>                        (:name
+acc@iiop://somewhere.org:50/acc)</p>
+
+<p class=MsoNormal>                        (:address
+iiop://somewhere.org:50/acc))</p>
+
+<p class=MsoNormal>                        :return-address (</p>
+
+<p class=MsoNormal>                                   (:name
+acc@iiop://agentland.com:50/acc)</p>
+
+<p class=MsoNormal>                                   (:address
+iiop://agentland.com:50/acc))</p>
+
+<p class=MsoNormal>                        :authentication ECDSA  </p>
+
+<p class=MsoNormal>                                   )</p>
+
+<p class=MsoNormal>:message
+</p>
+
+<p class=MsoNormal style='margin-left:35.4pt;'>(refuse</p>
+
+<p class=MsoNormal>                                   :sender
+acc@iiop://agentland.com:50/acc </p>
+
+<p class=MsoNormal>                                   :receiver
+acc@iiop://somewhere.org:50/acc</p>
+
+<p class=MsoNormal>                                   :ontology
+fipa-agent-management</p>
+
+<p class=MsoNormal style='margin-left:35.4pt;text-indent:35.4pt;'>:language SL1</p>
+
+<p class=MsoNormal>                        :context  fipa-request</p>
+
+<p class=MsoNormal>                        :content</p>
+
+<p class=MsoNormal>                                   .............)</p>
+
+<p class=MsoNormal>)</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h3 style='margin-left:0in;text-indent:0in'><a
+name="_Toc436810832">5.2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Security Profiling</a></span></h3>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The agent platform
+must be able to convey the security policy it enforces to other agents.
+Security profiling needs to be further studied and defined. Security profiling
+will leverage existing and ongoing work in other standards consortia with which
+FIPA will maintain liaison.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h2 style='margin-left:0in;text-indent:0in'><a
+name="_Toc436810833">5.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Auditing</a> </span></h2>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>In order to maintain accountability, especially in the case of
+repudiation, platform-level auditing is required. This involves the use of an
+automated mechanism to record platform activities in a protected audit log. </span></p>
+
+<h3 style='margin-left:0in;text-indent:0in'><a
+name="_Toc436810834">5.3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Audit Events</a> </span></h3>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>The implementation details of auditing are the design choices of the
+individual agent system developers, but the following minimum requirements
+should be met:</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Audit data should be obtained
+automatically and stored in a protected log(s) which cannot be tampered with.</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>A record of all platform activities
+that could be viewed as potential security threats should be recorded in the
+audit log.</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Audit data should be gathered from
+all the agents which support agent management: the APSM, AMS, ACC and DF.</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>A record of the start-up and
+shut-down of the audit log.</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>A record of any changes in what
+events or parameters are being audited.</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>At least following fields should be part of the audit record format:</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Wingdings;'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Date and time of the action</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Wingdings;'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Type of the action</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Wingdings;'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Subject identity (sender of the
+message)</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Wingdings;'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Object identity (receiver of the
+message)</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Wingdings;'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Success of Failure of event</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Wingdings;'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Reason for failure of event</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>The system should be capable of logging the following APSM events:</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Security Services Requested</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Security Exceptions </span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>The system should be capable of logging the following ACC events:</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Traffic through ACC</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Forwarding of messages – including
+refuse-failure reasons</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>The system should be capable of logging the following AMS events:</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Register/Deregister</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Modify</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Authenticate</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Cloning/Create/terminate</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Suspend/resume</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>The system should be capable of logging the following DF events:</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Register/Deregister</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Security parameters</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Modify (i.e. services)</span></p>
+
+<p class=Normalparagraph style='margin-left:.25in;text-indent:-.25in;'><span
+style='font-family:Symbol;'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:Arial;'>Search</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>&nbsp;</span></p>
+
+<p class=Normalparagraph><span
+style='font-family:Arial;'>The system administrator should be able to select which events need to
+be audited in order to comply with the platform’s security policy. In the case
+where the ACC, AMS, and DF are distributed across several platforms, care must
+be taken to ensure that the sequence of security events can be reconstructed. </span></p>
+
+<h3 style='margin-left:0in;text-indent:0in'><a
+name="_Toc436810835">5.3.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Audit Log Administration</a></span></h3>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The audit logs
+should only be accessed by authorized administrators. Systems administrators
+should exercise due diligence in maintaining and protecting audit logs, as
+legal issues related to the accountability of agents in multi-agent and mobile
+agent platforms are likely to become more important. </p>
+
+<h3 style='margin-left:0in;text-indent:0in'><a
+name="_Toc436810836">5.3.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Audit Log Security</a></span></h3>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The audit log
+itself must be protected from unauthorized access, alteration, and deletion. </p>
+
+<p class=MsoNormal>The system must be
+capable of monitoring the capacity of audit log and notifying the system
+administrator when a threshold is reached. </p>
+
+<h3 style='margin-left:0in;text-indent:0in'><a
+name="_Toc436810837">5.3.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Audit Log Analysis</a> </span></h3>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Audit Log analysis
+is outside the scope of this specification. Audit log analysis can be
+accomplished using vendor tools. </p>
+
+<h3 style='margin-left:0in;text-indent:0in'><a
+name="_Toc436810838">5.3.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Administrator Notification</a></span></h3>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The system should
+be capable of notifying a system administrator of security related audit
+events. For example, an email can be sent to the system administrator if the
+audit log has reached a threshold value of the audit log capacity. </p>
+
+</div>
+
+</body>
+
+</html>

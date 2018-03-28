@@ -1,0 +1,1657 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 10 (filtered)">
+<title>FIPA ACL Message Representation in String Specification</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Helv;
+	panose-1:2 11 6 4 2 2 2 3 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\FF2D\FF33 \660E\671D";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Century Old Style";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Geneva;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Monotype Sorts";}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Helvetica;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-align:justify;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h4
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h5
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h6
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.1in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:8.0pt;
+	font-family:Helvetica;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-3.3pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:red;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+strong
+	{font-family:"Book Antiqua";}
+em
+	{font-family:"Book Antiqua";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.zzCover, li.zzCover, div.zzCover
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.Code
+	{font-family:"Courier New";}
+p.Heading2, li.Heading2, div.Heading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallCode
+	{font-family:"Courier New";}
+span.SmallNormal
+	{font-family:"Book Antiqua";}
+span.SmallStrong
+	{font-family:"Book Antiqua";
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.Abbrevs, li.Abbrevs, div.Abbrevs
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Titre3h3, li.Titre3h3, div.Titre3h3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.source, li.source, div.source
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+p.Normaleparagraph, li.Normaleparagraph, div.Normaleparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.toprocess, li.toprocess, div.toprocess
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:blue;}
+span.CODE0
+	{font-family:"Courier New";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="SK_Preliminary"></a><a
+name="MLS_Field_MERGEFORMAT"></a><a name="MLS_Field_QUOTE"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a><b><span lang=EN-GB
+style='font-size:18.0pt'>&nbsp;</span></b></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><b><span lang=EN-GB style='font-size:18.0pt'>FOUNDATION
+FOR INTELLIGENT PHYSICAL AGENTS</span></b><b><span
+lang=EN-GB style='font-size:18.0pt'><a name="_Ref479045812"></a></span></b></p>
+
+<p class=Standardparagraph><a name="MLS_Field_CHARFORMAT"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><a
+name="_Toc468339237"></a><a name="_Ref461935548"></a><a name="_Ref461935540"></a><a
+name="_Ref461701353"></a><a name="_Ref461701311"><span style='font-size:24.0pt'>FIPA
+ACL Message</span></a><span style='font-size:24.0pt'> Representation<br>
+in String Specification</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+style='font-size:24.0pt'>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  title</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+  lang=EN-GB style='layout-grid-mode:both'>FIPA ACL Message Representation in
+  String Specification</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  number</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>SC00070I</span></p>
+  </td>
+  <td width=145 valign=top style='width:108.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=FR>Document
+  source</span></b></p>
+  </td>
+  <td width=177 valign=top style='width:132.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=FR>FIPA TC Agent
+  Management</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  status</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Standard</span></p>
+  </td>
+  <td width=145 valign=top style='width:108.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Date
+  of this status</span></b></p>
+  </td>
+  <td width=177 valign=top style='width:132.55pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2002/12/03</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Supersedes</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA00024</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Contact</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>fab@fipa.org</span></p>
+  </td>
+ </tr>
+ <tr style='height:3.5pt'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt;height:3.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Change
+  history</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt;height:3.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>See <i>Informative
+  Annex A — ChangeLog</i></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>©
+1996-2002 Foundation for Intelligent Physical Agents <br>
+http://www.fipa.org/<i><br>
+Geneva, Switzerland</i></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='text-align:center'><b><span
+  lang=EN-GB>Notice</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:108.45pt'>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:108.45pt'>
+  <p class=Standardparagraph><span lang=EN-GB>Use of the technologies described
+  in this specification may infringe patents, copyrights or other intellectual
+  property rights of FIPA Members and non-members. Nothing in this
+  specification should be construed as granting permission to use any of the
+  technologies described. Anyone planning to make use of technology covered by
+  the intellectual property rights of others should first obtain permission from
+  the holder(s) of the rights. FIPA strongly encourages anyone implementing any
+  part of this specification to determine first whether part(s) sought to be
+  implemented are covered by the intellectual property of others, and, if so,
+  to obtain appropriate licenses or other permission from the holder(s) of such
+  intellectual property prior to implementation. This specification is subject
+  to change without notice. Neither FIPA nor any of its Members accept any
+  responsibility whatsoever for damages or liability, direct or consequential,
+  which may result from the use of this specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=zzContents><span lang=EN-GB>Foreword</span></p>
+
+<p class=Standardparagraph>The Foundation for Intelligent Physical Agents
+(FIPA) is an international organization that is dedicated to promoting the
+industry of intelligent agents by openly developing specifications supporting
+interoperability among agents and agent-based applications. This occurs through
+open collaboration among its member organizations, which are companies and
+universities that are active in the field of agents. FIPA makes the results of
+its activities available to all interested parties and intends to contribute
+its results to the appropriate formal standards bodies where appropriate. </p>
+
+<p class=Standardparagraph>The members of FIPA are individually and
+collectively committed to open competition in the development of agent-based
+applications, services and equipment. Membership in FIPA is open to any
+corporation and individual firm, partnership, governmental body or
+international organization without restriction. In particular, members are not
+bound to implement or use specific agent-based standards, recommendations and
+FIPA specifications by virtue of their participation in FIPA. </p>
+
+<p class=Standardparagraph>The FIPA specifications are developed through direct
+involvement of the FIPA membership. The status of a specification can be either
+Preliminary, Experimental, Standard, Deprecated or Obsolete.<i> </i>More detail
+about the process of specification may be found in the FIPA <span lang=EN-GB>Document
+Policy [f-out-00000] and the FIPA Specifications Policy [f-out-00003]</span>. A
+complete overview of the FIPA specifications and their current status may be
+found on the FIPA Web site.</p>
+
+<p class=Standardparagraph>FIPA is a non-profit association registered in
+Geneva, Switzerland. As of June 2002, the 56 members of FIPA represented many<i>
+</i>countries worldwide. Further information about FIPA as an organization,
+membership information, FIPA specifications and upcoming meetings may be found on
+the FIPA Web site at http://www.fipa.org/.</p>
+
+<p class=zzContents><span lang=EN-GB>Contents</span></p>
+
+<p class=MsoToc1><a name="_Ref449499969"></a><a
+href="#_Toc26670489"><span lang=EN-GB>1</span><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span><span
+lang=EN-GB>Scope</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26670490"><span lang=EN-GB>2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>String ACL Representation</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670491"><span lang=EN-GB>2.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Component Name</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670492"><span lang=EN-GB>2.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Syntax</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670493"><span lang=EN-GB>2.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Lexical Rules</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670494"><span lang=EN-GB>2.4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Representation of Time</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670495"><span lang=EN-GB>2.5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Notes on the Grammar Rules</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26670496"><span lang=EN-GB>3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>References</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc26670497"><span lang=EN-GB>4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Informative Annex A —
+ChangeLog</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670498"><span lang=EN-GB>4.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>2002/11/01 - version H by
+TC X2S</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc26670499"><span lang=EN-GB>4.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>2002/12/03 - version I by
+FIPA Architecture Board</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoNormal></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=Section2>
+
+<h1><a name="_Toc26670489"></a><a name="_Toc495289272"><span lang=EN-GB>1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Scope</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>This document deals with
+message transportation between inter-operating agents and also forms part of
+the FIPA Agent Management Specification [FIPA00023]. It contains specifications
+for:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Syntactic representation of
+ACL in string form.</span></p>
+
+<p class=MsoNormal><i><span lang=EN-GB style='color:black'>&nbsp;</span></i></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc480605368"></a><a name="_Ref456500026"></a><a
+name="_Ref456499173"></a><a name="_Toc26670490"></a><a name="_Toc495289273"><span
+lang=EN-GB>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>String ACL Representation</span></a></h1>
+
+<p class=MsoNormal><a name="_Toc480609272"><span lang=EN-GB style='color:black'>This
+section defines the message transport syntax for string representation which is
+expressed in standard EBNF format (see <i>Table 1</i>).</span></a></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Grammar rule
+  component</span></b></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Example</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Terminal tokens are
+  enclosed in double quotes</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&quot;(&quot;</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Non-terminals are
+  written as capitalised identifiers</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Expression</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Square brackets
+  denote an optional construct</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>[
+  &quot;,&quot; OptionalArg ]</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Vertical bars denote
+  an alternative between choices</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Integer
+  | Float</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Asterisk denotes zero
+  or more repetitions of the preceding expression</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Digit*</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Plus denotes one or
+  more repetitions of the preceding expression</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Alpha+</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Parentheses are used
+  to group expansions</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>(
+  A | B )*</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=442 valign=top style='width:331.15pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='color:black'>Productions are
+  written with the non-terminal name on the left-hand side, expansion on the
+  right-hand side and terminated by a full stop</span></p>
+  </td>
+  <td width=259 valign=top style='width:194.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>ANonTerminal
+  = &quot;terminal&quot;.</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><a name="_Toc405389472"></a><a name="_Toc389055481"><span
+lang=EN-GB style='color:black'>&nbsp;</span></a></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB
+style='color:black'>Table 1: </span></b><span lang=EN-GB style='color:black'>EBNF
+Rules</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<h2><a name="_Toc26670491"></a><a name="_Toc495289274"><span lang=EN-GB>2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Component Name</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>The name assigned to
+this component is:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>fipa.acl.rep.string.std</span></p>
+
+<p class=MsoNormal><a name="_Toc480605369"></a><a name="_Toc405389471"></a><a
+name="_Ref397500653"><span lang=FR>&nbsp;</span></a></p>
+
+<h2><a name="_Toc26670492"></a><a name="_Toc495289275"><span lang=EN-GB>2.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Syntax</span></a></h2>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>ACLCommunicativeAct     =
+Message.</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'><br>
+Message                 = &quot;(&quot; MessageType</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                             
+MessageParameter* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'><br>
+MessageType             = </span><span lang=EN-GB style='color:black'>See [FIPA00037]</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'><br>
+MessageParameter        = &quot;:sender&quot; </span><span lang=EN-GB
+style='font-family:Courier'>AgentIdentifier</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+&quot;:receiver&quot; AgentIdentifierSet</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+&quot;:content&quot; String</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB style='font-family:Courier'>                        | &quot;:reply-with&quot;
+Expression</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+&quot;:reply-by&quot; DateTime</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+&quot;:in-reply-to&quot; Expression</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+&quot;:reply-to&quot; AgentIdentifierSet</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+&quot;:language&quot; Expression</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+&quot;:encoding&quot; Expression</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+&quot;:ontology&quot; Expression</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+&quot;:protocol&quot; Word</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+&quot;:conversation-id&quot;&nbsp;Expression</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+UserDefinedParameter Expression.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'><br>
+UserDefinedParameter    = Word</span><a href="#_ftn1" name="_ftnref1" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB style='color:black'><span
+class=MsoFootnoteReference><span lang=EN-GB style='font-size:10.0pt;font-family:
+Helvetica;color:black'>[1]</span></span></span></span></a><span lang=EN-GB
+style='font-family:Courier;color:black'>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'><br>
+Expression              = Word</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+String</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                        |
+Number</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                       
+| DateTime</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                        |
+&quot;(&quot; Expression* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>AgentIdentifier         =
+&quot;(&quot; &quot;agent-identifier&quot; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                             
+&quot;:name&quot; word </span></p>
+
+<p class=Normalparagraph style='margin-left:1.5in;text-indent:.5in'><span
+lang=EN-GB style='font-family:Courier'>    [ &quot;:addresses&quot; URLSequence
+]</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                           
+[ &quot;:resolvers&quot; AgentIdentifierSequence ] </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                           
+( UserDefinedParameter Expression )* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal style='margin-left:2.0in;text-indent:.5in'><span lang=EN-GB
+style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>AgentIdentifierSequence =
+&quot;(&quot; &quot;sequence&quot; AgentIdentifier* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>AgentIdentifierSet
+     = &quot;(&quot; &quot;set&quot; AgentIdentifier* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=toprocess><span lang=EN-GB style='font-family:Courier;color:windowtext'>URLSequence             =
+&quot;(&quot; &quot;sequence&quot; URL* &quot;)&quot;.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>DateTime                =
+DateTimeToken.</span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=Normalparagraph><span lang=EN-GB style='font-family:Courier'>URL           
+         = </span><span lang=EN-GB style='font-family:Helvetica'>See [RFC2396]</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<h2><a name="_Toc26670493"></a><a name="_Toc495289276"></a><a
+name="_Toc480605371"><span lang=EN-GB>2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Lexical Rules</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>Some slightly different rules apply for the
+generation of lexical tokens<a href="#_ftn2" name="_ftnref2" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span lang=EN-GB
+style='font-size:10.0pt;font-family:Helvetica'>[2]</span></span></span></a>.
+Lexical tokens use the same notation as above, with the exceptions noted in
+Table 2.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid'>
+  <td width=450 valign=top style='width:337.5pt;border:solid windowtext 1.5pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='page-break-after:avoid'><b><span lang=EN-GB
+  style='color:black'>Lexical rule component</span></b></p>
+  </td>
+  <td width=251 valign=top style='width:187.9pt;border:solid windowtext 1.5pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-GB style='color:black'>Example</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=450 valign=top style='width:337.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='color:black'>Square brackets enclose a character set</span></p>
+  </td>
+  <td width=251 valign=top style='width:187.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>[
+  &quot;a&quot;, &quot;b&quot;, &quot;c&quot; ]</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=450 valign=top style='width:337.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='color:black'>Dash in a character set denotes a range</span></p>
+  </td>
+  <td width=251 valign=top style='width:187.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>[
+  &quot;a” – &quot;z&quot; ]</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=450 valign=top style='width:337.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='color:black'>Tilde denotes the complement of a character set if it is
+  the first character</span></p>
+  </td>
+  <td width=251 valign=top style='width:187.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>[
+  ~ &quot;(&quot;, &quot;)&quot; ]</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=450 valign=top style='width:337.5pt;border-top:none;border-left:
+  solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;border-right:
+  solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+  style='color:black'>Post-fix question-mark operator denotes that the
+  preceding lexical expression is optional (may appear zero or one times)</span></p>
+  </td>
+  <td width=251 valign=top style='width:187.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.5pt;border-right:solid windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>[
+  &quot;0&quot; – &quot;9&quot; ] ? [ &quot;0&quot; – &quot;9&quot; ]</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB
+style='color:black'>Table 2: </span></b><span lang=EN-GB style='color:black'>Lexical
+Rules</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Word                   
+= [~ &quot;\0x00&quot; – &quot;\0x20&quot;, &quot;(&quot;, &quot;)&quot;,
+&quot;#&quot;, &quot;0&quot; – &quot;9&quot;, &quot;-&quot;, &quot;@&quot;]</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                         
+[~ &quot;\0x00&quot; – &quot;\0x20&quot;, &quot;(&quot;, &quot;)&quot;]*.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>String                 
+= StringLiteral | ByteLengthEncodedString.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>StringLiteral          
+= &quot;\&quot;&quot; ([ ~ &quot;\&quot;&quot; ] | &quot;\\\&quot;&quot;)*
+&quot;\&quot;&quot;.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB style='font-family:Courier;layout-grid-mode:both'>ByteLengthEncodedString =
+&quot;#&quot; Digit+ &quot;\&quot;&quot; &lt;byte sequence&gt;.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Number                  =
+Integer | Float.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>URL                     =
+</span><span lang=EN-GB>See [RFC2396]</span><span lang=EN-GB style='font-family:
+Courier;color:black'>     </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'><br>
+DateTimeToken           =  Sign?</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                          
+Year Month Day &quot;T&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                          
+Hour Minute Second MilliSecond </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                          
+( TypeDesignator ? ).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>Year                    =
+Digit Digit Digit Digit.</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Month                   =
+Digit Digit.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Day                     =
+Digit Digit.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>Hour                    =
+Digit Digit.</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>Minute                  =
+Digit Digit.</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>Second                  =
+Digit Digit.</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>MilliSecond             =
+Digit Digit Digit.</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>TypeDesignator          =
+AlphaCharacter.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier;color:black'>AlphaCharacter          = [ &quot;a&quot; – &quot;z&quot;
+] | [ &quot;A&quot; – &quot;Z&quot; ].<br>
+<br>
+Digit                   = [ &quot;0&quot; – &quot;9&quot; ].</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Sign                   
+= [ &quot;+&quot; , &quot;-&quot; ] .</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Integer                 =
+Sign? Digit+.     </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Dot                    
+= [ &quot;.&quot; ].</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>Float                   =
+Sign? FloatMantissa FloatExponent?</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>                       
+| Sign? Digit+ FloatExponent</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>FloatMantissa          
+= D</span><span lang=FR style='font-family:Courier;color:black'>igit+ Dot
+Digit* </span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>                       
+| Digit* Dot Digit+</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>FloatExponent          
+= Exponent Sign? Digit+</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB
+style='font-family:Courier;color:black'>Exponent                = [ &quot;e&quot;,
+&quot;E&quot; ]</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<h2><a name="_Toc26670494"></a><a name="_Toc495289277"></a><a
+name="_Toc480605360"></a><a name="_Ref473967044"><span lang=EN-GB>2.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Representation of Time</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>Time tokens are based on [ISO8601], with
+extension for relative time and millisecond durations. Time expressions may be
+absolute, or relative. Relative times are distinguished by the sign character </span><span
+lang=EN-GB style='font-family:Courier'>+</span><span lang=EN-GB> or </span><span
+lang=EN-GB style='font-family:Courier'>-</span><span lang=EN-GB> appearing as
+the first character in the token. </span><span lang=EN-GB>If no type designator
+is given, the local time zone is then used. The type designator for UTC is the
+character </span><span lang=EN-GB style='font-family:Courier'>Z</span><span
+lang=EN-GB>; UTC is preferred to prevent time zone ambiguities. Note that years
+must be encoded in four digits. As an example, 8:30 am on 15th April, 1996
+local time would be encoded as:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>19960415T083000000</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The same time in UTC would be:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB> </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>19960415T083000000Z</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>while&nbsp;one&nbsp;hour,&nbsp;15&nbsp;minutes&nbsp;and&nbsp;35&nbsp;milliseconds&nbsp;from&nbsp;now&nbsp;would&nbsp;be:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>               <br>
+</span><span lang=EN-GB style='font-family:Courier'>+00000000T011500035</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<h2><a name="_Toc26670495"></a><a name="_Toc495289278"></a><a
+name="_Toc480605372"></a><a name="_Toc405389473"></a><a name="_Toc389055482"><span
+lang=EN-GB>2.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notes on the Grammar Rules</span></a></h2>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>The standard definitions for
+integers and floating point are assumed.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>All keywords are
+case-insensitive.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>A length encoded string is a
+context sensitive lexical token. Its meaning is as follows: the message
+envelope of the token is everything from the leading </span><span lang=EN-GB
+style='font-family:Courier;color:black'>#</span><span lang=EN-GB
+style='color:black'> to the separator </span><span lang=EN-GB style='font-family:
+Courier;color:black'>&quot;</span><span lang=EN-GB style='color:black'> (inclusive).
+Between the markers of the message envelope is a decimal number with at least
+one digit. This digit then determines that <i>exactly</i> that number of 8-bit
+bytes are to be consumed as part of the token, without restriction. It is a
+lexical error for less than that number of bytes to be available.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Note that not all
+implementations of the ACC (see [FIPA00067]) will support the transparent
+transmission of 8-bit characters. It is the responsibility of the agent to
+ensure, by reference to internal API of the ACC, that a given channel is able
+to faithfully transmit the chosen message encoding.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>A well-formed message will
+obey the grammar, and in addition, will have at most one of each of the parameters.
+It is an error to attempt to send a message which is not well formed. Further
+rules on well-formed messages may be stated or implied the operational
+definitions of the values of parameters as these are further developed.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>Strings encoded in
+accordance with [ISO2022] may contain characters which are otherwise not
+permitted in the definition of </span><span class=CODE0><span lang=EN-GB
+style='font-family:Courier;color:black'>Word</span></span><span lang=EN-GB
+style='color:black'>. These characters are ESC (</span><span lang=EN-GB
+style='font-family:Courier;color:black'>0x1B</span><span lang=EN-GB
+style='color:black'>), SO (</span><span lang=EN-GB style='font-family:Courier;
+color:black'>0x0E</span><span lang=EN-GB style='color:black'>) and SI (</span><span
+lang=EN-GB style='font-family:Courier;color:black'>0x0F</span><span lang=EN-GB
+style='color:black'>). This is due to the complexity that would result from
+including the full [ISO2022] grammar in the above EBNF description. Hence,
+despite the basic description above, a word may contain any well-formed
+[ISO2022] encoded character, other (representations of) parentheses, spaces, or
+the </span><span lang=EN-GB style='font-family:Courier;color:black'>#</span><span
+lang=EN-GB style='color:black'> character. Note that parentheses may
+legitimately occur as <i>part</i> of a well formed escape sequence; the
+preceding restriction on characters in a word refers only to the encoded
+characters, not the form of the encoding.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>The format for time tokens
+is defined in Section 2.4.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='color:black'>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='color:black'>The format for an AID is
+defined in </span><span lang=EN-GB>[FIPA00023]<span style='color:black'>.</span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><i><span lang=EN-GB>&nbsp;</span></i></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26670496"></a><a name="_Toc495289279"><span lang=EN-GB>3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>References</span></a></h1>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00023]      </span><span
+lang=EN-GB>FIPA Agent Management Specification<span style='color:black'>. Foundation
+for Intelligent Physical Agents, 2000. </span></span><span lang=EN-GB
+style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00023/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00037]      </span><span
+lang=EN-GB>FIPA Communicative Act Library Specification<span style='color:black'>.
+Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00037/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00067]      </span><span
+lang=EN-GB>FIPA Agent Message Transport Service Specification<span
+style='color:black'>. Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00067/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[FIPA00075]      FIPA Agent Message
+Transport Protocol for IIOP Specification. <span style='color:black'>Foundation
+for Intelligent Physical Agents, 2000.<br>
+</span></span><span lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00075/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[ISO2022]         Information Technology,
+Character Code Structure and Extension Techniques. International Standards
+Organisation, 1994.<br>
+</span><span lang=EN-GB style='font-family:Courier'>http://www.iso.ch/cate/d22747.html</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[ISO8601]         Date Elements and
+Interchange Formats, Information Interchange-Representation of Dates and Times.
+International Standards Organisation, 1998.<br>
+</span><span lang=EN-GB style='font-family:Courier'>http://www.iso.ch/cate/d15903.html</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[RFC2396]         Uniform
+Resource Identifiers: Generic Syntax. Request for Comments, 1998. </span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.ietf.org/rfc/rfc2396.txt</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='font-family:Courier;color:black'>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Courier;color:black'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc26670497"></a><a name="_Toc8718591"></a><a name="_Ref8531939"></a><a
+name="_Toc522504001"><span lang=EN-GB>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Informative Annex A — ChangeLog</span></a></h1>
+
+<h2><a name="_Toc26670498"></a><a name="_Toc8718592"></a><a name="_Ref8531931"><span
+lang=EN-GB>4.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>2002/11/01 - version H by </span></a><span
+lang=EN-GB>TC X2S</span></h2>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><b>Page 3,
+line 134:             Fixed the definition of relative time</b></p>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Page 4,
+line 186:              Added description of definition of relative time</p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'>&nbsp;</p>
+
+<h2><a name="_Toc26670499"></a><a name="_Toc26669208"><span lang=EN-GB>4.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>2002/12/03 - version I by FIPA Architecture
+Board</span></a></h2>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'>Entire
+document:              Promoted to Standard status</p>
+
+<p class=MsoNormal align=left style='text-align:left'>&nbsp;</p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[1]</span></span></span></span></a><span
+lang=EN-GB> User-defined parameters must start with “:</span><span lang=EN-GB
+style='font-family:Courier'>X-</span><span lang=EN-GB>”.</span></p>
+
+</div>
+
+<div id=ftn2>
+
+<p class=MsoNormal><a href="#_ftnref2" name="_ftn2" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB style='font-size:8.0pt'><span
+class=MsoFootnoteReference><span lang=EN-GB style='font-size:8.0pt;font-family:
+Helvetica'>[2]</span></span></span></span></a><span lang=EN-GB> </span><span
+lang=EN-GB style='font-size:8.0pt'>All white space, tabs, carriage returns and
+line feeds between tokens should be skipped by the lexical analyser.</span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

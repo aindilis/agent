@@ -1,0 +1,759 @@
+Computer
+Science
+Based on:
+FIPA. FIPA Communicative Act Library
+Specification. Foundation for Intelligent
+Physical Agents, Document number
+SC00037J, Document source FIPA TC
+Communication. 2002.
+
+Agent Communications
+
+FIPA Performative
+Semantics
+
+Inform
+Summary
+
+The sender informs the receiver that a given proposition is true.
+
+Content
+
+A proposition.
+
+Descriptio
+n
+
+The sender intends that the receiver believe the proposition, the the receiver
+might not.
+
+Formal
+Model
+
+<i, inform (j, φ )>
+FP: Biφ /\
+Bi(Bifjφ \/ Uifjφ)
+RE: Bjφ
+
+Examples
+
+CPSC 662/CPSC 568
+Rob Kremer
+Department of Computer Science
+University of Calgary
+235
+
+2012-10-24
+
+Agent i informs agent j that (it is true that) it is raining today.
+(inform
+:sender (agent-identifier :name i)
+:receiver (set (agent-identifier :name j))
+:content "weather (today, raining)"
+:language Prolog)
+
+2012-10-24
+
+CPSC 662/568: Agent Communications
+
+236
+
+Query-if
+Now that we’ve tried to convince the receiver of
+something, we might wonder if he really believes it
+or not….
+
+Summary
+
+The action of asking another agent whether or not a given proposition is true.
+
+Content
+
+A proposition.
+
+Description
+
+Might get back a refuse.
+
+Formal
+Model
+
+<i, query-if (j, φ)> ≡
+<i, request (j, <j, inform-if (i, φ)>)>
+FP: Bifiφ /\ Uifiφ /\ Bi Ij Done(<j, inform-if (i, φ)>)
+
+<j, inform-if (i, φ)> ≡
+<j, inform (i, φ)>|<j, inform (i,
+
+RE: Done (<j, inform(i, φ)>|<j, inform (i,
+Examples
+
+2012-10-24
+
+CPSC 662/568: Agent Communications
+
+237
+
+φ)>
+
+φ)>)
+
+Agent i asks agent j if j is registered
+with domain server d1.
+
+Agent j replies that it is not.
+
+(query-if
+:sender (agent-identifier :name i)
+:receiver (set(agent-identitfier :name j))
+:content
+"((registered (server d1) (agent j)))"
+:reply-with r09
+…)
+
+(inform
+:sender (agent-identifier :name j)
+:receiver (set (agent-identifier :name i))
+:content
+"((not (registered (server d1) (agent j))))"
+:in-reply-to r09)
+
+2012-10-24
+
+CPSC 662/568: Agent Communications
+
+238
+
+Refuse
+But if the agent doesn’t know about the proposition,
+it can’t do an inform…
+
+Summary
+
+The action of refusing to perform a given action, and explaining the reason for the refusal.
+
+Content
+
+A tuple, consisting of an action expression and a proposition giving the reason for the refusal.
+
+Description
+Formal
+Model
+
+So it refuses.
+
+<i, refuse (j, <i, act>, φ)> ≡
+<i,disconfirm (j,Feasible(<i,act>))>;<i,inform (j,φ /\ Done (<i,act>) /\ Ii Done
+(<i,act>))>
+FP: Bi Feasible (<i, act>) /\ Bi (Bj Feasible (<i, act>) \/ Uj Feasible (<i, act>))
+/\ Bi α /\
+RE: Bj
+Where:
+α = φ /\
+
+Bi (Bifj α \/ Uifj α)
+
+Feasible (<i, act>) ∧ Bj α
+
+Done (<i, act>) /\
+
+Ii Done (<i, act>)
+
+Agent i informs j that action act is not feasible, and further that, because of proposition φ, act
+has not been done and i has no intention to do act.
+Examples
+
+2012-10-24
+
+CPSC 662/568: Agent Communications
+
+239
+
+2012-10-24
+
+Agent j refuses to i reserve a ticket for i,
+since there are insufficient funds in i’s
+account.
+
+(refuse
+:sender (agent-identifier :name j)
+:receiver (set (agent-identifier :name i))
+:content
+"((action (agent-identifier :name j)
+(reserve-ticket LHR MUC 27-sept-97))
+(insufficient-funds ac12345))"
+:language fipa-sl)
+
+CPSC 662/568: Agent Communications
+
+240
+
+Disconfirm
+Summary
+
+The sender informs the receiver that a given proposition is false, where the
+receiver is known to believe, or believe it likely that, the proposition is true.
+
+Content
+
+A proposition.
+
+Descriptio
+n
+Formal
+Model
+
+Like inform but can attempt to change the receiver's attitude.
+
+Examples
+
+Agent i, believing that agent j thinks that a shark is a mammal and attempts to
+change j’s belief.
+(disconfirm
+:sender (agent-identifier :name i)
+:receiver (set (agent-identifier :name j))
+:content "((mammal shark))"
+:language fipa-sl)
+
+…Agree
+
+Request…
+
+<i, disconfirm (j, φ)>
+FP: Bi φ /\ Bi(Ujφ \/ Bjφ)
+RE: Bj
+
+2012-10-24
+
+Request …
+
+φ
+
+…Refuse
+
+CPSC 662/568: Agent Communications
+
+241
+
+…Failure
+…Not
+Understood
+
+2012-10-24
+
+CPSC 662/568: Agent Communications
+
+242
+
+Request
+Summary
+
+The sender requests the receiver to perform some action. One important class
+of uses of the request act is to request the receiver to perform another
+communicative act.
+
+Content
+
+An action expression.
+
+Descriptio
+n
+Formal
+Model
+
+<i, request (j, a )>
+FP: FP (a) [i\j] /\ Bi Agent (j, a) /\
+
+Agree
+Summary
+
+The action of agreeing to perform some action, possibly in the future.
+
+Content
+
+A tuple, consisting of an action expression denoting the action to be done, and a proposition
+giving the conditions of the agreement.
+
+Description
+Formal
+Model
+
+2012-10-24
+
+FP: Bi α /\
+
+Bi (Bifj α \/ Uifj α)
+
+RE: Bj α
+
+Bi Ij Done (a)
+
+RE: Done (a)
+FP(a) [i\j] denotes the part of the FPs of a which are mental attitudes of i.
+Examples
+
+<i, agree (j, <i, act>, φ))> ≡ <i, inform (j, Ii Done (<i, act>, φ))>
+
+Examples
+
+Agent i requests j to open a file.
+(request
+:sender (agent-identifier :name i)
+:receiver (set (agent-identifier :name j))
+:content "open \"db.txt\" for input"
+:language vb)
+
+CPSC 662/568: Agent Communications
+
+Where: α = Ii Done(<i, act>, φ)
+Note that the formal difference between the semantics of agree and the semantics of
+acceptproposal rests on which agent is performing the action.
+(agree
+Agent i requests j to deliver a box to a certain
+:sender (agent-identifier :name j)
+location; j answers that it agrees to the request
+:receiver (set (agent-identifier :name i))
+but it has low priority.
+:content
+(request
+
+:sender (agent-identifier :name i)
+:receiver (set (agent-identifier :name j))
+:content "((action (agent-identifier :name j)
+(deliver box017 (loc 12 19))))"
+:protocol fipa-request
+:language fipa-sl
+:reply-with order567)
+
+243
+
+2012-10-24
+
+The action of telling another agent that an action was attempted but the attempt failed.
+
+Content
+
+A tuple, consisting of an action expression and a proposition giving the reason for the failure.
+
+Description
+Formal
+Model
+
+<i, failure (j, a, φ)> ≡ <i, inform (j, (∃ e) Single (e) /\ Done (e, Feasible (a) /\
+Ii Done (a)) /\ φ /\ Done (a) /\ Ii Done (a))>
+FP: Bi α /\
+
+Examples
+
+244
+
+Not Understood
+The sender of the act (for example, i) informs the receiver (for example, j) that it perceived
+that j performed some action, but that i did not understand what j just did. A particular common
+case is that i tells j that i did not understand the message that j has just sent to i.
+
+Content
+
+A tuple consisting of an action or event, eg: a communicative act, and an explanatory reason.
+
+Formal
+Model
+
+Bi (Bifj α \/ Uifj α)
+
+245
+
+<i, not-understood(j, a, φ)> ≡ <i, inform( j, α) >
+FP: Bi α /\ Bi (Bifj α \/ Uifj α)
+
+ı means “definite description”
+
+RE: Bj α
+
+Done(a) /\ Ii Done(a)
+
+Agent i informs agent j that, in the past, i had the intention to do action a and a was feasible. i
+performed the action of attempting to do a (that is, the action/event e is the attempt to do a),
+but now a has not been done and i no longer has the intention to do a, and φ is true.
+The informal implication is that φ is the reason that the action failed, though this causality is
+not expressed formally in the semantic model.
+Agent j informs i that it has failed to open a file.
+
+CPSC 662/568: Agent Communications
+
+(deliver box017 (loc 12
+(priority order567 low))"
+:in-reply-to order567
+:protocol fipa-request
+:language fipa-sl)
+
+Summary
+
+Where: α = φ /\ (∃x) Bi ((ιe Done (e) /\ Agent (e, j) /\ Bj(Done (e) /\ Agent (e, j) /\ (a = e))) = x)
+Examples
+
+Agent i did not understand a query-if message because it did not recognize the ontology.
+(not-understood
+:sender (agent-identifier :name i)
+:receiver (set (agent-identifier :name j))
+:content "((action (agent-identifier :name j)
+(query-if \n :sender (agent-identifier :name j) \n
+:receiver (set (agent-identifier :name i))
+:content \"<fipa-ccl content expression>\“ \n :ontology www \n
+:language fipa-ccl))
+(unknown (ontology \"www\")))"
+:language fipa-sl)
+
+(failure
+:sender (agent-identifier :name j)
+:receiver (set (agent-identifier :name i))
+:content "((action (agent-identifier :name j) (open \"foo.txt\"))
+(error-message \"No such file: foo.txt\"))"
+:language fipa-sl)
+
+2012-10-24
+
+"((action (agent-
+
+Description
+
+RE: Bj α
+Where: α = (∃e) Single(e) /\ Done(e,Feasible(a) /\ Ii Done(a)) /\ φ /\
+
+19)))
+
+CPSC 662/568: Agent Communications
+
+Failure
+Summary
+
+identifier :name j)
+
+2012-10-24
+
+CPSC 662/568: Agent Communications
+
+246
+
+Cancel
+But what if an agent agrees to do something, then
+discovers it can’t carry it out?
+• Cancel: no longer intends to carry out the action
+• Failure: cancel + the action was partially done
+
+Summary
+
+The action of one agent informing another agent that the first agent no longer has the
+intention that the second agent perform some action.
+
+Content
+
+An action expression denoting the action that is no longer intended.
+
+Description
+
+If the creditor wants to cancel, he should send a request to the debtor to stop the action.
+
+Formal
+Model
+
+<i, cancel (j, a)> ≡ <i, disconfirm (j, Ii Done (a))> // In fact, this doesn’t always capture the intent…
+FP: Ii Done (a) /\ Bi (Bj Ii Done (a) \/ Uj Ii Done (a))
+RE: Bj
+
+Ii Done (a)
+
+cancel applies to any form of request action. Suppose an agent i has requested an agent j to
+perform some action a, possibly if some condition holds. This request has the effect of i
+informing j that i has an intention that j perform the action a. When i comes to drop its
+intention, it can inform j that it no longer has this intention with a disconfirm.
+Examples
+
+Agent j asks i to cancel a previous requestwhenever act by quoting the action.
+(cancel
+:sender (agent-identifier :name j)
+:receiver (set(agent-identifier :name i))
+:content
+"((action (agent-identifier :name j)
+(request-whenever
+:sender (agent-identifier :name j)
+:receiver (set(agent-identifier :name i))
+
+2012-10-24
+
+CPSC 662/568: Agent Communications
+
+247
+
+2012-10-24
+
+:content
+\"((action (agent-identifier :name i)
+(inform-ref
+:sender (agent-identifier :name i)
+:receiver (set
+(agent-identifier :name j))
+:content
+\"((iota ?x (=(price widget) ?x))\")
+(> (price widget) 50))"
+…)))"
+:langage fipa-sl …)
+
+CPSC 662/568: Agent Communications
+
+248
+
+Failure
+Summary
+
+The action of telling another agent that an action was attempted but the attempt failed.
+
+Content
+
+A tuple, consisting of an action expression and a proposition giving the reason for the failure.
+
+Description
+Formal
+Model
+
+<i, failure (j, a, φ)> ≡
+<i, inform (j,(∃e)Single(e) /\ Done(e,Feasible(a) /\ Ii Done(a)) /\ φ /\
+FP: Bi α /\
+
+Done(a) /\
+
+Ii Done(a))>
+
+Done(a) /\
+
+Ii Done(a)
+
+Bi (Bifj α \/ Uifj α)
+
+RE: Bj α
+Where: α = (∃e)Single(e) /\ Done(e,Feasible(a) /\ Ii Done(a)) /\ φ /\
+
+Agent i informs agent j that, in the past, i had the intention to do action a and a was feasible. i
+performed the action of attempting to do a (that is, the action/event e is the attempt to do a),
+but now a has not been done and i no longer has the intention to do a, and φ is true.
+The informal implication is that φ is the reason that the action failed, though this causality is
+not expressed formally in the semantic model.
+Examples
+
+But what if the agent wants to do something for
+another agent? (As opposed to request)
+• Propose
+
+Agent j informs i that it has failed to open a file.
+(failure
+:sender (agent-identifier :name j)
+:receiver (set (agent-identifier :name i))
+:content "((action (agent-identifier :name j) (open \"foo.txt\"))
+(error-message \"No such file: foo.txt\"))"
+:language fipa-sl)
+
+2012-10-24
+
+CPSC 662/568: Agent Communications
+
+249
+
+2012-10-24
+
+CPSC 662/568: Agent Communications
+
+Propose
+
+250
+
+Accept Proposal
+
+Summary
+
+The action of submitting a proposal to perform a certain action, given certain preconditions.
+
+Summary
+
+The action of accepting a previously submitted proposal to perform an action.
+
+Content
+
+A tuple containing an action description, representing the action the sender is proposing to
+perform, and a proposition representing preconditions on the performance of the action.
+
+Content
+
+A tuple consisting of an action expression denoting the action to be done, and a proposition
+giving the conditions of the agreement.
+
+Description
+Formal
+Model
+
+Description
+<i, propose (j, <i, act>, φ)> ≡ <i, inform (j, Ij Done (<i, act>, φ) → Ii Done (<i, act>, φ))>
+FP: Bi α /\
+
+Formal
+Model
+
+Bi (Bifj α \/ Uifj α)
+
+RE: Bj α
+
+Examples
+
+Where: α = Ij Done (<i, act>, φ) → Ii Done (<i, act>, φ)
+Agent i informs j that, once j informs i that j has adopted the intention for i to perform action
+act, and the preconditions for i performing act have been established, i will adopt the intention
+to perform the communicative act.
+(propose
+Agent j proposes to i to sell
+:sender (agent-identifier :name j)
+50 boxes of plums for $5 (this
+:receiver (set (agent-identifier :name i))
+example continues the
+example of cfp).
+:content "((action j (sell plum 50))
+
+CPSC 662/568: Agent Communications
+
+251
+
+FP: Bi α /\
+
+Bi (Bifj α \/ Uifj α)
+
+RE: Bj α
+Examples
+
+(= (any ?x (and (= (price plum) ?x)
+(< ?x 10))) 5)"
+:ontology fruit-market
+:in-reply-to proposal2
+:language fipa-sl)
+
+2012-10-24
+
+<i, accept-proposal (j, <j, act>, φ))> ≡ <i, inform (j, Ii Done (<j, act>, φ))>
+
+2012-10-24
+
+Where: α = Ii Done (<j, act>, φ)
+Agent i informs j that it accepts an offer from j to stream a given multimedia title to channel 19
+when the customer is ready. Agent i will inform j of this fact when appropriate.
+(accept-proposal
+:sender (agent-identifier :name i)
+:receiver (set (agent-identifier :name j))
+:in-reply-to bid089
+:content "((action (agent-identifier :name j)
+(stream-content movie1234 19))
+(B (agent-identifier :name j) (ready customer78)))"
+:language fipa-sl)
+CPSC 662/568: Agent Communications
+
+252
+
+Others
+
+Reject Proposal
+•
+
+Summary
+
+The action of rejecting a proposal to perform some action during a negotiation.
+
+Content
+
+A tuple consisting of an action description and a proposition which formed the original
+proposal being rejected, and a further proposition which denotes the reason for the rejection.
+
+•
+
+Description
+Formal
+Model
+
+<i, reject-proposal (j, <j, act>, φ, ψ)> ≡ <i, inform (j,
+FP : Bi α /\
+
+Ii Done (<j, act>, φ) /\ ψ)>
+
+•
+
+Bi (Bifj α \/ Uifj α)
+
+RE : Bj α
+Where: α = Ii Done(<j, act>, φ) /\ ψ
+Agent i informs j that, because of proposition ψ, i does not have the intention for j to perform
+action act with precondition φ.
+Examples
+
+2012-10-24
+
+Agent i informs j that it rejects an offer from j to sell.
+(reject-proposal
+:sender (agent-identifier :name i)
+:receiver (set (agent-identifier :name j))
+:content "((action (agent-identifier :name j)(sell plum 50))
+(cost 200)(price-too-high 50))"
+:in-reply-to proposal13)
+
+CPSC 662/568: Agent Communications
+
+•
+•
+
+•
+
+253
+
+Confirm: The sender informs the receiver that a given proposition is
+true, where the receiver is known to be uncertain about the proposition.
+(see also disconfirm)
+Inform If: A macro action for the agent of the action to inform the
+recipient whether or not a proposition is true. (see also inform)
+Inform Ref: A macro action for sender to inform the receiver the object
+which corresponds to a descriptor, for example, a name. (see inform)
+Query Ref: The action of asking another agent for the object referred
+to by a referential expression.
+Propagate: The sender intends that the receiver treat the embedded
+message as sent directly to the receiver, and wants the receiver to
+identify the agents denoted by the given descriptor and send the
+received propagate message to them.
+Proxy: The sender wants the receiver to select target agents denoted
+by a given description and to send an embedded message to them.
+
+2012-10-24
+
+CPSC 662/568: Agent Communications
+
+254
+
+2012-10-24
+
+CPSC 662/568: Agent Communications
+
+256
+
+Others
+• Request When: The sender wants the receiver to perform
+some action when some given proposition becomes true.
+(see also request)
+• Request Whenever: The sender wants the receiver to
+perform some action as soon as some proposition
+becomes true and thereafter each time the proposition
+becomes true again. (see also request)
+• Subscribe: The act of requesting a persistent intention to
+notify the sender of the value of a reference, and to notify
+again whenever the object identified by the reference
+changes. (see also request)
+• Call for Proposal:The action of calling for proposals to
+perform a given action. (CfP protocol)
+2012-10-24
+
+CPSC 662/568: Agent Communications
+
+255
+
+

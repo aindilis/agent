@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>FIPA Performatives</title>
+<meta name="AUTHOR" content="Jose M Vidal"></meta>
+<meta name="GENERATOR" content="xslides.el, written by J.M. Vidal"></meta>
+<link rel="next" href="inform.xml" title="Inform and Request"/>
+<link rel="previous" href="structure.xml"  title="Message Structure"/>
+<link rel="author" href="../../index.html" title="Jose M Vidal"/>
+<link rel="parent" href="index.xml" title="Index"/>
+<link rel="top" href="../index.html" title="Presentation List"/>
+
+<link rel="stylesheet" type="text/css" href="../xslides-medwhite.css" title="White" media="all" />
+ 	    <link rel="alternate stylesheet" type="text/css" href="../xslides-medblue.css" title="Blue" media="all" />
+ 	    <link rel="alternate stylesheet" type="text/css" href="../xslides-usc.css" title="USCTheme" media="all" />
+<script type="text/javascript" src="../scripts/stylehelper.js"></script>
+</head>
+<body>
+<div class="navbar">
+<p>
+<a onclick="javascript:this.href=getURL('structure.xml');return true;" rel="prev" href="structure.xml" accesskey="P" title="Message Structure">&larr;</a>
+<a rel="index" href="index.xml" onclick="javascript:this.href=getURL('index.xml');return true;" accesskey="I" title="Index Page">^</a>
+<a rel="next" href="inform.xml" onclick="javascript:this.href=getURL('inform.xml');return true;" accesskey="N" title="Inform and Request">&rarr;</a>
+</p>
+</div>
+<div class="talktitle"><p>Agent Communication</p></div>
+<h1 class="slide">FIPA Performatives</h1>
+<div class="slidebody">
+      <ul>
+	<li>They are listed in the  <a href="../../library/XC00037H.pdf">FIPA Communicative Act Library
+	    Specification</a>.</li>
+	
+	<li><code>accept-proposal</code>- The action of accepting a previously submitted <code>propose</code> to perform an action.</li>
+	
+	<li><code>agree</code>- The action of agreeing to perform a <code>request</code>d action made by another agent. Agent will carry it out.</li>
+
+	<li><code>cancel</code>- Agent wants to cancel a previous <code>request</code>.</li>
+
+	<li><code>cfp</code>- Agent issues a call for proposals. It contains the actions to be carried out and any other terms of the agreement.</li>
+
+	<li><code>confirm</code>- The sender confirms to the receiver the truth of the content. The sender initially believed that the receiver was unsure about it.</li>
+
+	<li><code>disconfirm</code>- The sender confirms to the receiver the falsity of the content.</li>
+
+	<li><code>failure</code>- Tell the other agent that a previously <code>request</code>ed action failed.</li>
+
+	<li><code>inform</code>- Tell another agent something. The sender must believe in the truth of the statement. <em>Most used performative</em>.</li>
+
+	<li><code>inform-if</code>- Used as content of <code>request</code> to ask another agent to tell us is a statement is true or false.</li>
+
+	<li><code>inform-ref</code>- Like <code>inform-if</code> but asks for the value of the expression.</li>
+
+	<li><code>not-understood</code>- Sent when the agent did not understand the message.</li>
+
+	<li><code>propagate</code>- Asks another agent so forward this same <code>propagate</code> message to others.</li>
+
+	<li><code>propose</code>- Used as a response to a <code>cfp</code>. Agent proposes a deal.</li>
+
+	<li><code>proxy</code>- The sender wants the receiver to select target agents denoted by a given description and to send an embedded message to them.</li>
+
+	<li><code>query-if</code>- The action of asking another agent whether or not a given proposition is true.</li>
+
+	<li><code>query-ref</code>- The action of asking another agent for the object referred to by an referential expression.</li>
+
+	<li><code>refuse</code>- The action of refusing to perform a given action, and explaining the reason for the refusal.</li>
+
+	<li><code>reject-proposal</code>- The action of rejecting a proposal to perform some action during a negotiation.</li>
+
+	<li><code>request</code>- The sender requests the receiver to perform some action. Usually to request the receiver to perform another communicative act.</li>
+
+	<li><code>request-when</code>- The sender wants the receiver to perform some action when some given proposition becomes true.</li>
+
+	<li><code>request-whenever</code>- The sender wants the receiver to perform some action as soon as some proposition becomes true and thereafter each time the proposition becomes true again.</li>
+
+	<li><code>subscribe</code>- The act of requesting a persistent intention to notify the sender of the value of a reference, and to notify again whenever the object identified by the reference changes.</li>
+
+      </ul>
+    </div><hr class="bottom"/>
+<p class="author"><a href="../../index.html">Jos&eacute; M. Vidal</a>
+<a class="remote" href=" http://validator.w3.org/check?uri=http://jmvidal.cse.sc.edu/talks/agentcommunication/performatives.xml">.</a></p>
+<p class="pagenumber">12 of 24</p>
+</body>
+</html>

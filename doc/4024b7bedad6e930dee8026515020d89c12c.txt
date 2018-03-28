@@ -1,0 +1,854 @@
+Performatives in a Rationally Based Speech Act
+Theory
+Philip R. Cohen
+Articial Intelligence Center
+and
+Center for the Study of Language and Information
+SRI International
+333 Ravenswood Ave.
+Menlo Park, CA 94025
+and
+Hector J. Levesquey
+Department of Computer Science
+University of Toronto
+
+Abstract
+
+A crucially important adequacy test of any theory of speech acts is its ability to
+handle performatives. This paper provides a theory of performatives as a test case for
+our rationally based theory of illocutionary acts. We show why \I request you. . ." is a
+request, and \I lie to you that p" is self-defeating. The analysis supports and extends
+earlier work of theorists such as Bach and Harnish [1] and takes issue with recent claims
+by Searle [10] that such performative-as-declarative analyses are doomed to failure.
+
+1 Introduction
+There is something special about performative sentences, sentences such as \I promise to
+return": uttering them makes them true. How and when is this possible? Not all verbs
+can be uttered in the rst-person present tense and thereby make the sentence true. In
+general, the successful verbs seem to correspond to those naming illocutionary acts, but not
+ This paper was made possible by a contract from ATR International to SRI International, by a gift from
+the Systems Development Foundation, and by a grant from the Natural Sciences and Engineering Research
+Council of Canada. The views and conclusions contained in this document are those of the authors and should
+not be interpreted as representative of the ocial policies, either expressed or implied, of ATR International,
+the Systems Development Foundation, or the Canadian government. This paper will appear in the Proceedings
+of the 28th Annual Meeting of the Association for Computational Linguistics, Pittsburgh, Pennsylvania, June,
+1990.
+y Fellow of the Canadian Institute for Advanced Research.
+
+1
+
+to perlocutionary ones such as \frighten." But, even some illocutionary verbs cannot be used
+performatively: e.g., \I lie to you that I didn't steal your watch" is self-defeating [12]. So,
+which verbs can be use performatively, and in Searle's words [10], \how do performatives
+work?"
+Any theory of illocutionary acts needs to provide a solution to questions such as these. But,
+such questions are not merely of theoretical interest. Natural language database questionanswering systems have been known to receive performative utterances [14], dialogue systems
+that recognize illocutionary acts (e.g., [6]) will need to infer the correct illocutionary force
+to function properly, dialogue translation systems [5] will have to cope with markers of illocutionary force that function performatively (e.g., sentence nal particles in Japanese), and
+proposals for \agent-oriented programming languages" [7, 13], as well as Winograd and Flores' [15] Coordinator system, are based on performative communication. For all these
+systems, it is important to understand the semantics and pragmatics of such communicative
+acts, especially their intended eects. To do so, one needs a full theory of illocutionary acts,
+and a formal theory that predicts how utterances can be made true by uttering them.
+The currently accepted theory of performatives is that they are in fact assertions, hence
+true or false, and additionally constitute the performance of the named illocutionary act, in the
+same way as an indirect reading of an illocutionary act is obtained from the direct illocutionary
+act. That is, the named illocutionary act is derived from the assertion as an indirect speech
+act. The most compelling defense of this performative-as-assertion analysis that we are aware
+is that of Bach and Harnish [1], who address many of the linguistic phenomena discussed by
+Sadock [9], but who, we believe, have misanalyzed indirect speech acts. However, in a recent
+paper, Searle [10] forcefully criticizes the performative-as-assertion approach on the following
+grounds:
+ Assertions commit the speaker to the truth of what is asserted
+ Performative statements are self-referential
+ \An essential feature of any illocutionary act is the intention to perform that act"
+Searle claims that accounts based on self-referential assertions are \doomed to failure" because
+one cannot show that being committed to having the intention to be performing the named
+illocutionary act entails that one in fact has that intention. Moreover, he questions that one
+should derive the named illocutionary act from an assertion, rather than vice-versa. However,
+Searle has imparted into Bach and Harnish's theory his notion of assertions as commitments
+to the truth without providing a precise analysis of commitment. What may be doomed to
+failure is any attempt to base an analysis of performatives on such a theory of assertions.
+This paper provides a formal analysis of performatives that treats them as declarative
+utterances, not initially as assertions, does not succumb to Searle's criticisms, and does not
+require an entirely new class of illocutionary acts (the \declarations") as Searle and Vanderveken [12] have proposed. The analysis is oered as another adequacy criterion for our
+theory of illocutionary acts. That theory, more fully explicated in [3], is based on an analysis of the individual rational balance agents maintain among their beliefs, goals, intentions,
+commitments, and actions [2].
+2
+
+As desiderata for the theory of performatives, we demonstrate that the analysis meets two
+properties:
+ A sincere utterance of \I request you to open the door" is both a request and an
+assertion, yet neither illocutionary act characterization is derived from the other.
+ \I lie that the door is open" is self-defeating.
+Briey, the ability to capture performatives is met almost entirely because such utterances are treated as indicative mood utterances, and because illocutionary acts are dened
+as attempts. Since attempts depend on the speaker's beliefs, goals, and intentions, and these
+mental states are introspectable in our theory, if a speaker sincerely says, for example, \I
+request you to open the door," he must believe he did the act with the requisite beliefs, goals,
+and intentions. Hence, the utterance is a request.
+To meet the desiderata we need rst to present, albeit briey, the theory of rational
+interaction, the treatment of declarative mood utterances, and then the illocutionary act
+denitions for requesting and asserting. Finally, we combine the various analyses to analyze
+performatives.
+
+2 Abbreviated theory of rational action
+Below, we give an abbreviated description of the theory of rational action upon which we
+erect a theory of intention. The theory is cast in a modal logic of belief, goal, action, and
+time. Further details of this logic can be found in [2].
+
+2.1 Syntax
+
+The language we use has the usual connectives of a rst-order language with equality, as well
+as operators for the propositional attitudes and for talking about sequences of events: (BEL
+x p) and (GOAL x p) say that p follows from x's beliefs or goals (a.k.a choices) respectively;
+(AGT x e) says that x is the only agent for the sequence of events e; e1 e2 says that e1 is an
+initial subsequence of e2 ; and nally, (HAPPENS a) and (DONE a) say that a sequence of events
+describable by an action expression a will happen next or has just happened, respectively.
+Versions of HAPPENS and DONE specifying the agent (x) are also dened.
+An action expression here is built from variables ranging over sequences of events using the
+constructs of dynamic logic [4]: a;b is action composition; ajb is nondeterministic choice; ajjb
+is concurrent occurrence of a and b; p? is a test action; and nally, a is repetition. The usual
+programming constructs such as IF/THEN actions and WHILE loops, can easily be formed from
+these. Because test actions occur frequently in our analysis, yet create considerable confusion,
+read p?;a as \action a occurring when p holds," and for a;p?, read \action a occurs after which
+p holds." We use e as a variable ranging over sequences of events, and a and b for action
+expressions.
+We adopt the following abbreviations and domain predicates.
+3
+
+(BEFORE a p) def
+= (DONE p?;a)1
+(AFTER a p) def
+= (HAPPENS a;p?)
+
+3 def
+= 9e (HAPPENS e;p?).
+p
+
+(LATER p) def
+= :p ^ 3p.
+2p def
+= :3:p.
+
+(PRIOR p q) def
+= 8c (HAPPENS c;q?)  9a (a  c) ^ (HAPPENS a;p?).
+
+The proposition p will become true no later than q.
+(KNOW x p) def
+= p ^ (BEL x p).
+(IMPERATIVE s) means that sentence s is an imperative.
+(DECLARATIVE s) means that sentence s, a string of words, is a declarative.
+(MAIN-VERB s v), (TENSE s tense), (COMPLEMENT s s'), (D-OBJECT s np), (SUBJECT
+s np), are all syntactic predicates intended to have the obvious meanings.2
+(TRUE s e) means that sentence s is true with respect to some event sequence e
+(which we will say has just been done.)
+(REFERS np x e) means that noun phrase np refers to thing x with respect to event
+e.
+(FULFILL-CONDS s e e') means that event e fullls the satisfaction conditions, relative to event e', that are imposed by sentence s.3 For example, if s is \wash the
+oor," e would be a oor-washing event.
+
+2.2 Assumptions
+
+The model we are developing embodies various assumptions constraining beliefs and choices
+(goals). First, BEL has a \weak S5" semantics, and GOAL has a \system K" semantics.4
+Among the remaining assumptions, the following will be used in this paper.5
+Beliefs imply choice: j= (BEL x p)  (GOAL x p).
+This means that agents choose amongst worlds that are compatible with their beliefs.
+Goals are known: j=(GOAL x p)  (BEL x (GOAL x p)).
+Memory: j= (DONE x (BEL x p)?;e)  (BEL x (DONE x (BEL x p)?;e)).
+That is, agents remember what their beliefs were.
+This diers from the BEFORE relation described in [3], which is here labelled PRIOR.
+Feel free to substitute your favorite syntactic predicates.
+3
+TRUE REFERS, and FULFILL-CONDS are just placeholders for semantic theories of truth, reference, and
+the meanings of imperatives, respectively. Their last event arguments would be used only in the interpretation
+of indexicals.
+4
+See other work of ours [2] for a full model theory.
+5
+In other words, we only deal with semantic structures where these propositions come out true.
+1
+2
+
+4
+
+3 Individual Commitments and Intentions
+To capture one grade of commitment that an agent might have toward his goals, we dene
+a persistent goal, P-GOAL, to be one that the agent will not give up until he thinks certain
+conditions are satised. Specically, we have
+
+Denition 1 (P-GOAL x p q) def
+=
+(1) (BEL x :p) ^
+(2) (GOAL x (LATER p)) ^
+(3) [KNOW x
+
+(PRIOR [(BEL x p)_(BEL x 2:p)_(BEL x :q)]
+:[GOAL x (LATER p)])].
+
+That is, the agent x believes p is currently false, chooses that it be true later, and knows that
+before abandoning that choice, he must either believe it is true, believe it never will be true,
+or believe q, an escape clause (used to model subgoals, reasons, etc.) is false.
+Intention is a species of persistent goal. We analyze two kinds of intentions, those to do
+actions and those to achieve propositions. Accordingly, we dene INTEND1 and INTEND2 to
+take action expressions and propositions as arguments, respectively.
+Denition 2 Intention:
+(INTEND1 x a q) def
+= (P-GOAL x [DONE x (BEL x (HAPPENS a))?;a] q).
+def
+(INTEND2 x p q) = (P-GOAL x 9e[HAPPENS x
+(BEL x 9e' (HAPPENS x e';p?))?;e;p?] q)
+
+Intending to do an action a or achieve a proposition p is a special kind of commitment (i.e.,
+persistent goal) to having done the action a or having achieved p.6 However, it is not a simple
+commitment to having done a or e;p? for that would allow the agent to be committed to doing
+something accidentally or unknowingly. Instead, we require that the agent be committed to
+arriving at a state in which he believes he is about to do the intended action next.
+This completes a brief discussion of the foundational theory of intention and commitment.
+Next, we proceed to dene the more specic concepts needed for analyzing communicative
+action.
+
+4 Utterance Events
+We begin the analysis of utterance events by adopting a Gricean correlation of an utterance's
+features (e.g., syntactic mood or sentence-nal particles in Japanese) with the speaker's mental state, termed a \core attitude" in [3, 8]. Very roughly, a declarative utterance s will be
+correlated with the speaker's believing the uttered sentence is true, and an imperative utterance will be correlated with the speaker's wanting the addressee to do some action that
+fullls the conditions imposed by the sentence. Let us notate these correlations as:
+6
+
+For simplicity, we omit here one condition from the denition of INTEND2 in [2].
+
+5
+
+DECLARATIVE ) (BEL x (TRUE s e))
+IMPERATIVE ) (GOAL x 39e' (DONE y e') ^ (FULFILL-CONDS s e' e)
+
+We formalize this notation below.
+Someone who thinks he is observing an utterance event will come to believe the speaker
+is in the correlated mental state, unless he has other beliefs to the contrary. For example,
+if the observer thinks the speaker is lying, he believes that the speaker does not believe the
+uttered sentence is true. But, because he may think the speaker takes himself to be especially
+convincing, the observer may still believe that the speaker thinks the observer is deceived.
+Hence, he would believe the speaker thinks that he thinks the speaker believes p.
+This type of reasoning can continue to further levels. In general, if an utterance is produced
+when there are no countervailing observer beliefs at a certain level of nesting, then the result
+will be, at the given level of nesting, that the speaker is taken to be in the correlated mental
+state [8]. To be able to state such conditions, we need to be able to refer easily to what a
+person x believes about what y believes about what x believes etc., to arbitrary depths. To
+do so, we use the notion of ABEL.
+
+Denition 3 (ABEL n x y p) def
+= |(BEL x (BEL y ({zBEL x . . .(BEL x} p )| .{z. .)}
+n
+
+n
+
+That is, ABEL characterizes the nth alternating belief between x and y that p, built up \from
+outside in," i.e, starting with x's belief that p. On this basis, one can dene unilateral mutual
+belief | what one agent believes is mutually believed | as follows.
+
+Denition 4 (BMB x y p) def
+= 8n(ABEL n x y p)
+In other words, (BMB x y p) is the innite conjunction (BEL x p) ^ (BEL x (BEL y p)) ^ . . .
+Finally, we dene mutual belief and mutual knowledge as follows.
+
+Denition 5 (MB x y p) def
+= (BMB x y p) ^ (BMB y x p).
+(MK x y p) def
+= p ^ (MB x y p).
+
+Utterance events can produce eects at any (or no) level of alternating belief. For example,
+the speaker may not be trying to communicate anything to an intended observer. Illocutionary
+acts will be dened to require that the speaker intend to produce BMBs, that is, beliefs at
+all levels. In what follows, it is important to keep in mind the distinction between utterance
+events and full-blooded communicative acts.
+
+4.1 Notation for Describing Utterance Events
+
+We now provide a formal notation for this correlation of utterance form and the speaker's
+mental state as a kind of default axiom (cf. [8]). First, we specify who is speaking (spkr),
+who is observing (obs, which includes the speaker and addressee, but also others), who is
+6
+
+being addressed (addr), and what kind of sentence (s) has been spoken (indicated by ). We
+shall assume that everyone knows that a given utterance is of a given syntactic type (e.g.,
+declarative), that speakers and addressees are observers, and that observers are known by all
+to be observing.7
+
+Denition 6  )  def
+=
+8 spkr, obs, addr, e, s, n
+
+(KNOW obs (DONE spkr e) ^ (UTTER spkr addr s e) ^ ( s)) ^
+(ABEL n obs spkr
+(BEFORE e
+(GOAL spkr
+[AFTER e
+(KNOW addr (BEFORE e ))]) )) 
+(ABEL n obs spkr
+(BEFORE e
+ ^ (GOAL spkr
+[AFTER e
+(KNOW addr (BEFORE e ))]) ))
+
+That is,  )  is an abbreviation for a quantied implication roughly to the eect that
+if an observer obs knows that e was just done, where e was an uttering to addressee addr of a
+sentence s in syntactic mood , and obs does not believe that e was done when the speaker
+did not want the addressee to come to know that the core speaker-attitude  associated with
+utterances of that type held, then obs believes that the speaker in fact wanted the addressee
+to know that , and so he, the observer, believes that  held just prior to the utterance. The
+notation states that at each level of alternating belief for which the antecedent holds, so does
+the consequent. The symbol `)' can now be understood as a textual-replacement \macro"
+operator.
+Since these correlations are of the form 8nP(n)  Q(n), they imply 8nP(n)  8nQ(n). As
+we quantify over the positive integers indicating levels of alternative belief, we can derive
+the conclusion that under certain circumstances, addr thinks it is mutually believed (in our
+notation, BMB'ed) that the speaker spkr wants addr to know  was true.
+Notice that right after the utterance, we are concerned with what mental state the observer
+thinks the speaker chose to bring about in the observer with that utterance. That is, the
+condition on utterance events involves the speaker's wanting to get the observer to know
+something, Without this temporal dimension, our performative analysis would fail. The
+analysis of performatives will say that after having uttered such a sentence, or while uttering
+it, the speaker believes he has just done or is doing the named illocutionary act. Typically,
+prior to uttering a performative, the speaker has not just performed that speech act, and so
+he would believe his having just done so is false. So, if the condition on utterance events in
+Domain Axiom 1A involved only what the speaker believed or wanted to be true prior to the
+7
+
+The case of unseen observers is straightforward, but omitted here.
+
+7
+
+utterance, rather than after, all performatives would fail to achieve the observer's coming to
+believe anything.
+We can now state the correlation between utterance form and a speaker's mental state as
+a domain axiom.
+Domain Axiom 1 Declaratives and Imperatives:
+A. j=DECLARATIVE ) (BEL spkr (TRUE s e))
+B. j= IMPERATIVE ) (GOAL x 39e'(DONE y e') ^ (FULFILL-CONDS s e' e)
+Below, we present our denitions of illocutionary acts. Further justication can be found in
+[3].
+
+5 Illocutionary Acts as Attempts
+Searle [11] points out that an essential condition for requesting is that the speaker be attempting to get the addressee to perform the requested action. We take this observation one step
+further and dene all illocutionary acts as attempts, hence dened in terms of the speaker's
+mental states. Attempts involve both types of goal states, GOAL (merely chosen) and INTEND
+(chosen with commitment), as noted below.
+
+Denition 7 fATTEMPT x e p q t1g def
+=
+
+t1 ?;[(BEL x p ^ q) ^
+(INTEND1 x t1 ?;e;p? (GOAL x 3q)) ^
+(GOAL x 3q)]?; e
+
+That is, an attempt to achieve q via p is a complex action expression in which x is the agent
+of event e at time t1, and prior to e the agent believes p and q are both false, chooses that q
+should eventually be true, and intends, relative to that choice, that e should produce p. So,
+q represents some ultimate goal that may or may not be achieved by the attempt, while p
+represents what it takes to make an honest eort.
+
+5.1 Denitions of Request and Assert
+
+To characterize a request or, for that matter, any illocutionary action, we must decide on the
+appropriate formulas to substitute for p and q in the denition of an attempt. We constrain
+illocutionary acts to be those in which the speaker is committed to understanding, that is,
+to achieving a state of BMB that he is in a certain mental state. Below is a denition of a
+speaker's requesting an addressee to achieve p.
+
+Denition 8 fREQUEST spkr addr e p t1g def
+=
+fATTEMPT spkr e
+
+8
+
+[BMB addr spkr (BEFORE e
+(GOAL spkr 3p ^
+[AFTER e (INTEND2 addr p [(GOAL spkr 3p) ^
+(HELPFUL addr spkr)] )])]]
+9e' (DONE addr e';p?)
+t1g
+
+That is, event e is a request at time t1 if it is an attempt at that time to get the addressee to
+achieve some condition p while being committed to making public that the speaker wanted:
+rst, that p eventually be achieved; and second, that the addressed party should intend to
+achieve it relative to the speaker's wanting it achieved and relative to the addressee's being
+helpfully disposed towards the speaker.
+The illocutionary act of asserting will be dened as an attempt to make the speaker's
+believing the propositional content mutually believed.
+
+Denition 9 fASSERT spkr addr e p t1g def=
+fATTEMPT spkr addr e
+
+[BMB addr spkr
+(BEFORE e [GOAL spkr
+(AFTER e
+[KNOW addr (BEFORE e (BEL spkr p))])])]
+[BMB addr spkr (BEFORE e (BEL spkr p))]
+
+t1 g
+
+More precisely, assertions at time t1 are dened as attempts in which to make an \honest
+eort," the speaker is committed to getting the addressee to believe that it is mutually
+believed that the speaker wanted prior to the utterance that the addressee would come to
+know that the speaker believed p held then. That is, just like a request, an assertion makes
+public that the speaker wants the addressee to know what mental state he was in. Although
+he is committed to that, what the speaker has chosen to achieve is not merely to make public
+his goal that the addressee know what mental state he was in, but to make public that he
+was in fact in that state of believing p. For an INFORM, the speaker would choose to achieve
+(KNOW addr p).
+
+6 Performatives
+To illustrate how performatives work, we show when both assertions and requests can be
+derived from the utterance of the performative \I request you to <do act>." The important
+point to notice here is that we have not had to add to our machinery; performative utterances
+will be treated exactly as declarative utterances, with the exception that the content of the
+utterance will make reference to an utterance event.
+9
+
+6.1 Request Reports
+
+Let us characterize the truth conditions of the family of declarative sentences \x requests y to
+himperative sentence s'i." Let s be such a sentence. Let  be 9e1 (DONE y e1) ^ (FULFILL-CONDS
+s' e1 e). We ignore most syntactic considerations and indexicality for reasons of space.
+
+Domain Axiom 2 Present tense requests
+
+j= 8x, y, e, t1, (DONE t1 ?;e) ^ (SUBJECT s x) ^ (D-OBJECT s y) ^
+(REFERS x x e) ^ (REFERS y y e) 
+(TRUE s e)  (DONE x fREQUEST x y e  t1 g)
+That is, if event e was just done and the sentence s was a present tense declarative sentence
+whose main verb is \request," whose subject x refers to person x, and whose direct object y
+refers to person y, then the sentence is true i x just requested the addressee y to fulll the
+conditions of imperative sentence s'. A bare present (or present progressive) tense sentence
+is true when the event being described is contemporaneous with the event of uttering it.8
+This denition applies equally well to \John requests Mary to . . ." as it does when I utter
+\I request you to . . ." For the former, such sentences are likely to be narrations of ongoing
+events.9 For the latter, the event that is happening that makes the utterance true is the
+speaker's uttering of the sentence.
+By our denition of request, for x to request y to achieve p, x has to attempt to get y to
+do some action intentionally to fulll the sentence s', by making that goal mutually believed
+between them. Thus, to say x requested y to do something is only to say that x had the right
+beliefs, goals, and intentions.
+
+6.2 Performatives Used as Requests
+
+Next, we treat performative sentences as declaratives. This means that the eects of uttering them are described by Domain Axiom 1A. We sketch below a proof of a general theorem regarding performative requests, with s being the declarative sentence \I request you to
+himperative sentence s1i, and  being 9e1 (DONE addr e1) ^ (FULFILL-CONDS s1 e1 e). We take
+the uttering of a sentence to be a unitary utterance event.
+
+Theorem 1 A Performative Request
+j=8 spkr, addr, e, n, t1,
+
+(MK spkr addr (DONE spkr t1?;e) ^
+(UTTER spkr addr e s)) ^
+(BEFORE t1?;e
+(GOAL spkr [AFTER t1 ?;e
+8
+Searle [10] correctly points out that performatives can be uttered in the passive, and in the rst-person
+plural.
+9
+We are ignoring the habitual reading of bare present tense sentences because we do not have a semantics
+for them.
+
+10
+
+(KNOW addr
+[BEFORE t1?;e (BEL spkr (TRUE s e))])])) 
+(DONE fREQUEST spkr addr e  t1 g)
+
+That is, we need to show that if the sentence \I request you to <imperative sentence>" has
+just been uttered at time t1 sincerely, i.e., when the speaker wanted the addressee to know
+that he believed the sentence was true, then a direct request has taken place at t1 .
+Proof sketch: Essentially, one invokes the domain axiom for declaratives at the rst level
+of ABEL, entailing that the speaker believes that he believes that he has just done a REQUEST.
+Then, one expands the denition of REQUEST into an ATTEMPT, and then into its parts. The
+denition of ATTEMPT is based on BEL, GOAL and INTEND, the rst two of which are obviously
+introspectable. That is, if one believes one has them one does, and vice-versa. Hence, by the
+memory assumption, the speaker actually had them prior to the utterance. More critically,
+intending to act at time t1 is also introspectable at time t1 because agents know what they are
+doing at the next instant and because there is no time to drop their commitment [2]. Thus,
+one can repackage these mental states up into an ATTEMPT and then a REQUEST.
+
+6.3 Performatives Used as Assertions
+
+We have shown that the speaker of a sincere performative utterance containing an illocutionary verb has performed the illocutionary act named by that verb. Under somewhat stronger
+conditions, we can also prove that the speaker has made an assertion. As before, let s be \I
+request you to <imperative sentence>."
+Theorem 2 Performatives Used as Assertions
+j=8 spkr, addr, e, n, t1,
+(MK spkr addr (DONE spkr t1?;e) ^ (UTTER spkr addr e s)) ^
+[BEFORE e (BEL spkr
+[AFTER e
+8n(ABEL n addr spkr
+(BEFORE e
+(GOAL spkr
+[AFTER e
+(KNOW addr [BEFORE e (BEL spkr (TRUE s e))]]
+(DONE spkr fASSERT spkr addr (TRUE s e) t1 g)
+
+This default condition says that before the utterance, the speaker believed there would
+be no addressee belief after the utterance event (at any level n) to the eect that prior to
+that event the speaker did not want the addressee to come to know that the speaker believed
+(TRUE s e). Given Domain Axiom 1A, and the fact that BEL entails GOAL, this suces to
+entail the denition of assertion. Notice that whereas requesting was derived in virtue of the
+content of the utterance, an assertion was derived by default assumptions regarding lack of
+belief in the speaker's insincerity.
+11
+
+
+
+7 `Lie' is not a performative
+Some illocutionary verbs such as \lie," \hint," \insinuate," cannot be achieved performatively.
+The following analysis shows a general model for why such verbs naming covert acts cannot
+be performatively achieved.
+A reasonable denition of lying is the following complex action:
+
+Denition 10 fLIE spkr addr e pg def= (BEL spkr p)?;fASSERT spkr addr e p t1g
+That is, a lie is an assertion performed when the speaker believes the propositional content
+is false.
+For \I lie to you that the door is open" to be a successful performative utterance, it would
+have to be true that the utterance is a lie. We would have to show that the uttering of that
+declarative sentence results in a lie's having been done. More generally, we provide a putative
+statement of the truth conditions of \x lies to y that <declarative sentence s'> ." Call the
+main sentence s.
+
+Domain Axiom 3 Supposed Truth Conditions for Performative Lying
+j= 8e, x, y, t1, (DONE t1 ?;e) ^ (REFERS x x e) ^ (REFERS y y e) 
+(TRUE s e)  (DONE fLIE x y e (TRUE s' e) t1 g )
+
+That is, if s and s' are declarative sentences of the appropriate syntactic form, x refers to x
+and y refers to y, then s is true i in performing it at time t1 , x was lying that sentence s' is
+true.
+So we can prove the following. Let the sentence s be \I lie to you that <declarative
+sentence s'>."
+Theorem 3 Lies are not performative
+j=8 spkr, addr, e, n
+(MK spkr addr [(DONE spkr t1?;e) ^ (UTTER spkr addr e s)]) 
+(DONE fLIE spkr addr e (TRUE s e) t1 g)
+In other words, you cannot perform a lie by saying \I lie that . . ."
+Proof Sketch: Assume that it is mutually believed that the speaker has uttered declarative
+sentence s. Now, apply Domain Axiom 1A. By assumption, the rst conjunct of the antecedent
+holds. There are then two cases to consider. First, assume (**) the second conjunct holds (say,
+at level n = 1), i.e., the addressee does not believe the speaker did not want him to know that
+he believed s' was true. In virtue of the supposed truth conditions on lying, spkr would have
+to have been lying. By expanding its denition, and using the memory and introspectability
+properties of BEL, GOAL, and INTEND the addressee can conclude that, before the utterance,
+the speaker wanted him not to know that the speaker believes that in uttering S, he was lying.
+But, this contradicts the assumption (**). Since the speaker in fact uttered the sentence, that
+assumption is false, and the addressee believes the speaker did not in fact want him to know
+12
+
+that he believed the sentence was true. This renders impossible the intentions to be achieved
+in asserting, which are constitutive of lying as well.
+Now, assume (**) is false, so the addressee in fact believes the speaker did not want him
+to know that s' was true. Again, this immediately makes the speaker's intentions in asserting,
+and hence lying, impossible to achieve. So, in neither case is the utterance a lie. If the
+addressee believes the speaker is a competent speaker of the language, the speaker must have
+intended some other interpretation.
+
+8 Conclusion
+Requesting works well as a performative verb because requesting requires only that the agent
+has made an attempt, and need not have succeeded in getting the hearer to do the requested
+action, or even to form the right beliefs. Some verbs cannot be used performatively, such as
+\frighten," because they require something beyond a mere attempt. Hence, such verbs would
+name action expressions that required a particular proposition p be true after the utterance
+event. When the utterance event does not guarantee such a p, the use of the performative
+verb will not be possible.
+On the other hand, certain utterances (performative or not), when performed by the right
+people in the right circumstances, make certain institutional facts hold. So, when a clergyman,
+judge, or ship captain says \I now pronounce you husband and wife," the man and woman in
+question are married. In our framework, there would be a domain axiom whose antecedent
+characterizes the circumstances, participants, and nature of the utterance event, and whose
+consequent asserts that an institutional fact is true. The axiom is justied not by the nature
+of rational action, but by the existence of an institution. Such utterances could be made with
+a performative prex provided such attempts are made into successes by the institution.
+This paper has shown that treating performative utterances as declarative sentences is a
+viable analysis, in spite of Searle's criticisms. The performative use of an illocutionary verb
+is self-guaranteeing when the named illocutionary act consists in the speaker's making an
+attempt to make public his mental state. In such cases, if the speaker thinks he has done so,
+then he has. However, we do not derive the named illocutionary act from the assertion, nor
+vice-versa. Instead, both derivations may be made from the utterance event, but the assertive
+one is in fact harder to obtain as it has extra conditions that need to be satised.
+
+References
+[1] K. Bach and R. Harnish. Linguistic Communication and Speech Acts. M. I. T. Press,
+Cambridge, Massachusetts, 1979.
+[2] P. R. Cohen and H. J. Levesque. Intention is choice with commitment. Articial Intelligence, 42(3), 1990.
+
+13
+
+[3] P. R. Cohen and H. J. Levesque. Rational interaction as the basis for communication.
+In P. R. Cohen, J. Morgan, and M. E. Pollack, editors, Intentions in Communication.
+M.I.T. Press, Cambridge, Massachusetts, in press.
+[4] D. Harel. First-Order Dynamic Logic. Springer-Verlag, New York City, New York, 1979.
+[5] K. Kogure, H. Iida, K. Yoshimoto, H. Maeda, M. Kume, and S. Kato. A method of
+analyzing Japanese speech act types. In Second International Conference on Theoretical
+and Methodological Issues in Machine Translation of Natural Languages, 1986.
+[6] D. J. Litman and J. F. Allen. A plan recognition model for subdialogues in conversation.
+Technical report, Department of Computer Science, Univ. of Rochester, Rochester, New
+York, November 1984.
+[7] J. McCarthy. Elephant: a programming language based on speech acts. Unpublished
+ms., Dept. of Computer Science, Stanford University, 1989.
+[8] C. R. Perrault. An application of default logic to speech act theory. In P. R. Cohen,
+J. Morgan, and M. E. Pollack, editors, Intentions in Communication. M.I.T. Press,
+Cambridge, Massachusetts, in press.
+[9] J. Sadock. Toward a Linguistic Theory of Speech Acts. Academic Press, New York, 1984.
+[10] J. Searle. How performatives work. Linguistics and Philosophy, 12:535{558, 1989.
+[11] J. R. Searle. Speech acts: An essay in the philosophy of language. Cambridge University
+Press, Cambridge, 1969.
+[12] J. R. Searle and D. Vanderveken. Foundations of Illocutionary Logic. Cambridge Univ.
+Press, New York City, New York, 1985.
+[13] Y. Shoham. Agent oriented programming. Unpublished ms., Dept. of Computer Science,
+Stanford University, October 1989.
+[14] H. Tennant. Evaluation of natural language processors. Technical Report T-103, Coordinated Science Laboratory, University of Illinois, Urbana, Illinois, November 1980. Ph.
+D. Thesis.
+[15] T. Winograd and F. Flores. Understanding Computers and Cognition: A New Foundation
+for Design. Ablex Publishing Co., Norwood, New Jersey, 1986.
+
+A Model Theory
+A model M is a structure h; P; E; Agt; T; B; G; i, where  is a set, P is a set of people, E is
+a set of primitive event types, Agt 2 [E ,! P ] species the agent of an event, T  [Z ,! E ]
+is a set of possible courses of events (or worlds) specied as a function from the integers to
+14
+
+elements of E , B  T  P  Z  T is the belief accessibility relation, G  T  P  Z  T is
+the goal accessibility relation, and  interprets predicates. Formulas will be evaluated with
+respect to some possible course of events, hereafter some possible world, and an \index" into
+that possible world, that is, at a particular point in the course of events.
+
+A.1 Denitions
+
+ D =  S P S E , specifying the domain of quantication. That is, one can quantify
+over things, people, and sequences of (types of) primitive events. Given this,  
+[Predk  T  Z  Dk ].
+ AGT  E   P; where x 2 AGT [e1; . . . ; en] i there is an i such that x = Agt(ei): That
+is, AGT species the partial agents of a sequence of events.
+
+A.2 Satisfaction
+
+Assume M is a model,  a sequence of events, n an integer, v a set of bindings of variables
+to objects in D, and if v 2 [V ars ,! D], then vdx is that function which yields d for x and is
+the same as v everywhere else. We now specify what it means for M; ; v; n to satisfy a w
+, which we write as M; ; v; n j= . Because of formulas involving actions, this denition
+depends on what it means for an expression a to occur between index points n and m. This,
+we write as M; ; v; n[ a] m, and is itself dened in terms of satisfaction. The denitions are
+as follows:10
+1. M; ; v; n j= (BEL x p) i for all   such that B (; v (x); n;  ); M;  ; v; n j= p.
+2. M; ; v; n j= (BMB x y p) i for all 1; . . . m such that 1 =  and B (2i,1 ; v (x); n; 2i)
+and B (2i ; v (y); n; 2i+1) for every 1  i  m=2; we have that M; m ; v; n j= p. This is
+one-sided mutual belief (that is, x thinks it is mutually believed).
+3. M; ; v; n j= (GOAL x p) i for all   such that G(; v (x); n;  ); M;  ; v; n j= p.
+4. M; ; v; n j= (AGT x1 . . . xk e) i v (e) = S1 S2 . . . Sm and fx j x = Agt(Sj )&e 2 Sj g =
+fv(xj )g. Thus the xj are the only agents of e. One can easily dene inductively (AGT
+x1 . . . xk a), where a is an arbitrary action expression.
+5. M; ; v; n j= (e1  e2 ) i v (e1 ) starts v (e2 ):
+6. M; ; v; n j= (HAPPENS a) i 9m; m  n; such that M; ; v; n[ a] m. That is, a describes
+a sequence of events that happens \next" (after n).
+7. M; ; v; n j= (DONE a) i 9m; m  n; such that M; ; v; m[ a] n. That is, a describes a
+sequence of events that just happened (before n).
+10
+
+For conciseness, we omit that part of the denition that deals with the constructs of rst-order logic.
+
+15
+
+8. M; ; v; n j=(DOING a) i 9m  n and an n0  n such that m[ a] n0 . That is, the doing of
+a overlaps the current time. Notice that (HAPPENS a) and (DONE a) both imply (DOING
+a).
+9. M; ; v; n j= hTime-Propositioni i hTime-Propositioni = n.
+Turning now to the occurrence of actions, we have:
+1. M; ; v; n[ e] n + m (where e is an event variable) i v (e) = S1S2 . . . Sm and Si   (n +
+i); 1  i  m: Intuitively, e denotes some sequence of events of length m which appears
+next after n in the world  .
+2. M; ; v; n[ a; b] m i 9k; n  k  m, such that M; ; v; n[ a] k and M; ; v; k[ b] m. The
+action described by a and then that described by b occurs.
+3. M; ; v; n[ a j b] m i M; ; v; n[ a] m or M; ; v; n[ b] m. Either the action described by a
+or that described by b occurs within the interval.
+4. M; ; v; n[ a jj b] m i M; ; v; n[ a] m and M; ; v; n[ b] m. That is, both the action described by a and that described by b occur during the interval.
+5. M; ; v; n[ p?] n i M; ; v; n j= p. The test action, p?, involves no events at all, but
+occurs if p holds, or \blocks" (fails), when p is false.
+6. M; ; v; n[ a ] m i 9n1 ; . . . ; nk where n1 = n and nk = m and for every i such that
+1  i  k , 1, M; ; v; ni[ a] ni+1 .The iterative action a occurs between n and m
+provided only a sequence of what is described by a occurs within the interval.
+A w p is satisable if there is at least one M , world  , index n, and assignment v such that
+M; ; v; nj= p. A w p is valid, i for every M , world , event index n, and assignment of
+variables v , M; ; v; nj= p.
+
+B Proofs of Theorems
+B.1 Performative Requests
+Let s be \I request you to s1."
+
+Theorem 1 A Performative Request
+j=8 spkr, addr, e, n, t1,
+(MK spkr addr (DONE spkr t1?;e) ^
+(UTTER spkr addr e s)) ^
+(BEFORE t1?;e
+
+16
+
+(GOAL spkr [AFTER t1 ?;e
+(KNOW addr
+[BEFORE t1?;e (BEL spkr (TRUE s e))])])) 
+(DONE fREQUEST spkr addr e  t1 g)
+
+Assume the antecedent is true. We rst apply the Domain Axiom 1A to the utterance
+event, and note that if spkr has just done an utterance event, he believes he has done it (see
+[2]), meaning the speaker is also an observer of the event. Therefore, we have (at level n=1
+of the ABEL)
+(1) (DONE spkr t1?;e) ^ (BEL spkr (BEFORE e (BEL spkr (TRUE s e))) is true.
+By Domain Axiom 1A, this implies
+(2) (DONE spkr spkr t1 ?;e) ^
+
+(BEL spkr [BEFORE spkr e (BEL spkr (DONE t1 ?;fREQUEST spkr addr e g))]),
+
+That is, an event e is being performed by spkr, and spkr thinks spkr believed he has just done a
+direct request to fulll the embedded imperative sentence. By expanding out REQUEST into
+an ATTEMPT, we see that (2) entails
+(3) (BEL spkr (BEFORE spkr e
+where
+
+[BEL spkr (DONE spkr
+t1 ?;fATTEMPT spkr addr e (BMB addr spkr (GOAL spkr  ))  t1g],
+
+ def
+= 3 ^ [AFTER spkr e (INTEND2 addr  [(GOAL spkr 3) ^
+(HELPFUL addr spkr)])], and
+ def
+= 9e2 (DONE addr e2 ) ^ (FULFILL-CONDS s e2 e)
+Next, by the memory and introspectibility properties of BEL and by expanding the denition
+of ATTEMPT in (3), we get (4)
+
+(4) (BEFORE e [BEL spkr
+
+(DONE t1 ?;[(BEL spkr   ^  ) ^
+[INTEND1 spkr t1 ?;e2;(BMB addr spkr (GOAL spkr  ))?
+(GOAL spkr 3) ]
+
+17
+
+(GOAL spkr 3) ]; e)])
+
+Now, in virtue of the introspection properties of GOAL, and noting that an agent who thinks
+at time t1 that he intends at time t1 to do an action at time t1 INTEND1 in fact has that
+intention, spkr knew what his intentions were as well. Therefore, we have:
+(5) (DONE t1 ?;[(BEL spkr   ^  ) ^
+[INTEND1 spkr t1 ?;e2;(BMB addr spkr (GOAL spkr  ))?
+(GOAL spkr 3) ]
+(GOAL spkr 3) ]; e)])
+
+So, we have
+(5) (DONE spkr t1?;fREQUEST spkr addr e  t1 g;)
+Q.E.D.
+All these conclusions are, of course, true right after the performative sentence has been
+uttered.
+
+B.2 Lying is not performative
+Let s be \I lie to you that s'".
+
+Theorem 3 Lies are not performative
+j=8 spkr, addr, e, n
+
+(MK spkr addr [(DONE spkr t1?;e) ^ (UTTER spkr addr e s)]) 
+(DONE fLIE spkr addr e (TRUE s e) t1 g)
+
+Proof:11
+Let 	 def
+= (BEL addr (BEFORE spkr e (BEL spkr (TRUE s e)))) ^
+[BEFORE e (BEL spkr  (TRUE s e))].12.
+To begin, assume the antecedent to Domain Axiom 1A holds at level n = 1, meaning that
+the addressee does not suspect the speaker of insincerity. That is, assume
+(*) (BEL n addr spkr [BEFORE spkr e
+(GOAL spkr [AFTER spkr e
+11
+12
+
+The part of the formula to be operated upon next will appear in italics.
+Notice that 	 entails (KNOW addr [BEFORE spkr e (BEL spkr (TRUE s e))])
+
+18
+
+So, at level n = 1, by Domain Axiom 1A
+(1) (BEL addr [BEFORE spkr e
+
+(KNOW addr [BEFORE spkr e
+(BEL spkr (TRUE s e))]]
+
+(GOAL spkr [AFTER spkr e
+(KNOW addr
+(BEFORE spkr e [BEL spkr (True s e)]))] holds.
+
+That is, the addressee thinks the speaker wanted him to come to know that the speaker believes the \I lie . . ." sentence is true. In virtue of the supposed truth conditions of performative
+lying, he wanted the addressee to know that he lied.
+(2) (BEL addr [BEFORE spkr e
+(GOAL spkr
+[AFTER spkr e
+(KNOW addr
+(BEFORE spkr e
+[BEL spkr
+(DONE spkr t1?;fLIE spkr addr e (TRUE s' e)g],
+
+So, by the denition of LIE, the expansion of the INTEND1 argument to the ATTEMPT in its
+denition, and the rst expansion of BMB, and we conclude
+(3) (BEL addr
+[BEFORE spkr e
+(GOAL spkr
+[AFTER spkr e
+(KNOW addr
+[BEFORE spkr e
+
+(BEL spkr
+(BEL spkr (TRUE s' e)) ^
+[GOAL spkr (AFTER spkr e 	) ]
+
+19
+
+By Assumptions 2 and 3, if spkr thinks he had those BEL and GOALs, then he did. This entails
+(4) (BEL addr
+(BEFORE spkr e
+(GOAL spkr
+[AFTER spkr e
+(KNOW addr
+[BEFORE spkr e
+(BEL spkr (TRUE s' e)) ^
+(GOAL spkr (AFTER spkr e 	)) ]
+
+Therefore, by the denition of KNOW, we have
+(5) (BEL addr
+[BEFORE spkr e
+(GOAL spkr
+
+[AFTER spkr e [BEFORE spkr e
+(BEL spkr (TRUE s' e)) ^
+
+(GOAL spkr (AFTER spkr e 	)) ]
+
+Now, (AFTER spkr e (BEFORE e )) entails , so we have,
+(6) (BEL addr [ BEFORE spkr e (GOAL spkr (GOAL spkr (AFTER spkr e 	) ]
+and (GOAL spkr (GOAL spkr )) entails (GOAL spkr ), so we have
+(7) (BEL addr
+[BEFORE spkr e
+
+20
+
+(BEL spkr (TRUE s' e)) ^
+(GOAL spkr (AFTER spkr e 	))])
+
+This entails:
+(8) (BEL addr
+[BEFORE spkr e
+(GOAL spkr (AFTER spkr e
+(KNOW addr [BEFORE spkr e (BEL spkr (TRUE s' e))])]
+
+This contradicts the assumption in Domain Axiom 1A. Thus, we can conclude that the
+assumed antecedent (*) is false, i.e.,
+(BEL addr spkr
+[BEFORE spkr e
+(GOAL spkr [AFTER spkr e
+(KNOW addr (BEL spkr (TRUE s e))]].
+
+But this contradicts the intention constitutive of asserting, and hence lying.
+In the same fashion, if the second conjunct of the antecedent of Domain Axiom 1A is false,
+we immediately arrive at the same contradiction. Hence, the utterance is not a lie. Q.E.D.
+
+21
+
+

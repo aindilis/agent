@@ -1,0 +1,3722 @@
+<html>
+
+<head>
+<meta name=Generator content="Microsoft Office HTML Filter 2.0">
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Originator content="Microsoft Word 9">
+<title>FIPA RDF Content Language Specification</title>
+<style>
+<!--
+ 
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h1
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Helvetica;}
+h2
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:31.5pt;
+	text-align:justify;
+	text-indent:-31.5pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;}
+h3
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h4
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h5
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h6
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.1in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:8.0pt;
+	font-family:Helvetica;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoListBullet5, li.MsoListBullet5, div.MsoListBullet5
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:71.3pt;
+	text-align:justify;
+	text-indent:-.2in;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{
+	margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-3.3pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoListContinue, li.MsoListContinue, div.MsoListContinue
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:20.15pt;
+	text-align:justify;
+	text-indent:-20.15pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoListContinue2, li.MsoListContinue2, div.MsoListContinue2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:40.3pt;
+	text-align:justify;
+	text-indent:-20.15pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoListContinue3, li.MsoListContinue3, div.MsoListContinue3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:60.1pt;
+	text-align:justify;
+	text-indent:-20.15pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoListContinue4, li.MsoListContinue4, div.MsoListContinue4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:80.25pt;
+	text-align:justify;
+	text-indent:-20.15pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:red;}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:0in;
+	margin-right:-.5in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:black;}
+p.zzCover, li.zzCover, div.zzCover
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.Heading2, li.Heading2, div.Heading2
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallStrong
+	{
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{
+	margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{
+	margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.Abbrevs, li.Abbrevs, div.Abbrevs
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Titre3h3, li.Titre3h3, div.Titre3h3
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.source, li.source, div.source
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+p.Normaleparagraph, li.Normaleparagraph, div.Normaleparagraph
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.Figuretitle, li.Figuretitle, div.Figuretitle
+	{
+	margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:11.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Boxparagraph, li.Boxparagraph, div.Boxparagraph
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.DefinitionList, li.DefinitionList, div.DefinitionList
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.a2, li.a2, div.a2
+	{
+	margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.a3, li.a3, div.a3
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:12.0pt;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.a4, li.a4, div.a4
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.a5, li.a5, div.a5
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.a6, li.a6, div.a6
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Abstract, li.Abstract, div.Abstract
+	{
+	margin-top:12.0pt;
+	margin-right:22.7pt;
+	margin-bottom:11.0pt;
+	margin-left:22.7pt;
+	text-align:justify;
+	font-size:9.0pt;
+	font-family:Times;
+	color:black;}
+p.AbstractBullets, li.AbstractBullets, div.AbstractBullets
+	{
+	margin-top:0in;
+	margin-right:28.05pt;
+	margin-bottom:11.0pt;
+	margin-left:42.55pt;
+	text-align:justify;
+	text-indent:-14.2pt;
+	font-size:11.0pt;
+	font-family:Arial;
+	color:black;}
+p.AbstractBulletLast, li.AbstractBulletLast, div.AbstractBulletLast
+	{
+	margin-top:0in;
+	margin-right:28.05pt;
+	margin-bottom:12.0pt;
+	margin-left:42.55pt;
+	text-align:justify;
+	text-indent:-14.2pt;
+	font-size:11.0pt;
+	font-family:Arial;
+	color:black;}
+p.ANNEX, li.ANNEX, div.ANNEX
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:38.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.BodyTextFixed, li.BodyTextFixed, div.BodyTextFixed
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:black;}
+p.BodyTextIndentFixed, li.BodyTextIndentFixed, div.BodyTextIndentFixed
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.2in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:black;}
+p.Definition, li.Definition, div.Definition
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.Figure, li.Figure, div.Figure
+	{
+	margin-top:8.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"‚l‚r –¾’©";
+	color:black;}
+p.Figurefootnote, li.Figurefootnote, div.Figurefootnote
+	{
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:10.0pt;
+	page-break-after:avoid;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.Formula, li.Formula, div.Formula
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:20.0pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.Introduction, li.Introduction, div.Introduction
+	{
+	margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.item, li.item, div.item
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.item1, li.item1, div.item1
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.lisp, li.lisp, div.lisp
+	{
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:black;}
+p.Listepuces1, li.Listepuces1, div.Listepuces1
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:28.35pt;
+	text-align:justify;
+	text-indent:-14.15pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.NO, li.NO, div.NO
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:12.0pt;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.NormalFixed, li.NormalFixed, div.NormalFixed
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:black;}
+p.NormalIndentFixed, li.NormalIndentFixed, div.NormalIndentFixed
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:black;
+	font-weight:bold;}
+p.Note, li.Note, div.Note
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:10.0pt;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.p1, li.p1, div.p1
+	{
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.p2, li.p2, div.p2
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.p3, li.p3, div.p3
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.p4, li.p4, div.p4
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.p5, li.p5, div.p5
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.p6, li.p6, div.p6
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.renfonc, li.renfonc, div.renfonc
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:17.0pt;
+	text-indent:-17.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.section, li.section, div.section
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:19.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.subheading4, li.subheading4, div.subheading4
+	{
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:11.0pt;
+	font-family:Times-Roman;
+	color:black;}
+p.Tablefootnote, li.Tablefootnote, div.Tablefootnote
+	{
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:10.0pt;
+	font-size:9.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.Tabletitle0, li.Tabletitle0, div.Tabletitle0
+	{
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.5pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-weight:bold;}
+p.Terms, li.Terms, div.Terms
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.zzForeword, li.zzForeword, div.zzForeword
+	{
+	margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.zzHelp, li.zzHelp, div.zzHelp
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:11.0pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:green;}
+p.zzSTDTitle, li.zzSTDTitle, div.zzSTDTitle
+	{
+	margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:38.0pt;
+	margin-left:0in;
+	line-height:17.0pt;
+	page-break-before:always;
+	font-size:16.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.berschrift1h1, li.berschrift1h1, div.berschrift1h1
+	{
+	margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Bibliography, li.Bibliography, div.Bibliography
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:22.7pt;
+	margin-bottom:.0001pt;
+	text-indent:-22.7pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.Hoofd1, li.Hoofd1, div.Hoofd1
+	{
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-variant:small-caps;
+	font-weight:bold;
+	text-decoration:underline;}
+p.Hoofd2, li.Hoofd2, div.Hoofd2
+	{
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;
+	text-decoration:underline;}
+p.Hoofd3, li.Hoofd3, div.Hoofd3
+	{
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;
+	text-decoration:underline;}
+p.Hoofd4, li.Hoofd4, div.Hoofd4
+	{
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;
+	text-decoration:underline;}
+p.references, li.references, div.references
+	{
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.listanumerata, li.listanumerata, div.listanumerata
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:.25in;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.listanumerata2, li.listanumerata2, div.listanumerata2
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.listanumerata3, li.listanumerata3, div.listanumerata3
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:.75in;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.Normaal, li.Normaal, div.Normaal
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+p.syntax, li.syntax, div.syntax
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:black;
+	layout-grid-mode:line;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.Blockquote, li.Blockquote, div.Blockquote
+	{
+	margin-top:5.0pt;
+	margin-right:.25in;
+	margin-bottom:5.0pt;
+	margin-left:.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	layout-grid-mode:line;}
+p.H1, li.H1, div.H1
+	{
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Heading3, li.Heading3, div.Heading3
+	{
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Times;
+	color:black;
+	font-weight:bold;}
+p.H2, li.H2, div.H2
+	{
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Arial;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Heading1, li.Heading1, div.Heading1
+	{
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Times;
+	color:black;
+	font-weight:bold;}
+p.ReportAuthor, li.ReportAuthor, div.ReportAuthor
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:16.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Times;
+	color:black;
+	font-weight:bold;}
+p.a1, li.a1, div.a1
+	{
+	margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Primero, li.Primero, div.Primero
+	{
+	margin-top:6.0pt;
+	margin-right:2.85pt;
+	margin-bottom:6.0pt;
+	margin-left:2.85pt;
+	text-align:justify;
+	text-indent:.5in;
+	line-height:150%;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;
+	text-decoration:underline;}
+p.Appendix, li.Appendix, div.Appendix
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.25pt;
+	margin-bottom:.0001pt;
+	text-indent:-21.25pt;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.code-indented, li.code-indented, div.code-indented
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-style:italic;}
+p.code-indent, li.code-indent, div.code-indent
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.H3, li.H3, div.H3
+	{
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.H4, li.H4, div.H4
+	{
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.H5, li.H5, div.H5
+	{
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.H6, li.H6, div.H6
+	{
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	text-autospace:none;
+	font-size:8.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+p.Address, li.Address, div.Address
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;}
+p.a, li.a, div.a
+	{
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:14.0pt;
+	page-break-after:avoid;
+	punctuation-trim:leading;
+	punctuation-wrap:simple;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.a0, li.a0, div.a0
+	{
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:24.0pt;
+	page-break-after:avoid;
+	punctuation-trim:leading;
+	punctuation-wrap:simple;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+p.example, li.example, div.example
+	{
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:9.0pt;
+	font-family:"Courier New";}
+p.Normalsmall, li.Normalsmall, div.Normalsmall
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	color:black;
+	layout-grid-mode:line;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="SK_Preliminary"></a><a
+name="MLS_Field_QUOTE"></a><a name="MLS_Field_MERGEFORMAT"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a><b><span
+lang=EN-GB style='font-size:18.0pt;'>&nbsp;</span></b></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><b><span lang=EN-GB style='font-size:18.0pt;'>FOUNDATION FOR INTELLIGENT
+PHYSICAL AGENTS</span></b><b><span
+lang=EN-GB style='font-size:18.0pt;'><a name="_Ref479045812"></a></span></b></p>
+
+<p class=Standardparagraph><a
+name="MLS_Field_CHARFORMAT"><span lang=EN-GB>&nbsp;</span></a></span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt;'>FIPA RDF Content Language Specification</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt;'>&nbsp;</span></p>
+
+<div align=center>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border-top:1.0pt;border-left:
+  1.0pt;border-bottom:.5pt;border-right:.5pt;border-color:windowtext;
+  border-style:solid;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document title</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.0pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>FIPA RDF Content Language Specification</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document number</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>XC00011B</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document source</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>FIPA TC C</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document status</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>Experimental</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Date of this status</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>2001/08/10</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Supersedes</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>FIPA00003</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Contact</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>fab@fipa.org</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=624 colspan=4 valign=top style='width:468.05pt;border-top:none;
+  border-left:solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Change history</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext .5pt;
+  border-left:solid windowtext 1.0pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>2000/08/18</span></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:solid windowtext .5pt;
+  border-left:none;border-bottom:solid windowtext .5pt;border-right:solid windowtext 1.0pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>Approved for Experimental</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border-top:none;border-left:
+  solid windowtext 1.0pt;border-bottom:solid windowtext 1.0pt;border-right:
+  solid windowtext .5pt;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>2001/08/10</span></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span
+  lang=EN-GB>Line numbering added</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>© 2000 Foundation for Intelligent Physical Agents - http://www.fipa.org/</span></p>
+
+<p class=Standardparagraph><i><span
+lang=EN-GB>Geneva, Switzerland</span></i></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;'>
+ <tr>
+  <td width=715 valign=top style='width:7.45in;border:solid black .75pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='text-align:center'><b><span lang=EN-GB>Notice</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:108.45pt'>
+  <td width=715 valign=top style='width:7.45in;border:solid black .75pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:108.45pt'>
+  <p class=Standardparagraph><span lang=EN-GB>Use of the technologies described in this specification may infringe
+  patents, copyrights or other intellectual property rights of FIPA Members and
+  non-members. Nothing in this specification should be construed as granting
+  permission to use any of the technologies described. Anyone planning to make
+  use of technology covered by the intellectual property rights of others
+  should first obtain permission from the holder(s) of the rights. FIPA
+  strongly encourages anyone implementing any part of this specification to
+  determine first whether part(s) sought to be implemented are covered by the
+  intellectual property of others, and, if so, to obtain appropriate licenses
+  or other permission from the holder(s) of such intellectual property prior to
+  implementation. This specification is subject to change without notice.
+  Neither FIPA nor any of its Members accept any responsibility whatsoever for
+  damages or liability, direct or consequential, which may result from the use
+  of this specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=zzContents><span
+lang=EN-GB>Foreword</span></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB>The Foundation for Intelligent
+Physical Agents (FIPA) is an international organization that is dedicated to
+promoting the industry of intelligent agents by openly developing
+specifications supporting interoperability among agents and agent-based
+applications. This occurs through open collaboration among its member
+organizations, which are companies and universities that are active in the
+field of agents. FIPA makes the results of its activities available to all
+interested parties and intends to contribute its results to the appropriate
+formal standards bodies. </span></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB>The members of FIPA are individually
+and collectively committed to open competition in the development of
+agent-based applications, services and equipment. Membership in FIPA is open to
+any corporation and individual firm, partnership, governmental body or
+international organization without restriction. In particular, members are not
+bound to implement or use specific agent-based standards, recommendations and
+FIPA specifications by virtue of their participation in FIPA. </span></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB>The FIPA specifications are
+developed through direct involvement of the FIPA membership. The status of a
+specification can be either Preliminary, Experimental, Standard, Deprecated or
+Obsolete.More detail about the
+process of specification may be found in the FIPA Procedures for Technical
+Work. A complete overview of the FIPA specifications and their current status
+may be found in the FIPA List of Specifications. A list of terms and
+abbreviations used in the FIPA specifications may be found in the FIPA
+Glossary.</span></p>
+
+<p class=Standardparagraph><span
+lang=EN-GB>FIPA is a non-profit association
+registered in Geneva, Switzerland. As of January 2000, the 56 members of FIPA
+represented 17countries worldwide.
+Further information about FIPA as an organization, membership information, FIPA
+specifications and upcoming meetings may be found at http://www.fipa.org/.</span></p>
+
+<p class=zzContents><span
+lang=EN-GB>Contents</span></p>
+
+<p class=MsoToc1><a
+name="_Ref449499969"></a><a href="#_Toc505479449"><span lang=EN-GB>1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;text-decoration:
+none;'>     </span><span lang=EN-GB>Introduction</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505479450"><span lang=EN-GB>1.1</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>A Summary of RDF</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc505479451"><span lang=EN-GB>2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;text-decoration:
+none;'>     </span><span lang=EN-GB>RDF as a FIPA Content Language</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505479452"><span lang=EN-GB>2.1</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Objects</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505479453"><span lang=EN-GB>2.2</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Propositions</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505479454"><span lang=EN-GB>2.3</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Actions</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505479455"><span lang=EN-GB>2.4</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Action
+Implementations</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc505479456"><span lang=EN-GB>3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;text-decoration:
+none;'>     </span><span lang=EN-GB>Exchange of Rules Extensions</span><span lang=EN-GB style='color:windowtext;display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505479457"><span lang=EN-GB>3.1</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Introduction</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505479458"><span lang=EN-GB>3.2</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Rules in XML/RDF</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505479459"><span lang=EN-GB>3.3</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Exchanging Rules
+as Programming Code</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505479460"><span lang=EN-GB>3.4</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Using Rules with
+FIPA Communicative Acts</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505479461"><span lang=EN-GB>3.5</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>Further Remarks</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc505479462"><span lang=EN-GB>4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;text-decoration:
+none;'>     </span><span lang=EN-GB>Examples of Use</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505479463"><span lang=EN-GB>4.1</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>RDF Schemas for
+FIPA RDF 0</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc505479464"><span lang=EN-GB>4.2</span><span style='font-size:12.0pt;font-family:
+"Times New Roman";color:windowtext;text-decoration:none;'>      </span><span lang=EN-GB>RDF Schemas for
+FIPA RDF 1</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc505479465"><span lang=EN-GB>5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;text-decoration:
+none;'>     </span><span lang=EN-GB>References</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:
+none;'>. </span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none;'>3</span></a></p>
+
+<p class=MsoNormal></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica;'><br clear=all
+style='page-break-before:always;'>
+</span>
+
+<div class=Section2>
+
+<h1><a name="_Toc465199550"></a><a name="_Toc491142062"></a><a
+name="_Toc505479449"><span lang=EN-GB>1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Introduction</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>This specification describes how the
+Resource Description Framework (RDF - see [W3crdf]) can be used as content
+language in a FIPA message. Although FIPA does not require that a content
+language is able to represent actions<a
+href="#_ftn1" name="_ftnref1" title=""><span class=MsoFootnoteReference>[1]</span></a>,
+a lot of communicative acts require actions in their content. Therefore, we
+will show how RDF schemas can be defined extending its model to express: </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Objects</span></b><span
+lang=EN-GB> which are constructs that represent an identifiable entity (be it
+abstract or concrete) in the domain of discourse,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Propositions</span></b><span
+lang=EN-GB> which are statements expressing that some sentence in a language is
+true or false, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Actions</span></b><span
+lang=EN-GB> which try to express an activity that can be carried out by an
+object.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>By means of existing mechanisms in RDF
+(schema definitions), modular RDF extensions will be proposed, based on the </span><span
+lang=EN-GB style='font-family:Courier'>fipa-rdf0</span><span lang=EN-GB>
+content language. Those extensions will be able to tackle for example rules,
+logic algebra constructs, and others. These extensions can then be labelled as </span><span
+lang=EN-GB style='font-family:Courier'>fipa-rdf1</span><span lang=EN-GB>, </span><span
+lang=EN-GB style='font-family:Courier'>fipa-rdf2</span><span lang=EN-GB>, etc. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The general motivation behind this approach
+is to enable and ease the use of RDF Schemas emerging on the Web such as CC/PP,
+and to define one common standard approach here to increase the level of
+interoperability. The main strengths of the RDF language are in its
+extensibility, reusability and simplicity. Another advantage of RDF is that
+data and schemas are exchanged in a similar way. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The RDF model proposes the eXtensible
+Markup Language (XML - see [W3Cxml]) as an encoding syntax, but does not
+prevent anyone from using alternative encoding schemes. All </span><span
+lang=EN-GB style='font-family:Courier'>fipa-rdf</span><span lang=EN-GB>
+examples will therefore use an XML encoding, although, in principle, other
+encoding schemes could be used.<a name="_Toc465199551"></a></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc491142063"></a><a name="_Toc505479450"><span lang=EN-GB>1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>A Summary of RDF</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The RDF framework is based on an
+entity-relationship model. The RDF Data Modelis described by means
+of resources, properties and their values. A specific resource together with
+one or more named properties plus the values of these properties is an RDF description
+(a collection of RDF statements). </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>In addition to the RDF Data Model, the RDF
+Schemas (see [W3Crdfsch]) specification provides a typing system for the
+resources and properties used in the RDF data. It defines concepts such as
+classes, subclasses, properties or sub-properties. It also allows expressing
+constraints. Both the RDF Data Model and RDF Schema propose XML as a
+serialization syntax. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>RDF is a &quot;foundation for processing
+meta-data in the way that it provides interoperability between applications
+that exchange machine-understandable information.&quot; This suggests that RDF
+could be most useful to facilitate knowledge sharing and exchange between
+agents. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc491142064"></a><a name="_Toc505479451"><span lang=EN-GB>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>RDF as a FIPA Content Language</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>To be able to use RDF as a content language
+for FIPA ACL messages, we have to explore how objects, propositions and
+functions can be expressed in RDF, without endangering key extensibility
+inherent to the language. On the other hand, we will try to preserve RDF's
+simplicity, which is crucial for the success of languages on the Internet. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>We suggest to use the name </span><span
+lang=EN-GB style='font-family:Courier'>fipa-rdf0</span><span lang=EN-GB>, for
+the combined use of RDF and the basic schemas which define t<a
+name="_Toc465199553">he extensions needed for FIPA.</a></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc491142065"></a><a
+name="_Toc505479452"><span
+lang=EN-GB>2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Objects</span></a></span></h2>
+
+<p class=MsoNormal><span lang=EN-GB>Taking the above into account, it is
+obvious to see an analogy between an ACL object and an RDF resource, since both
+are defined as descriptions of a certain identifiable entity. This enables us
+to use RDF resource identifiers and references as ACL object identifiers and
+references. This means that to resolve an RDF reference, we can use a the FIPA
+communicative act </span><span lang=EN-GB style='font-family:Courier'>query-ref</span><span
+lang=EN-GB> (see [FIPA00054]), which will then be followed by an 'inform' me<a
+name="_Toc465199554">ssage, describing this object.</a></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc491142066"></a><a
+name="_Toc505479453"><span
+lang=EN-GB>2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Propositions</span></a></span></h2>
+
+<p class=MsoNormal><span lang=EN-GB>In the same context it seems logical to
+model ACL propositions using RDF statements. An RDF statement is composed out
+of three parts: subject (resource), predicate (property) and object
+(literal/value). As an example, consider the sentence &quot;W. Richard Stevens
+is the author of TCP/IP Illustrated&quot;. The RDF components of this
+proposition are the subject (TCP/IP Illustrated), the predicate (Author) and
+the object (W. Richard Stevens). This sentence/statement can then be described
+in RDF in the following manner: </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;?xml
+version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>         xmlns:s=&quot;http://description.org/schema/&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdf:Description ID=&quot;TCP/IP
+Illustrated&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;s:author&gt;W. Richard
+Stevens&lt;/s:author&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdf:Description&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;/rdf:RDF&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><i><span lang=EN-GB>Figure
+1</span></i><span lang=EN-GB>
+represents this in RDF graph form. </span><span lang=EN-GB>This way we have a
+starting point to state logical expressions in our content. Taking this one
+step further, we can say that by expressing this statement, we indicate our
+belief in this statement. In this way we can say that we always assume that an
+RDF statement expresses a belief. This approach would be sufficient in any
+context where the level of logic involved is limited.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img width=406 height=31
+src="XC00011B_image002.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure
+1:</span></b><span
+lang=EN-GB> A Proposition as an RDF Statement</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>To overcome this shortcoming however, we
+will explain how logical belief or disbelief of a certain statement could be
+expressed explicitly using RDF. To express that we believe a statement to be
+true or false, we have to model the original statement as a reified statement,
+that is, a resource with four predefined properties:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The <b>subject</b> property identifies the resource being described by
+the modelled statement; that is, the value of this property is the resource
+about which the original statement was made.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The <b>predicate</b> property
+identifies the property of the original statement; that is, the value is the
+specific property in the original statement.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The <b>object</b> property identifies
+the property value in the original statement; that is, the value is the object
+in the original statement.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The value of the <b>type</b> property
+describes the type of the new resource. All reified statements are instances of
+</span><span lang=EN-GB style='font-family:Courier'>rdf:Statement</span><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>A new resource with the above four
+properties represents the original statement and can both be used as the object
+of another statement and have additional statements made about it. The resource
+with these four properties is not a replacement for the original statement, but
+it is a model of the statement.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>By extending the RDF syntax model with the
+following elements, a means to express belief or disbelief of a statement is
+allowed (the complete schema of the RDF extensions can be found in <i>Section 4.1, RDF
+Schemas for FIPA RDF 1</i>):</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;?xml
+version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        
+xmlns:rdfs=&quot;http://www.w3.org/TR/1999/PR-rdf-schema-19990303#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:Class
+rdf:ID=&quot;http://www.fipa.org/schemas#Proposition&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;proposition&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;proposition&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:comment&gt;This describes the set of
+propositions&lt;/rdfs:comment&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:subClassOf rdf:resource=</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    
+&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:Class&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;http://www.fipa.org/schemas#belief&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;belief&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;acte&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;#Proposition&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:range rdf:resource=</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     
+&quot;http://www.w3c.org/TR/1999/PR-rdf-schema-19990303#Literal&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;/rdf:RDF&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Using this method we can easily describe
+ACL propositions in RDF. As an example, the following proposition will be
+modelled: &quot;The statement 'W. Richard Stevens is the author of TCP/IP
+Illustrated' is true&quot;. One way to do this is as follows:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;?xml
+version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        
+xmlns:fipa=http://www.fipa.org/schemas/fipa-rdf0#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;fipa:Proposition&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdf:subject&gt;TCP/IP
+Illustrated&lt;/rdf:subject&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdf:predicate rdf:resource=&quot;http://description.org/
+schema#author&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdf:object&gt;W. Richard
+Stevens&lt;/rdf:object/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>   
+&lt;fipa:belief&gt;true&lt;/fipa:belief&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/fipa:Proposition&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;/rdf:RDF&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Expressing that the same statement is
+false, is equally easy by replacing the value 'true' with 'false'. The RDF
+graph representation of the 'false' statement is presented in <i>Figure 2</i>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img width=439 height=269
+src="XC00011B_image004.gif"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a
+name="_Toc465199555"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB>Figure 2:</span></b><span
+lang=EN-GB> Explicit Logical Proposition in RDF</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc491142067"></a><a
+name="_Toc505479454"><span
+lang=EN-GB>2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Actions</span></a></span></h2>
+
+<p class=MsoNormal><span lang=EN-GB>An <b>action </b>expresses an activity, carried out by an object.
+There are three different properties related to an 'action':</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>An <b>act </b>identifies the operative
+part of the action; it can serve to identify the type of act or merely to
+describe the act. In the latter case specific types of action classes can be
+derived from the Action class. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>An <b>actor</b> identifies the entity
+responsible for the execution of the action, that is, the value is the specific
+entity which will/can/should perform the act (often the receiver, but possibly
+another agent/entity under &quot;control&quot; of the receiver). </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>An <b>argument </b>identifies an
+(optional) entity which can be used for the execution of the action; that is,
+the value is entity which is used by the actor to perform the act.  An action can have multiple arguments.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>When looking at an action this way, there
+is a structural analogy with a RDF statement.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>To model an action, the RDF syntax model
+can be extended with a new RDF type </span><span lang=EN-GB style='font-family:
+Courier'>fipa:Action</span><span lang=EN-GB> which has these properties. As an
+example, the following action will be modelled: &quot;John opens door1 and
+door2&quot;.  In this small example, the
+properties are the act (Open), the actor (John) and the arguments (door1 and
+door2). </span><span lang=EN-GB>In
+RDF, this action can then be described as:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;?xml
+version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        
+xmlns:fipa=&quot;http://www.fipa.org/schemas/fipa-rdf0#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;fipa:Action
+rdf:ID=&quot;JohnAction1&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;fipa:actor&gt;John&lt;/fipa:actor&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;fipa:act&gt;open&lt;/fipa:act&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;fipa:argument&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;rdf:bag&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;rdf:li&gt;door1&lt;/rdf:li&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;rdf:li&gt;door2&lt;/rdf:li&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;/rdf:bag&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/fipa:argument&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/fipa:Action&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;/rdf:RDF&gt;</span></p>
+
+<p class=example><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB>According to the RDF specification,
+the resource type defined in the schema corresponding to the type property can
+be used directly as an element name when the </span><span lang=EN-GB
+style='font-family:Courier;'>Description</span><span
+lang=EN-GB> element contains a type property.
+So, a shorter version of the above example could be written as follows:</span></p>
+
+<p class=example><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;?xml
+version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        
+xmlns:fipa=&quot;http://www.fipa.org/schemas#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;fipa:Action
+rdf:ID=&quot;JohnAction1&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;fipa:actor&gt;John&lt;/fipa:actor&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;fipa:act&gt;open&lt;/fipa:act&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;fipa:argument&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;rdf:bag&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;rdf:li&gt;door1&lt;/rdf:li&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;rdf:li&gt;door2&lt;/rdf:li&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;/rdf:bag&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/fipa:argument&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/fipa:Action&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;/rdf:RDF&gt;</span></p>
+
+<p class=example><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The model above still lacks the ability to
+state whether some action has finished or what the result is of the action.
+this can be solved by simply adding extra properties to the description of the
+action.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>As an example, suppose Mary requests John
+to open door 1 and door 2 and then wants John to inform her if he performed the
+action and what the result is. This little scenario exists of two messages:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Request from Mary to John containing
+the description of the action, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Inform from John to Mary, referring to
+the action and stating the completion of the action.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Using FIPA ACL combined with RDF content,
+the first messages could be expressed as:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>(request</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :sender Mary</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :receiver John</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :content (</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;?xml version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            
+xmlns:fipa=&quot;http://www.fipa.org/schemas#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;fipa:Action
+rdf:ID=&quot;JohnAction1&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>       
+&lt;fipa:actor&gt;John&lt;/rdf:actor&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;fipa:act&gt;open&lt;/rdf:act&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;fipa:argument&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>          &lt;rdf:bag&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            &lt;rdf:li&gt;door1&lt;/rdf:li&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            &lt;rdf:li&gt;door2&lt;/rdf:li&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>          &lt;/rdf:bag&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;/fipa:argument&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;/fipa:Action&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/rdf:RDF&gt;)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :language fipa-rdf0)</span></p>
+
+<p class=example><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><span
+lang=EN-GB><img width=479 height=209
+src="XC00011B_image006.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoCaption><b><span lang=EN-GB>Figure 3:</span></b><span lang=EN-GB> Example of an
+Open Action</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>And the subsequent reply message could be:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>(inform</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :sender John</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :receiver Mary</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :content (</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;?xml version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            
+xmlns:fipa=&quot;http://www.fipa.org/schemas#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;rdf:Description about=&quot;#JohnAction1&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>       
+&lt;fipa:done&gt;true&lt;/fipa:done&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;fipa:result&gt;doors
+closed&lt;/fipa:result&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;/rdf:Description&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/rdf:RDF&gt; )</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :language fipa-rdf0)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Note the ability offered by RDF to include
+previous actions by means of a reference instead of repeating the whole action.
+The RDF graph representation of the complete action description is presented in
+<i>Figure 3</i>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><span
+lang=EN-GB><img width=301 height=119
+src="XC00011B_image008.gif"></span></p>
+
+<p class=MsoNormal><a name="_Toc465199556"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<p class=MsoCaption><b><span
+lang=EN-GB>Figure 4:
+</span></b><span lang=EN-GB>Result of an Open Action</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc491142068"></a><a
+name="_Toc505479455"><span
+lang=EN-GB>2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Action Implementations</span></a></span></h2>
+
+<p class=MsoNormal><span lang=EN-GB>Different possible scenarios can be
+distinguished between when using the RDF actions. One possible usage is when a
+software designer describes in documentation (that is, in the RDF schemas in </span><span
+lang=EN-GB style='font-family:Courier'>rdfs:comment</span><span lang=EN-GB>)
+what is meant by a particular action; it is left to the implementer to decide
+which functions will be called. In another scenario, a more explicit
+description of the semantics might be needed by linking the action with some
+programming language. This section deals with the latter case.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>When an agent does not know how to perform
+an action and needs a more explicit representation of this action, the sender
+agent can specify the code which implements the action. For this purpose a new
+property for actions is introduced, called </span><span lang=EN-GB
+style='font-family:Courier'>implementedBy</span><span lang=EN-GB>, which has a
+resource of the type </span><span lang=EN-GB style='font-family:Courier'>Code</span><span
+lang=EN-GB> as property its value.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>A first possibility is that the property </span><span
+lang=EN-GB style='font-family:Courier'>implementedBy</span><span lang=EN-GB>
+contains a reference (a URI) to an external software module written in a
+specific programming language. For this purposes the </span><span lang=EN-GB
+style='font-family:Courier'>Code</span><span lang=EN-GB> resource therefore has
+a property </span><span lang=EN-GB style='font-family:Courier'>language</span><span
+lang=EN-GB> and a property </span><span lang=EN-GB style='font-family:Courier'>code-uri</span><span
+lang=EN-GB>. For reasons of simplicity, it is assumed that the language used is
+either Java or a scripting language such as JScript or ECMAscript. So, the
+property </span><span lang=EN-GB style='font-family:Courier'>code-uri</span><span
+lang=EN-GB> is a reference to the location of code where the method or function
+can be found (for Java a code base followed by a class name). </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>When a Java class is referenced, </span><span
+lang=EN-GB style='font-family:Courier'>code-uri</span><span lang=EN-GB> can
+contain the Java code-base. The receiving agent can then download this class,
+instantiate it (if needed), and perform the required action (or not). When a
+non-static class is being referred, we assume that there is always a
+zero-argument constructor (cfr. the requirement for JavaBeans). </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>In addition, we assume that there always
+exists a one-to-one correspondence between the FIPA arguments and fipa result
+property, into the method's arguments resp. return value. When multiple
+arguments are used, and the sequence of those is important, one should use the </span><span
+lang=EN-GB style='font-family:Courier'>rdf:Seq</span><span lang=EN-GB>
+container to separate them. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>As an example, suppose agent 'Student'
+requests agent 'Mathematician' to find the next prime following after '7'. The
+request message is as follows (see <i>Figure 5</i>):</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>(request</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :sender Student</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :receiver Mathematician</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :content (</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;?xml version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            
+xmlns:fipa=&quot;http://www.fipa.org/schemas/fipa-rdf0#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;fipa:Action
+rdf:ID=&quot;studreq01&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>       
+&lt;fipa:actor&gt;Mathematician&lt;/fipa:actor&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>       
+&lt;fipa:act&gt;findNextPrime&lt;/fipa:act&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;fipa:argument&gt;7&lt;/fipa:argument&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>          &lt;fipa:implementedBy&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            &lt;fipa:Code&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>           
+&lt;fipa:language&gt;Java&lt;/fipa:language&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>              &lt;fipa:code-uri&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>               
+http://www.mathagent.com/math.utility.prime</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>              &lt;/fipa:code-uri&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            &lt;/fipa:Code&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>          &lt;/fipa:implementedBy&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;/fipa:argument&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;/fipa:Action&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/rdf:RDF&gt; )</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :language fipa-rdf0)</span></p>
+
+<p class=example><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><span
+lang=EN-GB><img width=504 height=157
+src="XC00011B_image010.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoCaption><b><span lang=EN-GB>Figure 5:</span></b><span lang=EN-GB> Actions and
+Implementation References</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB>In the previous example, it is assumed that there exists a function or
+method in the static class </span><span lang=EN-GB style='font-family:Courier;'>math.utility.prime.class</span><span
+lang=EN-GB> with the same name of the FIPA act (</span><span lang=EN-GB
+style='font-family:Courier;'>findNextPrime</span><span lang=EN-GB>). If the name of the method is
+different from the FIPA act's name, then the 
+method name should be included after the hash sign (</span><span
+lang=EN-GB style='font-family:Courier;'>#</span><span lang=EN-GB>) of the property value </span><span
+lang=EN-GB style='font-family:Courier;'>code-uri</span><span lang=EN-GB>. For example: </span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;fipa:implementedBy&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;fipa:Code&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>   
+&lt;fipa:language&gt;Java&lt;/fipa:language&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;fipa:code-uri &gt;                     </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     
+http://www.mathagent.com/math.utility.prime#nextPrime</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/fipa:code-uri&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/fipa:Code&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;/fipa:implementedBy&gt;</span></p>
+
+<p class=example><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB>The Mathematician agent could reply with:</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>(inform</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :sender Mathematician</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :receiver Student</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :content (</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;?xml version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>             xmlns:fipa=&quot;http://www.fipa.org/schemas/fipa-rdf0#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;fipa:Action
+rdf:about=&quot;#studreq01&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>       
+&lt;fipa:done&gt;true&lt;/fipa:done&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>       
+&lt;fipa:result&gt;11&lt;/fipa:result&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;/fipa:Action&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/rdf:RDF&gt;)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :language fipa-rdf0)</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><span
+lang=EN-GB><img width=258 height=91
+src="XC00011B_image012.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoCaption><b><span lang=EN-GB>Figure 6:</span></b><span lang=EN-GB> Result of the </span><span
+lang=EN-GB style='font-family:Courier'>findNextPrime</span><span lang=EN-GB>
+Action</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Sometimes, multiple implementations can be
+associated with one specific action so the </span><span lang=EN-GB
+style='font-family:Courier'>implementedBy</span><span lang=EN-GB> property can
+contain an </span><span lang=EN-GB style='font-family:Courier'>rdf:Alt</span><span
+lang=EN-GB> container of Code classes. In some cases, the method implementation
+of the code may need to refer to values of the RDF data model and conventions
+are needed to establish a mapping between the RDF data and (Java) object model.
+Although no real standards already exist, several initiatives are taking off to
+define such a binding. Examples include: </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>DATAX: the Java interface (see
+[DATAX]),</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>GINF: the interfaces specified in the
+Generic Interoperability Framework (see [Melnik99]),</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>3AP: the RDF-Java mapping as used in
+Alcatel's 3AP platform, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Other Java API's have been suggested
+on the RDF-DEV mailing lists.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The following example shows the use of the
+binding property:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>(request</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :sender agent-dealer</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :receiver agent-carshop</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :content (</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;?xml version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            
+xmlns:fipa=&quot;http://www.fipa.org/schemas/fipa-rdf0#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;fipa:Action
+rdf:ID=&quot;price-update1&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>       
+&lt;fipa:actor&gt;agent-carshop&lt;/rdf:actor&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>       
+&lt;fipa:act&gt;addNewPrices&lt;/rdf:act&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;fipa:implementedBy&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>          &lt;fipa:Code&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>           
+&lt;fipa:language&gt;Java&lt;/fipa:language&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>           
+&lt;fipa:binding&gt;DATAX&lt;/fipa:binding&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            &lt;fipa:codeURI&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>             
+http://www.carshop.com/bin/CarStock</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            &lt;/fipa:codeURI&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>          &lt;/fipa:Code&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;/fipa:implementedBy&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;/fipa:Action&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/rdf:RDF&gt; )</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :language fipa-rdf0)</span></p>
+
+<p class=example><span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The file </span><span lang=EN-GB
+style='font-family:Courier'>CarStock.java</span><span lang=EN-GB> could look as
+follows:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>import
+com.muze.datax.*;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>import
+com.muze.datax.rdf.*;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>public class
+CarStock {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>public
+CarStock() { }</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>void
+addNewPrices() {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  EntitySet entities = new
+RDFReader().read(&quot;carstock.rdf&quot;);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  DATAXFactory f = new DefaultDATAXFactory();</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  Iterator it = entities.iterator();</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  while (it.hasNext()) {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    Entity e = (Entity)it.next();</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    Property p =
+e.getProperty(&quot;http://www.carshop.com/schemas#price&quot;);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    Float price = Float.valueOf(p.getValue());</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    p-new =
+f.createProperty(Property.ATTRIBUTE,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            &quot;newprice&quot;,
+1.05*price.floatValue());</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    e.add(p-new);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  }</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>}</span></p>
+
+<p class=example><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>In this example, the car dealer requests
+the car shop to attach new prices to their car stock: the new prices should
+become 5% higher than the old ones. In the Java file, the DATAX model is used
+to map the RDF data model into Java objects. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>A second possibility is that the  </span><span lang=EN-GB style='font-family:
+Courier'>fipa:implementedBy</span><span lang=EN-GB> property includes code
+which is directly embedded as a (Java) script. The property </span><span
+lang=EN-GB style='font-family:Courier'>fipa:script</span><span lang=EN-GB> of
+the resource </span><span lang=EN-GB style='font-family:Courier'>fipa:Code</span><span
+lang=EN-GB> can be used these for purposes. Once again, conventions are needed
+to map the RDF data and the Java (script) model. For an example, see Section 3.3, .</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc465199557"></a><a name="_Toc491142069"></a><a
+name="_Toc505479456"><span lang=EN-GB>3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Exchange of Rules</span><span
+lang=EN-GB> Extensions</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>This module allows the expression and
+exchange of rules, based on the FIPA-RDF0 model. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc465199558"></a><a name="_Toc491142070"></a><a
+name="_Toc505479457"><span lang=EN-GB>3.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Introduction</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>Using the </span><span lang=EN-GB
+style='font-family:Courier'>fipa-rdf1</span><span lang=EN-GB> language, agents
+can exchange knowledge about rules. An agent can inform another agent about one
+of its own &quot;house&quot; rules, but may also request to fire a particular
+rule on (a subset of) their knowledge base. In general, we leave it up to the
+implementer of the agent how to use the exchanged rules. The </span><span
+lang=EN-GB style='font-family:Courier'>fipa-rdf1</span><span lang=EN-GB> builds
+on top of the </span><span lang=EN-GB style='font-family:Courier'>fipa-rdf0</span><span
+lang=EN-GB> schemas, and provides extra schema information for expressing
+rules. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>We will distinguish between two different
+approaches for dealing with rules: </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal><span
+     lang=EN-GB>Rules exchanged as XML/RDF encoded expressions.</span></li>
+</ol>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<ol style='margin-top:0in' start=2 type=1>
+ <li class=MsoNormal><span
+     lang=EN-GB>Rules exchanged as pieces of programming code (scripts or Java
+     classes).</span></li>
+</ol>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc465199559"></a><a name="_Toc491142071"></a><a
+name="_Toc505479458"><span lang=EN-GB>3.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Rules in XML/RDF</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>An RDF rule consists of two basic
+components: a <i>selection</i> part and a <i>manipulation </i>part, which applies to all
+RDF resources contained in the selection. To express the selection, an RDF
+notation for this purpose is chosen. To express the manipulation part, which
+allows to change property values of the selected resources, we will simply use
+the RDF data model itself.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>In order to select parts of the RDF data
+resources, one can use an RDF query language. No real standards do exist at the
+moment, but various specifications are available which define how to
+query/select particular RDF resources including: </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>RDF Query Specification (see
+[W3Crdfquery]), and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>A Query and Inference Service for RDF
+(see [Decker98]).</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph style='margin-bottom:0in;margin-bottom:.0001pt'><span
+lang=EN-GB>The selection results will be put in
+an RDF container, identified by the property </span><span lang=EN-GB
+style='font-family:Courier;'>fipa:selection-result</span><span
+lang=EN-GB> of the rule. The manipulation part
+will then give an RDF description for all resources contained in the container
+of the selection results. The following is an example of an RDF encoded rule: </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;?xml
+version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/TR/REC-rdf-syntax#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        
+xmlns:fipa=&quot;http://www.fipa.org/schemas/fipa-rdf1#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        
+xmlns:car=&quot;http://www.cars.org/schemas#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>         xmlns:rdfq=&quot;http://www.w3.org/TandS/QL/QL98/pp/rdfquery.html&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;fipa:Rule
+rdf:ID=&quot;categorizeCars1&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;fipa:selection-result
+rdf:ID=&quot;speedycars&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;fipa:selection&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;rdfq:rdfquery&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>          &lt;rdfq:From
+eachResource=&quot;http://www.carshop.com/res/&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            &lt;rdfq:Select&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>              &lt;rdfq:Condition&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                &lt;rdfq:equals&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                  &lt;rdfq:Property
+name=&quot;rdf:type&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                  &lt;rdfq:String&gt; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                   
+http://www.cars.org/schemas#Car</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                  &lt;/rdfq:String&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                &lt;/rdfq:equals&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                &lt;rdfq:greaterThan&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                  &lt;rdfq:Property
+name=&quot;http://www.cars.org/schemas#speed&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                 
+&lt;rdfq:Integer&gt;200&lt;/rdfq:Integer&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                &lt;/rdfq:greaterThan&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>              &lt;/rdfq:Condition&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            &lt;/rdfq:Select&gt; </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>          &lt;/rdfq:From&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;/rdfq:rdfquery&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;/fipa:selection&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;fipa:manipulation&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;rdf:Description
+rdf:aboutEach=&quot;speedycars&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>         
+&lt;car:category&gt;speed-car&lt;/car:category&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;/rdf:Description&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;/fipa:manipulation&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/fipa:selection-result&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/fipa:Rule&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;/rdf:RDF&gt;</span></p>
+
+<p class=example><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>In the above example, first all cars are
+selected from all resources contained in </span><span lang=EN-GB
+style='font-family:Courier'>http://www.carshop.com/res/</span><span lang=EN-GB>
+for which the maximum speed exceeds 200 (km/h). In the manipulation part, for
+all resources contained in the resulting collection, the value of the property </span><span
+lang=EN-GB style='font-family:Courier'>car:category</span><span lang=EN-GB> is
+set to </span><span lang=EN-GB style='font-family:Courier'>speed-car</span><span
+lang=EN-GB>. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Ref464283999"></a><a name="_Toc465199560"></a><a
+name="_Toc491142072"></a><a name="_Toc505479459"><span lang=EN-GB>3.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Exchanging Rules as Programming Code</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>A rule is directly expressed as some piece
+of code (which presumably also selects nodes, and subsequently manipulates the
+RDF data). For this purpose, the property </span><span lang=EN-GB
+style='font-family:Courier'>fipa:implementedAs</span><span lang=EN-GB> is
+attached to the </span><span lang=EN-GB style='font-family:Courier'>fipa:Rule</span><span
+lang=EN-GB> class, as the property </span><span lang=EN-GB style='font-family:
+Courier'>implementedBy</span><span lang=EN-GB> was attached to a </span><span
+lang=EN-GB style='font-family:Courier'>fipa:Action</span><span lang=EN-GB>
+class. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The following example states that &quot;for
+all cars for which the property speed exceeds 200&nbsp;(km/h), the property
+category should be set to </span><span lang=EN-GB style='font-family:Courier'>race-car</span><span
+lang=EN-GB>:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;?xml
+version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/TR/REC-rdf-syntax#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        
+xmlns:car=&quot;http://www.cars.org/schemas#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>         xmlns=&quot;http://www.fipa.org/schemas/fipa-rdf1#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;fipa:Rule
+rdf:ID=&quot;categorizeCars2&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;fipa:implementedAs&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;fipa:Code&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>       
+&lt;fipa:language&gt;ECMAScript&lt;/fipa:language&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>       
+&lt;fipa:binding&gt;3AP&lt;/fipa:binding&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;fipa:script&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>          NodeSelection selection = new NodeSelection(&quot;&quot;);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>          Iterator it = selection.iterator();</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>          while (it.hasNext()) {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            Node n = (Node)it.next();</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            if
+((n.getProperty(&quot;speed&quot;).getValue() &gt; 200) &amp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>              
+(n.getProperty(&quot;type&quot;).getValue().</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>               equals(&quot;http://www.cars.org/schemas#Car&quot;)) {</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>                
+n.getProperty(&quot;category&quot;).setValue(&quot;race-car&quot;);</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            }</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>          }</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;/fipa:script&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;/fipa:Code&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/fipa:implementedAs&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/fipa:Rule&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;/rdf:RDF&gt;</span></p>
+
+<p class=example><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>This script uses the 3AP APIs to map the
+RDF data with the Java object model. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc465199561"></a><a name="_Toc491142073"></a><a
+name="_Toc505479460"><span lang=EN-GB>3.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Using Rules with FIPA Communicative
+Acts</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>An agent may request another agent to fire
+a specific rule to his knowledge base. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>(request</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :sender i</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :receiver j</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :content (</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;?xml version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/TR/REC-rdf-syntax#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            
+xmlns=&quot;http://www.fipa.org/schemas/fipa-rdf1#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;FireRule&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;rdf:type
+rdf:resource=&quot;http://www.fipa.org/schemas#Action&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        &lt;argument
+rdf:resource=&quot;#categorizeCars2&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;/FireRule&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/rdf:RDF&gt; )</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :language fipa-rdf1 )</span></p>
+
+<p class=example><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The rules engine will then have an impact
+on the properties of all car instances. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Another use is that an agent informs
+another agent about its (implicit) belief in the correctness of a rule: </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>(inform</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :sender i</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :receiver j</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :content (</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;?xml version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/TR/REC-rdf-syntax#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>            
+xmlns=&quot;http://www.fipa.org/schemas/fipa-rdf1#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &lt;fipa:Rule
+about=&quot;#categorizeCars2&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/rdf:RDF&gt; )</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  :language fipa-rdf0)</span></p>
+
+<p class=example><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The receiving agent may then decide to
+apply the rule (or not).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc465199562"></a><a name="_Toc491142074"></a><a
+name="_Toc505479461"><span lang=EN-GB>3.5<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Further Remarks</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>In practice, the RDF content in a FIPA
+message may look quite verbose. However, this problem can be tackled in
+different ways:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The RDF specification itself has been
+foreseen in a number of alternative 'abbreviated forms'.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Binary encodings can be used instead,
+as defined by the XML Token specification (see [W3Cxml]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;'><span lang=EN-GB style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Some parts of the content can be
+defined in advance by unique XML identifiers (URIs) and then used in subsequent
+messages. This may be especially useful when the negotiation focuses only on
+one specific service parameter.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>To support the latter mechanism of
+cross-referencing parts of the RDF content, we suggest the usage of the </span><span
+lang=EN-GB style='font-family:Courier'>query-ref</span><span lang=EN-GB> and </span><span
+lang=EN-GB style='font-family:Courier'>inform</span><span lang=EN-GB> (see
+[FIPA00046]) <a name="_Toc465199563">FIPA communicative acts. </a></span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc491142075"></a><a
+name="_Toc505479462"><span
+lang=EN-GB>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Examples of Use</span></a></span></h1>
+
+<p class=MsoNormal><span lang=EN-GB>A number of companies and organisations in
+the FACTS project (see [FACTS]) have used FIPA RDF as content language for
+agent-based provisioning of virtual private networks.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Ref441381217"></a><a name="_Ref441460135"></a><a
+name="_Toc465199564"></a><a name="_Toc491142076"></a><a name="_Toc505479463"><span
+lang=EN-GB>4.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>RDF Schemas for </span><span
+lang=EN-GB>FIPA RDF 0</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The RDF schema needed for using </span><span
+lang=EN-GB style='font-family:Courier'>fipa-rdf0</span><span lang=EN-GB> (for
+expressing actions and propositions) is as follows: </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;?xml
+version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        
+xmlns:rdfs=&quot;http://www.w3.org/TR/1999/PR-rdf-schema-19990303#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:Class
+rdf:ID=&quot;Proposition&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;proposition&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;proposition&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:subClassOf rdf:resource=</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     
+&quot;http://www.w3c.org/1999/02/22-rdf-syntax-ns#Statement&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:comment&gt;This describes the set
+of propositions&lt;/rdfs:comment&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:Class&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;belief&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;belief&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;acte&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;#Proposition&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:range rdf:resource=</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     
+&quot;http://www.w3c.org/TR/1999/PR-rdf-schema-19990303#Literal&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:Class rdf:ID=&quot;Action&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;action&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;action&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:subClassOf rdf:resource=</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     
+&quot;http://www.w3c.org/TR/1999/PR-rdf-schema-19990303#Resource&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:comment&gt;This describes the set
+of actions&lt;/rdfs:comment&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:Class&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;act&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;act&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;acte&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;#Action&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;actor&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;actor&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;acteur&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;#Action&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;argument&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;argument&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label xml:lang=&quot;fr&quot;&gt;argument&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;#Action&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;done&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;done&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;fini&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;#Action&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;result&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;result&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;resultat&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;#Action&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;implementedBy&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;implementedBy&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;implemente par&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;#Action&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:Class rdf:ID=&quot;Code&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;code&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;code&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:comment&gt;This describes the
+code implementation&lt;/rdfs:comment&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:Class&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty rdf:ID=&quot;language&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;language&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;langue&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;#Code&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:range rdf:resource=</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     
+&quot;http://www.w3c.org/TR/1999/PR-rdf-schema-19990303#Literal&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;binding&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;binding&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;binding&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;#Code&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:range rdf:resource=</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &quot;http://www.w3c.org/TR/1999/PR-rdf-schema-19990303#Literal&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;code-uri&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;code-uri&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;code-uri&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain rdf:resource=&quot;#Code&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:range rdf:resource=</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     
+&quot;http://www.w3c.org/TR/1999/PR-rdf-schema-19990303#Literal&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;script&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;script&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label xml:lang=&quot;fr&quot;&gt;script&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;#Code&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:range rdf:resource=</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>     
+&quot;http://www.w3c.org/TR/1999/PR-rdf-schema-19990303#Literal&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;/rdf:RDF&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Ref465112847"></a><a name="_Toc465199565"></a><a
+name="_Ref491073206"></a><a name="_Toc491142077"></a><a name="_Toc505479464"><span
+lang=EN-GB>4.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>RDF Schemas for </span><span
+lang=EN-GB>FIPA RDF 1</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The RDF schemas corresponding to </span><span
+lang=EN-GB style='font-family:Courier'>fipa-rdf1</span><span lang=EN-GB> are
+specified as follows (extending the above schemas):</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;?xml
+version=&quot;1.0&quot;?&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;rdf:RDF
+xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>        
+xmlns:rdfs=&quot;http://www.w3.org/TR/1999/PR-rdf-schema-19990303#&quot;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>         xmlns:fipa=&quot;http://www.fipa.org/schemas/fipa-rdf0#&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:Class rdf:ID=&quot;Rule&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;rule&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;regle&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:Class&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;selection&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:comment&gt;The selection part
+&lt;/rdfs:comment&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;Rule&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;manipulation&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:comment&gt;The manipulation
+part&lt;/rdfs:comment&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;Rule&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;selection-result&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:comment&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      Identifies the container filled with
+selection results</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;/rdfs:comment&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;Rule&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:range rdf:resource=</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>      &quot;http://www.w3c.org/TR/1999/PR-rdf-schema-19990303#Bag&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;rdfs:ConstraintProperty
+rdf:ID=&quot;implementedAs&quot;&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;en&quot;&gt;implemented as&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:label
+xml:lang=&quot;fr&quot;&gt;implemente comme&lt;/rdfs:label&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>    &lt;rdfs:domain
+rdf:resource=&quot;Rule&quot;/&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  &lt;/rdfs:ConstraintProperty&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;/rdf:RDF&gt;</span><a
+name="_Hlt464296161"></a></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica;'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc491142078"></a><a name="_Toc505479465"><span lang=EN-GB>5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>References</span></a></h1>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB>[DATAX]           DATAX: Data Exchange in XML. 1999.<br>
+</span><span lang=EN-GB style='font-family:Courier'>http://www.megginson.com/DATAX/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB>[Decker98]        A Query and Inference Service for RDF,
+Decker, S, Brickley, D, Saarela, J and Angele, J. 1998.<br>
+</span><span lang=EN-GB style='font-family:Courier'>http://www.ilrt.bris.ac.uk/discovery/rdf-dev/purls/papers/QL98-queryservice/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB>[FACTS]           FIPA Agent Communication Technologies
+and Services (FACTS). <br>
+</span><span lang=EN-GB style='font-family:Courier'>http://www.labs.bt.com/profsoc/facts/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB style='color:black'>[FIPA00046]      </span><span lang=EN-GB>FIPA Inform
+Communicative Act Specification<span style='color:black'>. Foundation for
+Intelligent Physical Agents, 2000. </span></span><span lang=EN-GB
+style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00046/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB style='color:black'>[FIPA00054]      </span><span lang=EN-GB>FIPA Query Ref
+Communicative Act Specification<span style='color:black'>. Foundation for
+Intelligent Physical Agents, 2000. </span></span><span lang=EN-GB
+style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00054/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB style='color:black'>[Melnik99]         Generic Interoperability Framework
+(GINF) Working Paper, Melnik, S. Stanford University, 1999.</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB>[W3Crdf]           Status for Resource Description
+Framework (RDF) Model and Syntax Specification<span style='color:black'>
+(Proposed Recommendation). </span>World Wide Web Consortium<span
+style='color:black'>, 1999.<br>
+</span></span><span lang=EN-GB style='font-family:Courier;color:black'>http://www.w3.org/TR/REC-rdf-syntax/<a
+name="_Ref441458344"></a><a name="_Ref441458399"></a></span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB>[W3Crdfquery]   RDF Query Specification (Technical
+Contribution). World Wide Web Consortium, 1998.<br>
+</span><span lang=EN-GB style='font-family:Courier'>http://www.w3.org/TandS/QL/QL98/pp/rdfquery.html</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB>[W3Crdfsch]      Resource Description Framework (RDF)
+Schema Specification 1.0 (Candidate Recommendation). World Wide Web Consortium,
+2000.<br>
+</span><span lang=EN-GB style='font-family:Courier'>http://www.w3.org/TR/rdf-schema/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in;'><span lang=EN-GB>[W3Cxml]          Extensible Markup Language (XML) 1.0
+Specification (Recommendation). World Wide Web Consortium, 1998.<br>
+</span><span lang=EN-GB style='font-family:Courier'>http://www.w3c.org/TR/REC-xml/</span></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1"
+name="_ftn1" title=""><span class=MsoFootnoteReference><span lang=EN-GB>[1]</span></span></a><span
+lang=EN-AU> A content language must be able to
+express at least any of propositions, objects or actions.</span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

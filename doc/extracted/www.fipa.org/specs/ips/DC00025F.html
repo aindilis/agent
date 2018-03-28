@@ -1,0 +1,2812 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 10 (filtered)">
+<title>FIPA Interaction Protocol Library Specification</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:0 11 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\FF2D\FF33 \660E\671D";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Geneva;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Times;
+	panose-1:0 0 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Arial Black";
+	panose-1:2 11 10 4 2 1 2 2 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Century Old Style";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"MS Serif";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Monotype Sorts";}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.3in;
+	text-align:justify;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Helvetica;}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.4in;
+	text-align:justify;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-align:justify;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+h4
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.6in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h5
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.7in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+h6
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.8in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.9in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.1in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:80.0pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:8.0pt;
+	font-family:Helvetica;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Helvetica;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:20.0pt;
+	font-family:"Arial Black";
+	letter-spacing:-1.5pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	layout-grid-mode:line;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:21.3pt;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-3.3pt;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:Arial;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	font-style:italic;}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	color:red;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+strong
+	{font-family:"Book Antiqua";}
+em
+	{font-family:"Book Antiqua";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Arial;}
+p.zzCover, li.zzCover, div.zzCover
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:right;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Century Old Style";}
+p.Body, li.Body, div.Body
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;}
+p.TableTitle, li.TableTitle, div.TableTitle
+	{margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.Code
+	{font-family:"Courier New";}
+p.Heading2, li.Heading2, div.Heading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+p.NonumHeading2, li.NonumHeading2, div.NonumHeading2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Book Antiqua";
+	color:black;
+	font-weight:bold;}
+span.SmallCode
+	{font-family:"Courier New";}
+span.SmallNormal
+	{font-family:"Book Antiqua";}
+span.SmallStrong
+	{font-family:"Book Antiqua";
+	font-weight:bold;}
+p.Standardparagraph, li.Standardparagraph, div.Standardparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.berschrift1h11, li.berschrift1h11, div.berschrift1h11
+	{margin-top:13.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	line-height:13.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.Special, li.Special, div.Special
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;}
+p.zzContents, li.zzContents, div.zzContents
+	{margin-top:48.0pt;
+	margin-right:0in;
+	margin-bottom:13.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-indent:0in;
+	line-height:13.0pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Helvetica;
+	color:black;
+	layout-grid-mode:line;
+	font-weight:bold;}
+p.FIPA-AM, li.FIPA-AM, div.FIPA-AM
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Courier;
+	color:black;
+	layout-grid-mode:line;}
+p.Abbrevs, li.Abbrevs, div.Abbrevs
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	text-align:justify;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Arial;
+	color:black;}
+p.Titre3h3, li.Titre3h3, div.Titre3h3
+	{margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;
+	font-weight:bold;}
+p.source, li.source, div.source
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	layout-grid-mode:line;}
+p.Normaleparagraph, li.Normaleparagraph, div.Normaleparagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:0in;
+	text-align:justify;
+	font-size:10.0pt;
+	font-family:Helvetica;
+	color:black;}
+p.Bullet, li.Bullet, div.Bullet
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:Arial;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:8.5in 11.0in;
+	margin:.55in 36.7pt .75in 20.15pt;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="SK_Preliminary"></a><a
+name="MLS_Field_MERGEFORMAT"></a><a name="MLS_Field_QUOTE"></a><a
+name="SKL_Preliminary"></a><a name=IsolibMLS></a><b><span lang=EN-GB
+style='font-size:18.0pt'>&nbsp;</span></b></p>
+
+<p class=Standardparagraph align=center style='margin-bottom:0in;margin-bottom:
+.0001pt;text-align:center'><a name="_Ref497719355"></a><b><span lang=EN-GB
+style='font-size:18.0pt'>FOUNDATION FOR INTELLIGENT PHYSICAL AGENTS</span></b><b><span lang=EN-GB style='font-size:18.0pt'><a name="_Ref479045812"></a></span></b></p>
+
+<p class=Standardparagraph><a name="MLS_Field_CHARFORMAT"><span lang=EN-GB>&nbsp;</span></a></p>
+
+<p class=Standardparagraph><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt'>FIPA Interaction Protocol Library
+Specification</span></p>
+
+<p class=Standardparagraph align=center style='text-align:center'><span
+lang=EN-GB style='font-size:24.0pt'>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  title</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA
+  Interaction Protocol Library Specification</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  number</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>DC00025F</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  source</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA
+  TC C</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Document
+  status</span></b></p>
+  </td>
+  <td width=170 valign=top style='width:127.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>Deprecated</span></p>
+  </td>
+  <td width=154 valign=top style='width:115.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Date
+  of this status</span></b></p>
+  </td>
+  <td width=167 valign=top style='width:125.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>2003/02/10</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Supersedes</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>FIPA00003</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Contact</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>fab@fipa.org</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=133 valign=top style='width:99.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><b><span lang=EN-GB>Change
+  history</span></b></p>
+  </td>
+  <td width=491 colspan=3 valign=top style='width:368.45pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 1.5pt 0in 1.5pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>See <i>Informative
+  Annex A — ChangeLog</i></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=Standardparagraph><span lang=EN-GB>© 2000 Foundation for Intelligent
+Physical Agents - http://www.fipa.org/</span></p>
+
+<p class=Standardparagraph><i><span lang=EN-GB>Geneva, Switzerland</span></i></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-bottom:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Standardparagraph align=center style='text-align:center'><b><span
+  lang=EN-GB>Notice</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:108.45pt'>
+  <td width=715 valign=top style='width:7.45in;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:108.45pt'>
+  <p class=Standardparagraph><span lang=EN-GB>Use of the technologies described
+  in this specification may infringe patents, copyrights or other intellectual
+  property rights of FIPA Members and non-members. Nothing in this
+  specification should be construed as granting permission to use any of the
+  technologies described. Anyone planning to make use of technology covered by
+  the intellectual property rights of others should first obtain permission
+  from the holder(s) of the rights. FIPA strongly encourages anyone
+  implementing any part of this specification to determine first whether
+  part(s) sought to be implemented are covered by the intellectual property of
+  others, and, if so, to obtain appropriate licenses or other permission from
+  the holder(s) of such intellectual property prior to implementation. This
+  specification is subject to change without notice. Neither FIPA nor any of
+  its Members accept any responsibility whatsoever for damages or liability,
+  direct or consequential, which may result from the use of this specification.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=zzContents><span lang=EN-GB>Foreword</span></p>
+
+<p class=Standardparagraph>The Foundation for Intelligent Physical Agents
+(FIPA) is an international organization that is dedicated to promoting the
+industry of intelligent agents by openly developing specifications supporting
+interoperability among agents and agent-based applications. This occurs through
+open collaboration among its member organizations, which are companies and
+universities that are active in the field of agents. FIPA makes the results of
+its activities available to all interested parties and intends to contribute
+its results to the appropriate formal standards bodies. </p>
+
+<p class=Standardparagraph>The members of FIPA are individually and
+collectively committed to open competition in the development of agent-based
+applications, services and equipment. Membership in FIPA is open to any corporation
+and individual firm, partnership, governmental body or international
+organization without restriction. In particular, members are not bound to
+implement or use specific agent-based standards, recommendations and FIPA
+specifications by virtue of their participation in FIPA. </p>
+
+<p class=Standardparagraph>The FIPA specifications are developed through direct
+involvement of the FIPA membership. The status of a specification can be either
+Preliminary, Experimental, Standard, Deprecated or Obsolete.<i> </i>More detail
+about the process of specification may be found in the FIPA Procedures for
+Technical Work. A complete overview of the FIPA specifications and their
+current status may be found in the FIPA List of Specifications. A list of terms
+and abbreviations used in the FIPA specifications may be found in the FIPA
+Glossary.</p>
+
+<p class=Standardparagraph>FIPA is a non-profit association registered in
+Geneva, Switzerland. As of January 2000, the 56 members of FIPA represented 17<i>
+</i>countries worldwide. Further information about FIPA as an organization,
+membership information, FIPA specifications and upcoming meetings may be found
+at http://www.fipa.org/.</p>
+
+<p class=zzContents><span lang=EN-GB>Contents</span></p>
+
+<p class=MsoToc1><a name="_Ref449499969"></a><a
+href="#_Toc34063436"><span lang=EN-GB>1</span><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext;text-decoration:none'>     </span><span
+lang=EN-GB>Scope</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc34063437"><span lang=EN-GB>2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Overview</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc34063438"><span lang=EN-GB>2.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Interaction Protocols</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc34063439"><span lang=EN-GB>2.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Status of a FIPA-Compliant
+Interaction Protocol</span><span lang=EN-GB style='color:windowtext;display:
+none;text-decoration:none'> </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc34063440"><span lang=EN-GB>2.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>FIPA Interaction Protocol
+Library Maintenance</span><span lang=EN-GB style='color:windowtext;display:
+none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc34063441"><span lang=EN-GB>2.4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Inclusion Criteria</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc34063442"><span lang=EN-GB>3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>AUML Sequence Diagrams for
+Interaction Protocol Specification</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc34063443"><span lang=EN-GB>3.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Introduction</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc34063444"><span lang=EN-GB>3.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Extending UML by Protocol
+Diagrams</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc34063445"><span lang=EN-GB>3.2.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Protocol Diagrams</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc34063446"><span lang=EN-GB>3.2.2</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>AgentRoles</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc34063447"><span lang=EN-GB>3.2.3</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Agent Lifeline</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc34063448"><span lang=EN-GB>3.2.4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Threads of Interaction</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>10</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc34063449"><span lang=EN-GB>3.2.5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Messages</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc34063450"><span lang=EN-GB>3.2.6</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Complex Messages</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc34063451"><span lang=EN-GB>3.2.7</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Nested Protocols</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>14</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc34063452"><span lang=EN-GB>3.2.8</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Complex Nested Protocols</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>15</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc34063453"><span lang=EN-GB>3.2.9</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>Threads of Interaction and
+Messages Inside and Outside Nested Protocols</span><span lang=EN-GB
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>16</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc34063454"><span lang=EN-GB>3.2.10</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>    </span><span lang=EN-GB>Parameterised Protocols</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc34063455"><span lang=EN-GB>3.2.11</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>    </span><span lang=EN-GB>Bound Elements</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>18</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc34063456"><span lang=EN-GB>4</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>References</span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>21</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc34063457"><span lang=EN-GB>5</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>     </span><span lang=EN-GB>Informative Annex A —
+ChangeLog</span><span lang=EN-GB style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>22</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc34063458"><span lang=EN-GB>5.1</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext;
+text-decoration:none'>      </span><span lang=EN-GB>2003/03/10 - version F by
+FIPA Architecture Board</span><span lang=EN-GB style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+lang=EN-GB style='color:windowtext;display:none;text-decoration:none'>22</span></a></p>
+
+<p class=MsoNormal></p>
+
+</div>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=Section2>
+
+<h1><a name="_Toc34063436"></a><a name="_Toc497728932"><span lang=EN-GB>1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Scope</span></a></h1>
+
+<p class=MsoNormal><a name="_Toc378578798"></a><a name="_Toc377361549"></a><a
+name="_Toc377361530"></a><a name="_Toc377358156"></a><a name="_Toc359645201"></a><a
+name="_Toc357853660"></a><a name="_Toc353954976"></a><a name="_Toc353073920"></a><a
+name="_Toc353003785"></a><a name="_Toc405699094">This document contains:</a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Specifications for structuring the FIPA Interaction Protocol
+Library (IPL) including a status of a FIPA Interaction Protocols (IPs),
+maintenance of the library and inclusion criteria for new IPs.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>A description of how to understand and express IPs using AUML
+(Agent Unified Modeling Language).</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The FIPA IP registry list.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>This specification is primarily concerned with defining the
+structure of the FIPA IPL and the requirements for an IP to be included in the
+library.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc34063437"></a><a name="_Toc497728933"><span lang=EN-GB>2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Overview</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-GB>This specification focuses on the
+organization, structure and status of the FIPA IPL and discusses the main
+requirements that an IP must satisfy in order to be FIPA-compliant. The
+objectives of standardising and defining a library of FIPA compliant IPs are:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>To provide tested patterns of agent interaction
+that may be of use in various aspects of agent-based systems,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>To facilitate the reuse of standard agent IPs,
+and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>To express IPs in a standard agent unified
+modelling language (AUML).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>In the following, we present the basic
+principles of the FIPA IPL which help to guarantee that the IPL is stable, that
+there are public rules for the inclusion and maintenance of the IPL, and that
+developers seeking a public IPs can use the IPL.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc34063438"></a><a name="_Toc497728934"><span lang=EN-GB>2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Interaction Protocols</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>Ongoing conversations between agents often
+fall into typical patterns. In such cases, certain message sequences are
+expected, and, at any point in the conversation, other messages are expected to
+follow. These typical patterns of message exchange are called <i>interaction
+protocols</i>. A designer of agent systems has the choice to make the agents
+sufficiently aware of the meanings of the messages and the goals, beliefs and
+other mental attitudes the agent possesses, and that the agent’s planning
+process causes such IPs to arise spontaneously from the agents’ choices. This,
+however, places a heavy burden of capability and complexity on the agent
+implementation, though it is not an uncommon choice in the agent community at
+large. An alternative, and very pragmatic, view is to pre-specify the IPs, so
+that a simpler agent implementation can nevertheless engage in meaningful
+conversation with other agents, simply by carefully following the known IP. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>This section of the specification details a
+number of such IPs, in order to facilitate the effective inter-operation of
+simple and complex agents. No claim is made that this is an exhaustive list of
+useful IPs, nor that they are necessary for any given application. The IPs are
+given pre-defined names and the requirement for adhering to the specification
+is:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><i><span lang=EN-GB>A FIPA ACL-compliant agent need not
+implement any of the standard IPs, nor is it restricted from using other IP
+names. However, if one of the standard IP names is used, the agent must behave
+consistently with the IP specification given here.</span></i></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><i><span lang=EN-GB>These IPs are not intended to cover
+every desirable interaction type. Individual IPs do not address a number of
+common real-world issues in agent interaction, such as exception handling,
+messages arriving out of sequence, dropped messages, timeouts, cancellation,
+etc. Rather, the IPs defined in this specification set should be viewed as
+interaction patterns, to be elaborated according to the context of the
+individual application. This strategy means that adhering to the stated IPs
+does not necessarily ensure interoperability; further agreement between agents
+about the issues above is required to ensure interoperability in all cases.</span></i></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Note that, by their nature, agents can
+engage in multiple dialogues, perhaps with different agents, simultaneously.
+The term <i>conversation </i>is used to denote any particular instance of such
+a dialogue. Thus, the agent may be concurrently engaged in multiple
+conversations, with different agents, within different IPs. The remarks in this
+section, which refer to the receipt of messages under the control of a given
+IP, refer only to a particular conversation.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc34063439"></a><a name="_Toc497728935"><span lang=EN-GB>2.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Status of a FIPA-Compliant Interaction Protocol</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The definition of an IP belonging to the
+FIPA IPL is normative, that is, if a given agent advertises that it employs an
+IP in the FIPA Content Language Library (see [FIPA00007]), then it must
+implement the IP as it is defined in the FIPA IPL. However, FIPA-compliant
+agents are not required to implement any of the FIPA IPL IPs themselves, except
+those required for Agent Management (see [FIPA00023]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>By collecting IP definitions in a single,
+publicly accessible registry, the FIPA IPL facilitates the use of standardized
+IPs by agents developed in different contexts. It also provides a greater
+incentive to developers to make their IPs generally applicable.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>FIPA is responsible for maintaining a
+consistent list of IP names and for making them publicly available. In addition
+to the list of encoding schemes, each IP in the FIPA IPL may specify additional
+information, such as stability information, versioning, contact information,
+different support levels, etc.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc34063440"></a><a name="_Toc497728936"><span lang=EN-GB>2.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>FIPA Interaction Protocol Library Maintenance</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>The most effective way of maintaining the
+FIPA IPL is through the use of the IPs themselves by different agent developers.
+This is the most direct way of discovering possible bugs, errors,
+inconsistencies, weaknesses, possible improvements, as well as capabilities,
+strengths, efficiency, etc.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>In order to collect feedback on the IPs in
+the library and to promote further research, FIPA encourages coordination among
+designers, agent developers and FIPA members.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc34063441"></a><a name="_Toc497728937"><span lang=EN-GB>2.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Inclusion Criteria</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>To populate the FIPA IPL, setting
+fundamental guidelines for the selection of specific IPs is necessary. The
+minimal criteria that must be satisfied for an IP to be FIPA compliant are:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>A clear and accurate representation of the IP is
+provided using AUML protocol diagram,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Substantial and clear documentation must be
+provided, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>The usefulness of a new IP should be made clear.
+</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>FIPA does not enforce the use of any
+particular IP.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc34063442"></a><a name="_Toc497728938"><span lang=EN-GB>3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>AUML Sequence Diagrams for Interaction Protocol
+Specification</span></a></h1>
+
+<h2><a name="_Toc34063443"></a><a name="_Toc497728939"><span lang=EN-GB>3.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Introduction</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>During the 1970s, structured programming
+was the dominant approach to software development. Along with it, software
+engineering technologies were developed in order to ease and formalize the
+system development lifecycle: from planning, through analysis and design and
+finally to system construction, transition, and maintenance. In the 1980s,
+object-oriented languages experienced a rise in popularity, bringing with it
+new concepts such as data encapsulation, inheritance, messaging, and
+polymorphism. By the end of the 1980s and beginning of the 1990s, a jungle of
+modelling approaches grew to support the object-oriented marketplace. To make
+sense of and unify these various approaches, an Analysis and Design Task Force
+was established on 29 June 1995 within the Object Management Group (OMG). And
+by November 1997, a de jure standard was adopted by the OMG members called the
+Unified Modelling Language (UML - see [OMGuml]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>UML unifies and formalizes the methods of
+many object-oriented approaches, including analysis and design [Booch94 and
+Booch95], modelling [Rumbaugh91] and software engineering [Jacobson94]. It
+supports the following kinds of models:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Static models</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>Such as class and
+package diagrams describe the static semantics of data and messages. Within
+system development, class diagrams are used in two different ways, for two
+different purposes. First, they can model a problem domain conceptually and since
+they are conceptual in nature, they can be presented to the customers.  Second,
+class diagrams can model the implementation of classes which guides developers.
+At a general level, the term </span><i><span lang=EN-GB>class </span></i><span
+lang=EN-GB>refers to the encapsulated unit and at the conceptual level, models
+types and their associations; the implementation level models implementation
+classes. While both can be more generally thought of as classes, their usage as
+concepts and implementation notions is important both in purpose and semantics.
+Package diagrams group classes in conceptual packages for presentation and
+consideration. (Physical aggregations of classes are called </span><i><span
+lang=EN-GB>components</span></i><span lang=EN-GB> that are in the
+implementation model family, mentioned below.)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Dynamic models</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>These include
+interaction diagrams (that is, sequence and collaboration diagrams), state
+charts and activity diagrams.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Use cases</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>The specification
+of actions that a system or class can perform by interacting with outside
+actors. They are commonly used to describe how a customer communicates with a
+software product.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Implementation models</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>These describe
+the component distribution on different platforms, such as component models and
+deployment diagrams</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Object Constraint Language (OCL)</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This is a simple
+formal language to express more semantics within an UML specification. It can
+be used to define constraints on the model, invariant, pre- and post-conditions
+of operations and navigation paths within an object net.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>For modelling agents and agent-based
+systems, UML is insufficient. Compared to objects, agents are active because
+they act for reasons that emerge from themselves. The activity of agents is
+based on their internal states, which include goals and conditions that guide
+the execution of defined tasks. While objects need control from outside to
+execute their methods, agents know the conditions and intended effects of their
+actions and hence take responsibility for their needs. Furthermore, agents do
+not only act solely but together with other agents. Multi-agent systems can
+often resemble a social community of interdependent members that act
+individually.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>However, no sufficient specification
+formalism exists yet for agent-based system development. To employ agent-based
+programming, a specification technique must support the whole software engineering
+process—from planning, through analysis and design, and finally to system
+construction, transition, and maintenance.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>A proposal for a full life-cycle
+specification of agent-based system development is beyond the scope of this
+specification. Here, we suggest a subset of an agent-based extension to the
+standard UML, called AUML, for the specification of agent interaction protocols
+(AIPs).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>It has to be distinguished between generic
+(or parameterised) protocols (and their instantiations) and domain-specific
+protocols.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h2><a name="_Toc34063444"></a><a name="_Toc497728940"><span lang=EN-GB>3.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Extending UML by Protocol Diagrams</span></a></h2>
+
+<p class=MsoNormal><span lang=EN-GB>In the following, we provide sequence
+diagrams for AUML [Odell2000], an extension to UML. We refer to these sequence
+diagrams as </span><i><span lang=EN-GB>protocol diagrams </span></i><span
+lang=EN-GB>(PDs) which show well-defined interactions among agents. Note that
+we do not define formal semantics for the communicative acts for AUML, but
+instead use the UML meta-model.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc34063445"></a><a name="_Toc497728941"><span lang=EN-GB>3.2.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Protocol Diagrams</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>Adapted from [OMGuml], section 3.59.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.1.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Semantics</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A PD represents an interaction, which is a
+set of messages exchanged among different agent roles within a collaboration to
+effect a desired behaviour of other AgentRoles or agent instances. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.1.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notation</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A PD has two dimensions: the vertical
+dimension represents time, the horizontal dimension represents different
+AgentRoles. Normally the time proceeds down the page and usually only time
+sequences are important, but in real-time applications the time axis could be
+an actual metric. There is no significance to the horizontal ordering of the
+AgentRoles.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.1.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Presentation Options</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>The axes can be interchanged, so that time
+proceeds horizontally to the right and different AgentRoles are shown as
+horizontal lines.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Various labels (such as timing marks,
+generated goals depending on the received message, etc.) can be shown either in
+the margin or near the lifelines or messages that they label.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica;color:black'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<h4><a name="_Ref497720432"><span lang=EN-GB>3.2.1.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Example</span></a></h4>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=341
+height=404 src="DC00025F_files/image001.gif"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<h4><a name="_Ref497715329"><span lang=EN-GB>3.2.1.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Mapping</span></a></h4>
+
+<p class=MsoNormal><span lang=EN-GB>The mapping is analogous defined as for
+sequence diagrams (see [OMGuml]).</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>A PD maps like a sequence diagram into an
+Interaction and an underlying Collaboration. An Interaction specifies a
+sequence of communications; it contains a collection of partially ordered
+Messages, each specifying a communication between a sender role and a receiver
+role. Collections of agent roles that conform to the ClassifierRoles in the
+Collaboration owning the Interaction, communicate by dispatching Stimuli that
+conform to the Messages in the Interaction. An AgentRole maps into a
+ClassifierRole. A PD presents one collection of AgentRoles and arrows mapping
+to AgentRole and Stimuli that conform to the ClassifierRoles and Messages in
+the Interaction and its Collaboration.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>In a PD, each AgentRole box with its
+lifeline maps into an agent role that conforms to a ClassifierRole in the
+Collaboration. The name fields maps into the name of the agent, the role name
+into the Classifier's name and the class field maps into the names of the
+Classifier (in this case AgentClasses being Classes) being the base Classifiers
+of the ClassifierRole. The splitting of lifelines has a concurrency Association
+defining either AND/OR parallelism or decision Association denoting threads (</span><span
+lang=EN-GB style='font-family:Courier'>&lt;&lt;thread&gt;&gt;</span><span
+lang=EN-GB>). The associations among roles are not shown on the sequence
+diagram since they must be obtained in the model from a complementary
+collaboration diagram or other means. A message arrow maps into a Stimulus
+connected to two AgentRoles. the sender and receiver AgentRole. The Stimulus
+conforms to a Message between the ClassifierRoles corresponding to the two
+AgentRoles' lifelines that the arrow connects. The Link is used for the
+communication of the Stimulus and plays the role specified by the
+AssociationRole connected to the Message. Unless the correct Link can be
+determined from a complementary collaboration diagram or other means, the
+Stimulus is either not attached to a Link (not a complete model), or it is
+attached to an arbitrary Link or to a dummy Link between the Instances
+conforming to the AssociationRole implied by the two ClassifierRoles due to the
+lack of complete information. The name of the communicative act is mapped onto
+the behaviour associated by the action performing, requested information,
+information passing, negotiation or error handling connected to the Message.
+Different alternatives exist for showing the arguments of the Stimulus. If
+references to the actual Instances being passed as arguments are shown, these
+are mapped onto the arguments of the Stimulus. If the argument expressions are
+shown instead, these are mapped onto the Arguments of the action performing,
+requested information, information passing, negotiation or error handling
+connected to the dispatching communicative act. Finally, if the types of the
+arguments are shown together with the name of the communicative act, these are
+mapped onto the parameter types of the communicative act. A timing label placed
+on the level of an arrow endpoint maps into the name of the corresponding
+Message. A constraint or guard placed on the diagrams maps into a Constraint on
+the entire Interaction. The cardinality label restricts the number of sending
+and receiving instances of agent roles accordingly to the numbers denoted at
+the beginning (sender) and end (receiver) of the message.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>An arrow with the arrowhead pointing to an
+AgentRole symbol within the frame of the diagram maps into a Stimulus
+dispatched by a </span><span lang=EN-GB style='font-family:Courier'>CreateAction</span><span
+lang=EN-GB>, that is, the Stimulus conforms to a Message in the Interaction
+which is connected to the </span><span lang=EN-GB style='font-family:Courier'>CreateAction</span><span
+lang=EN-GB>. The interpretation is that the AgentRole instance (not an
+arbitrary agent role, nor a set of AgentRole instances) is created by dispatching
+the Stimulus, and the AgentRole instance conforms to the receiver role
+specified in the Message. After the creation of the AgentRole instance, it may
+immediately start interacting with other AgentRoles. This implies that the
+creation of the AgentRole dispatches these Stimuli. If an AgentRole instance
+termination symbol (&quot;X&quot;) is the target of the of an arrow, the arrow
+maps into a Stimulus which will cause the receiving agent role instance to be
+removed. The Stimulus conforms to a Message in the Interaction with a </span><span
+lang=EN-GB style='font-family:Courier'>DestroyAction</span><span lang=EN-GB>
+attached to the Message or the agent instance terminates itself.  </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The order of the arrows in the diagram map
+onto a pair of associations between the Messages that correspond to the Stimuli
+the arrows maps onto. A predecessor association is established between Messages
+corresponding to successive arrow ends in the vertical sequence. In case of
+concurrent arrows preceding an arrow, the corresponding Message has a
+collection of predecessors. In case of exclusive-or and inclusive-or arrows
+preceding an arrow the corresponding message has one and at least one out of
+the collection of possible predecessors, respectively. Moreover, each Message
+has an activator (thread of interaction) association to the Message
+corresponding to the incoming arrow of the activation or pro-active sending of
+a message.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>A nested protocol maps into a PD. The name
+compartment of a nested protocol maps into the name of the Collaboration. The
+guard and constraint compartment maps into a constraint on the complete Interaction.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>A complex nested protocol maps into a PD.
+The order of the messages within the protocol is defined according to the
+combination of the complex nested protocol. The ordering of the messages in the
+nested protocol is the ordering of these protocols. Depending on the
+combination the messages are sent in AND/OR parallelism or decision ordering.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc34063446"></a><a name="_Toc497728942"><span lang=EN-GB>3.2.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>AgentRoles</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>In the framework of agent oriented
+programming an agent satisfying a distinguished role behaves in a special way.
+In contrast to this semantics </span><i><span lang=EN-GB>role</span></i><span
+lang=EN-GB> in UML is an instance focused term. Moreover the term </span><i><span
+lang=EN-GB>multi-object</span></i><span lang=EN-GB> does not fit to describe
+AgentRoles but it is used to show operations that address the entire set,
+rather than a single object in it. However, there is a communication with one
+instance of this multi-object. By </span><i><span lang=EN-GB>AgentRole </span></i><span
+lang=EN-GB>a set of agents satisfying distinguished properties, interfaces or
+having a distinguished behaviour are meant.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>UML distinguishes between:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>multiple classifications where a retailer agent
+can act as well as a buyer as well as a seller agent, for example, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>dynamic classification where an agent can change
+its classification during its existence.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Agents can perform various roles within one
+IP. Using a contract-net protocol, for example, between a buyer and a seller of
+a product, the initiator of the protocol has the role of a buyer and the
+participant has the role of a seller. But the seller can as well be a retailer
+agent, which acts as a seller in one case and as a buyer in another case, i.e.
+agents satisfying a distinguished role can support multiple classification and
+dynamic classification. Another example can be found in [FIPA00023] which
+defines the functionality of the Directory Facilitator (DF) and the Agent
+Management System (AMS). These functionalities can be implemented by different
+agents, but the functionality of the DF and AMS can also be integrated into one
+agent.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>An AgentRole can be seen as a set of agents
+satisfying a distinguished interface, service description or behaviour.
+Therefore the implementation of an agent can satisfy different roles. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Note that within FIPA the notion of role is
+not used, but in the framework of specifying agent-based systems this notion is
+appropriate.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Semantics</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>An AgentRole describes two different
+variations that can apply within a protocol definition. A protocol can be
+defined between different concrete agent instances or a set of agents
+satisfying a distinguished role and/or class. An agent satisfying a
+distinguished AgentRole and class is called agent of a given AgentRole and
+class, respectively.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notation</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>An AgentRole is shown as a rectangle that
+is filled with some string of one of the following forms:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>role</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This denotes
+arbitrary agents satisfying the distinguished AgentRole.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>instance / role-1 ... role-</span><i><span
+lang=EN-GB>n</span></i></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This denotes a
+distinguished agent instance that satisfies the AgentRoles 1-</span><i><span
+lang=EN-GB>n</span></i><span lang=EN-GB> where </span><i><span lang=EN-GB>n</span></i><span
+lang=EN-GB> </span><span lang=EN-GB style='font-family:Symbol'>³</span><span
+lang=EN-GB> 0.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>instance / role-1 ... role-</span><i><span
+lang=EN-GB>n</span></i><span lang=EN-GB> : class</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This denotes a
+distinguished agent instance that satisfied the AgentRoles 1-</span><i><span
+lang=EN-GB>n</span></i><span lang=EN-GB> where </span><i><span lang=EN-GB>n</span></i><span
+lang=EN-GB> </span><span lang=EN-GB style='font-family:Symbol'>³</span><span
+lang=EN-GB> 0 and class it belongs to.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Presentation Options</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>The second case can be abbreviated as
+instance if n equals zero, that is, a concrete agent is meant independent of
+the role(s) it satisfies and class it belongs to.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Example</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img
+width=77 height=27 src="DC00025F_files/image002.gif"> <img width=77 height=27
+src="DC00025F_files/image003.gif"> <img width=144 height=27
+src="DC00025F_files/image004.gif"> <img width=230 height=27
+src="DC00025F_files/image005.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.2.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Mapping</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>See </span><i><span lang=EN-GB>Section 3.2.1.5, Mapping</span></i><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc34063447"></a><a name="_Toc497728943"><span lang=EN-GB>3.2.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Agent Lifeline</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>The agent lifeline defines the time period
+when an agent exists. For example a user agent is created when a user logs on
+to the system and the user agent is destroyed when the user logs off. Another
+example is when an agent migrates from one machine to another.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Semantics</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A PD  defines the pattern of communication,
+that is, the steps in which the communicative acts are sent between agents of
+different AgentRoles. The agent lifeline describes the time period in which an
+agent of a given AgentRole exists. Only during this time period an agent can
+participate on a protocol. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The lifeline starts when the agent of a
+given AgentRole is created and ends when it is destroyed. The lifeline can be
+split in order to describe AND/OR parallelism and decisions and may merge
+together at some subsequent point.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.3.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notation</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>An agent lifeline is shown as a vertical
+dashed line. The lifeline represents the existence of an agent of a given
+AgentRole at a particular time. If the agent is created or destroyed during the
+period of time shown on the PD, then its lifeline starts or stops at the
+appropriate point; otherwise it goes from the top of the diagram to the bottom.
+An AgentRole is drawn at the head of the lifeline. If an agent of a given
+AgentRole is created during the PD, then the message that creates it is drawn
+with its arrowhead on the AgentRole. Note, that the AgentRole (see Section </span><i><span
+lang=EN-GB>3.2.3.4, Example</span></i><span
+lang=EN-GB>) that receives the message is responsible for the creation of the
+agent instance, that is, the arrowhead ends at the dashed line of the AgentRole
+receiving the message and the AgentRole is fixed at the left-hand or right-hand
+side of the lifeline or the thread of interaction. If an agent instance is
+destroyed during the PD, then its destruction is marked by a large
+&quot;X&quot;, either at the message that causes the destruction or (in the
+case of self destruction) at the final action of the AgentRole. The termination
+is restricted to concrete instances of an agent role.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>AgentRoles that exist when a protocol
+starts is shown at the top of the diagram (above the first message arrow). An
+AgentRole that exists when the protocol finishes has its lifeline continued
+beyond the final arrow of the diagram. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The lifeline may split into two or more
+lifelines to show AND/OR parallelism and decisions. Each separate track
+corresponds to a branch in the message flow. The lifelines may merge together
+at some subsequent point. The splitting of the lifeline for:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>AND parallelism starts at a horizontal heavy
+bar,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>OR parallelism (inclusive-or) starts at a
+horizontal heavy bar with a non-filled diamond, and,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>decision (exclusive-or) starts at a horizontal
+heavy bar with a non-filled diamond with &quot;x&quot; inside the diamond and
+is continued with a set of parallel vertical lifelines connected to the heavy
+bar.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The merging is done the analogous way, that
+is, the parallel vertical lifelines stop at some of the horizontal heavy bars
+and one lifeline is continued from at the heavy bar.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.3.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Presentation Options</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>None.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><a name="_Ref497719356"><span lang=EN-GB>3.2.3.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Example</span></a></h4>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img
+width=26 height=36 src="DC00025F_files/image006.gif">      <img width=28
+height=37 src="DC00025F_files/image007.gif">     <img width=28 height=37
+src="DC00025F_files/image008.gif">   <img width=28 height=37
+src="DC00025F_files/image009.gif">       <img width=28 height=36
+src="DC00025F_files/image010.gif">     <img width=28 height=37
+src="DC00025F_files/image011.gif"></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=left style='text-align:left'>See also <i>Section 3.2.1.4, <span
+lang=EN-GB><br clear=all style='page-break-before:always'>
+Example</span></i>.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h4><span lang=EN-GB>3.2.3.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Mapping</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>See </span><i><span lang=EN-GB>Section 3.2.1.5, Mapping</span></i><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc34063448"></a><a name="_Toc497728944"><span lang=EN-GB>3.2.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Threads of Interaction</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>The sending of messages can be done either
+in parallel or as a decision between different communicative acts. Receiving
+different communicative acts usually results in different behaviour and
+different answers, that is, the behaviour of an AgentRole depends on the
+received message.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Adapted from [OMGuml], section 7.4.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.4.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Semantics</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>Since the behaviour of an AgentRole depends
+on the incoming message and different communicative acts are allowed as an
+answer to a communicative act, the thread of interaction, that is, the
+processing of incoming messages, has to be split up into different threads of
+interaction. The lifeline of an AgentRole is split and the thread of
+interaction defines the reaction to received messages.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The thread of interaction shows the period
+during which an AgentRole is performing some task as a reaction to an incoming
+message. It represents only the duration of the action in time, but not the
+control relationship between the sender of the message and the receiver. A
+thread of interaction is always associated with the lifeline of an AgentRole.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Note we do not mean a physical thread in
+this context. The specification is independent of the implementation using
+threads or other mechanisms.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.4.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notation</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A thread of interaction is shown as a tall
+thin rectangle whose top is aligned with its initiation time and whose bottom
+is aligned with its completion time. It is drawn over the lifeline of an
+AgentRole. The task being performed may be labelled as text next to the thread
+of interaction or in the left margin, depending on the style; alternately the
+incoming message may indicate the task, in which case it may be omitted on the
+thread of interaction itself.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>If the distinction between the reaction to
+different incoming communicative acts can be neglected, the entire lifeline may
+be shown as one thread of interaction.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.4.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Presentation Options</span></h4>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Variation</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>A thread of
+interaction may can take only a short period of time. To simplify diagrams, for
+compactification reasons of the diagram the parallelism and the decisions can
+be abbreviated by omitting the splitting/merging and putting the different
+threads of interaction one after another on the lifeline.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Variation</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>A break of the
+rectangle describes a change in the thread of interaction.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.4.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Example</span></h4>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB
+style='color:red'><img width=145 height=143 src="DC00025F_files/image012.gif"> 
+</span><span lang=EN-GB>          can be abbreviated as<span style='color:red'>    </span>
+<span style='color:red'><img width=126 height=161
+src="DC00025F_files/image013.gif"></span></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.4.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Mapping</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>See </span><i><span lang=EN-GB>Section 3.2.1.5, Mapping</span></i><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3 style='margin-left:.25in;text-indent:-.25in'><a name="_Toc34063449"></a><a
+name="_Toc497728945"><span lang=EN-GB>3.2.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Messages</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>The main issue of protocols is the
+definition of communicative patterns, especially the sending of messages from
+one AgentRole to another. This sending can be done in different ways, for
+example, with different cardinalities, depending on some constraints or using
+AND/OR parallelism and decisions.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Adapted from [OMGuml], section 7.5 and
+section 8.9.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.5.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Semantics</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A message or sending of a communicative act
+is a communication from one AgentRole to another that conveys information with
+the expectation that the receiving AgentRole would react according to the
+semantics of the communicative act. The specification of the protocol says
+nothing about the implementation of the processing of the communicative act.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.5.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notation</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A message sending is shown as a horizontal
+solid arrow from a thread of interaction of an AgentRole to another thread of
+interaction of another AgentRole. In case of a message is sent from an
+AgentRole to itself (note that there might be many individual agents in an
+AgentRole), the arrow may start and end on the same lifeline or thread of
+interaction. Such a nested thread of interaction is denoted by a thread of
+interaction that is shifted a little bit to the right side in the actual thread
+of interaction.</span></p>
+
+<p class=MsoNormal></p>
+
+<p class=MsoNormal><span lang=EN-GB>Nested protocols are represented by a
+separate thread of interaction, along with an arrow initiating the nested
+protocol and one or more arrows terminating the nested protocol.  The
+initiating arrow is drawn starting with a small solid filled circle, and a
+terminating arrow ends with a circle surrounding a small solid filled circle.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Each arrow is labelled with a message label
+that has the following syntax:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><i><span style='font-family:Courier'>predecessor
+guard-condition sequence-expression communicative-act argument-list</span></i></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Where:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB style='font-family:Courier'>predecessor</span></i></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This consists of
+at most one natural number followed by a slash (</span><span lang=EN-GB
+style='font-family:Courier'>/</span><span lang=EN-GB>) defining the sequencing
+of a parallel construct or the number of the input and output parameter in the
+context of </span><i><span lang=EN-GB>Section 3.2.9, Threads of Interaction and Messages Inside and Outside Nested Protocols</span></i><span
+lang=EN-GB>, xxxx. The clause is omitted if the list is empty.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB style='font-family:Courier'>guard-condition</span></i></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This is a usual
+UML guard condition, with the semantics, that the message is sent iff the guard
+is true. The guard conditions must be defined on the behavioural semantics of
+the agents, that is, the internal state of the agent must not be used in the
+definition of the guard.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB style='font-family:Courier'>sequence-expression</span></i></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This is a
+constraint, especially with </span><span lang=EN-GB style='font-family:Courier'>n..m</span><span
+lang=EN-GB> which denotes that the message is sent </span><i><span lang=EN-GB>n</span></i><span
+lang=EN-GB> up to </span><i><span lang=EN-GB>m</span></i><span lang=EN-GB>
+times with </span><span lang=EN-GB style='font-family:Courier'>n</span><span
+lang=EN-GB> </span><span lang=EN-GB style='font-family:Symbol'>Î N</span><span
+lang=EN-GB>, </span><span lang=EN-GB style='font-family:Courier'>m</span><span
+lang=EN-GB> </span><span lang=EN-GB style='font-family:Symbol'>Î N</span><span
+lang=EN-GB> </span><span lang=EN-GB style='font-family:Symbol'>È</span><span
+lang=EN-GB> {*}<a href="#_ftn1" name="_ftnref1" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span lang=EN-GB
+style='font-size:10.0pt;font-family:Helvetica'>[1]</span></span></span></a>.
+The keyword </span><span lang=EN-GB style='font-family:Courier'>broadcast</span><span
+lang=EN-GB> denotes the broadcast sending of a message; the keyword </span><span
+lang=EN-GB style='font-family:Courier'>deadline</span><span lang=EN-GB> denotes
+a string that is encoded according to [ISO8601] and represents the deadline by
+which a message is useful.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB style='font-family:Courier'>communicative-act</span></i></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This is either the
+name, that is, a string representation with an underlined name, of a concrete
+communicative act instance, the name of a concrete communicative act instance
+and its associated communicative act, written as </span><i><u><span lang=EN-GB
+style='font-family:Courier'>name</span></u></i><u><span lang=EN-GB
+style='font-family:Courier'>:</span></u><i><u><span lang=EN-GB
+style='font-family:Courier'>communicative-act</span></u></i><span lang=EN-GB>
+or only the name of the communicative act, for example, </span><span
+lang=EN-GB style='font-family:Courier'>inform</span><span lang=EN-GB>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB style='font-family:Courier'>argument-list</span></i></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This is a
+comma-separated list of arguments enclosed in parentheses. The parentheses can
+be omitted if the list is empty. Each argument is an expression in pseudo-code
+or an appropriate programming language or an OCL expression.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'></p>
+
+<h4><span lang=EN-GB>3.2.5.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Presentation Options</span></h4>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Variation: Cardinality </span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>The cardinality
+of a message (for example, </span><i><span lang=EN-GB>n</span></i><span
+lang=EN-GB> senders and </span><i><span lang=EN-GB>m </span></i><span
+lang=EN-GB>receivers of a message) is shown by writing natural numbers at the
+beginning and at the end of the arrow. This variation is only allowed if the
+sender and/or receiver is not an instance of an agent.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Variation: Asynchronous Message Passing</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>An asynchronous
+message is drawn with a stick arrowhead (</span><span lang=EN-GB
+style='font-family:Arial'><img width=35 height=13
+src="DC00025F_files/image014.gif">)</span><span lang=EN-GB>. It shows the
+sending of the message without yielding control.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Variation: Synchronous Message Passing</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>A synchronous
+message is drawn with a filled solid arrowhead (</span><span lang=EN-GB
+style='font-family:Arial'><img width=37 height=12
+src="DC00025F_files/image015.gif"></span><span lang=EN-GB>). It shows the
+yielding of the thread of control (wait semantics), that is, the AgentRole
+waits until an answer message is received and nothing else can be processed.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Variation: Time intensive Message Passing</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>Normally message
+arrows are drawn horizontally. This indicates the duration required to send the
+message is atomic, that is, it is brief compared to the granularity of the
+interaction and that nothing else can take place during the message
+transmission. That is the correct assumption within many computers. If the
+messages requires some time to arrive for mobile communication, for example,
+during which something else can occur then the message arrow may be slanted
+downward so that the arrowhead is below the arrow tail (</span><span
+lang=EN-GB style='font-family:Arial'><img width=42 height=14
+src="DC00025F_files/image016.gif">)</span><span lang=EN-GB>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Variation: Repetition</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>The repetition of
+parts of a PD is represented by an arrow or one of its variations usually
+marked by some guards or constraints ending at a thread of interaction which is
+according to the time axis before or after the actual time point. Note, that in
+this case the time ordering on the PDs is violated.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.5.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Example</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img
+width=171 height=172 src="DC00025F_files/image017.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.5.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Mapping</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>See </span><i><span lang=EN-GB>Section 3.2.1.5, Mapping</span></i><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc34063450"></a><a name="_Toc497728946"><span lang=EN-GB>3.2.6<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Complex Messages</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>Besides the already presented kinds of
+messages, more complex messages can be used.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.6.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Semantics</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A complex message may be the parallel
+sending of messages or exclusively sending of exactly one message out of a set
+of different messages.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.6.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notation</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>Three kinds of complex messages are
+distinguished. All three complex messages substitute an arrow from one thread
+of interaction to another thread of interaction by an arrow starting at one
+thread of interaction ending either:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>at a heavy bar (for AND parallelism),</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>at a heavy bar with a non-filled diamond (for OR
+parallelism; inclusive-or), or,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>at a heavy bar with a non-filled diamond (for
+decisions; exclusive-or) with an &quot;x&quot; inside the diamond.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>From these different kinds of heavy bars
+new arrows start in a right angle at the bar and end at possibly different
+threads of interaction, which are possibly combined in a parallel or decisional
+way.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The merging of different messages is done
+in the analogous way, that is, the parallel horizontal message arrows stop at
+one vertical bar and one message arrow is continued from the heavy bar.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.6.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Presentation Options</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>None.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.6.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Example</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=108
+height=89 src="DC00025F_files/image018.gif">        <img width=125 height=87
+src="DC00025F_files/image019.gif">        <img width=100 height=84
+src="DC00025F_files/image020.gif"></p>
+
+<p class=MsoNormal align=center style='text-align:center'>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'>(a)                              
+(b)<a href="#_ftn2" name="_ftnref2" title=""><span class=MsoFootnoteReference><span
+class=MsoFootnoteReference><span style='font-size:10.0pt;font-family:Helvetica'>[2]</span></span></span></a>                             
+(c)</p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.6.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Mapping</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>See </span><i><span lang=EN-GB>Section 3.2.1.5, Mapping</span></i><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc34063451"></a><a name="_Toc497728947"><span lang=EN-GB>3.2.7<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Nested Protocols</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>Nested protocols are applied to specify
+complex systems in a modular way. Moreover the reuse of parts of a
+specification increases the readability of them.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>A nested protocol can be defined and
+applied, if it is used several times within the same specification. In contrast
+to a parameterised protocol it is only an abbreviation for a fixed (part of a)
+protocol. Additionally nested protocols are used for the definition of
+repetition of a nested protocol according to guards and constraints.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Interleaved protocols show that between
+different agents a protocol is performed and more over in order to
+finish/proceed the protocol an agent has to perform another protocol with other
+agents.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.7.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Semantics</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>If the nested protocol is marked with some
+guard then the semantics of the nested protocol is the semantics of the
+protocol under the assumption that the guard evaluates to true, otherwise the
+semantics is the semantics of an empty protocol, that is, nothing is specified.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>If the nested protocol is marked with some
+constraints the nested protocol is repeated as long as the constraints evaluate
+to true.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.7.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notation</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A nested protocol is shown as a rectangle
+with rounded corners. It may have one or more compartments. The compartments
+are optional. They are as follows:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Name compartment</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This holds the
+(optional) name of the nested protocol as a string. Nested protocols without
+names are anonymous.  It is undesirable to show the same named nested protocol
+twice in the same diagram except when they define the same nested protocol. The
+compartment is written in the upper left-hand corner of the rectangle.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Guard compartment</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This holds the
+(optional) guard of the nested protocol in the usual guard notation as </span><span
+lang=EN-GB style='font-family:Courier'>[guard-condition]</span><span
+lang=EN-GB>. Nested protocols without guards are equivalent with nested
+protocols with guard </span><span lang=EN-GB style='font-family:Courier'>[true]</span><span
+lang=EN-GB>. The guard compartment is written together with the constraint
+compartment in the lower left-hand corner of the rectangle.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>Constraint compartment</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This holds the
+(optional) constraint of the nested protocol in the usual constraint notation
+as </span><span lang=EN-GB style='font-family:Courier'>{constraint-condition}</span><span
+lang=EN-GB>. Nested protocols without constraints are equivalent with nested
+protocols with constraint </span><span lang=EN-GB style='font-family:Courier'>{1}</span><span
+lang=EN-GB>. The constraint compartment is written together with the guard
+compartment in the lower left-hand corner of the rectangle. In addition to the
+constraint condition used in UML the constraint </span><span lang=EN-GB
+style='font-family:Courier'>n..m</span><span lang=EN-GB> denotes that the
+nested protocol is repeated </span><i><span lang=EN-GB>n</span></i><span
+lang=EN-GB> up to </span><i><span lang=EN-GB>m</span></i><span lang=EN-GB>
+times with </span><i><span lang=EN-GB>n</span></i><span lang=EN-GB> </span><span
+lang=EN-GB style='font-family:Symbol'>Î N</span><span lang=EN-GB>, </span><i><span
+lang=EN-GB>m</span></i><span lang=EN-GB> </span><span lang=EN-GB
+style='font-family:Symbol'>Î N È</span><span lang=EN-GB> {*}.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Another nested protocol can completely be
+drawn within the actual nested protocol denoting that the inner one is part of
+the outer one.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.7.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Presentation Options</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>The abbreviations </span><span lang=EN-GB
+style='font-family:Courier'>n</span><span lang=EN-GB> and </span><span
+lang=EN-GB style='font-family:Courier'>*</span><span lang=EN-GB> can be applied
+to denote </span><i><span lang=EN-GB>n</span></i><span lang=EN-GB>..</span><i><span
+lang=EN-GB>n</span></i><span lang=EN-GB> and 0..*, respectively. Beyond the
+above usage of nested protocols for simple protocols, nested protocols can also
+be used applying parameterised protocols or instantiated parameterised
+protocols.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Another presentation option is the
+definition of interleaved protocols. For a nested protocol being part of
+another protocol the rectangle representing it has to be completely drawn
+within the other one. If interleaved protocols are defined, that is, during
+performing one IP another IP has to be processed, the rectangles are not drawn
+within each other.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.7.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Example</span></h4>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img
+width=200 height=189 src="DC00025F_files/image021.gif">                     <img
+width=260 height=168 src="DC00025F_files/image022.gif"></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal align=center style='text-align:center'>Nested
+Protocol                                              Interleaved Protocols</p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc34063452"></a><a name="_Toc497728948"><span lang=EN-GB>3.2.8<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Complex Nested Protocols</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>Beyond the already presented nested and
+interleaved protocols, other kinds of complex nested protocols can also be defined.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.8.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Semantics</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A complex nested protocol defines the
+parallel or decisional combination of nested protocols. It has to take into
+consideration the thread of interaction at the beginning and at the end of the
+complex nested protocol. Furthermore the starting and ending point within the
+nested protocols have to be considered.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.8.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notation</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>Three kinds of complex nested protocols are
+distinguished. All three complex nested protocols are drawn over the lifeline
+and threads of interaction within a PD. Each individual nested protocol in a
+complex nested protocol is introduced by a line that is terminated by the
+rectangle of a nested protocol. These lines are connected either by:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>a heavy bar defining AND parallelism,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>a heavy bar with a non-filled diamond defining
+OR parallelism (inclusive-or), or,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>a heavy bar with a non-filled diamond defining
+decisions (exclusive-or) with an &quot;x&quot; inside the diamond.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The threads of interaction which are
+continued in the different nested protocols are drawn as usual.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.8.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Presentation Options</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>None.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.8.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Example</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img
+width=184 height=184 src="DC00025F_files/image023.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.8.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Mapping</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>See </span><i><span lang=EN-GB>Section 3.2.1.5, Mapping</span></i><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc34063453"></a><a name="_Toc497728949"></a><a
+name="_Ref497728816"></a><a name="_Ref497728814"><span lang=EN-GB>3.2.9<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Threads of Interaction and Messages Inside and
+Outside Nested Protocols</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>Usually, nested protocols have input and
+output parameters, namely threads of interaction and messages.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.9.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Semantics</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>Nested protocols are defined in detail
+either within a PD where it is used or outside another PD. Threads of
+interaction and messages inside and outside nested protocols define the input
+and output parameter for nested protocols.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The input parameters are the threads of
+interaction, which are carried on in the nested protocol, and the messages
+which are received from other IPs.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The output parameters are on the one side
+the threads of interaction which are started within the nested protocol and are
+carried on outside the nested protocol and the messages which are sent from
+inside the nested protocol to AgentRoles not involved in the actual nested protocol.
+A message or thread of interaction ending at an input or starting at an output
+parameter of a nested protocol describes the connection of a whole PD with the
+embedded nested protocol.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.9.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notation</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>The input and output parameters for the
+threads of interaction of a nested protocol are shown as a tall thin rectangle
+(like a thread of interaction) which is drawn beyond the bounds of over the top
+line and bottom line of the nested protocol rectangle, respectively.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The input and output message parameters are
+shown by arrows starting with a small solid filled circle, and arrows ending at
+a circle surrounding a small solid filled circle (a bull's eye), respectively.</span></p>
+
+<h4><span lang=EN-GB>3.2.9.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Presentation Options</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>The message arrows can be marked like usual
+messages. In this context, the predecessor denotes the number of the
+input/output parameter. The input/output thread of interaction can be marked
+with natural numbers to define the exact number of the parameter.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.9.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Example</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img
+width=200 height=222 src="DC00025F_files/image024.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.9.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Mapping</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>See </span><i><span lang=EN-GB>Section 3.2.1.5, Mapping</span></i><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc34063454"></a><a name="_Toc497728950"><span lang=EN-GB>3.2.10<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB>Parameterised Protocols</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>Adapted from [OMGuml], section 5.11.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.10.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Semantics</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A parameterised protocol is the description
+for an IP with one or more unbound formal parameters. It therefore defines a
+family of protocols, each protocol specified by binding the parameters to
+actual values. Typically the parameters represent agent roles, constraints,
+instances of communicative acts and nested protocols. The parameters used within
+the parameterised protocol are defined in terms of the formal parameters so
+they are become bound when the parameterised protocol itself is bound to the
+actual values.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>A parameterised protocol is not a
+directly-usable protocol because it has unbound parameters. Its parameters must
+be bound to actual values to create a bound form that is a protocol.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.10.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notation</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A small dashed rectangle is superimposed on
+the upper right-hand corner of the rectangle with rounded corners as when
+defining a nested protocol. The dashed rectangle contains a parameter list of
+formal parameters for the protocol. The list must not be empty, although it
+might be suppressed in the presentation. The name of the parameterised protocol
+is written as a string in the upper left-hand corner.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The parameter list is a comma-separated
+list of arguments (formal parameters) defined by identifiers, like names for
+AgentRoles, constraint expressions, communicative acts or nested protocol
+names.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.10.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Presentation Options</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>The input/output parameters like messages
+and threads of interactions can be used and defined as for nested protocols.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Communicative act can be marked with an
+asterisk in the parameter specification, denoting different kinds of messages
+that can alternatively be sent in this context.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.10.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Example</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img
+width=347 height=402 src="DC00025F_files/image025.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.10.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Mapping</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>See </span><i><span lang=EN-GB>Section 3.2.1.5, Mapping</span></i><span
+lang=EN-GB>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.10.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Comment</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>Note the difference between interleaved,
+nested and parameterised protocols. An interleaved protocol is used to show
+that during the execution of one protocol another one is started/performed.
+Nested protocols are used to show repetitions of sub-protocols, identifying
+fixed sub-protocols, reference to a fixed sub-protocol, like asking the DF for
+some information, or guarding a sub-protocol. Parameterised protocols are used
+to prepare patterns which can be instantiated in different contexts and
+applications, for example, the FIPA Contract Net Protocol for appointment
+scheduling and negotiation about some good which should be sold.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h3><a name="_Toc34063455"></a><a name="_Toc497728951"><span lang=EN-GB>3.2.11<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB>Bound Elements</span></a></h3>
+
+<p class=MsoNormal><span lang=EN-GB>Adapted from [OMGuml], section 5.12.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.11.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Semantics</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A parameterised PD cannot be used directly
+in an ordinary interaction description, because it has free parameters that are
+not meaningful outside of a scope that declares the parameter. To be used, a
+formal parameter of a parameterised protocol must be bound to actual values.
+The actual value for each parameter is an expression defined within the scope
+of use. If the referencing scope is itself a parameterised protocol, then the
+parameters of the referencing parameterised protocol can be used as actual
+values in binding the referenced parameterised protocol, but the parameter
+names in the two templates cannot be assumed to correspond, because they have no
+scope outside of their respective templates. We can assume without loss of
+generality that the parameter names of the different parameterised protocols
+are different.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.11.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Notation</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>A bound element is indicated in the name
+string of an element, as follows:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><i><span lang=EN-GB style='font-family:Courier'>parameterised-protocol-name</span></i><span
+lang=EN-GB style='font-family:Courier'> &lt; <i>role-list</i>, <i>constraint-expression-list</i>,
+<i>value-list</i> &gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Where:</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB style='font-family:Courier'>parameterised-protocol-name</span></i></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This is identical
+to the name of the parameterised protocol.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB style='font-family:Courier'>role-list</span></i></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This is a
+comma-delimited list of role labels. constraint-expression-list is a
+comma-delimited list of constraint terms. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB style='font-family:Courier'>value-list</span></i></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span lang=EN-GB>This is a
+comma-delimited non-empty list of pairs, separated by a colon consisting of a
+value expression and a communicative act. The communicative act is optional.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>The number and types of the values must
+match the number and types of the parameterised protocol formal parameters for
+the parameterised protocol of the given name. The bound element name may be
+used anywhere that protocol of the parameterised kind could be used.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.11.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Presentation Options</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>None.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<span lang=EN-GB style='font-size:10.0pt;font-family:Helvetica;color:black'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<h4><span lang=EN-GB>3.2.11.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Example</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>FIPA-ContractNet-Protocol</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&lt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  Buyer, Seller</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  20000807</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  cfp-seller :
+cfp,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  refuse-1   :
+refuse,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>  refuse-2   :
+refuse, not-understood, propose, reject-proposal, accept-proposal,</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>              
+cancel, inform, failure</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:Courier'>&gt;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-GB><img
+width=290 height=395 src="DC00025F_files/image026.gif"></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<h4><span lang=EN-GB>3.2.11.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Mapping</span></h4>
+
+<p class=MsoNormal><span lang=EN-GB>The use of the bound element syntax for the
+name of a symbol maps into a Binding dependency between the dependent
+ModelElement corresponding to the bound element symbol and the provider
+ModelElement whose name matches the name part of the bound element without the
+arguments. If the name does not match a parameterised protocol or if the number
+of arguments in the bound element does not match the number of formal
+parameters in the parameterised protocol, then the model is ill-formed. Each
+argument in the bound element maps into a ModelElement bearing a
+templateArgument association to the Namespace of the bound element. The Binding
+relationship bears the list of actual argument values.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>&nbsp;</span></p>
+
+<b><span lang=EN-GB style='font-size:14.0pt;font-family:Helvetica'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc34063456"></a><a name="_Toc497728952"><span lang=EN-GB>4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>References</span></a></h1>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[Booch94]         Booch,
+G., Object-Oriented Analysis and Design with Applications. Benjamin/Cummings,
+1994.</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[Booch95]         Booch,
+G., Object Solutions: Managing the Object-Oriented Project. Addison-Wesley,
+1995.</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00007]      </span><span
+lang=EN-GB>FIPA Content Language Library Specification<span style='color:black'>.
+Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00007/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB style='color:black'>[FIPA00023]      </span><span
+lang=EN-GB>FIPA Agent Management Specification<span style='color:black'>.
+Foundation for Intelligent Physical Agents, 2000. </span></span><span
+lang=EN-GB style='font-family:Courier;color:black'>http://www.fipa.org/specs/fipa00023/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[ISO8601]         Date Elements and Interchange
+Formats, Information Interchange – Representation of Dates and Times, ISO
+8601:1988(E), 1988.</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[Odell2000]        Odell, J., Parunak, H.
+van Dyke and Bauer, B., Extending UML for Agents. In: AOIS Worshop at AAAI,
+2000.</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=EN-GB>[OMGuml]         OMG Unified Modelling
+Language Version 1.1, Object Management Group, 1999.<br>
+</span><span lang=EN-GB style='font-family:Courier'>http://www.omg.org/uml/</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'>[Rumbaugh91]   Rumbaugh, J., Blaha, M., Premerlani, W.,
+Eddy, F. and Lorenzen, W., Object-Oriented Modeling and Design<i>.</i> Prentice
+Hall, 1991.</p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'>&nbsp;</p>
+
+<b><span style='font-size:14.0pt;font-family:Helvetica'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<h1><a name="_Toc34063457"></a><a name="_Toc8532400"></a><a name="_Ref8531939"></a><a
+name="_Toc522504001"><span lang=EN-GB>5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>Informative Annex A — ChangeLog</span></a></h1>
+
+<h2><a name="_Toc34063458"></a><a name="_Toc8532402"><span lang=EN-GB>5.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>2003/03/10 - version F by FIPA Architecture
+Board</span></a></h2>
+
+<p class=MsoNormal style='margin-left:115.0pt;text-indent:-115.0pt'><span
+lang=FR>Entire document&nbsp;:             Deprecated</span></p>
+
+<p class=MsoNormal align=left style='margin-left:1.0in;text-align:left;
+text-indent:-1.0in'><span lang=FR>&nbsp;</span></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[1]</span></span></span></span></a><span
+lang=EN-GB> The asterix represents repetition an arbitrary number of times.</span></p>
+
+</div>
+
+<div id=ftn2>
+
+<p class=MsoFootnoteText><a href="#_ftnref2" name="_ftn2" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:8.0pt;font-family:Helvetica'>[2]</span></span></span></span></a><span
+lang=EN-GB> This shows the restriction that </span><span lang=EN-GB
+style='font-family:Courier'>request</span><span lang=EN-GB> is sent before </span><span
+lang=EN-GB style='font-family:Courier'>query</span><span lang=EN-GB>.</span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+sub ProcessMessage {
+  my ($self,%args) = @_;
+
+}
+
+sub ProcessSpeechAct {
+  my ($self,%args) = @_;
+
+  my $entry = $args{Entry};
+  # generate the characterstic stuff
+  my $id = $entry->{ID};
+  my $lf = $self->LogicForm($entry->{Item});
+  my $freevars = $self->FreeVariables($lf);
+  my $characteristic_predicate = "p1-$id";
+  my $characteristic_term = "($characteristic_predicate ".join(" ",@$freevars).")";
+
+  my $res = $self->MyImportExport->Convert
+    (
+     Input => $lf,
+     InputType => "Interlingua",
+     OutputType => "KIF String",
+    );
+  if (! $res->Success) {
+    return $res;
+  }
+  # my $lfstring = $res->{Result}->[0]->{Output}->[0];
+  my $characteristic_iff = "(iff $prop $lfstring)";
+
+  # still need to define the sending and receiving agents somehow
+  my $sender = $args{Sender};
+  my $receiver = $args{Receiver};
+
+  my $assertions = [$characteristic_iff];
+  if ($entry->{Type} eq "Task") {
+    if ($entry->{Mode} eq "Assign") {
+      # 'Type' => 'Task',
+      # 'Item' => 'make optimal chess playing programs,',
+      # 'Mode' => 'Assign'
+      # assign#v#4'(e0,x0) -> choose#v#1'( e0 , x0 , x2 ) + something#n#1/person#n#1'( e2 , x2 ) + for'( e1 , e0 , x3 ) + specific'( e4 , x3 ) + purpose'( e3 , x3 )
+      push @$assertions, (
+			  "(BDI_Bel Semanta (S5_Possible (BDI_Intend $sender (S5_Necessary (CLIL_Goal $receiver $characteristic_term)))))",
+			  "(BDI_Bel Semanta (S5_Possible (BDI_Bel $sender (S5_Possible (KARO_A $receiver $characteristic_term)))))",
+			 );
+    } elsif ($entry->{Mode} eq "Request") {
+      # 'Type' => 'Task',
+      # 'Item' => 'you do the best you know',
+      # 'Mode' => 'Request'
+      # request#v#2'(e0,x0) -> ask#v#1'( e3 , x7 , x6 , x5 ) + person'( e4 , x8 ) + to'( e8 , x13 , e7 ) + something#n#1'( e6 , x12 )
+      # can/could you please do blahblahblah (note the "can" i.e. capability)
+      push @$assertions, (
+			  "(BDI_Bel Semanta (S5_Possible (BDI_Intend $sender (Learn Sender (CLIL_Goal $receiver $characteristic_term)))))",
+			 );
+    } elsif ($entry->{Mode} eq "Suggest") {
+      # 'Type' => 'Task',
+      # 'Item' => 'You can do this, you can make certain guarantees that certain failures',
+      # 'Mode' => 'Suggest'
+      ## suggest#v#3'(e0,x0) -> imply#v#2'( e0 , x0 , x2 ) + as'( e1 , e0 , x3 ) + possibility'( e3 , x3 )
+      push @$assertions, (
+			  "(BDI_Bel Semanta (S5_Possible (BDI_Intend $sender (Learn Sender (CLIL_Goal $receiver $characteristic_term)))))",
+			 );
+    }
+  } elsif ($entry->{Type} eq "Event") {
+    if ($entry->{Mode} eq "Assign") {
+      # 'Type' => 'Event',
+      # 'Item' => 'available.',
+      # 'Mode' => 'Assign'
+      push @$assertions, (
+			 );
+    }
+  }
+  return {
+	  Success => 1,
+	  Result => $assertions,
+	 };
+}
+
+sub LogicForm {
+
+}
+
+sub FreeVariables {
+
+}

@@ -1,0 +1,1 @@
+$("#inputSearchRight").bind("keyup paste",function(){$("#inputSearchLeft").val($(this).val())});$("#inputSearchLeft").bind("keyup paste",function(){$("#inputSearchRight").val($(this).val())})
