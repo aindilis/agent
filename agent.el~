@@ -1,7 +1,0 @@
-(global-set-key "\C-cago1" 'agent-open-reference-the-art-and-science-of-programming-robotic-agents)
-
-(defun agent-open-reference-the-art-and-science-of-programming-robotic-agents ()
- (interactive)
- (ffap
-  (concat "/var/lib/myfrdcsa/codebases/internal/digilib/data/collections/special/books/the-art-and-science-of-programming-robotic-agents--thielscher/"
-   "pdf/Springer.Reasoning.Robots.The.Art.and.Science.of.Programming.Robotic.Agents.Oct.2005.pdf")))
